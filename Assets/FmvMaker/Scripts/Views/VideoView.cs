@@ -10,6 +10,10 @@ namespace FmvMaker.Views {
 
         [SerializeField]
         private VideoPresenter _presenter;
+        [SerializeField]
+        private VideoPlayer _mainPlayer;
+        [SerializeField]
+        private VideoPlayer _backgroundPlayer;
 
         void Awake() {
             if (!_presenter) {
@@ -19,24 +23,75 @@ namespace FmvMaker.Views {
         }
 
         void Start() {
-            _presenter.MainPlayer.loopPointReached += ShowBackground;
+            _mainPlayer.loopPointReached += ShowBackground;
+            _mainPlayer.started += DisableBackgroundVideo;
+            _backgroundPlayer.started += DisableMainVideo;
         }
 
         void OnDestroy() {
-            _presenter.MainPlayer.loopPointReached -= ShowBackground;
+            _mainPlayer.loopPointReached -= ShowBackground;
+            _mainPlayer.started -= DisableBackgroundVideo;
+            _backgroundPlayer.started -= DisableMainVideo;
         }
 
         public void PlayMainVideoClip(VideoClip clip) {
-            _presenter.MainPlayer.clip = clip;
-            _presenter.MainPlayer.Play();
+            _mainPlayer.url = "";
+            _mainPlayer.clip = clip;
+            _mainPlayer.Play();
+        }
+
+        public void PlayMainVideoClip(string url) {
+            _mainPlayer.clip = null;
+            _mainPlayer.url = url;
+            _mainPlayer.Play();
+        }
+
+        public void StartBackgroundVideo() {
+            _backgroundPlayer.Play();
         }
 
         public void StopBackgroundVideo() {
-            _presenter.BackgroundPlayer.Stop();
+            _backgroundPlayer.Stop();
         }
 
         private void ShowBackground(VideoPlayer source) {
             _presenter.SetBackgroundPlayer(); 
+        }
+
+        private void DisableMainVideo(VideoPlayer source) {
+            SetPlayerVisible(false);
+        }
+
+        private void DisableBackgroundVideo(VideoPlayer source) {
+            _presenter.DisableBackgroundVideo();
+        }
+
+        public void SetPlayerVisible(bool isMainVisible = true) {
+            if (isMainVisible) {
+                _mainPlayer.transform.localPosition = new Vector3(0, 0, 0.01f);
+                _backgroundPlayer.transform.localPosition = new Vector3(0, 0, 0.1f);
+            } else {
+                _mainPlayer.transform.localPosition = new Vector3(0, 0, 0.1f);
+                _backgroundPlayer.transform.localPosition = new Vector3(0, 0, 0.01f);
+            }
+            //mainPlayer.gameObject.SetActive(isMainVisible);
+            //backgroundPlayer.gameObject.SetActive(!isMainVisible);
+        }
+
+        public void SetStaticBackgroundInfo(Vector3 localEulerRotation, Material playerMaterial) {
+            SetBackgroundPlayerRotationAndMaterial(localEulerRotation, playerMaterial);
+            _backgroundPlayer.clip = null;
+        }
+
+        public void SetDynamicBackgroundInfo(Vector3 localEulerRotation, Material playerMaterial, VideoClip clip) {
+            SetBackgroundPlayerRotationAndMaterial(localEulerRotation, playerMaterial);
+            _backgroundPlayer.clip = clip;
+            _backgroundPlayer.Prepare();
+        }
+
+        private void SetBackgroundPlayerRotationAndMaterial(Vector3 localEulerRotation, Material playerMaterial) {
+            _backgroundPlayer.transform.localEulerAngles = localEulerRotation;
+            _backgroundPlayer.gameObject.GetComponent<Renderer>().material = playerMaterial;
         }
     }
 }

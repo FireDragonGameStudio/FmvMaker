@@ -196,9 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d44bdeb33aa93894ab86a560b09bf1f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainPlayer: {fileID: 575174185}
-  backgroundPlayer: {fileID: 1682482923}
-  view: {fileID: 1177813088}
+  _view: {fileID: 1177813088}
   videoMaterial: {fileID: 2100000, guid: db0dfbe85e643aa40be147727fea4414, type: 2}
   backgroundMaterial: {fileID: 2100000, guid: 98536a31db1e2254ebbde28ea09a0c2e, type: 2}
 --- !u!20 &282840813
@@ -610,6 +608,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _presenter: {fileID: 282840812}
+  _mainPlayer: {fileID: 575174185}
+  _backgroundPlayer: {fileID: 1682482923}
 --- !u!1 &1682482921
 GameObject:
   m_ObjectHideFlags: 0

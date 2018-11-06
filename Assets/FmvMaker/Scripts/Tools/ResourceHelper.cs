@@ -1,8 +1,12 @@
-﻿using UnityEngine;
+﻿using FmvMaker.Models;
+using System.IO;
+using UnityEngine;
 using UnityEngine.Video;
 
-namespace FmvMaker.Models {
+namespace FmvMaker.Tools {
     public static class ResourceInfo {
+
+        private static FmvMakerConfig _config => LoadFmvConfig.LoadConfig();
 
         public static VideoClip LoadVideoClipFromResources(string name) {
             return Resources.Load<VideoClip>($"Videos/{name}");
