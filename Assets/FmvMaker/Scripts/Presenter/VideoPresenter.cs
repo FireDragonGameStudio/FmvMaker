@@ -69,7 +69,7 @@ namespace FmvMaker.Presenter {
             }
 
             // return all current navigation targets to pool
-            ObjectPool.Instance.ReturnAllObjectsToPool();
+            ObjectPool.Instance.ReturnAllTargetObjectsToPool();
         }
 
         public void PlayVideoByName(string videoName) {
@@ -101,7 +101,7 @@ namespace FmvMaker.Presenter {
         private void GenerateNavigationElements(TargetInfo[] targets, Transform viewTransform) {
             for (int i = 0; i < targets.Length; i++) {
                 // rent new navigation targets from pool
-                GameObject targetObject = ObjectPool.Instance.GetPooledObject();
+                GameObject targetObject = ObjectPool.Instance.GetPooledTargetObject();
                 targetObject.SetActive(true);
                 targetObject.transform.SetParent(viewTransform);
                 targetObject.transform.localScale = Vector3.one;

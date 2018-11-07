@@ -7,38 +7,54 @@ namespace FmvMaker.Tools {
 
         public static ObjectPool Instance;
 
-        public List<GameObject> pooledObjects;
-        public GameObject objectToPool;
-        public int amountToPool;
+        [SerializeField]
+        private List<GameObject> pooledTargetObjects;
+        [SerializeField]
+        private List<GameObject> pooledVideoObjects;
+        [SerializeField]
+        private GameObject targetObjectToPool;
+        [SerializeField]
+        private GameObject videoObjectToPool;
 
         void Awake() {
             Instance = this;
         }
 
         void Start() {
-            pooledObjects = new List<GameObject>();
-            for (int i = 0; i < amountToPool; i++) {
-                
-            }
+            pooledTargetObjects = new List<GameObject>();
         }
 
-        public GameObject GetPooledObject() {
-            for (int i = 0; i < pooledObjects.Count; i++) {
-                if (!pooledObjects[i].activeInHierarchy) {
-                    return pooledObjects[i];
+        public GameObject GetPooledTargetObject() {
+            for (int i = 0; i < pooledTargetObjects.Count; i++) {
+                if (!pooledTargetObjects[i].activeInHierarchy) {
+                    return pooledTargetObjects[i];
                 }
             }
 
             // no pooled objects available
-            GameObject newObj = Instantiate(objectToPool);
+            GameObject newObj = Instantiate(targetObjectToPool);
             newObj.SetActive(false);
-            pooledObjects.Add(newObj);
+            pooledTargetObjects.Add(newObj);
             return newObj;
         }
 
-        public void ReturnAllObjectsToPool() {
-            for (int i = 0; i < pooledObjects.Count; i++) {
-                pooledObjects[i].SetActive(false);
+        public GameObject GetPooledVideoObject() {
+            for (int i = 0; i < pooledVideoObjects.Count; i++) {
+                if (!pooledVideoObjects[i].activeInHierarchy) {
+                    return pooledVideoObjects[i];
+                }
+            }
+
+            // no pooled objects available
+            GameObject newObj = Instantiate(videoObjectToPool);
+            pooledVideoObjects.Add(newObj);
+            return newObj;
+        }
+
+
+        public void ReturnAllTargetObjectsToPool() {
+            for (int i = 0; i < pooledTargetObjects.Count; i++) {
+                pooledTargetObjects[i].SetActive(false);
             }
         }
     }

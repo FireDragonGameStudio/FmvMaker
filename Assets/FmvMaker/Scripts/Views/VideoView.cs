@@ -35,7 +35,6 @@ namespace FmvMaker.Views {
         }
 
         public void PlayMainVideoClip(VideoClip clip) {
-            _mainPlayer.url = "";
             _mainPlayer.clip = clip;
             _mainPlayer.Play();
         }
@@ -74,8 +73,6 @@ namespace FmvMaker.Views {
                 _mainPlayer.transform.localPosition = new Vector3(0, 0, 0.1f);
                 _backgroundPlayer.transform.localPosition = new Vector3(0, 0, 0.01f);
             }
-            //mainPlayer.gameObject.SetActive(isMainVisible);
-            //backgroundPlayer.gameObject.SetActive(!isMainVisible);
         }
 
         public void SetStaticBackgroundInfo(Vector3 localEulerRotation, Material playerMaterial) {
