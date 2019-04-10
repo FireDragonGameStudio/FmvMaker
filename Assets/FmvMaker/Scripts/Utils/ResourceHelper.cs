@@ -3,7 +3,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Video;
 
-namespace FmvMaker.Tools {
+namespace FmvMaker.Utils {
     public static class ResourceInfo {
 
         private static FmvMakerConfig _config => LoadFmvConfig.LoadConfig();

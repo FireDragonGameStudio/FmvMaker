@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace FmvMaker.Tools {
+namespace FmvMaker.Utils {
     public class StretchVideoPlane : MonoBehaviour {
 
         private float _ratio = 1.777777777f;

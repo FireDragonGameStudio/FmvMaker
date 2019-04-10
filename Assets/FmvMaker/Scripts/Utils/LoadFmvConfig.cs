@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-namespace FmvMaker.Tools {
+namespace FmvMaker.Utils {
     public static class LoadFmvConfig {
 
         private static FmvMakerConfig _config;
