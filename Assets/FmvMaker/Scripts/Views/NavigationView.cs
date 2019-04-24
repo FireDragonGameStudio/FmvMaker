@@ -16,13 +16,13 @@ namespace FmvMaker.Views {
 
         private RectTransform _rectTransform;
 
-        void Awake() {
+        private void Awake() {
             _navigationButton = GetComponent<Button>();
             _navigationText = GetComponentInChildren<Text>();
             _rectTransform = GetComponent<RectTransform>();
         }
 
-        void OnDisable() {
+        private void OnDisable() {
             _navigationButton.onClick.RemoveAllListeners();
             OnNavigationClicked.RemoveAllListeners();
         }
@@ -32,8 +32,6 @@ namespace FmvMaker.Views {
             _rectTransform.anchoredPosition = new Vector2(model.RelativeScreenPosition.x, model.RelativeScreenPosition.y);
 
             _navigationButton.onClick.AddListener(() => OnNavigationClicked?.Invoke(model));
-
-            // preload next target data
         }
     }
 }

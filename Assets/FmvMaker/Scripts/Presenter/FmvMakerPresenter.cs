@@ -17,36 +17,62 @@ namespace FmvMaker.Presenter {
 
         private VideoElement _currentVideoElement;
         private List<VideoElement> _allVideoElements;
+        private int _loopCounter = 0;
 
-        void Awake() {
+        private void Awake() {
             if (!_view) {
-                Debug.LogError("No video player for presenter set. I'll try to find it automatically. Please check if view is set, before starting playmode again.", this);
+                Debug.LogError("No video view for presenter set. I'll try to find it automatically. Please check if view is set, before starting playmode again.", this);
                 _view = GetComponentInChildren<VideoView>();
             }
             _view.OnLoopPointReached += LoopPointReached;
         }
 
-        void Start() {
+        private void Start() {
             FmvMakerConfig config = LoadFmvConfig.LoadConfig();
 
             _allVideoElements = LoadFmvData.GenerateVideoMockData();
 
             // start first clip
-            _currentVideoElement = _allVideoElements[0];
-            PlayVideo(_currentVideoElement.Name);
+            PlayVideo(_allVideoElements[0]);
         }
 
-        void OnDestroy() {
+        private void Update() {
+            // check for video skipping
+            if (Input.GetKeyUp(KeyCode.Escape)) {
+                _view.SkipVideoClip();
+            }
+        }
+
+        private void OnDestroy() {
             _view.OnLoopPointReached -= LoopPointReached;
         }
 
         public void PlayVideo(string videoName) {
+            PlayVideo(_allVideoElements.FirstOrDefault(v => v.Name == videoName));
+        }
+
+        public void PlayVideo(VideoElement video) {
             // either load from file system/online or resources
-            _view.PlayVideoClip(_allVideoElements.FirstOrDefault(v => v.Name == videoName));
+            Debug.Log($"Play video: {video.Name}");
+            _loopCounter = 0;
+            _currentVideoElement = video;
+            _view.PlayVideoClip(video);
         }
 
         private void LoopPointReached() {
-            GenerateNavigationElements();
+            _loopCounter++;
+
+            if (_loopCounter > 1) {
+                return;
+            }
+
+            // check for next video to either generate navigation elements
+            // or move directly to the next video
+            if ((_currentVideoElement.NavigationTargets.Length < 1) || string.IsNullOrEmpty(_currentVideoElement.NavigationTargets[0].DisplayText)) {
+                PlayVideo(_currentVideoElement.NavigationTargets[0].NextVideo);
+            } else {
+                GenerateNavigationElements();
+            }
         }
 
         private void GenerateNavigationElements() {

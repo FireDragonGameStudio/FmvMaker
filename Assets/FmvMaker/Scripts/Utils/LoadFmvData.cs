@@ -13,22 +13,72 @@ namespace FmvMaker.Utils {
             // scan files for VideoInfo json files
             return new List<VideoElement>() {
                 new VideoElement() {
-                    Name = "First",
+                    Name = "Idle",
+                    IsLooping = false,
                     NavigationTargets = new NavigationModel[] {
                         new NavigationModel() {
-                            DisplayText = "Second Title",
-                            RelativeScreenPosition = GetRelativeScreenPosition(0.3f, 0.5f),
-                            NextVideo = "Second"
-                        },
-                        new NavigationModel() {
-                            DisplayText = "Third",
-                            RelativeScreenPosition = GetRelativeScreenPosition(0.1f, 0.1f),
-                            NextVideo = ""
+                            DisplayText = "Up Dir",
+                            RelativeScreenPosition = GetRelativeScreenPosition(0.2f, 0.5f),
+                            NextVideo = "Up"
+                        }, new NavigationModel() {
+                            DisplayText = "Left Dir",
+                            RelativeScreenPosition = GetRelativeScreenPosition(0.2f, 0.5f),
+                            NextVideo = "Left"
+                        }, new NavigationModel() {
+                            DisplayText = "Right Dir",
+                            RelativeScreenPosition = GetRelativeScreenPosition(0.8f, 0.5f),
+                            NextVideo = "Right"
+                        }, new NavigationModel() {
+                            DisplayText = "Down Dir",
+                            RelativeScreenPosition = GetRelativeScreenPosition(0.5f, 0.2f),
+                            NextVideo = "Down"
                         }
                     }
                 }, new VideoElement() {
-                    Name = "Second",
-                    NavigationTargets = new NavigationModel[] { }
+                    Name = "Left",
+                    NavigationTargets = new NavigationModel[] {
+                        new NavigationModel() {
+                            DisplayText = "",
+                            RelativeScreenPosition = GetRelativeScreenPosition(Vector2.zero),
+                            NextVideo = "Idle"
+                        }
+                    }
+                }, new VideoElement() {
+                    Name = "Right",
+                    NavigationTargets = new NavigationModel[] {
+                        new NavigationModel() {
+                            DisplayText = "",
+                            RelativeScreenPosition = GetRelativeScreenPosition(Vector2.zero),
+                            NextVideo = "Idle"
+                        }
+                    }
+                }, new VideoElement() {
+                    Name = "Down",
+                    NavigationTargets = new NavigationModel[] {
+                        new NavigationModel() {
+                            DisplayText = "Down Left",
+                            RelativeScreenPosition = GetRelativeScreenPosition(0.2f, 0.5f),
+                            NextVideo = "DownLeft"
+                        }
+                    }
+                }, new VideoElement() {
+                    Name = "DownLeft",
+                    NavigationTargets = new NavigationModel[] {
+                        new NavigationModel() {
+                            DisplayText = "",
+                            RelativeScreenPosition = GetRelativeScreenPosition(Vector2.zero),
+                            NextVideo = "DownReturn"
+                        }
+                    }
+                }, new VideoElement() {
+                    Name = "DownReturn",
+                    NavigationTargets = new NavigationModel[] {
+                        new NavigationModel() {
+                            DisplayText = "",
+                            RelativeScreenPosition = GetRelativeScreenPosition(Vector2.zero),
+                            NextVideo = "Idle"
+                        }
+                    }
                 }
             };
         }
@@ -41,6 +91,10 @@ namespace FmvMaker.Utils {
         /// <returns></returns>
         private static Vector2 GetRelativeScreenPosition(float x, float y) {
             return new Vector2(Screen.width * x, Screen.height * y);
+        }
+
+        private static Vector2 GetRelativeScreenPosition(Vector2 vector2) {
+            return GetRelativeScreenPosition(vector2.x, vector2.y);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 
 [Flags]
-public enum VideoSource {
+public enum VideoSourceOld {
     Online = 10,
     Offline = 20,
     Resources = 30
