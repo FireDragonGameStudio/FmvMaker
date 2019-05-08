@@ -29,7 +29,7 @@ namespace FmvMaker.Views {
 
         public void SetTargetData(NavigationModel model) {
             _navigationText.text = model.DisplayText;
-            _rectTransform.anchoredPosition = new Vector2(model.RelativeScreenPosition.x, model.RelativeScreenPosition.y);
+            _rectTransform.anchoredPosition = FmvData.GetAbsoluteScreenPosition(model.RelativeScreenPosition);
 
             _navigationButton.onClick.AddListener(() => OnNavigationClicked?.Invoke(model));
         }

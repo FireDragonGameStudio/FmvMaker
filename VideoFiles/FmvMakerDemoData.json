@@ -1,0 +1,107 @@
+[{
+		"Name": "Idle",
+		"IsLooping": true,
+		"NavigationTargets": [{
+				"NextVideo": "Up",
+				"DisplayText": "Up Dir",
+				"RelativeScreenPosition": {
+					"x": 0.5,
+					"y": 0.8
+				}
+			}, {
+				"NextVideo": "Left",
+				"DisplayText": "Left Dir",
+				"RelativeScreenPosition": {
+					"x": 0.2,
+					"y": 0.5
+				}
+			}, {
+				"NextVideo": "Right",
+				"DisplayText": "Right Dir",
+				"RelativeScreenPosition": {
+					"x": 0.8,
+					"y": 0.5
+				}
+			}, {
+				"NextVideo": "Down",
+				"DisplayText": "Down Dir",
+				"RelativeScreenPosition": {
+					"x": 0.5,
+					"y": 0.2
+				}
+			}
+		]
+	}, {
+		"Name": "Left",
+		"IsLooping": false,
+		"NavigationTargets": [{
+				"NextVideo": "Idle",
+				"DisplayText": "",
+				"RelativeScreenPosition": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			}
+		]
+	}, {
+		"Name": "Right",
+		"IsLooping": false,
+		"NavigationTargets": [{
+				"NextVideo": "Idle",
+				"DisplayText": "",
+				"RelativeScreenPosition": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			}
+		]
+	}, {
+		"Name": "Down",
+		"IsLooping": false,
+		"NavigationTargets": [{
+				"NextVideo": "DownLeft",
+				"DisplayText": "Down Left",
+				"RelativeScreenPosition": {
+					"x": 0.2,
+					"y": 0.5
+				}
+			}
+		]
+	}, {
+		"Name": "DownLeft",
+		"IsLooping": false,
+		"NavigationTargets": [{
+				"NextVideo": "DownReturn",
+				"DisplayText": "",
+				"RelativeScreenPosition": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			}
+		]
+	}, {
+		"Name": "DownReturn",
+		"IsLooping": false,
+		"NavigationTargets": [{
+				"NextVideo": "Idle",
+				"DisplayText": "",
+				"RelativeScreenPosition": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			}
+		]
+	}, {
+		"Name": "Up",
+		"IsLooping": false,
+		"NavigationTargets": [{
+				"NextVideo": "Idle",
+				"DisplayText": "",
+				"RelativeScreenPosition": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			}
+		]
+	}
+]

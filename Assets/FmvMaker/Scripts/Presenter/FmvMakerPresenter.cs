@@ -1,11 +1,9 @@
 ﻿using FmvMaker.Models;
 using FmvMaker.Utils;
 using FmvMaker.Views;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace FmvMaker.Presenter {
     public class FmvMakerPresenter : MonoBehaviour {
@@ -28,9 +26,8 @@ namespace FmvMaker.Presenter {
         }
 
         private void Start() {
-            FmvMakerConfig config = LoadFmvConfig.LoadConfig();
-
-            _allVideoElements = LoadFmvData.GenerateVideoMockData();
+            //_allVideoElements = FmvData.GenerateVideoMockData();
+            _allVideoElements = FmvData.GenerateVideoDataFromLocalFile(LoadFmvConfig.Config.LocalVideoPath);
 
             // start first clip
             PlayVideo(_allVideoElements[0]);
@@ -40,6 +37,9 @@ namespace FmvMaker.Presenter {
             // check for video skipping
             if (Input.GetKeyUp(KeyCode.Escape)) {
                 _view.SkipVideoClip();
+            }
+            if (Input.GetKeyUp(KeyCode.E)) {
+                FmvData.ExportVideoDataToLocalFile(_allVideoElements, LoadFmvConfig.Config.LocalVideoPath);
             }
         }
 
@@ -56,12 +56,13 @@ namespace FmvMaker.Presenter {
             Debug.Log($"Play video: {video.Name}");
             _loopCounter = 0;
             _currentVideoElement = video;
-            _view.PlayVideoClip(video);
+            _view.PrepareAndPlayVideoClip(video);
         }
 
         private void LoopPointReached() {
             _loopCounter++;
 
+            // don´t show navigation elements again, when looping
             if (_loopCounter > 1) {
                 return;
             }

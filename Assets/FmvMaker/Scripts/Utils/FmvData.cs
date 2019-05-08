@@ -1,9 +1,11 @@
 ﻿using FmvMaker.Models;
+using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 namespace FmvMaker.Utils {
-    public static class LoadFmvData {
+    public static class FmvData {
 
         /// <summary>
         /// Generate video mock data to test functionalities
@@ -14,23 +16,23 @@ namespace FmvMaker.Utils {
             return new List<VideoElement>() {
                 new VideoElement() {
                     Name = "Idle",
-                    IsLooping = false,
+                    IsLooping = true,
                     NavigationTargets = new NavigationModel[] {
                         new NavigationModel() {
                             DisplayText = "Up Dir",
-                            RelativeScreenPosition = GetRelativeScreenPosition(0.2f, 0.5f),
+                            RelativeScreenPosition = new Vector2(0.5f, 0.8f),
                             NextVideo = "Up"
                         }, new NavigationModel() {
                             DisplayText = "Left Dir",
-                            RelativeScreenPosition = GetRelativeScreenPosition(0.2f, 0.5f),
+                            RelativeScreenPosition = new Vector2(0.2f, 0.5f),
                             NextVideo = "Left"
                         }, new NavigationModel() {
                             DisplayText = "Right Dir",
-                            RelativeScreenPosition = GetRelativeScreenPosition(0.8f, 0.5f),
+                            RelativeScreenPosition = new Vector2(0.8f, 0.5f),
                             NextVideo = "Right"
                         }, new NavigationModel() {
                             DisplayText = "Down Dir",
-                            RelativeScreenPosition = GetRelativeScreenPosition(0.5f, 0.2f),
+                            RelativeScreenPosition = new Vector2(0.5f, 0.2f),
                             NextVideo = "Down"
                         }
                     }
@@ -39,7 +41,7 @@ namespace FmvMaker.Utils {
                     NavigationTargets = new NavigationModel[] {
                         new NavigationModel() {
                             DisplayText = "",
-                            RelativeScreenPosition = GetRelativeScreenPosition(Vector2.zero),
+                            RelativeScreenPosition = Vector2.zero,
                             NextVideo = "Idle"
                         }
                     }
@@ -48,7 +50,7 @@ namespace FmvMaker.Utils {
                     NavigationTargets = new NavigationModel[] {
                         new NavigationModel() {
                             DisplayText = "",
-                            RelativeScreenPosition = GetRelativeScreenPosition(Vector2.zero),
+                            RelativeScreenPosition = Vector2.zero,
                             NextVideo = "Idle"
                         }
                     }
@@ -57,7 +59,7 @@ namespace FmvMaker.Utils {
                     NavigationTargets = new NavigationModel[] {
                         new NavigationModel() {
                             DisplayText = "Down Left",
-                            RelativeScreenPosition = GetRelativeScreenPosition(0.2f, 0.5f),
+                            RelativeScreenPosition = new Vector2(0.2f, 0.5f),
                             NextVideo = "DownLeft"
                         }
                     }
@@ -66,7 +68,7 @@ namespace FmvMaker.Utils {
                     NavigationTargets = new NavigationModel[] {
                         new NavigationModel() {
                             DisplayText = "",
-                            RelativeScreenPosition = GetRelativeScreenPosition(Vector2.zero),
+                            RelativeScreenPosition = Vector2.zero,
                             NextVideo = "DownReturn"
                         }
                     }
@@ -75,12 +77,31 @@ namespace FmvMaker.Utils {
                     NavigationTargets = new NavigationModel[] {
                         new NavigationModel() {
                             DisplayText = "",
-                            RelativeScreenPosition = GetRelativeScreenPosition(Vector2.zero),
+                            RelativeScreenPosition = Vector2.zero,
+                            NextVideo = "Idle"
+                        }
+                    }
+                }, new VideoElement() {
+                    Name = "Up",
+                    NavigationTargets = new NavigationModel[] {
+                        new NavigationModel() {
+                            DisplayText = "",
+                            RelativeScreenPosition = Vector2.zero,
                             NextVideo = "Idle"
                         }
                     }
                 }
             };
+        }
+
+        public static List<VideoElement> GenerateVideoDataFromLocalFile(string localFilePath) {
+            return JsonConvert.DeserializeObject<List<VideoElement>>(File.ReadAllText(Path.Combine(localFilePath, "FmvMakerDemoData.json")));
+        }
+
+        public static void ExportVideoDataToLocalFile(List<VideoElement> videoElements, string localFilePath) {
+            using (StreamWriter sw = new StreamWriter(Path.Combine(localFilePath, "FmvMakerDemoData.json"))) {
+                sw.Write(JsonConvert.SerializeObject(videoElements));
+            }
         }
 
         /// <summary>
@@ -89,12 +110,12 @@ namespace FmvMaker.Utils {
         /// <param name="x">Horizontal screen position</param>
         /// <param name="y">Vertical sceen position</param>
         /// <returns></returns>
-        private static Vector2 GetRelativeScreenPosition(float x, float y) {
+        public static Vector2 GetAbsoluteScreenPosition(float x, float y) {
             return new Vector2(Screen.width * x, Screen.height * y);
         }
 
-        private static Vector2 GetRelativeScreenPosition(Vector2 vector2) {
-            return GetRelativeScreenPosition(vector2.x, vector2.y);
+        public static Vector2 GetAbsoluteScreenPosition(Vector2 vector2) {
+            return GetAbsoluteScreenPosition(vector2.x, vector2.y);
         }
     }
 }

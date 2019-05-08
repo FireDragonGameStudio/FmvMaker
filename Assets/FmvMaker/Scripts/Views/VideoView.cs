@@ -13,29 +13,31 @@ namespace FmvMaker.Views {
         public event Action OnPreparationCompleted;
 
         [SerializeField]
-        private Transform _firstVideoElement;
-        [SerializeField]
-        private Transform _secondVideoElemnt;
-
         private VideoPlayer _firstPlayer;
+        [SerializeField]
         private VideoPlayer _secondPlayer;
+
         private AudioSource _firstAudioSource;
         private AudioSource _secondAudioSource;
+
+        private VideoPlayer _activeVideoPlayer;
+        private VideoPlayer _inactiveVideoPlayer;
 
         // false -> select second player, true -> select first player
         private bool _videoPlayerToggle = true;
 
+        public bool IsLooping => _activeVideoPlayer.isLooping;
+        public bool IsPlaying => _activeVideoPlayer.isPlaying;
+
         private void Awake() {
-            if (!_firstVideoElement || !_secondVideoElemnt) {
-                Debug.LogWarning("No video player for view set. I'll try to find it automatically. Please check if references are set, before starting playmode again.", this);
-                _firstVideoElement = transform.GetChild(0);
-                _secondVideoElemnt = transform.GetChild(1);
+            if (!_firstPlayer || !_secondPlayer) {
+                Debug.LogWarning("No video players/audio sources for view set. I'll try to find it automatically. Please check if references are set, before starting playmode again.", this);
+                _firstPlayer = transform.GetChild(0).GetComponent<VideoPlayer>();
+                _secondPlayer = transform.GetChild(1).GetComponent<VideoPlayer>();
             }
 
-            _firstPlayer = _firstVideoElement.GetComponent<VideoPlayer>();
-            _firstAudioSource = _firstVideoElement.GetComponent<AudioSource>();
-            _secondPlayer = _secondVideoElemnt.GetComponent<VideoPlayer>();
-            _secondAudioSource = _secondVideoElemnt.GetComponent<AudioSource>();
+            _firstAudioSource = _firstPlayer.GetComponent<AudioSource>();
+            _secondAudioSource = _secondPlayer.GetComponent<AudioSource>();
         }
 
         private void Start() {
@@ -46,6 +48,9 @@ namespace FmvMaker.Views {
             _secondPlayer.loopPointReached += LoopPointReached;
             _secondPlayer.started += PlayerStarted;
             _secondPlayer.prepareCompleted += PreparationComplete;
+
+            _activeVideoPlayer = _secondPlayer;
+            _inactiveVideoPlayer = _firstPlayer;
         }
 
         private void OnDestroy() {
@@ -63,60 +68,68 @@ namespace FmvMaker.Views {
         }
 
         private async void PlayerStarted(VideoPlayer source) {
+            // wait a short time for smoother blending
             await Task.Delay(TimeSpan.FromSeconds(0.1));
-            DisableOtherPlayer();
+
+            _inactiveVideoPlayer.Stop();
             OnPlayerStarted?.Invoke();
         }
 
         private void PreparationComplete(VideoPlayer source) {
-            StartCurrentPlayer();
-        }
-
-        public void PlayVideoClip(VideoElement videoElement) {
-            VideoPlayer player = _videoPlayerToggle ? _firstPlayer : _secondPlayer;
-            if (Uri.TryCreate(videoElement.Name, UriKind.Absolute, out Uri uriResult) && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps)) {
-                player.source = VideoSource.Url;
-                player.url = videoElement.Name;
-            } else {
-                player.source = VideoSource.VideoClip;
-                player.clip = LoadVideo(videoElement.Name);
-            }
-            player.isLooping = videoElement.IsLooping;
-            player.Prepare();
-        }
-
-        public void SkipVideoClip() {
-            if (_firstPlayer.isPlaying || !_firstPlayer.isLooping) {
-                _firstPlayer.frame = (long)_firstPlayer.frameCount - 5;
-            }
-
-
-            //OnLoopPointReached?.Invoke();
-        }
-
-        private void StartCurrentPlayer() {
+            // play actual player and set active/inactive players
             if (_videoPlayerToggle) {
                 _firstPlayer.Play();
                 _firstAudioSource.Play();
+                _activeVideoPlayer = _firstPlayer;
+                _inactiveVideoPlayer = _secondPlayer;
             } else {
                 _secondPlayer.Play();
                 _secondAudioSource.Play();
+                _activeVideoPlayer = _secondPlayer;
+                _inactiveVideoPlayer = _firstPlayer;
             }
+
+            // show nav elements immediately on looping videos
+            if (_activeVideoPlayer.isLooping) {
+                OnLoopPointReached.Invoke();
+            }
+
             _videoPlayerToggle = !_videoPlayerToggle;
+
+            OnPreparationCompleted?.Invoke();
         }
 
-        private void DisableOtherPlayer() {
-            if (_videoPlayerToggle) {
-                _firstPlayer.Stop();
-                Debug.Log("Stop first player");
+        public void PrepareAndPlayVideoClip(VideoElement videoElement) {
+            if (LoadFmvConfig.Config.SourceType.Equals("LOCAL")) {
+                string elementUri = LoadVideoFromLocalFile(videoElement.Name);
+                //if (Uri.TryCreate(elementUri, UriKind.Absolute, out Uri uriResult) && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps)) {
+                _inactiveVideoPlayer.source = VideoSource.Url;
+                _inactiveVideoPlayer.url = LoadVideoFromLocalFile(videoElement.Name);
+                //} else {
+                //    Debug.LogError($"Video file {elementUri} could not be loaded.");
+                //}
             } else {
-                _secondPlayer.Stop();
-                Debug.Log("Stop second player");
+                _inactiveVideoPlayer.source = VideoSource.VideoClip;
+                _inactiveVideoPlayer.clip = LoadVideoFromResources(videoElement.Name);
+            }
+            _inactiveVideoPlayer.isLooping = videoElement.IsLooping;
+            _inactiveVideoPlayer.Prepare();
+        }
+
+        public void SkipVideoClip() {
+            if (!_activeVideoPlayer.isLooping) {
+                _activeVideoPlayer.frame = (long)_activeVideoPlayer.frameCount - 5;
+            } else {
+                OnLoopPointReached.Invoke();
             }
         }
 
-        private VideoClip LoadVideo(string name) {
+        private VideoClip LoadVideoFromResources(string name) {
             return ResourceInfo.LoadVideoClipFromResources(name);
+        }
+
+        private string LoadVideoFromLocalFile(string name) {
+            return ResourceInfo.LoadVideoClipFromFile(name);
         }
     }
 }

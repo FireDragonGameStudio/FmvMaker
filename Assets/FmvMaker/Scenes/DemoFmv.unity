@@ -387,8 +387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058bf0fb78f4df14b9a67077d6ac6467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _firstVideoElement: {fileID: 1451594707}
-  _secondVideoElemnt: {fileID: 1078660167}
+  _firstPlayer: {fileID: 1451594712}
+  _secondPlayer: {fileID: 1078660169}
 --- !u!4 &1068682701
 Transform:
   m_ObjectHideFlags: 0
