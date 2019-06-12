@@ -3,6 +3,6 @@
 namespace FmvMaker.Models {
     [Serializable]
     public class NavigationModel : BaseUiElementModel {
-        public string NextVideo;
+        public string NextVideo = "";
     }
 }

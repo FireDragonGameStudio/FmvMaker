@@ -35,24 +35,14 @@
 		"Name": "Left",
 		"IsLooping": false,
 		"NavigationTargets": [{
-				"NextVideo": "Idle",
-				"DisplayText": "",
-				"RelativeScreenPosition": {
-					"x": 0.0,
-					"y": 0.0
-				}
+				"NextVideo": "Idle"
 			}
 		]
 	}, {
 		"Name": "Right",
 		"IsLooping": false,
 		"NavigationTargets": [{
-				"NextVideo": "Idle",
-				"DisplayText": "",
-				"RelativeScreenPosition": {
-					"x": 0.0,
-					"y": 0.0
-				}
+				"NextVideo": "Idle"
 			}
 		]
 	}, {
@@ -71,36 +61,21 @@
 		"Name": "DownLeft",
 		"IsLooping": false,
 		"NavigationTargets": [{
-				"NextVideo": "DownReturn",
-				"DisplayText": "",
-				"RelativeScreenPosition": {
-					"x": 0.0,
-					"y": 0.0
-				}
+				"NextVideo": "DownReturn"
 			}
 		]
 	}, {
 		"Name": "DownReturn",
 		"IsLooping": false,
 		"NavigationTargets": [{
-				"NextVideo": "Idle",
-				"DisplayText": "",
-				"RelativeScreenPosition": {
-					"x": 0.0,
-					"y": 0.0
-				}
+				"NextVideo": "Idle"
 			}
 		]
 	}, {
 		"Name": "Up",
 		"IsLooping": false,
 		"NavigationTargets": [{
-				"NextVideo": "Idle",
-				"DisplayText": "",
-				"RelativeScreenPosition": {
-					"x": 0.0,
-					"y": 0.0
-				}
+				"NextVideo": "Idle"
 			}
 		]
 	}

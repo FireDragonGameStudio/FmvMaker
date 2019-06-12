@@ -117,7 +117,7 @@ namespace FmvMaker.Views {
         }
 
         public void SkipVideoClip() {
-            if (!_activeVideoPlayer.isLooping) {
+            if (!_activeVideoPlayer.isLooping && _activeVideoPlayer.isPlaying) {
                 _activeVideoPlayer.frame = (long)_activeVideoPlayer.frameCount - 5;
             } else {
                 OnLoopPointReached.Invoke();
