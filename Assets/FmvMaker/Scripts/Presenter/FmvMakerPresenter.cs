@@ -1,8 +1,10 @@
 ﻿using FmvMaker.Models;
 using FmvMaker.Utils;
 using FmvMaker.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace FmvMaker.Presenter {
@@ -25,9 +27,12 @@ namespace FmvMaker.Presenter {
             _view.OnLoopPointReached += LoopPointReached;
         }
 
-        private void Start() {
+        private async void Start() {
             //_allVideoElements = FmvData.GenerateVideoMockData();
             _allVideoElements = FmvData.GenerateVideoDataFromLocalFile(LoadFmvConfig.Config.LocalVideoPath);
+
+            // wait a short time for Unity to get correct values for screen height and width
+            await Task.Delay(TimeSpan.FromSeconds(0.1));
 
             // start first clip
             PlayVideo(_allVideoElements[0]);

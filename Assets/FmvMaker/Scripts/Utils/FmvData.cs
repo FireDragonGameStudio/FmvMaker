@@ -110,12 +110,12 @@ namespace FmvMaker.Utils {
         /// <param name="x">Horizontal screen position</param>
         /// <param name="y">Vertical sceen position</param>
         /// <returns></returns>
-        public static Vector2 GetAbsoluteScreenPosition(float x, float y) {
+        public static Vector2 GetRelativeScreenPosition(float x, float y) {
             return new Vector2(Screen.width * x, Screen.height * y);
         }
 
-        public static Vector2 GetAbsoluteScreenPosition(Vector2 vector2) {
-            return GetAbsoluteScreenPosition(vector2.x, vector2.y);
+        public static Vector2 GetRelativeScreenPosition(Vector2 vector2) {
+            return GetRelativeScreenPosition(vector2.x, vector2.y);
         }
     }
 }
