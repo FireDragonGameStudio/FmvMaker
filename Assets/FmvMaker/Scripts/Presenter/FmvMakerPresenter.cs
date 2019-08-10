@@ -17,6 +17,7 @@ namespace FmvMaker.Presenter {
 
         private VideoElement _currentVideoElement;
         private List<VideoElement> _allVideoElements;
+        private List<ItemElement> _allItemElements;
         private int _loopCounter = 0;
 
         private void Awake() {
@@ -28,8 +29,8 @@ namespace FmvMaker.Presenter {
         }
 
         private async void Start() {
-            //_allVideoElements = FmvData.GenerateVideoMockData();
             _allVideoElements = FmvData.GenerateVideoDataFromLocalFile(LoadFmvConfig.Config.LocalVideoPath);
+            _allItemElements = FmvData.GenerateItemMockData();
 
             // wait a short time for Unity to get correct values for screen height and width
             await Task.Delay(TimeSpan.FromSeconds(0.1));

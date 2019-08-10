@@ -94,12 +94,33 @@ namespace FmvMaker.Utils {
             };
         }
 
+        /// <summary>
+        /// Generate video mock data to test functionalities
+        /// </summary>
+        /// <returns></returns>
+        public static List<ItemElement> GenerateItemMockData() {
+            // scan files for VideoInfo json files
+            return new List<ItemElement>() {
+                new ItemElement() {
+                    Name = "Horn",
+                    DisplayText = "BeansHorn",
+                    Description = "Makes noise",
+                    RelativeScreenPosition = Vector2.zero
+                }, new ItemElement() {
+                    Name = "Screwdriver",
+                    DisplayText = "BeanDriver",
+                    Description = "Helps to repair certin things",
+                    RelativeScreenPosition = Vector2.zero
+                }
+            };
+        }
+
         public static List<VideoElement> GenerateVideoDataFromLocalFile(string localFilePath) {
-            return JsonConvert.DeserializeObject<List<VideoElement>>(File.ReadAllText(Path.Combine(localFilePath, "FmvMakerDemoData.json")));
+            return JsonConvert.DeserializeObject<List<VideoElement>>(File.ReadAllText(Path.Combine(localFilePath, "FmvMakerDemoVideoData.json")));
         }
 
         public static void ExportVideoDataToLocalFile(List<VideoElement> videoElements, string localFilePath) {
-            using (StreamWriter sw = new StreamWriter(Path.Combine(localFilePath, "FmvMakerDemoData.json"))) {
+            using (StreamWriter sw = new StreamWriter(Path.Combine(localFilePath, "FmvMakerDemoVideoData.json"))) {
                 sw.Write(JsonConvert.SerializeObject(videoElements));
             }
         }

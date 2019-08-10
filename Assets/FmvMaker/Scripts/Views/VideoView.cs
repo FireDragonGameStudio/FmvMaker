@@ -38,16 +38,8 @@ namespace FmvMaker.Views {
 
             _firstAudioSource = _firstPlayer.GetComponent<AudioSource>();
             _secondAudioSource = _secondPlayer.GetComponent<AudioSource>();
-        }
 
-        private void Start() {
-            _firstPlayer.loopPointReached += LoopPointReached;
-            _firstPlayer.started += PlayerStarted;
-            _firstPlayer.prepareCompleted += PreparationComplete;
-
-            _secondPlayer.loopPointReached += LoopPointReached;
-            _secondPlayer.started += PlayerStarted;
-            _secondPlayer.prepareCompleted += PreparationComplete;
+            SetupVideoEvents();
 
             _activeVideoPlayer = _secondPlayer;
             _inactiveVideoPlayer = _firstPlayer;
@@ -61,6 +53,16 @@ namespace FmvMaker.Views {
             _secondPlayer.loopPointReached -= LoopPointReached;
             _secondPlayer.started -= PlayerStarted;
             _secondPlayer.prepareCompleted -= PreparationComplete;
+        }
+
+        private void SetupVideoEvents() {
+            _firstPlayer.loopPointReached += LoopPointReached;
+            _firstPlayer.started += PlayerStarted;
+            _firstPlayer.prepareCompleted += PreparationComplete;
+
+            _secondPlayer.loopPointReached += LoopPointReached;
+            _secondPlayer.started += PlayerStarted;
+            _secondPlayer.prepareCompleted += PreparationComplete;
         }
 
         private void LoopPointReached(VideoPlayer source) {
@@ -101,13 +103,16 @@ namespace FmvMaker.Views {
 
         public void PrepareAndPlayVideoClip(VideoElement videoElement) {
             if (LoadFmvConfig.Config.SourceType.Equals("LOCAL")) {
-                string elementUri = LoadVideoFromLocalFile(videoElement.Name);
-                //if (Uri.TryCreate(elementUri, UriKind.Absolute, out Uri uriResult) && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps)) {
                 _inactiveVideoPlayer.source = VideoSource.Url;
                 _inactiveVideoPlayer.url = LoadVideoFromLocalFile(videoElement.Name);
-                //} else {
-                //    Debug.LogError($"Video file {elementUri} could not be loaded.");
-                //}
+            } else if (LoadFmvConfig.Config.SourceType.Equals("ONLINE")) {
+                string elementUri = LoadVideoFromLocalFile(videoElement.Name);
+                if (Uri.TryCreate(elementUri, UriKind.Absolute, out Uri uriResult) && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps)) {
+                    _inactiveVideoPlayer.source = VideoSource.Url;
+                    _inactiveVideoPlayer.url = LoadVideoFromOnlineSource(videoElement.Name);
+                } else {
+                    Debug.LogError($"Video file {elementUri} could not be loaded.");
+                }
             } else {
                 _inactiveVideoPlayer.source = VideoSource.VideoClip;
                 _inactiveVideoPlayer.clip = LoadVideoFromResources(videoElement.Name);
@@ -130,6 +135,10 @@ namespace FmvMaker.Views {
 
         private string LoadVideoFromLocalFile(string name) {
             return ResourceInfo.LoadVideoClipFromFile(name);
+        }
+
+        private string LoadVideoFromOnlineSource(string name) {
+            return ResourceInfo.LoadVideoClipFromOnlineSource(name);
         }
     }
 }

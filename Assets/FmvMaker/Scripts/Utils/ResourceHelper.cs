@@ -10,7 +10,11 @@ namespace FmvMaker.Utils {
         }
 
         public static string LoadVideoClipFromFile(string name) {
-            return new Uri(LoadFmvConfig.Config.LocalVideoPath + name + ".mp4").AbsoluteUri;
+            return new Uri($"{LoadFmvConfig.Config.LocalVideoPath}{name}.mp4").AbsoluteUri;
+        }
+
+        public static string LoadVideoClipFromOnlineSource(string name) {
+            return new Uri($"{LoadFmvConfig.Config.OnlineVideoURL}{name}").AbsoluteUri;
         }
     }
 }
