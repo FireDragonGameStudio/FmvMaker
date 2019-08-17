@@ -6,5 +6,6 @@ namespace FmvMaker.Models {
         public string Name;
         public bool IsLooping;
         public NavigationModel[] NavigationTargets;
+        public string[] Items;
     }
 }

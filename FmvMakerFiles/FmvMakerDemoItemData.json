@@ -1,0 +1,58 @@
+[{
+		"Name": "apple",
+		"Description": "Hilft leichten Hunger zu bekämpfen.",
+		"DisplayText": "Köstlicher Apfel",
+		"RelativeScreenPosition": {
+			"x": 0.2,
+			"y": 0.8
+		}
+	}, {
+		"Name": "bag",
+		"Description": "Darin kann etwas verstaut werden.",
+		"DisplayText": "Tasche",
+		"RelativeScreenPosition": {
+			"x": 0.4,
+			"y": 0.8
+		}
+	}, {
+		"Name": "coins",
+		"Description": "Um etwas zu kaufen.",
+		"DisplayText": "alte Münzen",
+		"RelativeScreenPosition": {
+			"x": 0.6,
+			"y": 0.8
+		}
+	}, {
+		"Name": "gem",
+		"Description": "Ein funkelnder Edelstein.",
+		"DisplayText": "Saphir",
+		"RelativeScreenPosition": {
+			"x": 0.8,
+			"y": 0.8
+		}
+	}, {
+		"Name": "Meat",
+		"Description": "Gegen riesigen Hunger.",
+		"DisplayText": "Fleisch",
+		"RelativeScreenPosition": {
+			"x": 0.2,
+			"y": 0.2
+		}
+	}, {
+		"Name": "mp",
+		"Description": "Ein erfrischender Durstlöscher.",
+		"DisplayText": "Wasserflasche",
+		"RelativeScreenPosition": {
+			"x": 0.4,
+			"y": 0.2
+		}
+	}, {
+		"Name": "pants",
+		"Description": "Eine getragene Hose.",
+		"DisplayText": "Stylische Hose",
+		"RelativeScreenPosition": {
+			"x": 0.6,
+			"y": 0.2
+		}
+	}
+]

@@ -30,6 +30,11 @@
 					"y": 0.2
 				}
 			}
+		],
+		"Items": [
+			"apple",
+			"coins",
+			"Meat"
 		]
 	}, {
 		"Name": "Left",

@@ -7,23 +7,23 @@ namespace FmvMaker.Utils {
         public static ObjectPool Instance;
 
         [SerializeField]
-        private GameObject navigationTargetObjectPrefab;
+        private GameObject _navigationTargetObjectPrefab = null;
         [SerializeField]
-        private GameObject itemObjectPrefab;
+        private GameObject _itemObjectPrefab = null;
 
         private List<GameObject> _pooledNavigationTargetObjects = new List<GameObject>();
         private List<GameObject> _pooledItemObjects = new List<GameObject>();
 
-        void Awake() {
+        private void Awake() {
             Instance = this;
         }
 
         public GameObject GetPooledTargetObject() {
-            return GetPooledObject(ref _pooledNavigationTargetObjects, navigationTargetObjectPrefab);
+            return GetPooledObject(ref _pooledNavigationTargetObjects, _navigationTargetObjectPrefab);
         }
 
         public GameObject GetPooledItemObject() {
-            return GetPooledObject(ref _pooledItemObjects, itemObjectPrefab);
+            return GetPooledObject(ref _pooledItemObjects, _itemObjectPrefab);
         }
 
         private GameObject GetPooledObject(ref List<GameObject> gameObjects, GameObject prefab) {

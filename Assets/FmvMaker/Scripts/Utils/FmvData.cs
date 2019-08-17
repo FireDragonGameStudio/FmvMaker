@@ -102,15 +102,40 @@ namespace FmvMaker.Utils {
             // scan files for VideoInfo json files
             return new List<ItemElement>() {
                 new ItemElement() {
-                    Name = "Horn",
-                    DisplayText = "BeansHorn",
-                    Description = "Makes noise",
-                    RelativeScreenPosition = Vector2.zero
+                    Name = "apple",
+                    DisplayText = "Köstlicher Apfel",
+                    Description = "Hilft leichten Hunger zu bekämpfen.",
+                    RelativeScreenPosition = new Vector2(0.2f, 0.8f)
                 }, new ItemElement() {
-                    Name = "Screwdriver",
-                    DisplayText = "BeanDriver",
-                    Description = "Helps to repair certin things",
-                    RelativeScreenPosition = Vector2.zero
+                    Name = "bag",
+                    DisplayText = "Tasche",
+                    Description = "Darin kann etwas verstaut werden.",
+                    RelativeScreenPosition = new Vector2(0.2f, 0.6f)
+                }, new ItemElement() {
+                    Name = "coins",
+                    DisplayText = "alte Münzen",
+                    Description = "Um etwas zu kaufen.",
+                    RelativeScreenPosition = new Vector2(0.2f, 0.4f)
+                }, new ItemElement() {
+                    Name = "gem",
+                    DisplayText = "Saphir",
+                    Description = "Ein funkelnder Edelstein.",
+                    RelativeScreenPosition = new Vector2(0.2f, 0.2f)
+                }, new ItemElement() {
+                    Name = "Meat",
+                    DisplayText = "Fleisch",
+                    Description = "Gegen riesigen Hunger.",
+                    RelativeScreenPosition = new Vector2(0.4f, 0.2f)
+                }, new ItemElement() {
+                    Name = "mp",
+                    DisplayText = "Wasserflasche",
+                    Description = "Ein erfrischender Durstlöscher.",
+                    RelativeScreenPosition = new Vector2(0.6f, 0.2f)
+                }, new ItemElement() {
+                    Name = "pants",
+                    DisplayText = "Stylische Hose",
+                    Description = "Eine getragene Hose.",
+                    RelativeScreenPosition = new Vector2(0.8f, 0.2f)
                 }
             };
         }
@@ -119,18 +144,22 @@ namespace FmvMaker.Utils {
             return JsonConvert.DeserializeObject<List<VideoElement>>(File.ReadAllText(Path.Combine(localFilePath, "FmvMakerDemoVideoData.json")));
         }
 
+        public static List<ItemElement> GenerateItemDataFromLocalFile(string localFilePath) {
+            return JsonConvert.DeserializeObject<List<ItemElement>>(File.ReadAllText(Path.Combine(localFilePath, "FmvMakerDemoItemData.json")));
+        }
+
         public static void ExportVideoDataToLocalFile(List<VideoElement> videoElements, string localFilePath) {
             using (StreamWriter sw = new StreamWriter(Path.Combine(localFilePath, "FmvMakerDemoVideoData.json"))) {
                 sw.Write(JsonConvert.SerializeObject(videoElements));
             }
         }
 
-        /// <summary>
-        /// Gets the relative screen position for x, y values between 0 and 1. Origin (0, 0) is the left lower corner.
-        /// </summary>
-        /// <param name="x">Horizontal screen position</param>
-        /// <param name="y">Vertical sceen position</param>
-        /// <returns></returns>
+        public static void ExportItemDataToLocalFile(List<ItemElement> videoElements, string localFilePath) {
+            using (StreamWriter sw = new StreamWriter(Path.Combine(localFilePath, "FmvMakerDemoItemData.json"))) {
+                sw.Write(JsonConvert.SerializeObject(videoElements));
+            }
+        }
+
         public static Vector2 GetRelativeScreenPosition(float x, float y) {
             return new Vector2(Screen.width * x, Screen.height * y);
         }

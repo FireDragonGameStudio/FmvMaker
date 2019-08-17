@@ -1,6 +1,7 @@
 {
     "AspectRatio": "16:9",
 	"OnlineVideoURL": "https://www.youtube.com/watch?v=",
-	"LocalVideoPath": "D:\\UnityProjects\\FmvMaker\\VideoFiles\\",
+	"OnlineImageURL": "https://www.myfileserver.com/images/",
+	"LocalFilePath": "D:\\UnityProjects\\FmvMaker\\FmvMakerFiles\\",
 	"SourceType": "LOCAL"
 }

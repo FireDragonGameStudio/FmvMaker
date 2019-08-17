@@ -1,6 +1,7 @@
 ﻿using FmvMaker.Models;
 using FmvMaker.Utils;
 using FmvMaker.Views;
+using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +13,11 @@ namespace FmvMaker.Presenter {
 
         [SerializeField]
         private VideoView _view;
+        [UsedImplicitly]
         [SerializeField]
-        private Canvas _canvas;
+        private RectTransform _videoElementsPanel = null;
+        [SerializeField]
+        private RectTransform _inventoryElementsPanel = null;
 
         private VideoElement _currentVideoElement;
         private List<VideoElement> _allVideoElements;
@@ -29,23 +33,22 @@ namespace FmvMaker.Presenter {
         }
 
         private async void Start() {
-            _allVideoElements = FmvData.GenerateVideoDataFromLocalFile(LoadFmvConfig.Config.LocalVideoPath);
-            _allItemElements = FmvData.GenerateItemMockData();
+            _allVideoElements = FmvData.GenerateVideoDataFromLocalFile(LoadFmvConfig.Config.LocalFilePath);
+            _allItemElements = FmvData.GenerateItemDataFromLocalFile(LoadFmvConfig.Config.LocalFilePath);
 
             // wait a short time for Unity to get correct values for screen height and width
             await Task.Delay(TimeSpan.FromSeconds(0.1));
 
-            // start first clip
             PlayVideo(_allVideoElements[0]);
         }
 
         private void Update() {
-            // check for video skipping
             if (Input.GetKeyUp(KeyCode.Escape)) {
                 _view.SkipVideoClip();
             }
-            if (Input.GetKeyUp(KeyCode.E)) {
-                FmvData.ExportVideoDataToLocalFile(_allVideoElements, LoadFmvConfig.Config.LocalVideoPath);
+            if (Input.GetKeyUp(KeyCode.X)) {
+                FmvData.ExportVideoDataToLocalFile(_allVideoElements, LoadFmvConfig.Config.LocalFilePath);
+                FmvData.ExportItemDataToLocalFile(_allItemElements, LoadFmvConfig.Config.LocalFilePath);
             }
         }
 
@@ -58,7 +61,6 @@ namespace FmvMaker.Presenter {
         }
 
         public void PlayVideo(VideoElement video) {
-            // either load from file system/online or resources
             Debug.Log($"Play video: {video.Name}");
             _loopCounter = 0;
             _currentVideoElement = video;
@@ -68,7 +70,7 @@ namespace FmvMaker.Presenter {
         private void LoopPointReached() {
             _loopCounter++;
 
-            // don´t show navigation elements again, when looping
+            // don´t load navigation elements again, when looping
             if (_loopCounter > 1) {
                 return;
             }
@@ -79,24 +81,45 @@ namespace FmvMaker.Presenter {
                 PlayVideo(_currentVideoElement.NavigationTargets[0].NextVideo);
             } else {
                 GenerateNavigationElements();
+                GenerateItemElements();
             }
         }
 
         private void GenerateNavigationElements() {
             for (int i = 0; i < _currentVideoElement.NavigationTargets.Length; i++) {
-                // rent new navigation targets from pool
+
                 GameObject targetObject = ObjectPool.Instance.GetPooledTargetObject();
                 targetObject.SetActive(true);
-                targetObject.transform.SetParent(_canvas.transform);
+                targetObject.transform.SetParent(_videoElementsPanel.transform);
                 targetObject.transform.localScale = Vector3.one;
-                targetObject.GetComponent<NavigationView>().SetTargetData(_currentVideoElement.NavigationTargets[i]);
-                targetObject.GetComponent<NavigationView>().OnNavigationClicked.AddListener(OnNavigationClicked);
+
+                NavigationView view = targetObject.GetComponent<NavigationView>();
+                view.SetTargetData(_currentVideoElement.NavigationTargets[i]);
+                view.OnNavigationClicked.AddListener(OnNavigationClicked);
             }
         }
 
         private void OnNavigationClicked(NavigationModel model) {
             ObjectPool.Instance.ReturnAllTargetObjectsToPool();
             PlayVideo(model.NextVideo);
+        }
+
+        private void GenerateItemElements() {
+            for (int i = 0; i < _currentVideoElement.Items.Length; i++) {
+
+                ItemElement currentItem = _allItemElements.FirstOrDefault(item => item.Name.Equals(_currentVideoElement.Items[i]));
+
+                GameObject itemObject = ObjectPool.Instance.GetPooledItemObject();
+                itemObject.SetActive(true);
+                itemObject.transform.SetParent(_videoElementsPanel.transform);
+                itemObject.transform.localScale = Vector3.one;
+
+                ItemView view = itemObject.GetComponent<ItemView>();
+                view.SetItemData(currentItem);
+                view.OnItemClicked.AddListener(() => {
+                    view.AddToInventory(_inventoryElementsPanel.transform);
+                });
+            }
         }
     }
 }
