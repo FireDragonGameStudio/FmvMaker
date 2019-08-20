@@ -1,6 +1,11 @@
 [{
 		"Name": "apple",
 		"Description": "Hilft leichten Hunger zu bekämpfen.",
+		"NavigationTarget": {
+			"NextVideo": "Up"
+		},
+		"IsInInventory": false,
+        "WasUsed": false,
 		"DisplayText": "Köstlicher Apfel",
 		"RelativeScreenPosition": {
 			"x": 0.2,
@@ -9,6 +14,11 @@
 	}, {
 		"Name": "bag",
 		"Description": "Darin kann etwas verstaut werden.",
+		"NavigationTarget": {
+			"NextVideo": "Up"
+		},
+		"IsInInventory": false,
+        "WasUsed": false,
 		"DisplayText": "Tasche",
 		"RelativeScreenPosition": {
 			"x": 0.4,
@@ -17,6 +27,11 @@
 	}, {
 		"Name": "coins",
 		"Description": "Um etwas zu kaufen.",
+		"NavigationTarget": {
+			"NextVideo": "Down"
+		},
+		"IsInInventory": false,
+        "WasUsed": false,
 		"DisplayText": "alte Münzen",
 		"RelativeScreenPosition": {
 			"x": 0.6,
@@ -25,6 +40,11 @@
 	}, {
 		"Name": "gem",
 		"Description": "Ein funkelnder Edelstein.",
+		"NavigationTarget": {
+			"NextVideo": "Down"
+		},
+		"IsInInventory": false,
+        "WasUsed": false,
 		"DisplayText": "Saphir",
 		"RelativeScreenPosition": {
 			"x": 0.8,
@@ -33,6 +53,11 @@
 	}, {
 		"Name": "Meat",
 		"Description": "Gegen riesigen Hunger.",
+		"NavigationTarget": {
+			"NextVideo": "Left"
+		},
+		"IsInInventory": false,
+        "WasUsed": false,
 		"DisplayText": "Fleisch",
 		"RelativeScreenPosition": {
 			"x": 0.2,
@@ -41,6 +66,11 @@
 	}, {
 		"Name": "mp",
 		"Description": "Ein erfrischender Durstlöscher.",
+		"NavigationTarget": {
+			"NextVideo": "Right"
+		},
+		"IsInInventory": false,
+        "WasUsed": false,
 		"DisplayText": "Wasserflasche",
 		"RelativeScreenPosition": {
 			"x": 0.4,
@@ -49,6 +79,11 @@
 	}, {
 		"Name": "pants",
 		"Description": "Eine getragene Hose.",
+		"NavigationTarget": {
+			"NextVideo": "Up"
+		},
+		"IsInInventory": false,
+        "WasUsed": false,
 		"DisplayText": "Stylische Hose",
 		"RelativeScreenPosition": {
 			"x": 0.6,

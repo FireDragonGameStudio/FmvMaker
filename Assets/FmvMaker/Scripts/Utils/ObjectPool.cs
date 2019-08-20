@@ -40,6 +40,16 @@ namespace FmvMaker.Utils {
             return newObj;
         }
 
+        public void RemoveItemObjectFromPool(GameObject itemObject) {
+            //for (int i = 0; i < _pooledItemObjects.Count; i++) {
+            //if (itemObject..Equals(_pooledItemObjects[i])) {
+            _pooledItemObjects.Remove(itemObject);
+            Destroy(itemObject);
+            //break;
+            //}
+            //}
+        }
+
         public void ReturnAllTargetObjectsToPool() {
             ReturnAllObjectsToPool(ref _pooledNavigationTargetObjects);
         }

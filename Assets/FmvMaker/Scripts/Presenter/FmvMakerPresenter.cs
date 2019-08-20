@@ -101,24 +101,35 @@ namespace FmvMaker.Presenter {
 
         private void OnNavigationClicked(NavigationModel model) {
             ObjectPool.Instance.ReturnAllTargetObjectsToPool();
+            ObjectPool.Instance.ReturnAllItemObjectsToPool();
             PlayVideo(model.NextVideo);
         }
 
         private void GenerateItemElements() {
-            for (int i = 0; i < _currentVideoElement.Items.Length; i++) {
+            for (int i = 0; i < _currentVideoElement.Items?.Length; i++) {
 
                 ItemElement currentItem = _allItemElements.FirstOrDefault(item => item.Name.Equals(_currentVideoElement.Items[i]));
 
-                GameObject itemObject = ObjectPool.Instance.GetPooledItemObject();
-                itemObject.SetActive(true);
-                itemObject.transform.SetParent(_videoElementsPanel.transform);
-                itemObject.transform.localScale = Vector3.one;
+                if (!currentItem.IsInInventory && !currentItem.WasUsed) {
+                    GameObject itemObject = ObjectPool.Instance.GetPooledItemObject();
+                    itemObject.SetActive(true);
+                    itemObject.transform.SetParent(_videoElementsPanel.transform);
+                    itemObject.transform.localScale = Vector3.one;
 
-                ItemView view = itemObject.GetComponent<ItemView>();
-                view.SetItemData(currentItem);
-                view.OnItemClicked.AddListener(() => {
-                    view.AddToInventory(_inventoryElementsPanel.transform);
-                });
+                    ItemView view = itemObject.GetComponent<ItemView>();
+                    view.SetItemData(currentItem);
+                    view.OnItemClicked.AddListener(() => {
+                        view.AddToInventory(_inventoryElementsPanel.transform);
+                        currentItem.IsInInventory = true;
+                        view.OnItemClicked.RemoveAllListeners();
+                        view.OnItemClicked.AddListener(() => {
+                            currentItem.WasUsed = true;
+                            ObjectPool.Instance.RemoveItemObjectFromPool(itemObject);
+                            itemObject.transform.SetParent(_videoElementsPanel.transform);
+                            OnNavigationClicked(currentItem.NavigationTarget);
+                        });
+                    });
+                }
             }
         }
     }
