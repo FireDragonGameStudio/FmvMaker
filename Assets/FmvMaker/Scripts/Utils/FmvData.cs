@@ -11,13 +11,13 @@ namespace FmvMaker.Utils {
         /// Generate video mock data to test functionalities
         /// </summary>
         /// <returns></returns>
-        public static List<VideoElement> GenerateVideoMockData() {
+        public static List<VideoModel> GenerateVideoMockData() {
             // scan files for VideoInfo json files
-            return new List<VideoElement>() {
-                new VideoElement() {
+            return new List<VideoModel>() {
+                new VideoModel() {
                     Name = "Idle",
                     IsLooping = true,
-                    NavigationTargets = new NavigationModel[] {
+                    NavigationTargets = new List<NavigationModel> {
                         new NavigationModel() {
                             DisplayText = "Up Dir",
                             RelativeScreenPosition = new Vector2(0.5f, 0.8f),
@@ -36,54 +36,54 @@ namespace FmvMaker.Utils {
                             NextVideo = "Down"
                         }
                     }
-                }, new VideoElement() {
+                }, new VideoModel() {
                     Name = "Left",
-                    NavigationTargets = new NavigationModel[] {
+                    NavigationTargets = new List<NavigationModel> {
                         new NavigationModel() {
                             DisplayText = "",
                             RelativeScreenPosition = Vector2.zero,
                             NextVideo = "Idle"
                         }
                     }
-                }, new VideoElement() {
+                }, new VideoModel() {
                     Name = "Right",
-                    NavigationTargets = new NavigationModel[] {
+                    NavigationTargets = new List<NavigationModel> {
                         new NavigationModel() {
                             DisplayText = "",
                             RelativeScreenPosition = Vector2.zero,
                             NextVideo = "Idle"
                         }
                     }
-                }, new VideoElement() {
+                }, new VideoModel() {
                     Name = "Down",
-                    NavigationTargets = new NavigationModel[] {
+                    NavigationTargets = new List<NavigationModel> {
                         new NavigationModel() {
                             DisplayText = "Down Left",
                             RelativeScreenPosition = new Vector2(0.2f, 0.5f),
                             NextVideo = "DownLeft"
                         }
                     }
-                }, new VideoElement() {
+                }, new VideoModel() {
                     Name = "DownLeft",
-                    NavigationTargets = new NavigationModel[] {
+                    NavigationTargets = new List<NavigationModel> {
                         new NavigationModel() {
                             DisplayText = "",
                             RelativeScreenPosition = Vector2.zero,
                             NextVideo = "DownReturn"
                         }
                     }
-                }, new VideoElement() {
+                }, new VideoModel() {
                     Name = "DownReturn",
-                    NavigationTargets = new NavigationModel[] {
+                    NavigationTargets = new List<NavigationModel> {
                         new NavigationModel() {
                             DisplayText = "",
                             RelativeScreenPosition = Vector2.zero,
                             NextVideo = "Idle"
                         }
                     }
-                }, new VideoElement() {
+                }, new VideoModel() {
                     Name = "Up",
-                    NavigationTargets = new NavigationModel[] {
+                    NavigationTargets = new List<NavigationModel> {
                         new NavigationModel() {
                             DisplayText = "",
                             RelativeScreenPosition = Vector2.zero,
@@ -98,40 +98,40 @@ namespace FmvMaker.Utils {
         /// Generate video mock data to test functionalities
         /// </summary>
         /// <returns></returns>
-        public static List<ItemElement> GenerateItemMockData() {
+        public static List<ItemModel> GenerateItemMockData() {
             // scan files for VideoInfo json files
-            return new List<ItemElement>() {
-                new ItemElement() {
+            return new List<ItemModel>() {
+                new ItemModel() {
                     Name = "apple",
                     DisplayText = "Köstlicher Apfel",
                     Description = "Hilft leichten Hunger zu bekämpfen.",
                     RelativeScreenPosition = new Vector2(0.2f, 0.8f)
-                }, new ItemElement() {
+                }, new ItemModel() {
                     Name = "bag",
                     DisplayText = "Tasche",
                     Description = "Darin kann etwas verstaut werden.",
                     RelativeScreenPosition = new Vector2(0.2f, 0.6f)
-                }, new ItemElement() {
+                }, new ItemModel() {
                     Name = "coins",
                     DisplayText = "alte Münzen",
                     Description = "Um etwas zu kaufen.",
                     RelativeScreenPosition = new Vector2(0.2f, 0.4f)
-                }, new ItemElement() {
+                }, new ItemModel() {
                     Name = "gem",
                     DisplayText = "Saphir",
                     Description = "Ein funkelnder Edelstein.",
                     RelativeScreenPosition = new Vector2(0.2f, 0.2f)
-                }, new ItemElement() {
+                }, new ItemModel() {
                     Name = "Meat",
                     DisplayText = "Fleisch",
                     Description = "Gegen riesigen Hunger.",
                     RelativeScreenPosition = new Vector2(0.4f, 0.2f)
-                }, new ItemElement() {
+                }, new ItemModel() {
                     Name = "mp",
                     DisplayText = "Wasserflasche",
                     Description = "Ein erfrischender Durstlöscher.",
                     RelativeScreenPosition = new Vector2(0.6f, 0.2f)
-                }, new ItemElement() {
+                }, new ItemModel() {
                     Name = "pants",
                     DisplayText = "Stylische Hose",
                     Description = "Eine getragene Hose.",
@@ -140,21 +140,21 @@ namespace FmvMaker.Utils {
             };
         }
 
-        public static List<VideoElement> GenerateVideoDataFromLocalFile(string localFilePath) {
-            return JsonConvert.DeserializeObject<List<VideoElement>>(File.ReadAllText(Path.Combine(localFilePath, "FmvMakerDemoVideoData.json")));
+        public static List<VideoModel> GenerateVideoDataFromLocalFile(string localFilePath) {
+            return JsonConvert.DeserializeObject<List<VideoModel>>(File.ReadAllText(Path.Combine(localFilePath, "FmvMakerDemoVideoData.json")));
         }
 
-        public static List<ItemElement> GenerateItemDataFromLocalFile(string localFilePath) {
-            return JsonConvert.DeserializeObject<List<ItemElement>>(File.ReadAllText(Path.Combine(localFilePath, "FmvMakerDemoItemData.json")));
+        public static List<ItemModel> GenerateItemDataFromLocalFile(string localFilePath) {
+            return JsonConvert.DeserializeObject<List<ItemModel>>(File.ReadAllText(Path.Combine(localFilePath, "FmvMakerDemoItemData.json")));
         }
 
-        public static void ExportVideoDataToLocalFile(List<VideoElement> videoElements, string localFilePath) {
+        public static void ExportVideoDataToLocalFile(List<VideoModel> videoElements, string localFilePath) {
             using (StreamWriter sw = new StreamWriter(Path.Combine(localFilePath, "FmvMakerDemoVideoData.json"))) {
                 sw.Write(JsonConvert.SerializeObject(videoElements));
             }
         }
 
-        public static void ExportItemDataToLocalFile(List<ItemElement> videoElements, string localFilePath) {
+        public static void ExportItemDataToLocalFile(List<ItemModel> videoElements, string localFilePath) {
             using (StreamWriter sw = new StreamWriter(Path.Combine(localFilePath, "FmvMakerDemoItemData.json"))) {
                 sw.Write(JsonConvert.SerializeObject(videoElements));
             }

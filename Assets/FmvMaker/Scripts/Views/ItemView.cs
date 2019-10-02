@@ -31,11 +31,11 @@ namespace FmvMaker.Views {
             OnItemClicked.RemoveAllListeners();
         }
 
-        public void SetItemData(ItemElement model) {
+        public void SetItemData(ItemModel model) {
             LoadImageSprite(model.Name);
             _itemText.text = model.DisplayText;
             _rectTransform.anchoredPosition = FmvData.GetRelativeScreenPosition(model.RelativeScreenPosition);
-            _itemButton.onClick.AddListener(() => OnItemClicked?.Invoke());
+            _itemButton.onClick.AddListener(() => OnItemClicked?.Invoke(model));
         }
 
         //public void ResetItemData() {
@@ -49,7 +49,7 @@ namespace FmvMaker.Views {
         //OnItemClicked.RemoveAllListeners();
         //}
 
-        IEnumerator LoadImageSpriteCoroutine(string spritePath) {
+        private IEnumerator LoadImageSpriteCoroutine(string spritePath) {
             UnityWebRequest www = UnityWebRequest.Get(spritePath);
             DownloadHandlerTexture texDl = new DownloadHandlerTexture(true);
             www.downloadHandler = texDl;
@@ -72,11 +72,6 @@ namespace FmvMaker.Views {
             } else {
                 _itemImage.sprite = Resources.Load<Sprite>("Textures/spriteName");
             }
-        }
-
-        public void AddToInventory(Transform inventoryParent) {
-            transform.SetParent(inventoryParent);
-            _rectTransform.anchoredPosition = Vector2.zero;
         }
     }
 }

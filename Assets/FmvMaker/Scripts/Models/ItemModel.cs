@@ -2,7 +2,7 @@
 
 namespace FmvMaker.Models {
     [Serializable]
-    public class ItemElement : BaseUiElementModel {
+    public class ItemModel : BaseUiElementModel {
         public string Name;
         public string Description;
         public NavigationModel NavigationTarget;

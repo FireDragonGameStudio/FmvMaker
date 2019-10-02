@@ -101,7 +101,7 @@ namespace FmvMaker.Views {
             OnPreparationCompleted?.Invoke();
         }
 
-        public void PrepareAndPlayVideoClip(VideoElement videoElement) {
+        public void PrepareAndPlayVideoClip(VideoModel videoElement) {
             if (LoadFmvConfig.Config.SourceType.Equals("LOCAL")) {
                 _inactiveVideoPlayer.source = VideoSource.Url;
                 _inactiveVideoPlayer.url = LoadVideoFromLocalFile(videoElement.Name);

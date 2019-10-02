@@ -31,10 +31,46 @@
 				}
 			}
 		],
-		"Items": [
-			"apple",
-			"coins",
-			"Meat"
+		"Items": [{
+				"Name": "apple",
+				"Description": "Hilft leichten Hunger zu bekämpfen.",
+				"NavigationTarget": {
+					"NextVideo": "Up"
+				},
+				"IsInInventory": false,
+				"WasUsed": false,
+				"DisplayText": "Köstlicher Apfel",
+				"RelativeScreenPosition": {
+					"x": 0.2,
+					"y": 0.8
+				}
+			}, {
+				"Name": "coins",
+				"Description": "Um etwas zu kaufen.",
+				"NavigationTarget": {
+					"NextVideo": "Down"
+				},
+				"IsInInventory": false,
+				"WasUsed": false,
+				"DisplayText": "alte Münzen",
+				"RelativeScreenPosition": {
+					"x": 0.6,
+					"y": 0.8
+				}
+			}, {
+				"Name": "Meat",
+				"Description": "Gegen riesigen Hunger.",
+				"NavigationTarget": {
+					"NextVideo": "Left"
+				},
+				"IsInInventory": false,
+				"WasUsed": false,
+				"DisplayText": "Fleisch",
+				"RelativeScreenPosition": {
+					"x": 0.2,
+					"y": 0.2
+				}
+			}
 		]
 	}, {
 		"Name": "Left",
