@@ -38,17 +38,6 @@ namespace FmvMaker.Views {
             _itemButton.onClick.AddListener(() => OnItemClicked?.Invoke(model));
         }
 
-        //public void ResetItemData() {
-        //_itemImage.sprite = null;
-        //_itemText.text = "";
-        //_rectTransform.anchorMin = Vector2.zero;
-        //_rectTransform.anchorMax = Vector2.zero;
-        //_rectTransform.pivot = new Vector2(0.5f, 0.5f);
-        //_rectTransform.anchoredPosition = Vector2.zero;
-        //_itemButton.onClick.RemoveAllListeners();
-        //OnItemClicked.RemoveAllListeners();
-        //}
-
         private IEnumerator LoadImageSpriteCoroutine(string spritePath) {
             UnityWebRequest www = UnityWebRequest.Get(spritePath);
             DownloadHandlerTexture texDl = new DownloadHandlerTexture(true);

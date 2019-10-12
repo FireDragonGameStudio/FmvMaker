@@ -1,5 +1,4 @@
 ﻿using FmvMaker.Models;
-using Newtonsoft.Json;
 using System.IO;
 using UnityEngine;
 
@@ -11,7 +10,7 @@ namespace FmvMaker.Utils {
         public static FmvMakerConfig Config {
             get {
                 if (_config == null) {
-                    _config = JsonConvert.DeserializeObject<FmvMakerConfig>(File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "FmvMaker", "FmvMakerConfig.json")));
+                    _config = JsonUtility.FromJson<FmvMakerConfig>(File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "FmvMaker", "FmvMakerConfig.json")));
                 }
                 return _config;
             }

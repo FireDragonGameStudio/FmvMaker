@@ -12,7 +12,8 @@ namespace FmvMaker.Utils {
         private GameObject _itemObjectPrefab = null;
 
         private List<GameObject> _pooledNavigationTargetObjects = new List<GameObject>();
-        private List<GameObject> _pooledItemObjects = new List<GameObject>();
+        private List<GameObject> _pooledItemToFindObjects = new List<GameObject>();
+        private List<GameObject> _pooledInventoryItemObjects = new List<GameObject>();
 
         private void Awake() {
             Instance = this;
@@ -22,8 +23,12 @@ namespace FmvMaker.Utils {
             return GetPooledObject(ref _pooledNavigationTargetObjects, _navigationTargetObjectPrefab);
         }
 
-        public GameObject GetPooledItemObject() {
-            return GetPooledObject(ref _pooledItemObjects, _itemObjectPrefab);
+        public GameObject GetPooledItemToFindObject() {
+            return GetPooledObject(ref _pooledItemToFindObjects, _itemObjectPrefab);
+        }
+
+        public GameObject GetPooledInventoryItemObject() {
+            return GetPooledObject(ref _pooledInventoryItemObjects, _itemObjectPrefab);
         }
 
         private GameObject GetPooledObject(ref List<GameObject> gameObjects, GameObject prefab) {
@@ -40,22 +45,26 @@ namespace FmvMaker.Utils {
             return newObj;
         }
 
-        public void RemoveItemObjectFromPool(GameObject itemObject) {
-            //for (int i = 0; i < _pooledItemObjects.Count; i++) {
-            //if (itemObject..Equals(_pooledItemObjects[i])) {
-            _pooledItemObjects.Remove(itemObject);
+        public void RemoveItemToFindObjectFromPool(GameObject itemObject) {
+            _pooledItemToFindObjects.Remove(itemObject);
             Destroy(itemObject);
-            //break;
-            //}
-            //}
+        }
+
+        public void RemoveInventoryItemObjectFromPool(GameObject itemObject) {
+            _pooledInventoryItemObjects.Remove(itemObject);
+            Destroy(itemObject);
         }
 
         public void ReturnAllTargetObjectsToPool() {
             ReturnAllObjectsToPool(ref _pooledNavigationTargetObjects);
         }
 
-        public void ReturnAllItemObjectsToPool() {
-            ReturnAllObjectsToPool(ref _pooledItemObjects);
+        public void ReturnAllItemToFindObjectsToPool() {
+            ReturnAllObjectsToPool(ref _pooledItemToFindObjects);
+        }
+
+        public void ReturnAllInventoryItemObjectsToPool() {
+            ReturnAllObjectsToPool(ref _pooledInventoryItemObjects);
         }
 
         private void ReturnAllObjectsToPool(ref List<GameObject> gameObjects) {

@@ -1,8 +1,6 @@
 ﻿using FmvMaker.Models;
 using FmvMaker.Utils;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+using FmvMaker.Views;
 using UnityEngine;
 
 namespace FmvMaker.Presenter {
@@ -10,43 +8,33 @@ namespace FmvMaker.Presenter {
 
         [SerializeField]
         private RectTransform _inventoryElementsPanel = null;
+        [SerializeField]
+        private FmvMakerPresenter _fmvMakerPresenter = null;
 
-        private List<ItemModel> _allItemElements;
-
-        private void Start() {
-            _allItemElements = FmvData.GenerateItemDataFromLocalFile(LoadFmvConfig.Config.LocalFilePath);
-            GenerateItemElements();
-        }
+        private bool _inventoryToggle;
 
         private void Update() {
-            if (Input.GetKeyUp(KeyCode.X)) {
-                FmvData.ExportItemDataToLocalFile(_allItemElements, LoadFmvConfig.Config.LocalFilePath);
+            if (Input.GetKeyUp(KeyCode.I)) {
+                float yPos = _inventoryToggle ? 50 : -50;
+                _inventoryElementsPanel.position = new Vector3(
+                    _inventoryElementsPanel.position.x, yPos, _inventoryElementsPanel.position.z);
+                _inventoryToggle = !_inventoryToggle;
             }
         }
 
-        private void GenerateItemElements() {
-            foreach (ItemModel currentItem in _allItemElements) {
-                if (currentItem.IsInInventory && !currentItem.WasUsed) {
-                    GameObject itemObject = ObjectPool.Instance.GetPooledItemObject();
-                    itemObject.SetActive(true);
-                    itemObject.transform.SetParent(_inventoryElementsPanel.transform);
-                    itemObject.transform.localScale = Vector3.one;
+        public void AddItemToInventory(ItemModel itemModel) {
+            GameObject itemObject = ObjectPool.Instance.GetPooledInventoryItemObject();
+            itemObject.SetActive(true);
+            itemObject.transform.SetParent(_inventoryElementsPanel.transform);
+            itemObject.transform.localScale = Vector3.one;
 
-                    //ItemView view = itemObject.GetComponent<ItemView>();
-                    //view.SetItemData(currentItem);
-                    //view.OnItemClicked.AddListener(() => {
-                    //    view.AddToInventory(_inventoryElementsPanel.transform);
-                    //    currentItem.IsInInventory = true;
-                    //    view.OnItemClicked.RemoveAllListeners();
-                    //    view.OnItemClicked.AddListener(() => {
-                    //        currentItem.WasUsed = true;
-                    //        ObjectPool.Instance.RemoveItemObjectFromPool(itemObject);
-                    //        itemObject.transform.SetParent(_videoElementsPanel.transform);
-                    //        OnNavigationClicked(currentItem.NavigationTarget);
-                    //    });
-                    //});
+            ItemView view = itemObject.GetComponent<ItemView>();
+            view.SetItemData(itemModel);
+            view.OnItemClicked.AddListener((model) => {
+                if (_fmvMakerPresenter.OnItemUsed(model)) {
+                    ObjectPool.Instance.RemoveInventoryItemObjectFromPool(itemObject);
                 }
-            }
+            });
         }
     }
 }

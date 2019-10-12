@@ -2,7 +2,6 @@
 using FmvMaker.Utils;
 using FmvMaker.Views;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -14,9 +13,11 @@ namespace FmvMaker.Presenter {
         private VideoView _view;
         [SerializeField]
         private RectTransform _videoElementsPanel = null;
+        [SerializeField]
+        private ItemManagerPresenter _itemManager = null;
 
         private VideoModel _currentVideoElement;
-        private List<VideoModel> _allVideoElements;
+        private VideoModel[] _allVideoElements;
         private int _loopCounter = 0;
 
         private void Awake() {
@@ -61,6 +62,15 @@ namespace FmvMaker.Presenter {
             _view.PrepareAndPlayVideoClip(video);
         }
 
+        public bool OnItemUsed(ItemModel itemModel) {
+            if ((_currentVideoElement.ItemsToUse != null) && Array.Exists(_currentVideoElement.ItemsToUse, (item) => itemModel.Name.Equals(item.Name))) {
+                int idx = Array.FindIndex(_currentVideoElement.ItemsToUse, ((item) => itemModel.Name.Equals(item.Name)));
+                PlayVideo(_currentVideoElement.ItemsToUse[idx].NavigationTarget.NextVideo);
+                return true;
+            }
+            return false;
+        }
+
         private void LoopPointReached() {
             _loopCounter++;
 
@@ -71,7 +81,7 @@ namespace FmvMaker.Presenter {
 
             // check for next video to either generate navigation elements
             // or move directly to the next video
-            if ((_currentVideoElement.NavigationTargets.Count < 1) || string.IsNullOrEmpty(_currentVideoElement.NavigationTargets[0].DisplayText)) {
+            if ((_currentVideoElement.NavigationTargets.Length < 1) || string.IsNullOrEmpty(_currentVideoElement.NavigationTargets[0].DisplayText)) {
                 PlayVideo(_currentVideoElement.NavigationTargets[0].NextVideo);
             } else {
                 GenerateNavigationElements();
@@ -80,7 +90,7 @@ namespace FmvMaker.Presenter {
         }
 
         private void GenerateNavigationElements() {
-            for (int i = 0; i < _currentVideoElement.NavigationTargets.Count; i++) {
+            for (int i = 0; i < _currentVideoElement.NavigationTargets.Length; i++) {
 
                 GameObject targetObject = ObjectPool.Instance.GetPooledTargetObject();
                 targetObject.SetActive(true);
@@ -95,15 +105,15 @@ namespace FmvMaker.Presenter {
 
         private void OnNavigationClicked(NavigationModel model) {
             ObjectPool.Instance.ReturnAllTargetObjectsToPool();
-            ObjectPool.Instance.ReturnAllItemObjectsToPool();
+            ObjectPool.Instance.ReturnAllItemToFindObjectsToPool();
             PlayVideo(model.NextVideo);
         }
 
         private void GenerateItemsToFind() {
             if (_currentVideoElement.ItemsToFind != null) {
-                for (int i = 0; i < _currentVideoElement.ItemsToFind.Count; i++) {
+                for (int i = 0; i < _currentVideoElement.ItemsToFind.Length; i++) {
                     if (!_currentVideoElement.ItemsToFind[i].IsInInventory) {
-                        GameObject targetObject = ObjectPool.Instance.GetPooledItemObject();
+                        GameObject targetObject = ObjectPool.Instance.GetPooledItemToFindObject();
                         targetObject.SetActive(true);
                         targetObject.transform.SetParent(_videoElementsPanel.transform);
                         targetObject.transform.localScale = Vector3.one;
@@ -114,22 +124,8 @@ namespace FmvMaker.Presenter {
                             view.OnItemClicked.RemoveAllListeners();
                             model.IsInInventory = true;
                             OnNavigationClicked(model.NavigationTarget);
-                            // add item to inventory
+                            _itemManager.AddItemToInventory(model);
                         });
-                    }
-                }
-            }
-        }
-
-        private void GenerateItemsToUse() {
-            if (_currentVideoElement.ItemsToUse != null) {
-                for (int i = 0; i < _currentVideoElement.ItemsToUse.Count; i++) {
-                    if (!_currentVideoElement.ItemsToUse[i].WasUsed) {
-                        // Generate Drag&Drop Drop event which checks the item that
-                        // was dropped and eventually launches a video sequence.
-                        // Maybe keep a default value in mind for non-usable items.
-                        // Like:
-                        // OnDrop.AddListener(check if dropped item is usable - launch video)
                     }
                 }
             }

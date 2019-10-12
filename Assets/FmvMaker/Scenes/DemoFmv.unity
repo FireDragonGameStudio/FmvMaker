@@ -849,6 +849,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1711673670}
   - component: {fileID: 1711673671}
+  - component: {fileID: 1711673673}
   - component: {fileID: 1711673672}
   m_Layer: 0
   m_Name: FmvMaker
@@ -887,7 +888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _view: {fileID: 1068682700}
   _videoElementsPanel: {fileID: 1747223802}
-  _inventoryElementsPanel: {fileID: 106760165}
+  _itemManager: {fileID: 1711673673}
 --- !u!114 &1711673672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -904,6 +905,20 @@ MonoBehaviour:
     type: 3}
   _itemObjectPrefab: {fileID: 1133256870980526, guid: 8f59b351c229fff41a2450726cdb69f2,
     type: 3}
+--- !u!114 &1711673673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711673669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea1a3d296414004a82fa32223fa27f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inventoryElementsPanel: {fileID: 106760165}
+  _fmvMakerPresenter: {fileID: 1711673671}
 --- !u!1 &1747223801
 GameObject:
   m_ObjectHideFlags: 0
