@@ -2,7 +2,7 @@
 using System;
 using UnityEngine.Events;
 
-namespace FmvMaker.Utils {
+namespace FmvMaker.Core.Utilities {
     [Serializable]
     public class NavigationClickEvent : UnityEvent<NavigationModel> {
     }

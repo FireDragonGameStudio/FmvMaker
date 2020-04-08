@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace FmvMaker.Utils {
+namespace FmvMaker.Core.Utilities {
     public class ObjectPool : MonoBehaviour {
 
         public static ObjectPool Instance;

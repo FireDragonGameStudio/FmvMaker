@@ -1,5 +1,5 @@
 ﻿using FmvMaker.Models;
-using FmvMaker.Utils;
+using FmvMaker.Core.Utilities;
 using UnityEngine;
 using UnityEngine.UI;
 

@@ -2,7 +2,7 @@
 using System.IO;
 using UnityEngine;
 
-namespace FmvMaker.Utils {
+namespace FmvMaker.Core.Utilities {
     public static class LoadFmvConfig {
 
         private static FmvMakerConfig _config;

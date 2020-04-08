@@ -3,7 +3,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Video;
 
-namespace FmvMaker.Utils {
+namespace FmvMaker.Core.Utilities {
     public static class ResourceInfo {
 
         public static TextAsset VideoModelData => Resources.Load<TextAsset>("FmvMakerDemoVideoData");
