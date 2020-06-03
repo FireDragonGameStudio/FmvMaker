@@ -1,30 +1,24 @@
 ﻿using FmvMaker.Core.Interfaces;
 using FmvMaker.Core.VideoSources;
-using FmvMaker.Models;
+using FmvMaker.Core.Models;
 using FmvMaker.Core.Utilities;
 using System;
 using UnityEngine;
 using UnityEngine.Video;
 
 namespace FmvMaker.Core.Facades {
-    public class VideoFacade : MonoBehaviour, IVideoEvents {
+    public class FmvVideoFacade : MonoBehaviour, IVideoEvents {
 
-        public event Action OnPlayerStarted;
-        public event Action OnLoopPointReached;
         public event Action OnPreparationCompleted;
+        public event Action<VideoModel> OnPlayerStarted;
+        public event Action<VideoModel> OnLoopPointReached;
 
         private VideoPlayer videoPlayer;
         private AudioSource audioSource;
+        private VideoModel videoModel;
         private IVideoSource videoSource;
 
-        public bool IsLooping {
-            get {
-                return videoPlayer.isLooping;
-            }
-            set {
-                _ = videoPlayer.isLooping;
-            }
-        }
+        public bool IsLooping => videoPlayer.isLooping;
 
         public bool IsPlaying => videoPlayer.isPlaying;
 
@@ -55,27 +49,27 @@ namespace FmvMaker.Core.Facades {
         }
 
         private void SetupUnityVideoEvents() {
-            videoPlayer.loopPointReached += LoopPointReached;
             videoPlayer.started += PlayerStarted;
             videoPlayer.prepareCompleted += PreparationComplete;
+            videoPlayer.loopPointReached += LoopPointReached;
         }
 
         private void DisposeUnityVideoEvents() {
-            videoPlayer.loopPointReached -= LoopPointReached;
             videoPlayer.started -= PlayerStarted;
             videoPlayer.prepareCompleted -= PreparationComplete;
-        }
-
-        private void LoopPointReached(VideoPlayer source) {
-            OnLoopPointReached?.Invoke();
+            videoPlayer.loopPointReached -= LoopPointReached;
         }
 
         private void PlayerStarted(VideoPlayer source) {
-            OnPlayerStarted?.Invoke();
+            OnPlayerStarted?.Invoke(videoModel);
         }
 
         private void PreparationComplete(VideoPlayer source) {
             OnPreparationCompleted?.Invoke();
+        }
+
+        private void LoopPointReached(VideoPlayer source) {
+            OnLoopPointReached?.Invoke(videoModel);
         }
 
         public void Play() {
@@ -94,12 +88,13 @@ namespace FmvMaker.Core.Facades {
         }
 
         public void Prepare(VideoModel videoElement) {
+            videoModel = videoElement;
             videoSource.SetVideoSource(videoElement.Name);
             videoPlayer.isLooping = videoElement.IsLooping;
             videoPlayer.Prepare();
         }
 
-        public void SkipVideoClip() {
+        public void Skip() {
             if (!videoPlayer.isLooping && videoPlayer.isPlaying) {
                 videoPlayer.frame = (long)videoPlayer.frameCount - 5;
             } else {

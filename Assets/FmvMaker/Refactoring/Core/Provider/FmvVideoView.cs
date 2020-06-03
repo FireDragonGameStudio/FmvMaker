@@ -1,30 +1,26 @@
 ﻿using FmvMaker.Core.Facades;
-using FmvMaker.Core.Interfaces;
-using FmvMaker.Models;
+using FmvMaker.Core.Models;
 using System;
 using System.Threading.Tasks;
 using UnityEngine;
 
 namespace FmvMaker.Core.Provider {
-    public class VideoView : MonoBehaviour, IVideoEvents {
-
-        public event Action OnPlayerStarted;
-        public event Action OnLoopPointReached;
-        public event Action OnPreparationCompleted;
+    public class FmvVideoView : MonoBehaviour {
 
         [SerializeField]
-        private VideoFacade firstPlayer;
+        private FmvVideoFacade firstPlayer = null;
         [SerializeField]
-        private VideoFacade secondPlayer;
+        private FmvVideoFacade secondPlayer = null;
 
         // false -> select second player, true -> select first player
         private bool videoPlayerToggle = true;
-        private VideoFacade inactivePlayer;
+        private FmvVideoFacade inactivePlayer;
 
-        public VideoFacade ActivePlayer => GetActivePlayer();
+        public FmvVideoFacade ActivePlayer => GetActivePlayer();
 
         private void Awake() {
             SetupVideoFacadeEvents();
+            GetActivePlayer();
         }
 
         private void OnDestroy() {
@@ -32,58 +28,53 @@ namespace FmvMaker.Core.Provider {
         }
 
         public void SkipVideoClip() {
-            ActivePlayer.SkipVideoClip();
+            ActivePlayer.Skip();
         }
 
-        public void PrepareAndPlayVideoClip(VideoModel videoModel) {
-            inactivePlayer.Prepare(videoModel);
+        public void PauseVideoClip() {
+            ActivePlayer.Pause();
+        }
+
+        public void PrepareAndPlay(VideoModel videoModel) {
+            ActivePlayer.Prepare(videoModel);
         }
 
         private void SetupVideoFacadeEvents() {
-            firstPlayer.OnLoopPointReached += LoopPointReached;
             firstPlayer.OnPlayerStarted += PlayerStarted;
             firstPlayer.OnPreparationCompleted += PreparationComplete;
+            firstPlayer.OnLoopPointReached += LoopPointReached;
 
-            secondPlayer.OnLoopPointReached += LoopPointReached;
             secondPlayer.OnPlayerStarted += PlayerStarted;
             secondPlayer.OnPreparationCompleted += PreparationComplete;
+            secondPlayer.OnLoopPointReached += LoopPointReached;
         }
 
         private void DisposeVideoFacadeEvents() {
-            firstPlayer.OnLoopPointReached -= LoopPointReached;
             firstPlayer.OnPlayerStarted -= PlayerStarted;
             firstPlayer.OnPreparationCompleted -= PreparationComplete;
+            firstPlayer.OnLoopPointReached -= LoopPointReached;
 
-            secondPlayer.OnLoopPointReached -= LoopPointReached;
             secondPlayer.OnPlayerStarted -= PlayerStarted;
             secondPlayer.OnPreparationCompleted -= PreparationComplete;
-        }
-
-        private void LoopPointReached() {
-            OnLoopPointReached?.Invoke();
-        }
-
-        private async void PlayerStarted() {
-            // wait a short time for smoother blending
-            await Task.Delay(TimeSpan.FromSeconds(0.1));
-
-            inactivePlayer.Stop();
-            OnPlayerStarted?.Invoke();
+            secondPlayer.OnLoopPointReached -= LoopPointReached;
         }
 
         private void PreparationComplete() {
             ActivePlayer.Play();
-
-            // show nav elements immediately on looping videos
-            if (ActivePlayer.IsLooping) {
-                OnLoopPointReached.Invoke();
-            }
-
             videoPlayerToggle = !videoPlayerToggle;
-            OnPreparationCompleted?.Invoke();
         }
 
-        private VideoFacade GetActivePlayer() {
+        private async void PlayerStarted(VideoModel videoModel) {
+            // wait a short time for smoother blending
+            await Task.Delay(TimeSpan.FromSeconds(0.1));
+
+            inactivePlayer.Stop();
+            PlayerStarted(videoModel);
+        }
+
+        private void LoopPointReached(VideoModel videoModel) { }
+
+        private FmvVideoFacade GetActivePlayer() {
             if (videoPlayerToggle) {
                 inactivePlayer = secondPlayer;
                 return firstPlayer;

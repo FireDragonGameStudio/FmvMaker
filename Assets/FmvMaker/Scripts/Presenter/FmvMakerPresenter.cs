@@ -1,10 +1,11 @@
-﻿using FmvMaker.Models;
+﻿using FmvMaker.Core.Models;
 using FmvMaker.Core.Utilities;
 using FmvMaker.Views;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
+using FmvMaker.Core.Facades;
 
 namespace FmvMaker.Presenter {
     public class FmvMakerPresenter : MonoBehaviour {
@@ -97,7 +98,7 @@ namespace FmvMaker.Presenter {
                 targetObject.transform.SetParent(_videoElementsPanel.transform);
                 targetObject.transform.localScale = Vector3.one;
 
-                NavigationView view = targetObject.GetComponent<NavigationView>();
+                NavigationFacade view = targetObject.GetComponent<NavigationFacade>();
                 view.SetTargetData(_currentVideoElement.NavigationTargets[i]);
                 view.OnNavigationClicked.AddListener(OnNavigationClicked);
             }
@@ -118,7 +119,7 @@ namespace FmvMaker.Presenter {
                         targetObject.transform.SetParent(_videoElementsPanel.transform);
                         targetObject.transform.localScale = Vector3.one;
 
-                        ItemView view = targetObject.GetComponent<ItemView>();
+                        FmvItemFacade view = targetObject.GetComponent<FmvItemFacade>();
                         view.SetItemData(_currentVideoElement.ItemsToFind[i]);
                         view.OnItemClicked.AddListener((model) => {
                             view.OnItemClicked.RemoveAllListeners();

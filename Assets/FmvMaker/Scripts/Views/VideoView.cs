@@ -1,4 +1,4 @@
-﻿using FmvMaker.Models;
+﻿using FmvMaker.Core.Models;
 using FmvMaker.Core.Utilities;
 using System;
 using System.Threading.Tasks;
@@ -130,15 +130,15 @@ namespace FmvMaker.Views {
         }
 
         private VideoClip LoadVideoFromResources(string name) {
-            return ResourceInfo.LoadVideoClipFromResources(name);
+            return ResourceVideoInfo.LoadVideoClipFromResources(name);
         }
 
         private string LoadVideoFromLocalFile(string name) {
-            return ResourceInfo.LoadVideoClipFromFile(name);
+            return ResourceVideoInfo.LoadVideoClipFromFile(name);
         }
 
         private string LoadVideoFromOnlineSource(string name) {
-            return ResourceInfo.LoadVideoClipFromOnlineSource(name);
+            return ResourceVideoInfo.LoadVideoClipFromOnlineSource(name);
         }
     }
 }

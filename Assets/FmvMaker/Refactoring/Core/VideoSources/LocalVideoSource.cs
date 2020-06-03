@@ -14,7 +14,7 @@ namespace FmvMaker.Core.VideoSources {
 
         public void SetVideoSource(string videoName) {
             videoPlayer.source = VideoSource.Url;
-            videoPlayer.url = ResourceInfo.LoadVideoClipFromFile(videoName);
+            videoPlayer.url = ResourceVideoInfo.LoadVideoClipFromFile(videoName);
         }
     }
 }

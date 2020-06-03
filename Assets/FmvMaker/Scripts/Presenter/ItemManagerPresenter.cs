@@ -1,7 +1,7 @@
-﻿using FmvMaker.Models;
+﻿using FmvMaker.Core.Models;
 using FmvMaker.Core.Utilities;
-using FmvMaker.Views;
 using UnityEngine;
+using FmvMaker.Core.Facades;
 
 namespace FmvMaker.Presenter {
     public class ItemManagerPresenter : MonoBehaviour {
@@ -28,7 +28,7 @@ namespace FmvMaker.Presenter {
             itemObject.transform.SetParent(_inventoryElementsPanel.transform);
             itemObject.transform.localScale = Vector3.one;
 
-            ItemView view = itemObject.GetComponent<ItemView>();
+            FmvItemFacade view = itemObject.GetComponent<FmvItemFacade>();
             view.SetItemData(itemModel);
             view.OnItemClicked.AddListener((model) => {
                 if (_fmvMakerPresenter.OnItemUsed(model)) {

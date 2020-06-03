@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace FmvMaker.Models {
+namespace FmvMaker.Core.Models {
     [Serializable]
     public abstract class BaseUiElementModel {
         public string DisplayText = "";

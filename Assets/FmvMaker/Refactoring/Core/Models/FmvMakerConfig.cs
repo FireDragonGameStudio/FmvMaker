@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FmvMaker.Models {
+namespace FmvMaker.Core.Models {
     [Serializable]
     public class FmvMakerConfig {
         public string AspectRatio;

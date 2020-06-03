@@ -1,4 +1,4 @@
-﻿using FmvMaker.Models;
+﻿using FmvMaker.Core.Models;
 using System.IO;
 using UnityEngine;
 
@@ -139,7 +139,11 @@ namespace FmvMaker.Core.Utilities {
         }
 
         public static VideoModel[] GenerateVideoDataFromLocalFile(string localFilePath) {
-            return JsonUtility.FromJson<VideoModelWrapper>(ResourceInfo.VideoModelData.text).VideoList;
+            return JsonUtility.FromJson<VideoModelWrapper>(ResourceVideoInfo.VideoModelData.text).VideoList;
+        }
+
+        public static ItemModel[] GenerateItemDataFromLocalFile(string localFilePath) {
+            return JsonUtility.FromJson<ItemModelWrapper>(ResourceVideoInfo.ItemModelData.text).ItemList;
         }
 
         public static void ExportVideoDataToLocalFile(VideoModel[] videoElements, string localFilePath) {

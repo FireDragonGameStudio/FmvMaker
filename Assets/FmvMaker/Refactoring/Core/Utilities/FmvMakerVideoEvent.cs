@@ -4,6 +4,6 @@ using UnityEngine.Events;
 
 namespace FmvMaker.Core.Utilities {
     [Serializable]
-    public class NavigationClickEvent : UnityEvent<NavigationModel> {
+    public class FmvMakerVideoEvent : UnityEvent<VideoModel> {
     }
 }

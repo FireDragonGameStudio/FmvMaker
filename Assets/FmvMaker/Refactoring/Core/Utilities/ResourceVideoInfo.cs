@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.Video;
 
 namespace FmvMaker.Core.Utilities {
-    public static class ResourceInfo {
+    public static class ResourceVideoInfo {
 
         public static TextAsset VideoModelData => Resources.Load<TextAsset>("FmvMakerDemoVideoData");
+        public static TextAsset ItemModelData => Resources.Load<TextAsset>("FmvMakerDemoItemData");
 
         public static VideoClip LoadVideoClipFromResources(string name) {
             return Resources.Load<VideoClip>($"Videos/{name}");

@@ -1,4 +1,4 @@
-﻿using FmvMaker.Models;
+﻿using FmvMaker.Core.Models;
 using System;
 using UnityEngine.Events;
 

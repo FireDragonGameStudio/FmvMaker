@@ -14,10 +14,10 @@ namespace FmvMaker.Core.VideoSources {
         }
 
         public void SetVideoSource(string videoName) {
-            string elementUri = ResourceInfo.LoadVideoClipFromFile(videoName);
+            string elementUri = ResourceVideoInfo.LoadVideoClipFromFile(videoName);
             if (Uri.TryCreate(elementUri, UriKind.Absolute, out Uri uriResult) && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps)) {
                 videoPlayer.source = VideoSource.Url;
-                videoPlayer.url = ResourceInfo.LoadVideoClipFromOnlineSource(videoName);
+                videoPlayer.url = ResourceVideoInfo.LoadVideoClipFromOnlineSource(videoName);
             } else {
                 Debug.LogError($"Video file {elementUri} could not be loaded from online source.");
             }
