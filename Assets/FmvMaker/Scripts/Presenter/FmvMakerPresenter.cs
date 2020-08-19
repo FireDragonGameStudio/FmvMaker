@@ -30,7 +30,7 @@ namespace FmvMaker.Presenter {
         }
 
         private async void Start() {
-            _allVideoElements = FmvData.GenerateVideoDataFromLocalFile(LoadFmvConfig.Config.LocalFilePath);
+            _allVideoElements = FmvData.GenerateVideoDataFromLocalFile();
 
 
             // wait a short time for Unity to get correct values for screen height and width
@@ -66,7 +66,7 @@ namespace FmvMaker.Presenter {
         public bool OnItemUsed(ItemModel itemModel) {
             if ((_currentVideoElement.ItemsToUse != null) && Array.Exists(_currentVideoElement.ItemsToUse, (item) => itemModel.Name.Equals(item.Name))) {
                 int idx = Array.FindIndex(_currentVideoElement.ItemsToUse, ((item) => itemModel.Name.Equals(item.Name)));
-                PlayVideo(_currentVideoElement.ItemsToUse[idx].NavigationTarget.NextVideo);
+                PlayVideo(_currentVideoElement.ItemsToUse[idx].UseageNavigationTarget.NextVideo);
                 return true;
             }
             return false;
@@ -98,8 +98,8 @@ namespace FmvMaker.Presenter {
                 targetObject.transform.SetParent(_videoElementsPanel.transform);
                 targetObject.transform.localScale = Vector3.one;
 
-                NavigationFacade view = targetObject.GetComponent<NavigationFacade>();
-                view.SetTargetData(_currentVideoElement.NavigationTargets[i]);
+                FmvNavigationFacade view = targetObject.GetComponent<FmvNavigationFacade>();
+                view.SetNavigationData(_currentVideoElement.NavigationTargets[i]);
                 view.OnNavigationClicked.AddListener(OnNavigationClicked);
             }
         }
@@ -124,7 +124,7 @@ namespace FmvMaker.Presenter {
                         view.OnItemClicked.AddListener((model) => {
                             view.OnItemClicked.RemoveAllListeners();
                             model.IsInInventory = true;
-                            OnNavigationClicked(model.NavigationTarget);
+                            OnNavigationClicked(model.PickUpNavigationTarget);
                             _itemManager.AddItemToInventory(model);
                         });
                     }

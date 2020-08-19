@@ -2,11 +2,8 @@
     "ItemList": [{
 			"Name": "apple",
 			"Description": "Hilft leichten Hunger zu bekämpfen.",
-			"PickUpNavigationTarget": {
-				"Name": "Up"
-			},
-			"UseageNavigationTarget": {
-				"Name": "Left"
+			"NavigationTarget": {
+				"NextVideo": "Up"
 			},
 			"IsInInventory": false,
 			"WasUsed": false,
@@ -18,11 +15,8 @@
 		}, {
 			"Name": "coins",
 			"Description": "Um etwas zu kaufen.",
-			"PickUpNavigationTarget": {
-				"Name": "Up"
-			},
-			"UseageNavigationTarget": {
-				"Name": "Right"
+			"NavigationTarget": {
+				"NextVideo": "Up"
 			},
 			"IsInInventory": false,
 			"WasUsed": false,
@@ -34,11 +28,8 @@
 		}, {
 			"Name": "Meat",
 			"Description": "Gegen riesigen Hunger.",
-			"PickUpNavigationTarget": {
-				"Name": "Up"
-			},
-			"UseageNavigationTarget": {
-				"Name": "Right"
+			"NavigationTarget": {
+				"NextVideo": "Up"
 			},
 			"IsInInventory": false,
 			"WasUsed": false,
@@ -50,11 +41,8 @@
 		}, {
 			"Name": "bag",
 			"Description": "Darin kann etwas verstaut werden.",
-			"PickUpNavigationTarget": {
-				"Name": "Up"
-			},
-			"UseageNavigationTarget": {
-				"Name": "Down"
+			"NavigationTarget": {
+				"NextVideo": "Up"
 			},
 			"IsInInventory": false,
 			"WasUsed": false,

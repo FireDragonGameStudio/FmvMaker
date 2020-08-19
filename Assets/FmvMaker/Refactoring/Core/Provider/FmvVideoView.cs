@@ -7,6 +7,11 @@ using UnityEngine;
 namespace FmvMaker.Core.Provider {
     public class FmvVideoView : MonoBehaviour {
 
+        public event Action<VideoModel> OnVideoStarted;
+        public event Action<VideoModel, bool> OnVideoPaused;
+        public event Action<VideoModel> OnVideoSkipped;
+        public event Action<VideoModel> OnVideoFinished;
+
         [SerializeField]
         private FmvVideoFacade firstPlayer = null;
         [SerializeField]
@@ -14,25 +19,33 @@ namespace FmvMaker.Core.Provider {
 
         // false -> select second player, true -> select first player
         private bool videoPlayerToggle = true;
+
+        private FmvVideoFacade activePlayer;
         private FmvVideoFacade inactivePlayer;
 
         public FmvVideoFacade ActivePlayer => GetActivePlayer();
 
         private void Awake() {
             SetupVideoFacadeEvents();
-            GetActivePlayer();
         }
 
         private void OnDestroy() {
             DisposeVideoFacadeEvents();
         }
 
-        public void SkipVideoClip() {
+        public void SkipVideoClip(VideoModel video) {
             ActivePlayer.Skip();
+            OnVideoSkipped?.Invoke(video);
         }
 
-        public void PauseVideoClip() {
-            ActivePlayer.Pause();
+        public void PauseVideoClip(VideoModel video) {
+            if (ActivePlayer.IsPlaying) {
+                ActivePlayer.Pause();
+            } else {
+                ActivePlayer.Play();
+            }
+
+            OnVideoPaused?.Invoke(video, !ActivePlayer.IsPlaying);
         }
 
         public void PrepareAndPlay(VideoModel videoModel) {
@@ -61,25 +74,28 @@ namespace FmvMaker.Core.Provider {
 
         private void PreparationComplete() {
             ActivePlayer.Play();
-            videoPlayerToggle = !videoPlayerToggle;
         }
 
-        private async void PlayerStarted(VideoModel videoModel) {
+        private async void PlayerStarted(VideoModel video) {
             // wait a short time for smoother blending
-            await Task.Delay(TimeSpan.FromSeconds(0.1));
-
+            await Task.Delay(TimeSpan.FromSeconds(0.1f));
             inactivePlayer.Stop();
-            PlayerStarted(videoModel);
+            OnVideoStarted?.Invoke(video);
         }
 
-        private void LoopPointReached(VideoModel videoModel) { }
+        private void LoopPointReached(VideoModel video) {
+            videoPlayerToggle = !videoPlayerToggle;
+            OnVideoFinished(video);
+        }
 
         private FmvVideoFacade GetActivePlayer() {
             if (videoPlayerToggle) {
                 inactivePlayer = secondPlayer;
+                activePlayer = firstPlayer;
                 return firstPlayer;
             }
             inactivePlayer = firstPlayer;
+            activePlayer = secondPlayer;
             return secondPlayer;
         }
     }

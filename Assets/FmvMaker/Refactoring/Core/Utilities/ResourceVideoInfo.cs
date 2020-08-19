@@ -8,6 +8,7 @@ namespace FmvMaker.Core.Utilities {
 
         public static TextAsset VideoModelData => Resources.Load<TextAsset>("FmvMakerDemoVideoData");
         public static TextAsset ItemModelData => Resources.Load<TextAsset>("FmvMakerDemoItemData");
+        public static TextAsset NavigationModelData => Resources.Load<TextAsset>("FmvMakerDemoNavigationData");
 
         public static VideoClip LoadVideoClipFromResources(string name) {
             return Resources.Load<VideoClip>($"Videos/{name}");
@@ -21,12 +22,12 @@ namespace FmvMaker.Core.Utilities {
             return new Uri($"{LoadFmvConfig.Config.OnlineVideoURL}{name}").AbsoluteUri;
         }
 
-        public static string LoadItemImageFromFile(string name) {
-            return "file:///" + Path.Combine(LoadFmvConfig.Config.LocalFilePath, "Textures", name + ".png");
-        }
+        //public static string LoadItemImageFromFile(string name) {
+        //    return "file:///" + Path.Combine(LoadFmvConfig.Config.LocalFilePath, "Textures", name + ".png");
+        //}
 
-        public static string LoadItemImageFromOnlineSource(string name) {
-            return new Uri($"{LoadFmvConfig.Config.OnlineImageURL}{name}").AbsoluteUri;
-        }
+        //public static string LoadItemImageFromOnlineSource(string name) {
+        //    return new Uri($"{LoadFmvConfig.Config.OnlineImageURL}{name}").AbsoluteUri;
+        //}
     }
 }

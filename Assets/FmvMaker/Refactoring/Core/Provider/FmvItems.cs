@@ -9,7 +9,7 @@ namespace FmvMaker.Core.Provider {
     public class FmvItems : MonoBehaviour {
 
         [SerializeField]
-        private FmvVideos fmvVideos;
+        private FmvVideos fmvVideos = null;
         [SerializeField]
         private RectTransform videoElementsPanel = null;
         [SerializeField]
@@ -28,7 +28,7 @@ namespace FmvMaker.Core.Provider {
         }
 
         private void LoadItems() {
-            allItems.AddRange(FmvData.GenerateItemDataFromLocalFile(LoadFmvConfig.Config.LocalFilePath).Where((item) => !item.WasUsed));
+            allItems.AddRange(FmvData.GenerateItemDataFromLocalFile().Where((item) => !item.WasUsed));
         }
 
         private void GenerateInventoryItems() {
@@ -53,21 +53,20 @@ namespace FmvMaker.Core.Provider {
             allFindableItems.AddRange(
                 GenerateItems(allItems.Where((item) => !item.IsInInventory && !item.WasUsed), videoElementsPanel));
 
-            SetEventsForFindableItems();
+            ConfigureFindableItems();
         }
 
-        private void SetEventsForFindableItems() {
+        private void ConfigureFindableItems() {
             for (int i = 0; i < allFindableItems.Count; i++) {
                 SetEventsForFindableItem(allFindableItems[i]);
+                SetFindableItemInactive(allFindableItems[i]);
             }
         }
 
         private void SetEventsForFindableItem(FmvItemFacade itemFacade) {
-            for (int i = 0; i < allFindableItems.Count; i++) {
-                itemFacade.OnItemClicked.RemoveAllListeners();
-                itemFacade.OnItemClicked.AddListener(ItemFromFindableToInventory);
-                itemFacade.OnItemClicked.AddListener(TriggerNaviagtionTarget);
-            }
+            itemFacade.OnItemClicked.RemoveAllListeners();
+            itemFacade.OnItemClicked.AddListener(ItemFromFindableToInventory);
+            itemFacade.OnItemClicked.AddListener(TriggerPickUpNavigationTarget);
         }
 
         private List<FmvItemFacade> GenerateItems(IEnumerable<ItemModel> items, RectTransform parent) {
@@ -91,6 +90,10 @@ namespace FmvMaker.Core.Provider {
             targetObject.transform.localScale = Vector3.one;
 
             return targetObject.GetComponent<FmvItemFacade>();
+        }
+
+        private void SetFindableItemInactive(FmvItemFacade itemFacade) {
+            itemFacade.gameObject.SetActive(false);
         }
 
         private void AddItemToInventory(ItemModel model) {
@@ -128,20 +131,37 @@ namespace FmvMaker.Core.Provider {
             }
         }
 
-        public void ItemFromFindableToInventory(ItemModel model) {
+        private void ItemFromFindableToInventory(ItemModel model) {
             RemoveItemFromItemList(allFindableItems, model);
             AddItemToInventory(model);
         }
 
-        private void TriggerNaviagtionTarget(ItemModel model) {
-            //throw new NotImplementedException();
+        private void TriggerPickUpNavigationTarget(ItemModel model) {
+            fmvVideos.PlayVideoFromNavigationTarget(model.PickUpNavigationTarget.Name);
         }
 
-        public void ItemFromInventoryToUsed(ItemModel model) {
+        private void TriggerUseageNavigationTarget(ItemModel model) {
+            fmvVideos.PlayVideoFromNavigationTarget(model.UseageNavigationTarget.Name);
+        }
+
+        private void ItemFromInventoryToUsed(ItemModel model) {
             if (fmvVideos.CheckCurrentItemsForItemToUse(model)) {
+                TriggerUseageNavigationTarget(model);
                 RemoveItemFromItemList(allInventoryItems, model);
                 SetItemToAlreadyUsed(model);
             }
+        }
+
+        public void EnableFindableItems(ItemModel[] itemModels) {
+            for (int i = 0; i < itemModels.Length; i++) {
+                allFindableItems
+                    .SingleOrDefault(item => item.name.ToLower().Equals(itemModels[i].Name.ToLower()))
+                    ?.gameObject.SetActive(true);
+            }
+        }
+
+        public void DisableFindableItems() {
+            allFindableItems.ForEach(item => item.gameObject.SetActive(false));
         }
     }
 }

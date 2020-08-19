@@ -138,12 +138,16 @@ namespace FmvMaker.Core.Utilities {
             };
         }
 
-        public static VideoModel[] GenerateVideoDataFromLocalFile(string localFilePath) {
+        public static VideoModel[] GenerateVideoDataFromLocalFile() {
             return JsonUtility.FromJson<VideoModelWrapper>(ResourceVideoInfo.VideoModelData.text).VideoList;
         }
 
-        public static ItemModel[] GenerateItemDataFromLocalFile(string localFilePath) {
+        public static ItemModel[] GenerateItemDataFromLocalFile() {
             return JsonUtility.FromJson<ItemModelWrapper>(ResourceVideoInfo.ItemModelData.text).ItemList;
+        }
+
+        public static NavigationModel[] GenerateNavigationDataFromLocalFile() {
+            return JsonUtility.FromJson<NavigationModelWrapper>(ResourceVideoInfo.NavigationModelData.text).NavigationList;
         }
 
         public static void ExportVideoDataToLocalFile(VideoModel[] videoElements, string localFilePath) {

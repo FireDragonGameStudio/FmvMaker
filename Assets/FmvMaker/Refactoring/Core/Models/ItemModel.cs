@@ -5,7 +5,8 @@ namespace FmvMaker.Core.Models {
     public class ItemModel : BaseUiElementModel {
         public string Name;
         public string Description;
-        public NavigationModel NavigationTarget;
+        public NavigationModel PickUpNavigationTarget;
+        public NavigationModel UseageNavigationTarget;
         public bool IsInInventory;
         public bool WasUsed;
     }

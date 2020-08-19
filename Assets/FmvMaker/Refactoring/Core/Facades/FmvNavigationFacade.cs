@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace FmvMaker.Core.Facades {
     [RequireComponent(typeof(Button))]
-    public class NavigationFacade : MonoBehaviour {
+    public class FmvNavigationFacade : MonoBehaviour {
 
         public NavigationClickEvent OnNavigationClicked = new NavigationClickEvent();
 
@@ -22,12 +22,13 @@ namespace FmvMaker.Core.Facades {
             rectTransform = GetComponent<RectTransform>();
         }
 
-        private void OnDisable() {
+        private void OnDestroy() {
             navigationButton.onClick.RemoveAllListeners();
             OnNavigationClicked.RemoveAllListeners();
         }
 
-        public void SetTargetData(NavigationModel model) {
+        public void SetNavigationData(NavigationModel model) {
+            gameObject.name = model.Name;
             navigationText.text = model.DisplayText;
             rectTransform.anchoredPosition = FmvData.GetRelativeScreenPosition(model.RelativeScreenPosition);
 

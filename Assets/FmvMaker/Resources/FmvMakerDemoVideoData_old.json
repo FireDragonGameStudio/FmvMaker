@@ -3,13 +3,33 @@
 			"Name": "Idle",
 			"IsLooping": true,
 			"NavigationTargets": [{
-					"Name": "Up"
+					"NextVideo": "Up",
+					"DisplayText": "Up Dir",
+					"RelativeScreenPosition": {
+						"x": 0.5,
+						"y": 0.8
+					}
 				}, {
-					"Name": "Left"
+					"NextVideo": "Left",
+					"DisplayText": "Left Dir",
+					"RelativeScreenPosition": {
+						"x": 0.2,
+						"y": 0.5
+					}
 				}, {
-					"Name": "Right"
+					"NextVideo": "Right",
+					"DisplayText": "Right Dir",
+					"RelativeScreenPosition": {
+						"x": 0.8,
+						"y": 0.5
+					}
 				}, {
-					"Name": "Down"
+					"NextVideo": "Down",
+					"DisplayText": "Down Dir",
+					"RelativeScreenPosition": {
+						"x": 0.5,
+						"y": 0.2
+					}
 				}
 			],
 			"ItemsToFind": [{
@@ -28,21 +48,26 @@
 			"Name": "Left",
 			"IsLooping": false,
 			"NavigationTargets": [{
-					"Name": "InstantIdle"
+					"NextVideo": "Idle"
 				}
 			]
 		}, {
 			"Name": "Right",
 			"IsLooping": false,
 			"NavigationTargets": [{
-					"Name": "InstantIdle"
+					"NextVideo": "Idle"
 				}
 			]
 		}, {
 			"Name": "Down",
 			"IsLooping": false,
 			"NavigationTargets": [{
-					"Name": "DownLeft"
+					"NextVideo": "DownLeft",
+					"DisplayText": "Down Left",
+					"RelativeScreenPosition": {
+						"x": 0.2,
+						"y": 0.5
+					}
 				}
 			],
 			"ItemsToFind": [{
@@ -53,21 +78,21 @@
 			"Name": "DownLeft",
 			"IsLooping": false,
 			"NavigationTargets": [{
-					"Name": "InstantDownReturn"
+					"NextVideo": "DownReturn"
 				}
 			]
 		}, {
 			"Name": "DownReturn",
 			"IsLooping": false,
 			"NavigationTargets": [{
-					"Name": "InstantIdle"
+					"NextVideo": "Idle"
 				}
 			]
 		}, {
 			"Name": "Up",
 			"IsLooping": false,
 			"NavigationTargets": [{
-					"Name": "InstantIdle"
+					"NextVideo": "Idle"
 				}
 			]
 		}
