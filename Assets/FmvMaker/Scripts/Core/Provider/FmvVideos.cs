@@ -8,21 +8,29 @@ using UnityEngine;
 namespace FmvMaker.Core.Provider {
     public class FmvVideos : MonoBehaviour {
 
-        private const KeyCode ExportKeyCode = KeyCode.X;
-        private const KeyCode SkipKeyCode = KeyCode.Escape;
-        private const KeyCode PauseKeyKode = KeyCode.P;
-
+        [Header("FmvMaker Events")]
         public FmvMakerVideoEvent OnVideoStarted = new FmvMakerVideoEvent();
         public FmvMakerVideoBoolEvent OnVideoPaused = new FmvMakerVideoBoolEvent();
         public FmvMakerVideoEvent OnVideoSkipped = new FmvMakerVideoEvent();
         public FmvMakerVideoEvent OnVideoFinished = new FmvMakerVideoEvent();
 
+        [Header("Key Bindings")]
+        [SerializeField]
+        private KeyCode ExportKey = KeyCode.X;
+        [SerializeField]
+        private KeyCode SkipKey = KeyCode.Escape;
+        [SerializeField]
+        private KeyCode PauseKey = KeyCode.P;
+
+        [Header("Settings")]
+        [SerializeField]
+        private string nameOfStartVideo = "";
+
+        [Header("Internal references")]
         [SerializeField]
         private FmvItems fmvItems = null;
         [SerializeField]
         private FmvNavigations fmvNavigations = null;
-        [SerializeField]
-        private string nameOfStartVideo = "";
         [SerializeField]
         private FmvVideoView videoView = null;
 
@@ -133,7 +141,6 @@ namespace FmvMaker.Core.Provider {
         }
 
         private void PlayVideo(VideoModel video) {
-            Debug.Log($"Play video: {video.Name}");
             currentVideoElement = video;
             itemsLoaded = false;
             navigationsLoaded = false;
@@ -141,19 +148,19 @@ namespace FmvMaker.Core.Provider {
         }
 
         private void SkipVideo() {
-            if (Input.GetKeyUp(SkipKeyCode) && !currentVideoElement.IsLooping && currentVideoElement.AlreadyWatched) {
+            if (Input.GetKeyUp(SkipKey) && !currentVideoElement.IsLooping && currentVideoElement.AlreadyWatched && videoView.ActivePlayer.IsPlaying) {
                 videoView.SkipVideoClip(currentVideoElement);
             }
         }
 
         private void PauseVideo() {
-            if (Input.GetKeyUp(PauseKeyKode)) {
+            if (Input.GetKeyUp(PauseKey)) {
                 videoView.PauseVideoClip(currentVideoElement);
             }
         }
 
         private void ExportVideoData() {
-            if (Input.GetKeyUp(ExportKeyCode)) {
+            if (Input.GetKeyUp(ExportKey)) {
                 FmvData.ExportVideoDataToLocalFile(allVideoElements, LoadFmvConfig.Config.LocalFilePath);
             }
         }

@@ -1,5 +1,6 @@
 ﻿using FmvMaker.Core.Models;
 using FmvMaker.Core.Utilities;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -18,12 +19,14 @@ namespace FmvMaker.Core.Facades {
         private Text itemText;
 
         private RectTransform rectTransform;
+        private ItemModel itemModel;
 
         private void Awake() {
             itemButton = GetComponent<Button>();
             itemImage = GetComponent<Image>();
             itemText = GetComponentInChildren<Text>();
             rectTransform = GetComponent<RectTransform>();
+            DynamicVideoResolution.Instance.ScreenSizeChanged += OnScreenSizeChanged;
         }
 
         private void OnDestroy() {
@@ -33,11 +36,16 @@ namespace FmvMaker.Core.Facades {
 
         public void SetItemData(ItemModel model) {
             //LoadImageSprite(model.Name);
+            itemModel = model;
             itemImage.sprite = Resources.Load<Sprite>($"Textures/{model.Name}");
             gameObject.name = model.Name;
             itemText.text = model.DisplayText;
             rectTransform.anchoredPosition = FmvData.GetRelativeScreenPosition(model.RelativeScreenPosition);
             itemButton.onClick.AddListener(() => OnItemClicked?.Invoke(model));
+        }
+
+        private void OnScreenSizeChanged(float width, float height) {
+            rectTransform.anchoredPosition = FmvData.GetRelativeScreenPosition(itemModel.RelativeScreenPosition);
         }
 
         //private IEnumerator LoadImageSpriteCoroutine(string spritePath) {
@@ -54,13 +62,13 @@ namespace FmvMaker.Core.Facades {
         //}
 
         //private void LoadImageSprite(string spriteName) {
-            //if (LoadFmvConfig.Config.SourceType.Equals("LOCAL")) {
-            //    StartCoroutine(LoadImageSpriteCoroutine(ResourceVideoInfo.LoadItemImageFromFile(spriteName)));
-            //} else if (LoadFmvConfig.Config.SourceType.Equals("ONLINE")) {
-            //    StartCoroutine(LoadImageSpriteCoroutine(ResourceVideoInfo.LoadItemImageFromOnlineSource(spriteName)));
-            //} else {
-            //    itemImage.sprite = Resources.Load<Sprite>($"Textures/{spriteName}");
-            //}
+        //if (LoadFmvConfig.Config.SourceType.Equals("LOCAL")) {
+        //    StartCoroutine(LoadImageSpriteCoroutine(ResourceVideoInfo.LoadItemImageFromFile(spriteName)));
+        //} else if (LoadFmvConfig.Config.SourceType.Equals("ONLINE")) {
+        //    StartCoroutine(LoadImageSpriteCoroutine(ResourceVideoInfo.LoadItemImageFromOnlineSource(spriteName)));
+        //} else {
+        //    itemImage.sprite = Resources.Load<Sprite>($"Textures/{spriteName}");
+        //}
         //}
     }
 }

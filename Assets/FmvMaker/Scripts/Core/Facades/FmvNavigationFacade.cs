@@ -1,5 +1,6 @@
 ﻿using FmvMaker.Core.Models;
 using FmvMaker.Core.Utilities;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,11 +16,13 @@ namespace FmvMaker.Core.Facades {
         private Text navigationText;
 
         private RectTransform rectTransform;
+        private NavigationModel navigationModel;
 
         private void Awake() {
             navigationButton = GetComponent<Button>();
             navigationText = GetComponentInChildren<Text>();
             rectTransform = GetComponent<RectTransform>();
+            DynamicVideoResolution.Instance.ScreenSizeChanged += OnScreenSizeChanged;
         }
 
         private void OnDestroy() {
@@ -28,11 +31,16 @@ namespace FmvMaker.Core.Facades {
         }
 
         public void SetNavigationData(NavigationModel model) {
+            navigationModel = model;
             gameObject.name = model.Name;
             navigationText.text = model.DisplayText;
             rectTransform.anchoredPosition = FmvData.GetRelativeScreenPosition(model.RelativeScreenPosition);
 
             navigationButton.onClick.AddListener(() => OnNavigationClicked?.Invoke(model));
+        }
+
+        private void OnScreenSizeChanged(float width, float height) {
+            rectTransform.anchoredPosition = FmvData.GetRelativeScreenPosition(navigationModel.RelativeScreenPosition);
         }
     }
 }

@@ -156,12 +156,13 @@ namespace FmvMaker.Core.Utilities {
             }
         }
 
-        public static Vector2 GetRelativeScreenPosition(float x, float y) {
-            return new Vector2(Screen.width * x, Screen.height * y);
+        public static Vector2 GetRelativeScreenPosition(float offsetFactorX, float offsetFactorY) {
+            return new Vector2(DynamicVideoResolution.Instance.lastScreenSize.x * offsetFactorX,
+                DynamicVideoResolution.Instance.lastScreenSize.y * offsetFactorY);
         }
 
-        public static Vector2 GetRelativeScreenPosition(Vector2 vector2) {
-            return GetRelativeScreenPosition(vector2.x, vector2.y);
+        public static Vector2 GetRelativeScreenPosition(Vector2 relativePosition) {
+            return GetRelativeScreenPosition(relativePosition.x, relativePosition.y);
         }
     }
 }
