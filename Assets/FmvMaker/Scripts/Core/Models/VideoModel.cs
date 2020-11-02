@@ -5,9 +5,9 @@ namespace FmvMaker.Core.Models {
     public class VideoModel : BaseUiElementModel {
         public string Name;
         public bool IsLooping;
-        public NavigationModel[] NavigationTargets;
-        public ItemModel[] ItemsToFind;
-        public ItemModel[] ItemsToUse;
+        public ClickableModel[] NavigationTargets;
+        public ClickableModel[] ItemsToFind;
+        public ClickableModel[] ItemsToUse;
         public bool AlreadyWatched;
     }
 }

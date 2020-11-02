@@ -10,7 +10,8 @@ namespace FmvMaker.Core.Utilities {
         public static FmvMakerConfig Config {
             get {
                 if (_config == null) {
-                    _config = JsonUtility.FromJson<FmvMakerConfig>(File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "FmvMaker", "FmvMakerConfig.json")));
+                    string configText = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "FmvMaker", "FmvMakerConfig.json"));
+                    _config = JsonUtility.FromJson<FmvMakerConfig>(configText);
                 }
                 return _config;
             }

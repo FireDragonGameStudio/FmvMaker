@@ -5,19 +5,19 @@ using UnityEngine;
 namespace FmvMaker.Examples.Scripts {
     public class CheckFmvMakerEvents : MonoBehaviour, IFmvVideoEvents {
         public void OnVideoFinished(VideoModel videoModel) {
-            Debug.Log($"Video {videoModel.Name} finished.");
+            Debug.Log($"CustomEvent: Video {videoModel.Name} finished.");
         }
 
         public void OnVideoPaused(VideoModel videoModel, bool isPaused) {
-            Debug.Log($"Video {videoModel.Name} paused. Pause: {isPaused}");
+            Debug.Log($"CustomEvent: Video {videoModel.Name} paused. Pause: {isPaused}");
         }
 
         public void OnVideoSkipped(VideoModel videoModel) {
-            Debug.Log($"Video {videoModel.Name} skipped.");
+            Debug.Log($"CustomEvent: Video {videoModel.Name} skipped.");
         }
 
         public void OnVideoStarted(VideoModel videoModel) {
-            Debug.Log($"Video {videoModel.Name} started. Looping: {videoModel.IsLooping}");
+            Debug.Log($"CustomEvent: Video {videoModel.Name} started. Looping: {videoModel.IsLooping}");
         }
     }
 }

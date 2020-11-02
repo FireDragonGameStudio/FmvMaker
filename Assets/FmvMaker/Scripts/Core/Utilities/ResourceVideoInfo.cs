@@ -7,15 +7,14 @@ namespace FmvMaker.Core.Utilities {
     public static class ResourceVideoInfo {
 
         public static TextAsset VideoModelData => Resources.Load<TextAsset>("FmvMakerDemoVideoData");
-        public static TextAsset ItemModelData => Resources.Load<TextAsset>("FmvMakerDemoItemData");
-        public static TextAsset NavigationModelData => Resources.Load<TextAsset>("FmvMakerDemoNavigationData");
+        public static TextAsset ClickableModelData => Resources.Load<TextAsset>("FmvMakerDemoClickableData");
 
         public static VideoClip LoadVideoClipFromResources(string name) {
             return Resources.Load<VideoClip>($"Videos/{name}");
         }
 
         public static string LoadVideoClipFromFile(string name) {
-            return new Uri($"{LoadFmvConfig.Config.LocalFilePath}\\Videos\\{name}.mp4").AbsoluteUri;
+            return new Uri($@"{LoadFmvConfig.Config.LocalFilePath}\Videos\{name}.mp4").AbsoluteUri;
         }
 
         public static string LoadVideoClipFromOnlineSource(string name) {

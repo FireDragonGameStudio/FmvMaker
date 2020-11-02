@@ -8,21 +8,21 @@ namespace FmvMaker.Core.Utilities {
         public delegate void ScreenSizeChangeEventHandler(float width, float height);
         public event ScreenSizeChangeEventHandler ScreenSizeChanged;
 
-        public Vector2 lastScreenSize { get; private set; }
+        public Vector2 LastScreenSize { get; private set; }
 
         [SerializeField]
         private RectTransform fmvVideoElementPanel = null;
 
         private void Awake() {
-            lastScreenSize = new Vector2(fmvVideoElementPanel.rect.width, fmvVideoElementPanel.rect.height);
+            LastScreenSize = new Vector2(fmvVideoElementPanel.rect.width, fmvVideoElementPanel.rect.height);
             Instance = this;
         }
 
         private void Update() {
             Vector2 screenSize = new Vector2(fmvVideoElementPanel.rect.width, fmvVideoElementPanel.rect.height);
 
-            if (this.lastScreenSize != screenSize) {
-                this.lastScreenSize = screenSize;
+            if (this.LastScreenSize != screenSize) {
+                this.LastScreenSize = screenSize;
                 OnScreenSizeChange(screenSize.x, screenSize.y);
             }
         }

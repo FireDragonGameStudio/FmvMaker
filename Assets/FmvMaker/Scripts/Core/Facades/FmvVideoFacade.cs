@@ -35,7 +35,7 @@ namespace FmvMaker.Core.Facades {
         }
 
         private void SetupVideoPlayerConfig() {
-            switch (LoadFmvConfig.Config.SourceType) {
+            switch (LoadFmvConfig.Config.VideoSourceType) {
                 case "LOCAL":
                     videoSource = gameObject.AddComponent<LocalVideoSource>();
                     break;

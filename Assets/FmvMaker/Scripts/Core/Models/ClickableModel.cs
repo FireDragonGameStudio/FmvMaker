@@ -2,11 +2,12 @@
 
 namespace FmvMaker.Core.Models {
     [Serializable]
-    public class ItemModel : BaseUiElementModel {
+    public class ClickableModel : BaseUiElementModel {
         public string Name;
         public string Description;
-        public NavigationModel PickUpNavigationTarget;
-        public NavigationModel UseageNavigationTarget;
+        public string PickUpVideo;
+        public string UseageVideo;
+        public bool IsNavigation;
         public bool IsInInventory;
         public bool WasUsed;
     }

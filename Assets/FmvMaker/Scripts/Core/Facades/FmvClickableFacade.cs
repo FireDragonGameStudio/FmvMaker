@@ -7,9 +7,9 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 
 namespace FmvMaker.Core.Facades {
-    public class FmvItemFacade : MonoBehaviour {
+    public class FmvClickableFacade : MonoBehaviour {
 
-        public ItemClickEvent OnItemClicked = new ItemClickEvent();
+        public ClickableClickEvent OnItemClicked = new ClickableClickEvent();
 
         [SerializeField]
         private Button itemButton;
@@ -19,7 +19,7 @@ namespace FmvMaker.Core.Facades {
         private Text itemText;
 
         private RectTransform rectTransform;
-        private ItemModel itemModel;
+        private ClickableModel clickableModel;
 
         private void Awake() {
             itemButton = GetComponent<Button>();
@@ -34,18 +34,19 @@ namespace FmvMaker.Core.Facades {
             OnItemClicked.RemoveAllListeners();
         }
 
-        public void SetItemData(ItemModel model) {
+        public void SetItemData(ClickableModel model) {
             //LoadImageSprite(model.Name);
-            itemModel = model;
+            clickableModel = model;
             itemImage.sprite = Resources.Load<Sprite>($"Textures/{model.Name}");
             gameObject.name = model.Name;
             itemText.text = model.DisplayText;
+            itemText.enabled = !string.IsNullOrEmpty(model.DisplayText);
             rectTransform.anchoredPosition = FmvData.GetRelativeScreenPosition(model.RelativeScreenPosition);
             itemButton.onClick.AddListener(() => OnItemClicked?.Invoke(model));
         }
 
         private void OnScreenSizeChanged(float width, float height) {
-            rectTransform.anchoredPosition = FmvData.GetRelativeScreenPosition(itemModel.RelativeScreenPosition);
+            rectTransform.anchoredPosition = FmvData.GetRelativeScreenPosition(clickableModel.RelativeScreenPosition);
         }
 
         //private IEnumerator LoadImageSpriteCoroutine(string spritePath) {

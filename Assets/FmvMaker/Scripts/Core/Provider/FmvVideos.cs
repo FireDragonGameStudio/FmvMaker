@@ -15,12 +15,12 @@ namespace FmvMaker.Core.Provider {
         public FmvMakerVideoEvent OnVideoFinished = new FmvMakerVideoEvent();
 
         [Header("Key Bindings")]
+        //[SerializeField]
+        //private KeyCode ExportKey = KeyCode.X;
         [SerializeField]
-        private KeyCode ExportKey = KeyCode.X;
+        private KeyCode SkipVideoKey = KeyCode.Escape;
         [SerializeField]
-        private KeyCode SkipKey = KeyCode.Escape;
-        [SerializeField]
-        private KeyCode PauseKey = KeyCode.P;
+        private KeyCode PauseVideoKey = KeyCode.P;
 
         [Header("Settings")]
         [SerializeField]
@@ -28,9 +28,7 @@ namespace FmvMaker.Core.Provider {
 
         [Header("Internal references")]
         [SerializeField]
-        private FmvItems fmvItems = null;
-        [SerializeField]
-        private FmvNavigations fmvNavigations = null;
+        private FmvClickableObjects clickableObjects = null;
         [SerializeField]
         private FmvVideoView videoView = null;
 
@@ -67,7 +65,7 @@ namespace FmvMaker.Core.Provider {
         private void Update() {
             SkipVideo();
             PauseVideo();
-            ExportVideoData();
+            //ExportVideoData();
         }
 
         private void OnDestroy() {
@@ -94,13 +92,13 @@ namespace FmvMaker.Core.Provider {
 
         private void DisablePreviousItems(VideoModel video) {
             if (!itemsLoaded) {
-                fmvItems.DisableFindableItems();
+                clickableObjects.DisableFindableItems();
             }
         }
 
         private void DisablePreviousNavigationTargets(VideoModel video) {
             if (!navigationsLoaded) {
-                fmvNavigations.DisableNavigationTargets();
+                clickableObjects.DisableNavigationTargets();
             }
         }
 
@@ -119,24 +117,28 @@ namespace FmvMaker.Core.Provider {
         }
 
         private void CheckForInstantNextVideo(VideoModel video) {
-            if ((video.NavigationTargets.Length == 1) && 
-                fmvNavigations.GetNavigationModelByName(video.NavigationTargets[0].Name).DisplayText.Equals(string.Empty)) {
-                PlayVideoFromNavigationTarget(video.NavigationTargets[0].Name);
+            if (video.NavigationTargets.Length == 1) {
+                ClickableModel navigationTargetItem = clickableObjects.GetNavigationItemModelByName(video.NavigationTargets[0].Name);
+                if (string.IsNullOrEmpty(navigationTargetItem.Description)) {
+                    PlayVideoFromNavigationTarget(navigationTargetItem.PickUpVideo);
+                }
             }
         }
 
         private void ShowCurrentItems(VideoModel video) {
             if (!itemsLoaded && (video.ItemsToFind?.Length > 0)) {
-                fmvItems.EnableFindableItems(video.ItemsToFind);
+                clickableObjects.EnableFindableItems(video.ItemsToFind);
                 itemsLoaded = true;
             }
         }
 
         private void ShowCurrentNavigationTargets(VideoModel video) {
-            if (!navigationsLoaded && (video.NavigationTargets?.Length > 0) &&
-                !fmvNavigations.GetNavigationModelByName(video.NavigationTargets[0].Name).DisplayText.Equals(string.Empty)) {
-                fmvNavigations.SetNavigationTargetsActive(video.NavigationTargets);
-                navigationsLoaded = true;
+            if (!navigationsLoaded && (video.NavigationTargets?.Length > 0)) {
+                ClickableModel navigationTargetItem = clickableObjects.GetNavigationItemModelByName(video.NavigationTargets[0].Name);
+                if (!string.IsNullOrEmpty(navigationTargetItem.Description)) {
+                    clickableObjects.SetNavigationTargetsActive(video.NavigationTargets);
+                    navigationsLoaded = true;
+                }
             }
         }
 
@@ -148,29 +150,29 @@ namespace FmvMaker.Core.Provider {
         }
 
         private void SkipVideo() {
-            if (Input.GetKeyUp(SkipKey) && !currentVideoElement.IsLooping && currentVideoElement.AlreadyWatched && videoView.ActivePlayer.IsPlaying) {
+            if (Input.GetKeyUp(SkipVideoKey) && !currentVideoElement.IsLooping && currentVideoElement.AlreadyWatched && videoView.ActivePlayer.IsPlaying) {
                 videoView.SkipVideoClip(currentVideoElement);
             }
         }
 
         private void PauseVideo() {
-            if (Input.GetKeyUp(PauseKey)) {
+            if (Input.GetKeyUp(PauseVideoKey)) {
                 videoView.PauseVideoClip(currentVideoElement);
             }
         }
 
-        private void ExportVideoData() {
-            if (Input.GetKeyUp(ExportKey)) {
-                FmvData.ExportVideoDataToLocalFile(allVideoElements, LoadFmvConfig.Config.LocalFilePath);
-            }
-        }
+        //private void ExportVideoData() {
+            //if (Input.GetKeyUp(ExportKey)) {
+            //    FmvData.ExportVideoDataToLocalFile(allVideoElements, LoadFmvConfig.Config.LocalFilePath);
+            //}
+        //}
 
         private VideoModel GetVideoModelByName(string videoName) {
             return allVideoElements
                 .SingleOrDefault((video) => video.Name.ToLower().Equals(videoName.ToLower()));
         }
 
-        public bool CheckCurrentItemsForItemToUse(ItemModel itemModel) {
+        public bool CheckCurrentItemsForItemToUse(ClickableModel itemModel) {
             if (currentVideoElement.ItemsToUse == null) {
                 return false;
             }
@@ -180,8 +182,7 @@ namespace FmvMaker.Core.Provider {
         }
 
         public void PlayVideoFromNavigationTarget(string navigationTargetName) {
-            NavigationModel navigationModel = fmvNavigations.GetNavigationModelByName(navigationTargetName);
-            PlayVideo(GetVideoModelByName(navigationModel.NextVideo));
+            PlayVideo(GetVideoModelByName(navigationTargetName));
         }
     }
 }

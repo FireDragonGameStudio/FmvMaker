@@ -412,7 +412,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 736910559}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -428,7 +428,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1005435512}
   - component: {fileID: 1005435514}
-  - component: {fileID: 1005435515}
   - component: {fileID: 1005435513}
   m_Layer: 0
   m_Name: FmvUI
@@ -464,6 +463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59df1829b43b0144e8713d76fa479ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InventoryToogle: 105
   inventoryElementsPanel: {fileID: 383087582}
 --- !u!114 &1005435514
 MonoBehaviour:
@@ -480,23 +480,7 @@ MonoBehaviour:
   fmvVideos: {fileID: 1563772660}
   videoElementsPanel: {fileID: 1771585202}
   inventoryElementsPanel: {fileID: 383087582}
-  itemObjectPrefab: {fileID: 1133256870980526, guid: 8f59b351c229fff41a2450726cdb69f2,
-    type: 3}
---- !u!114 &1005435515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1005435511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed91e50af2e48714ba95b997b237c766, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fmvVideos: {fileID: 1563772660}
-  videoElementsPanel: {fileID: 1771585202}
-  navigationObjectPrefab: {fileID: 1133256870980526, guid: 9492c0b1a248abe4da4702dd7844f6d4,
+  clickableObjectPrefab: {fileID: 1133256870980526, guid: 8f59b351c229fff41a2450726cdb69f2,
     type: 3}
 --- !u!1 &1370328298
 GameObject:
@@ -523,7 +507,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370328298}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 214.39902, y: 236.45967, z: -99.07611}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -841,12 +825,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  ExportKey: 120
-  SkipKey: 27
-  PauseKey: 112
+  SkipVideoKey: 27
+  PauseVideoKey: 112
   nameOfStartVideo: Idle
-  fmvItems: {fileID: 1005435514}
-  fmvNavigations: {fileID: 1005435515}
+  clickableObjects: {fileID: 1005435514}
   videoView: {fileID: 1563772658}
 --- !u!1 &1611264349
 GameObject:
