@@ -4,6 +4,6 @@ using UnityEngine.Events;
 
 namespace FmvMaker.Core.Utilities {
     [Serializable]
-    public class FmvMakerVideoBoolEvent : UnityEvent<VideoModel, bool> {
+    public class VideoEvent : UnityEvent<VideoModel> {
     }
 }

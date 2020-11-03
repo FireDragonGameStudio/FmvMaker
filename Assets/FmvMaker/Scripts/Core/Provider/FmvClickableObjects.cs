@@ -1,5 +1,4 @@
 ﻿using FmvMaker.Core.Facades;
-using FmvMaker.Core.Utilities;
 using FmvMaker.Core.Models;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +10,8 @@ namespace FmvMaker.Core.Provider {
         [Header("Internal references")]
         [SerializeField]
         private FmvVideos fmvVideos = null;
+        [SerializeField]
+        private FmvData fmvData = null;
         [SerializeField]
         private RectTransform videoElementsPanel = null;
         [SerializeField]
@@ -31,7 +32,7 @@ namespace FmvMaker.Core.Provider {
         }
 
         private void LoadItems() {
-            allItems.AddRange(FmvData.GenerateItemDataFromLocalFile().Where((item) => !item.WasUsed));
+            allItems.AddRange(fmvData.GenerateItemDataFromLocalFile().Where((item) => !item.WasUsed));
         }
 
         private void GenerateInventoryItems() {

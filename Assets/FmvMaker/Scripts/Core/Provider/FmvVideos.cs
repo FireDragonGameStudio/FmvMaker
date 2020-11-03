@@ -9,14 +9,12 @@ namespace FmvMaker.Core.Provider {
     public class FmvVideos : MonoBehaviour {
 
         [Header("FmvMaker Events")]
-        public FmvMakerVideoEvent OnVideoStarted = new FmvMakerVideoEvent();
-        public FmvMakerVideoBoolEvent OnVideoPaused = new FmvMakerVideoBoolEvent();
-        public FmvMakerVideoEvent OnVideoSkipped = new FmvMakerVideoEvent();
-        public FmvMakerVideoEvent OnVideoFinished = new FmvMakerVideoEvent();
+        public VideoEvent OnVideoStarted = new VideoEvent();
+        public VideoBoolEvent OnVideoPaused = new VideoBoolEvent();
+        public VideoEvent OnVideoSkipped = new VideoEvent();
+        public VideoEvent OnVideoFinished = new VideoEvent();
 
         [Header("Key Bindings")]
-        //[SerializeField]
-        //private KeyCode ExportKey = KeyCode.X;
         [SerializeField]
         private KeyCode SkipVideoKey = KeyCode.Escape;
         [SerializeField]
@@ -31,6 +29,8 @@ namespace FmvMaker.Core.Provider {
         private FmvClickableObjects clickableObjects = null;
         [SerializeField]
         private FmvVideoView videoView = null;
+        [SerializeField]
+        private FmvData data = null;
 
         private VideoModel[] allVideoElements;
         private VideoModel currentVideoElement;
@@ -41,7 +41,7 @@ namespace FmvMaker.Core.Provider {
         private VideoModel StartVideo => GetVideoModelByName(nameOfStartVideo);
 
         private void Awake() {
-            allVideoElements = FmvData.GenerateVideoDataFromLocalFile();
+            allVideoElements = data.GenerateVideoDataFromLocalFile();
 
             SetupVideoEventTrigger();
         }
@@ -65,7 +65,6 @@ namespace FmvMaker.Core.Provider {
         private void Update() {
             SkipVideo();
             PauseVideo();
-            //ExportVideoData();
         }
 
         private void OnDestroy() {
@@ -160,12 +159,6 @@ namespace FmvMaker.Core.Provider {
                 videoView.PauseVideoClip(currentVideoElement);
             }
         }
-
-        //private void ExportVideoData() {
-            //if (Input.GetKeyUp(ExportKey)) {
-            //    FmvData.ExportVideoDataToLocalFile(allVideoElements, LoadFmvConfig.Config.LocalFilePath);
-            //}
-        //}
 
         private VideoModel GetVideoModelByName(string videoName) {
             return allVideoElements

@@ -41,12 +41,12 @@ namespace FmvMaker.Core.Facades {
             gameObject.name = model.Name;
             itemText.text = model.DisplayText;
             itemText.enabled = !string.IsNullOrEmpty(model.DisplayText);
-            rectTransform.anchoredPosition = FmvData.GetRelativeScreenPosition(model.RelativeScreenPosition);
+            rectTransform.anchoredPosition = DynamicVideoResolution.GetRelativeScreenPosition(model.RelativeScreenPosition);
             itemButton.onClick.AddListener(() => OnItemClicked?.Invoke(model));
         }
 
         private void OnScreenSizeChanged(float width, float height) {
-            rectTransform.anchoredPosition = FmvData.GetRelativeScreenPosition(clickableModel.RelativeScreenPosition);
+            rectTransform.anchoredPosition = DynamicVideoResolution.GetRelativeScreenPosition(clickableModel.RelativeScreenPosition);
         }
 
         //private IEnumerator LoadImageSpriteCoroutine(string spritePath) {

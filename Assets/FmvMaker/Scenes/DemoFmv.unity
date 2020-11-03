@@ -301,6 +301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 600364141}
   - component: {fileID: 600364142}
+  - component: {fileID: 600364143}
   m_Layer: 0
   m_Name: FmvHelper
   m_TagString: Untagged
@@ -335,6 +336,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fmvVideoElementPanel: {fileID: 1771585202}
+--- !u!114 &600364143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600364140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7d63537cad47a3499e1c4ff3a386b10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  demoMode: 0
+  VideoModelData: {fileID: 4900000, guid: 5cfcbc7340e76584e9629f8bac576a40, type: 3}
+  ClickableModelData: {fileID: 4900000, guid: 089dfb8dced05fd4c8f843f43d00d8cd, type: 3}
 --- !u!1 &736910559
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,6 +494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fmvVideos: {fileID: 1563772660}
+  fmvData: {fileID: 600364143}
   videoElementsPanel: {fileID: 1771585202}
   inventoryElementsPanel: {fileID: 383087582}
   clickableObjectPrefab: {fileID: 1133256870980526, guid: 8f59b351c229fff41a2450726cdb69f2,
@@ -830,6 +847,7 @@ MonoBehaviour:
   nameOfStartVideo: Idle
   clickableObjects: {fileID: 1005435514}
   videoView: {fileID: 1563772658}
+  data: {fileID: 600364143}
 --- !u!1 &1611264349
 GameObject:
   m_ObjectHideFlags: 0

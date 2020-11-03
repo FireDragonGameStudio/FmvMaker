@@ -12,6 +12,7 @@ namespace FmvMaker.Core.Provider {
         public event Action<VideoModel> OnVideoSkipped;
         public event Action<VideoModel> OnVideoFinished;
 
+        [Header("Internal references")]
         [SerializeField]
         private FmvVideoFacade firstPlayer = null;
         [SerializeField]

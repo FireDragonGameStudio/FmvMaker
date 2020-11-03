@@ -6,8 +6,6 @@ using UnityEngine.Video;
 namespace FmvMaker.Core.Utilities {
     public static class ResourceItemInfo {
 
-        public static TextAsset ItemModelData => Resources.Load<TextAsset>("FmvMakerDemoItemData");
-
         public static VideoClip LoadItemFromResources(string name) {
             return Resources.Load<VideoClip>($"Videos/{name}");
         }
