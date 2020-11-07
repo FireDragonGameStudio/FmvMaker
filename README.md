@@ -1,4 +1,5 @@
 # FmvMaker
+[Reference config files to FmvData](Assets/FmvMaker/Textures/FmvMakerLogo.png)
 FmvMaker was designed for creating FMV, point'n click, or other types of games/plugins, which use some kind of video playlist with possible interactions. FmvMaker uses only (!) native Unity components to ensure a maximum of compatiblity with all of Unity's supported build platforms. If you encounter errors or problems, pls create an issue. We'll try to help you asap. :)
 
 ## Getting started
@@ -160,6 +161,8 @@ If you're not providing optional fields, FmvMaker will use the default value. Wh
 
 ## Enough explanation, can't we start already?
 YES, we can. With the example from the previous section you've already created a simple prototype, which will allow us to navigate between video elements. If you want to use your own .mp4 videos, just copy them into the FmvMaker/Resources/FmvMakerVideos and replace their file names (without extension) in the **VideoData** configuration file. For the final touches, open Unity and open the EmptyFmv scenes, located in FmvMaker/Scenes. After selecting the FmvHelper GameObject in the hierarchy, drag the created JSON files into their corresponding fields of the FmvData component. (Picturehere) A predefined project (CircleFmv), which is based on the previous sections is also shipped with the FmvMaker package.
+
+[Reference config files to FmvData](Assets/FmvMaker/Textures/FmvMakerDemoData_Reference.PNG)
 
 ## Advanced video navigation
 
