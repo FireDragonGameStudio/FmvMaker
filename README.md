@@ -42,10 +42,10 @@ In this section we'll start to create our configuration file for our **VideoData
 The version, including a basic structure of our **VideoData** file will look like this:
 ```javascript
 {
-    "VideoList": [{
-			"Name": "UniqueVideoTitle",
-		}
-	]
+  "VideoList": [{
+	  "Name": "UniqueVideoTitle",
+    }
+  ]
 }
 ```
 
