@@ -43,7 +43,7 @@ The version, including a basic structure of our **VideoData** file will look lik
 ```javascript
 {
   "VideoList": [{
-	  "Name": "UniqueVideoTitle",
+      "Name": "UniqueVideoTitle",
     }
   ]
 }
@@ -57,16 +57,16 @@ The next field is called *IsLooping* and optional. Pls only use this field (and 
 Having the player moving from one to the next video file is made possible via the so called **NavigationTargets**. A video can have *1-n* **NavigationTargets** which are represented as an array of the current video element. This array contains the name/s of the next video/s. Again the name corresponds to your desired video filename within the Resources folder (within the FmvMaker folder). Please remember to use the filename without the file extension. When having multiple names, make that the entries are separated via ,
 ```javascript
 {
-    "VideoList": [{
-			"Name": "UniqueVideoName",
-			"NavigationTargets": [{
-					"Name": "NextUniqueVideoName"
-				}, {
-					"Name": "AnotherUniqueVideoName"
-				}
-			]
-		}
-	]
+  "VideoList": [{
+      "Name": "UniqueVideoName",
+      "NavigationTargets": [{
+          "Name": "NextUniqueVideoName"
+        }, {
+          "Name": "AnotherUniqueVideoName"
+        }
+      ]
+    }
+  ]
 }
 ```
 
@@ -75,26 +75,26 @@ Each name used as **NavigationTarget** must have it's own **Clickable** within o
 Let's try to build a circle, where our player can move from **UniqueVideoName** to **NextUniqueVideoName**. From there to **AnotherUniqueVideoName** and from **AnotherUniqueVideoName** back to **UniqueVideoName**. A simple circular video route through our game. Pls note that neede the **Clickables** will be created within the next sections.
 ```javascript
 {
-    "VideoList": [{
-			"Name": "UniqueVideoName",
-			"NavigationTargets": [{
-					"Name": "NextUniqueVideoClickable"
-				}
-			]
-		}, {
-			"Name": "NextUniqueVideoName",
-			"NavigationTargets": [{
-					"Name": "AnotherUniqueVideoClickable"
-				}
-			]
-		}, {
-			"Name": "AnotherUniqueVideoName",
-			"NavigationTargets": [{
-					"Name": "UniqueVideoClickable"
-				}
-			]
-		}
-	]
+  "VideoList": [{
+      "Name": "UniqueVideoName",
+      "NavigationTargets": [{
+          "Name": "NextUniqueVideoClickable"
+        }
+      ]
+    }, {
+      "Name": "NextUniqueVideoName",
+      "NavigationTargets": [{
+          "Name": "AnotherUniqueVideoClickable"
+        }
+      ]
+    }, {
+      "Name": "AnotherUniqueVideoName",
+      "NavigationTargets": [{
+          "Name": "UniqueVideoClickable"
+        }
+      ]
+    }
+  ]
 }
 ```
 
@@ -105,17 +105,17 @@ In this section we'll start to create our configuration file for our **Clickable
 After defining our video route, we'll need **Clickables** to navigate through our defined route. This will we configured in our **Clickables** configuration file. Create a new file (e.g. DemoClickableData.json), which will hold the **Clickables** information within the FmvMaker/Resources/ folder. A basic structure with one **Clickable** element will look like this:
 ```javascript
 {
-    "ClickableList": [{
-			"Name": "ClickableMe",
-			"Description": "Fancy, but short description.",
-			"PickUpVideo": "WhichVideoToPlayOnClick",
-			"IsNavigation": true,
-			"RelativeScreenPosition": {
-				"x": 0.5,
-				"y": 0.2
-			}
-		}
-	]
+  "ClickableList": [{
+      "Name": "ClickableMe",
+      "Description": "Fancy, but short description.",
+      "PickUpVideo": "WhichVideoToPlayOnClick",
+      "IsNavigation": true,
+      "RelativeScreenPosition": {
+        "x": 0.5,
+        "y": 0.2
+      }
+    }
+  ]
 }
 ```
 
@@ -130,31 +130,31 @@ After defining our video route, we'll need **Clickables** to navigate through ou
 If you're not providing optional fields, FmvMaker will use the default value. When now taking our already defined video data, we can now create the **Clickables**, which will result in a **Clickables** configuration file with the following content (Pls note that the *RelativeScreenPosition* was not filled in the third **Clickable** to show you the usage of the default values):
 ```javascript
 {
-    "ClickableList": [{
-			"Name": "UniqueVideoClickable",
-			"Description": "Go to NextUniqueVideo.",
-			"PickUpVideo": "NextUniqueVideoName",
-			"IsNavigation": true,
-			"RelativeScreenPosition": {
-				"x": 0.5,
-				"y": 0.2
-			}
-		}, {
-			"Name": "NextUniqueVideoClickable",
-			"Description": "Go to AnotherUniqueVideo.",
-			"PickUpVideo": "AnotherUniqueVideoName",
-			"IsNavigation": true,
-			"RelativeScreenPosition": {
-				"x": 0.2,
-				"y": 0.5
-			}
-		}, {
-			"Name": "AnotherUniqueVideoClickable",
-			"Description": "Go to UniqueVideo.",
-			"PickUpVideo": "UniqueVideoName",
-			"IsNavigation": true
-		}
-	]
+  "ClickableList": [{
+      "Name": "UniqueVideoClickable",
+      "Description": "Go to NextUniqueVideo.",
+      "PickUpVideo": "NextUniqueVideoName",
+      "IsNavigation": true,
+      "RelativeScreenPosition": {
+        "x": 0.5,
+        "y": 0.2
+      }
+    }, {
+      "Name": "NextUniqueVideoClickable",
+      "Description": "Go to AnotherUniqueVideo.",
+      "PickUpVideo": "AnotherUniqueVideoName",
+      "IsNavigation": true,
+      "RelativeScreenPosition": {
+        "x": 0.2,
+        "y": 0.5
+      }
+    }, {
+      "Name": "AnotherUniqueVideoClickable",
+      "Description": "Go to UniqueVideo.",
+      "PickUpVideo": "UniqueVideoName",
+      "IsNavigation": true
+    }
+  ]
 }
 ```
 
@@ -182,39 +182,39 @@ YES, we can. With the example from the previous section you've already created a
 ## The full VideoData API
 ```javascript
 {
-    "VideoList": [{
-			"Name": "UniqueVideoName",
-			"IsLooping": true,
-			"NavigationTargets": [{
-					"Name": "Up"
-				}, {
-					"Name": "Left"
-				}, {
-					"Name": "Right"
-				}, {
-					"Name": "Down"
-				}
-			],
-			"ItemsToFind": [{
-					"Name": "apple"
-				}, {
-					"Name": "coins"
-				}, {
-					"Name": "Meat"
-				}
-			],
-			"ItemsToUse": [{
-					"Name": "bag"
-				}
-			],
-			"AlreadyWatched": false,
-			"DisplayText": "DisplayText",
-			"RelativeScreenPosition": {
-				"x": 0,
-				"y": 0
-			}
-		}
-	]
+  "VideoList": [{
+      "Name": "UniqueVideoName",
+      "IsLooping": true,
+      "NavigationTargets": [{
+          "Name": "Up"
+        }, {
+          "Name": "Left"
+        }, {
+          "Name": "Right"
+        }, {
+          "Name": "Down"
+        }
+      ],
+      "ItemsToFind": [{
+          "Name": "apple"
+        }, {
+          "Name": "coins"
+        }, {
+          "Name": "Meat"
+        }
+      ],
+      "ItemsToUse": [{
+          "Name": "bag"
+        }
+      ],
+      "AlreadyWatched": false,
+      "DisplayText": "DisplayText",
+      "RelativeScreenPosition": {
+        "x": 0,
+        "y": 0
+      }
+    }
+  ]
 }
 ```
 | Field | Type | Default value | Optional | Description |
@@ -222,13 +222,43 @@ YES, we can. With the example from the previous section you've already created a
 | Name | string | "" | | The video element need a unique name, which is set via the *Name* field. |
 | IsLooping | bool | false | x | The *IsLooping* field can be used to create a looped video state, when set to true. This gives the player a better idea of the scenes by showing various impressions. E.g. wind movement, lively places, traffic, etc… Pls make sure to use loopable videos when using this property. If this field is not used or set to false, the video playing atm will stop at the last frame. After reaching this last frame all possible further actions (**NavigationTargets**, **ItemsToFind**) will be presented to the player (which is usually the way traditional FMV games do).|
 | NavigationTargets | string[] | [] | | A video can have *1-n* **NavigationTargets** which are represented as an array of the current video element. This array contains the name/s of the next video/s. Again the name corresponds to your desired video filename within the Resources folder (FmvMaker/Resources/FmvMakerVideos). Please remember to use the filename without the file extension. When having multiple names, make that the entries are separated via , |
-| ItemsToFind | string[] | [] | | *PickUpVideo* will refer to the video element to play, when the player clicks on this **Clickable**. The refered video element must exist with the same name within the **VideoData** configuration file. |
-| ItemsToUse | string[] | [] | | *IsNavigation* helps to distinguish between pure navigation and collectable items. The item section will explain this in more detail. |
+| ItemsToFind | string[] | [] | | *ItemsToFind* references all items **Clickables** which can be found within this video element. |
+| ItemsToUse | string[] | [] | | *ItemsToFind* references all items **Clickables** which can be used within this video element. To use items, they have to be found first. |
 | AlreadyWatched | bool | false | x | *AlreadyWatched* checks if a video was already watched. Players can skip already watched videos by pressing a predefined key. This field should NOT be used within your configuration files. |
 | DisplayText | string | "" | x | *DisplayText* does what it name says. It shows a set text. This field should NOT be used within your configuration files. |
-| RelativeScreenPosition | Vector2 | x=0.5, y=0.5 | x| The *RelativeScreenPosition* should NOT be used within your configuration files. This field is reserved for further useage to display multiple videos at once. | 
+| RelativeScreenPosition | Vector2 | x=0.5, y=0.5 | x| The *RelativeScreenPosition* should NOT be used within your video configuration file. This field is reserved for further useage to display multiple videos at once. | 
 
 ## The full Clickable API
+```javascript
+{
+  "ClickableList": [{
+      "Name": "ClickableMe",
+      "Description": "Description? Try this.",
+      "PickUpVideo": "UniqueVideoName",
+      "UseageVideo": "AnotherUniqueVideoName",
+	  "IsNavigation": false,
+      "IsInInventory": false,
+      "WasUsed": false,
+      "DisplayText": "Delicious apple",
+      "RelativeScreenPosition": {
+        "x": 0.2,
+        "y": 0.8
+      }
+    }
+  ]
+}
+```
+| Field | Type | Default value | Optional | Description |
+| --- | --- | --- | --- | --- |
+| Name | string | "" | | The **Clickable** needs a unique name, which is set via the *Name* field. |
+| Description | string | "" | x | *Description* does what it name says. It shows a set text, maybe as tooltip or something similar. When dealing with an instant **NavigationTarget** this field can be omited, to tell FmvMaker that the next video (linked in *PickUpVideo*) should be instantly played. |
+| PickUpVideo | string | "" |  | The *PickUpVideo* field links to the video element, which should be played, when this **Clickable** item is selected.|
+| UseageVideo | string | "" | | The *UseageVideo* field links to the video element, which should be played, when this **Clickable** item is selected from the inventory in the correct screen. That means this **Clickable** must be referenced as a *ItemToUse* in the current video element. |
+| IsNavigation | bool | false | x | *IsNavigation* helps to distinguish between pure navigation and collectable items. It it's true, the **Clickable** will be used as a **NavigationTarget**. It it's set to false, or the default value is used (by omiting this field), this **Clickable** will be an item. |
+| IsInInventory | bool | false | x | *IsInInventory* checks if this item was already collected or not. It can be used to track the players progress, or preload certain items for the players inventory. |
+| WasUsed | bool | false | x | *WasUsed* checks if item was already used, like intended. Items where this property is true, will not be loaded by FmvMaker. This can be useful for either testing, or tracking player progress. |
+| DisplayText | string | "" | x | *DisplayText* does what it name says. It shows a set text. This field should NOT be used within your configuration files. |
+| RelativeScreenPosition | Vector2 | x=0.5, y=0.5 | x| The *RelativeScreenPosition* places your **Clickable** on the designated screen position. Pls make sure to only use values between 0 and 1, where x=0, y=0 refers to the lower left corner, x=0.5,y=0.5 to the center (default) and x=1, y=1 to the upper right corner. | 
 
 ## Adding your own logic
 A more sophisticated example is shipped with the demo project.
