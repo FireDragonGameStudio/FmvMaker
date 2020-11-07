@@ -118,7 +118,7 @@ namespace FmvMaker.Core.Provider {
         private void CheckForInstantNextVideo(VideoModel video) {
             if (video.NavigationTargets.Length == 1) {
                 ClickableModel navigationTargetItem = clickableObjects.GetNavigationItemModelByName(video.NavigationTargets[0].Name);
-                if (string.IsNullOrEmpty(navigationTargetItem.Description)) {
+                if ((navigationTargetItem != null) && string.IsNullOrEmpty(navigationTargetItem.Description)) {
                     PlayVideoFromNavigationTarget(navigationTargetItem.PickUpVideo);
                 }
             }
@@ -134,7 +134,7 @@ namespace FmvMaker.Core.Provider {
         private void ShowCurrentNavigationTargets(VideoModel video) {
             if (!navigationsLoaded && (video.NavigationTargets?.Length > 0)) {
                 ClickableModel navigationTargetItem = clickableObjects.GetNavigationItemModelByName(video.NavigationTargets[0].Name);
-                if (!string.IsNullOrEmpty(navigationTargetItem.Description)) {
+                if ((navigationTargetItem != null) && !string.IsNullOrEmpty(navigationTargetItem.Description)) {
                     clickableObjects.SetNavigationTargetsActive(video.NavigationTargets);
                     navigationsLoaded = true;
                 }

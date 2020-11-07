@@ -204,7 +204,7 @@ namespace FmvMaker.Core.Provider {
         }
 
         public ClickableModel GetNavigationItemModelByName(string navigationName) {
-            ClickableModel navigationItem = allItems.Single(navigation => navigation.Name.ToLower().Equals(navigationName.ToLower()));
+            ClickableModel navigationItem = allItems.SingleOrDefault(navigation => navigation.Name.ToLower().Equals(navigationName.ToLower()));
             return navigationItem;
         }
 

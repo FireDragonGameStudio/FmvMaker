@@ -37,10 +37,18 @@ namespace FmvMaker.Core.Facades {
         public void SetItemData(ClickableModel model) {
             //LoadImageSprite(model.Name);
             clickableModel = model;
-            itemImage.sprite = Resources.Load<Sprite>($"Textures/{model.Name}");
             gameObject.name = model.Name;
+            itemImage.sprite = Resources.Load<Sprite>($"FmvMakerTextures/{model.Name}");
             itemText.text = model.DisplayText;
             itemText.enabled = !string.IsNullOrEmpty(model.DisplayText);
+
+            // set default sprite if necessary
+            if (!itemImage.sprite) {
+                itemImage.sprite = Resources.Load<Sprite>($"FmvMakerTextures/default");
+                itemText.text = model.Name;
+                itemText.enabled = true;
+            }
+
             rectTransform.anchoredPosition = DynamicVideoResolution.GetRelativeScreenPosition(model.RelativeScreenPosition);
             itemButton.onClick.AddListener(() => OnItemClicked?.Invoke(model));
         }

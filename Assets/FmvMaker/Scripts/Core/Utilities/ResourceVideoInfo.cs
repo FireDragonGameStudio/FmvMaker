@@ -7,11 +7,11 @@ namespace FmvMaker.Core.Utilities {
     public static class ResourceVideoInfo {
 
         public static VideoClip LoadVideoClipFromResources(string name) {
-            return Resources.Load<VideoClip>($"Videos/{name}");
+            return Resources.Load<VideoClip>($"FmvMakerVideos/{name}");
         }
 
         public static string LoadVideoClipFromFile(string name) {
-            return new Uri($@"{LoadFmvConfig.Config.LocalFilePath}\Videos\{name}.mp4").AbsoluteUri;
+            return new Uri($@"{LoadFmvConfig.Config.LocalFilePath}\FmvMakerVideos\{name}.mp4").AbsoluteUri;
         }
 
         public static string LoadVideoClipFromOnlineSource(string name) {

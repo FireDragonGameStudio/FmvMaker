@@ -1,0 +1,27 @@
+{
+    "ClickableList": [{
+			"Name": "downClickable",
+			"Description": "Downwards.",
+			"PickUpVideo": "Down",
+			"IsNavigation": true,
+			"RelativeScreenPosition": {
+				"x": 0.5,
+				"y": 0.2
+			}
+		}, {
+			"Name": "downLeft",
+			"Description": "Down and left.",
+			"PickUpVideo": "DownLeft",
+			"IsNavigation": true,
+			"RelativeScreenPosition": {
+				"x": 0.2,
+				"y": 0.5
+			}
+		}, {
+			"Name": "instantDownReturn",
+			"Description": "instantDownReturn",
+			"PickUpVideo": "Idle",
+			"IsNavigation": true
+		}
+	]
+}

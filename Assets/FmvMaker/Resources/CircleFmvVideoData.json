@@ -1,0 +1,22 @@
+{
+    "VideoList": [{
+			"Name": "Idle",
+			"NavigationTargets": [{
+					"Name": "downClickable"
+				}
+			]
+		}, {
+			"Name": "Down",
+			"NavigationTargets": [{
+					"Name": "DownLeft"
+				}
+			]
+		}, {
+			"Name": "DownLeft",
+			"NavigationTargets": [{
+					"Name": "instantDownReturn"
+				}
+			]
+		}
+	]
+}

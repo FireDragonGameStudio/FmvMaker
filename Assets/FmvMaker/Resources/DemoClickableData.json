@@ -1,5 +1,5 @@
 {
-    "ItemList": [{
+    "ClickableList": [{
 			"Name": "apple",
 			"Description": "Hungry? Try this.",
 			"PickUpVideo": "Up",

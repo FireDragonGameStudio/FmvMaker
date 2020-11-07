@@ -3,6 +3,6 @@
 namespace FmvMaker.Core.Models {
     [Serializable]
     public class ClickableModelWrapper {
-        public ClickableModel[] ItemList;
+        public ClickableModel[] ClickableList;
     }
 }

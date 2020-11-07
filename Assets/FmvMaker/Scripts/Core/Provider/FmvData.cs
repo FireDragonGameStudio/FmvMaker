@@ -43,7 +43,7 @@ namespace FmvMaker.Core.Provider {
         }
 
         public ClickableModel[] GenerateItemDataFromLocalFile() {
-            return JsonUtility.FromJson<ClickableModelWrapper>(ClickableModelData.text).ItemList;
+            return JsonUtility.FromJson<ClickableModelWrapper>(ClickableModelData.text).ClickableList;
         }
     }
 }
