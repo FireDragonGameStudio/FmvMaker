@@ -8,13 +8,13 @@
     }, {
       "Name": "NextUniqueVideoName",
       "NavigationTargets": [{
-          "Name": "NextUniqueClickable"
+          "Name": "NextClickable"
         }
       ]
     }, {
       "Name": "AnotherUniqueVideoName",
       "NavigationTargets": [{
-          "Name": "AnotherUniqueClickable"
+          "Name": "AnotherClickable"
         }
       ],
       "ItemsToUse": [{

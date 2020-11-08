@@ -506,13 +506,13 @@ Create a **Clickable** and a **VideoData** element for every **Item** you'd like
     }, {
       "Name": "NextUniqueVideoName",
       "NavigationTargets": [{
-          "Name": "NextUniqueClickable"
+          "Name": "NextClickable"
         }
       ]
     }, {
       "Name": "AnotherUniqueVideoName",
       "NavigationTargets": [{
-          "Name": "AnotherUniqueClickable"
+          "Name": "AnotherClickable"
         }
       ],
       "ItemsToUse": [{
@@ -568,7 +568,7 @@ Create a **Clickable** and a **VideoData** element for every **Item** you'd like
         "y": 0.2
       }
     }, {
-      "Name": "NextUniqueClickable",
+      "Name": "NextClickable",
       "Description": "Go to AnotherUniqueVideo.",
       "PickUpVideo": "AnotherUniqueVideoName",
       "IsNavigation": true,
@@ -577,7 +577,7 @@ Create a **Clickable** and a **VideoData** element for every **Item** you'd like
         "y": 0.5
       }
     }, {
-      "Name": "AnotherUniqueClickable",
+      "Name": "AnotherClickable",
       "Description": "Go back to UniqueVideo.",
       "PickUpVideo": "DifferentUniqueVideoName",
       "IsNavigation": true

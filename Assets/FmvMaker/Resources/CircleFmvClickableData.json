@@ -9,7 +9,7 @@
         "y": 0.2
       }
     }, {
-      "Name": "NextUniqueClickable",
+      "Name": "NextClickable",
       "Description": "Go to AnotherUniqueVideo.",
       "PickUpVideo": "AnotherUniqueVideoName",
       "IsNavigation": true,
@@ -18,7 +18,7 @@
         "y": 0.5
       }
     }, {
-      "Name": "AnotherUniqueClickable",
+      "Name": "AnotherClickable",
       "Description": "Go back to UniqueVideo.",
       "PickUpVideo": "DifferentUniqueVideoName",
       "IsNavigation": true
