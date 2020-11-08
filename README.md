@@ -1,6 +1,6 @@
 # FmvMaker
 
-![FmvMaker Logo small](Assets/FmvMaker/Textures/FmvMakerLogo_small.png)
+![FmvMaker Logo small](Assets/FmvMaker/Textures/FmvMakerLogo_social.png)
 
 **FmvMaker** was designed for creating FMVs, point'n click adventures, or other types of games/plugins, which use some kind of video playlist with possible interactions. **FmvMaker** uses only (!) native Unity components to ensure a maximum of compatiblity with all of Unity's supported build platforms. If you encounter errors or problems, pls create a new issue at the Github repository. We'll try to help you asap. :)
 
