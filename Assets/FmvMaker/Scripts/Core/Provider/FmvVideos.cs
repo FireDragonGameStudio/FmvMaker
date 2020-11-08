@@ -19,6 +19,8 @@ namespace FmvMaker.Core.Provider {
         private KeyCode SkipVideoKey = KeyCode.Escape;
         [SerializeField]
         private KeyCode PauseVideoKey = KeyCode.P;
+        [SerializeField]
+        private KeyCode QuitGameKey = KeyCode.Q;
 
         [Header("Settings")]
         [SerializeField]
@@ -157,6 +159,12 @@ namespace FmvMaker.Core.Provider {
         private void PauseVideo() {
             if (Input.GetKeyUp(PauseVideoKey)) {
                 videoView.PauseVideoClip(currentVideoElement);
+            }
+        }
+
+        private void QuitGame() {
+            if (Input.GetKeyUp(QuitGameKey)) {
+                Application.Quit();
             }
         }
 

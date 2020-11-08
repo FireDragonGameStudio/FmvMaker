@@ -80,6 +80,8 @@ Each name used as **NavigationTarget** must have it's own **Clickable** within o
 
 Let's try to build a circle, where our player can move from **UniqueVideoName** to **NextUniqueVideoName**. From there to **AnotherUniqueVideoName** and from **AnotherUniqueVideoName** back to **UniqueVideoName**. Usually there is some kind of video elemtent to start. We'll use **UniqueVideoName** for that. As a result we need a fourth video element called **DifferentUniqueVideoName** to have a video transition from **AnotherUniqueVideoName** back to **UniqueVideoName**. This results in a simple circular video route through our game. Pls note that neede the **Clickables** will be created within the next sections.
 
+IMPORTANT: The **UniqueVideoName** and **DifferentUniqueVideoName** are representing basically the same video element, but offer different approaches to the player.
+
 ```javascript
 {
   "VideoList": [{
@@ -182,7 +184,7 @@ Select the FmvVideoObject and set the field "Name Of Start Video" to the filenam
 
 ![Set start video entry in FmvVideoView](Assets/FmvMaker/Textures/FmvMakerDemoData_SetStartVideo.PNG)
 
-Press play in Unity Editor and watch your **VideoData** play and interact with your configured **Clickables** to navigate. A predefined project (CircleFmv), which is based on the previous sections is also shipped with the FmvMaker package. To give you a better understanding, of how this behaviour works in this example, pls have a look at the following "state diagram".
+Press play in Unity Editor and watch your **VideoData** play and interact with your configured **Clickables** to navigate. A predefined project (CircleFmv), which is based on the previous sections is also shipped with the FmvMaker package. To give you a better understanding, of how this behaviour works in this example, pls have a look at the following "state diagram". As mentioned before the **UniqueVideoName** and **DifferentUniqueVideoName** video elements are representing **UniqueState**, but offer different approaches to the player. The **Clickables** are transitions from an origin to the target, which is set via the *PickUpVideo* field.
 
 ![State overview of CircleFmv demo](Assets/FmvMaker/Textures/FmvMakerCircleDemo_States00.PNG)
 
@@ -196,14 +198,14 @@ You can either reuse already existing **Clickables** or create new ones. This ma
 
 The new **VideoData** element (DifferentUniqueVideoName) will basically be the same like the AnotherUniqueVideoName video element, except for the linked video file. This kind of "duplication" behaviour is intended to give you the greatest possible flexibility, when configuring your game. E.g. the **NavigationTargets** can differ, depending on which route the player chooses, to get to his destination. Let's see how an full configuration example looks, based on our CircularFmv prototype:
 
-CircleFmvVideoData.json
+**CircleFmvVideoData.json**
 ```javascript
 {
   "VideoList": [{
       "Name": "UniqueVideoName",
       "NavigationTargets": [{
           "Name": "UniqueClickable"
-		}, {
+        }, {
           "Name": "DifferentUniqueClickable"
         }
       ]
@@ -223,7 +225,7 @@ CircleFmvVideoData.json
       "Name": "DifferentUniqueVideoName",
       "NavigationTargets": [{
           "Name": "UniqueClickable"
-		}, {
+        }, {
           "Name": "DifferentUniqueClickable"
         }
       ]
@@ -238,7 +240,7 @@ CircleFmvVideoData.json
 }
 ```
 
-CircleFmvClickableData.json
+**CircleFmvClickableData.json**
 ```javascript
 {
   "ClickableList": [{
@@ -282,16 +284,16 @@ Our "state diagram" has now changed to this:
 ![State overview of CircleFmv demo](Assets/FmvMaker/Textures/FmvMakerCircleDemo_States01.PNG)
 
 ### Instant NavigationTargets
-Sometimes you want to jump from video element directly to another, without letting the user decide where to go. This can be useful in storytelling to avoid dead ends, or go quickly back to a video element from where the player can continue. Usually you'd record a video, which shows everything, but as things can become complex and you'll have to somehow have to combine videos, without shipping them multiple times with your projects, "Instant **NavigationTargets** can be rather useful. Let's take our CircleFmv prototype and replace our AnotherUniqueClickable & DifferentUniqueClickable with an "Instant **NavigationTarget**". A possible for this behavour may be to show the player, that he'll have to approach AnotherUniqueVideoName by a different route.
+Sometimes you want to jump from video element directly to another, without letting the user decide where to go. This can be useful in storytelling to avoid dead ends, or go quickly back to a video element from where the player can continue. Usually you'd record a video, which shows everything, but as things can become complex and you'll have to somehow have to combine videos, without shipping them multiple times with your projects, "Instant **NavigationTargets** can be rather useful. Let's take our CircleFmv prototype and replace our AnotherUniqueClickable & DifferentUniqueClickable with an "Instant **NavigationTarget**". A possible for this behavour may be to show the player, that he'll have to approach AnotherUniqueVideoName by a different route. To change a **Clickable** into a "Instant **NavigationTarget**" you'll just omit the *Description* and *RelativeScreenPosition* fields. FmvMaker will take care of the rest. In this exampe the **DifferentUniqueClickable** points to **UniqueToDifferentVideoName**, which then points to **InstantAnotherUniqueClickable** and results in **DifferentUniqueVideoName**.
 
-CircleFmvVideoData.json
+**CircleFmvVideoData.json**
 ```javascript
 {
   "VideoList": [{
       "Name": "UniqueVideoName",
       "NavigationTargets": [{
           "Name": "UniqueClickable"
-		}, {
+        }, {
           "Name": "DifferentUniqueClickable"
         }
       ]
@@ -311,7 +313,7 @@ CircleFmvVideoData.json
       "Name": "DifferentUniqueVideoName",
       "NavigationTargets": [{
           "Name": "UniqueClickable"
-		}, {
+        }, {
           "Name": "DifferentUniqueClickable"
         }
       ]
@@ -326,7 +328,7 @@ CircleFmvVideoData.json
 }
 ```
 
-CircleFmvClickableData.json
+**CircleFmvClickableData.json**
 ```javascript
 {
   "ClickableList": [{
@@ -354,7 +356,7 @@ CircleFmvClickableData.json
       "IsNavigation": true
     }, {
       "Name": "DifferentUniqueClickable",
-	  "Description": "Go to AnotherUniqueVideo.",
+      "Description": "Go to AnotherUniqueVideo.",
       "PickUpVideo": "DifferentUniqueVideoName",
       "IsNavigation": true,
       "RelativeScreenPosition": {
@@ -373,16 +375,244 @@ Our "state diagram" has now changed to this:
 ![State overview if CircleFmv demo](Assets/FmvMaker/Textures/FmvMakerCircleDemo_States02.PNG)
 
 ### Loopable video elements
+It often makes sense to have some kind of hub, where the player originates from, or can choose multiple ways. A good example for this would be some kind of hanger in a space FMV game. As a still image doesn't seem lively, a looping video makes sense, to convey an active environment to the player. For this you can define *Loopable* videos. When combining all configuration details from the previous sections, this is no longer a problem. Let's define our *UniqueState* as *Loopable* and create the necessary configuration, with the help of "Instant **NavigationTargets**.
+
+**CircleFmvVideoData.json**
+```javascript
+{
+  "VideoList": [{
+      "Name": "UniqueVideoName",
+      "NavigationTargets": [{
+          "Name": "InstantUniqueIdleClickable"
+        }
+      ]
+    }, {
+      "Name": "NextUniqueVideoName",
+      "NavigationTargets": [{
+          "Name": "NextUniqueClickable"
+        }
+      ]
+    }, {
+      "Name": "AnotherUniqueVideoName",
+      "NavigationTargets": [{
+          "Name": "AnotherUniqueClickable"
+        }
+      ]
+    }, {
+      "Name": "DifferentUniqueVideoName",
+      "NavigationTargets": [{
+          "Name": "InstantUniqueIdleClickable"
+        }
+      ]
+    }, {
+      "Name": "UniqueToDifferentVideoName",
+      "NavigationTargets": [{
+          "Name": "InstantAnotherUniqueClickable"
+        }
+      ]
+    }, {
+      "Name": "UniqueIdleVideoName",
+      "IsLooping": true,
+      "NavigationTargets": [{
+          "Name": "UniqueClickable"
+        }, {
+          "Name": "DifferentUniqueClickable"
+        }
+      ]
+    }
+  ]
+}
+```
+
+**CircleFmvClickableData.json**
+```javascript
+{
+  "ClickableList": [{
+      "Name": "UniqueClickable",
+      "Description": "Go to NextUniqueVideo.",
+      "PickUpVideo": "NextUniqueVideoName",
+      "IsNavigation": true,
+      "RelativeScreenPosition": {
+        "x": 0.8,
+        "y": 0.2
+      }
+    }, {
+      "Name": "NextUniqueClickable",
+      "Description": "Go to AnotherUniqueVideo.",
+      "PickUpVideo": "AnotherUniqueVideoName",
+      "IsNavigation": true,
+      "RelativeScreenPosition": {
+        "x": 0.2,
+        "y": 0.5
+      }
+    }, {
+      "Name": "AnotherUniqueClickable",
+      "Description": "Go back to UniqueVideo.",
+      "PickUpVideo": "DifferentUniqueVideoName",
+      "IsNavigation": true
+    }, {
+      "Name": "DifferentUniqueClickable",
+      "Description": "Go to AnotherUniqueVideo.",
+      "PickUpVideo": "UniqueToDifferentVideoName",
+      "IsNavigation": true,
+      "RelativeScreenPosition": {
+        "x": 0.2,
+        "y": 0.2
+      }
+    }, {
+      "Name": "InstantAnotherUniqueClickable",
+      "PickUpVideo": "DifferentUniqueVideoName",
+      "IsNavigation": true
+    }, {
+      "Name": "InstantUniqueIdleClickable",
+      "PickUpVideo": "UniqueIdleVideoName",
+      "IsNavigation": true
+    }
+  ]
+}
+```
+
+Our "state diagram" has now changed to this:
+![State overview if CircleFmv demo](Assets/FmvMaker/Textures/FmvMakerCircleDemo_States03.PNG)
 
 ## Use Clickable Items to enhanced your game
+For now, we've only focused on the video navigation with the help of **Clickables**. But **Clickables** can be used for a different purposes to. Items are basically the same as **NavigationTargets**, but the can be stored in an inventory and used to trigger actions. For this FmvMaker comes with an basic inventory implementation, which allows you to already build a FMV game with various items. As it's for **NagivationTargets** there can be multiple items (to either find and/or use) per video element. Let's take the example from our CircleFmv and add a few items to enhance the prototype.
 
-### Multiple Items in one screen
+### Items to find and use
+Create a **Clickable** and a **VideoData** element for every item you'd like to find. You can place them with the *RelativeScreenPosition* field. The items themselfes will be linked via the *ItemsToFind* and *ItemsToUse* fields of the designated video element. In this example two items will trigger video sequences from our *UniqueState* when beeing found. Furthermore these items can be used with different video elements.
 
-### Items to find
+**CircleFmvVideoData.json**
+```javascript
+{
+  "VideoList": [{
+      "Name": "UniqueVideoName",
+      "NavigationTargets": [{
+          "Name": "InstantUniqueIdleClickable"
+        }
+      ]
+    }, {
+      "Name": "NextUniqueVideoName",
+      "NavigationTargets": [{
+          "Name": "NextUniqueClickable"
+        }
+      ]
+    }, {
+      "Name": "AnotherUniqueVideoName",
+      "NavigationTargets": [{
+          "Name": "AnotherUniqueClickable"
+        }
+      ],
+      "ItemsToUse": [{
+          "Name": "SecondItemClickable"
+        }
+      ]
+    }, {
+      "Name": "DifferentUniqueVideoName",
+      "NavigationTargets": [{
+          "Name": "InstantUniqueIdleClickable"
+        }
+      ]
+    }, {
+      "Name": "UniqueToDifferentVideoName",
+      "NavigationTargets": [{
+          "Name": "InstantAnotherUniqueClickable"
+        }
+      ]
+    }, {
+      "Name": "UniqueIdleVideoName",
+      "IsLooping": true,
+      "NavigationTargets": [{
+          "Name": "UniqueClickable"
+        }, {
+          "Name": "DifferentUniqueClickable"
+        }
+      ],
+      "ItemsToFind": [{
+          "Name": "FirstItemClickable"
+        }, {
+          "Name": "SecondItemClickable"
+        }
+      ],
+	  "ItemsToUse": [{
+          "Name": "FirstItemClickable"
+        }
+      ]
+    }
+  ]
+}
+```
 
-### Items to use
+**CircleFmvClickableData.json**
+```javascript
+{
+  "ClickableList": [{
+      "Name": "UniqueClickable",
+      "Description": "Go to NextUniqueVideo.",
+      "PickUpVideo": "NextUniqueVideoName",
+      "IsNavigation": true,
+      "RelativeScreenPosition": {
+        "x": 0.8,
+        "y": 0.2
+      }
+    }, {
+      "Name": "NextUniqueClickable",
+      "Description": "Go to AnotherUniqueVideo.",
+      "PickUpVideo": "AnotherUniqueVideoName",
+      "IsNavigation": true,
+      "RelativeScreenPosition": {
+        "x": 0.2,
+        "y": 0.5
+      }
+    }, {
+      "Name": "AnotherUniqueClickable",
+      "Description": "Go back to UniqueVideo.",
+      "PickUpVideo": "DifferentUniqueVideoName",
+      "IsNavigation": true
+    }, {
+      "Name": "DifferentUniqueClickable",
+      "Description": "Go to AnotherUniqueVideo.",
+      "PickUpVideo": "UniqueToDifferentVideoName",
+      "IsNavigation": true,
+      "RelativeScreenPosition": {
+        "x": 0.2,
+        "y": 0.2
+      }
+    }, {
+      "Name": "InstantAnotherUniqueClickable",
+      "PickUpVideo": "DifferentUniqueVideoName",
+      "IsNavigation": true
+    }, {
+      "Name": "InstantUniqueIdleClickable",
+      "PickUpVideo": "UniqueIdleVideoName",
+      "IsNavigation": true
+    }, {
+      "Name": "FirstItemClickable",
+      "Description": "Hungry? Try this.",
+      "PickUpVideo": "UniqueToDifferentVideoName",
+      "UseageVideo": "NextUniqueVideoName",
+      "DisplayText": "Delicious FirstItemClickable",
+      "RelativeScreenPosition": {
+        "x": 0.2,
+        "y": 0.4
+      }
+    }, {
+      "Name": "SecondItemClickable",
+      "Description": "To buy something.",
+      "PickUpVideo": "NextUniqueVideoName",
+      "UseageVideo": "DifferentUniqueVideoName",
+      "DisplayText": "Valueable SecondItemClickable",
+      "RelativeScreenPosition": {
+        "x": 0.6,
+        "y": 0.8
+      }
+    }
+  ]
+}
+```
 
 ## Key bindings and already implemented game mechanics
+Pause, Skip, Quit (ToDo), Show/Hide inventory
+
 
 ## Use icons for NavigationTargets and Items
 
@@ -390,28 +620,26 @@ Our "state diagram" has now changed to this:
 ```javascript
 {
   "VideoList": [{
-      "Name": "UniqueVideoName",
-      "IsLooping": true,
+      "Name": "UniqueVideoNameToChoose",
+      "IsLooping": false,
       "NavigationTargets": [{
-          "Name": "Up"
+          "Name": "..."
         }, {
-          "Name": "Left"
+          "Name": "..."
         }, {
-          "Name": "Right"
-        }, {
-          "Name": "Down"
+          "Name": "..."
         }
       ],
       "ItemsToFind": [{
-          "Name": "apple"
+          "Name": "..."
         }, {
-          "Name": "coins"
+          "Name": "..."
         }, {
-          "Name": "Meat"
+          "Name": "..."
         }
       ],
       "ItemsToUse": [{
-          "Name": "bag"
+          "Name": "..."
         }
       ],
       "AlreadyWatched": false,
@@ -479,7 +707,8 @@ A more sophisticated example is shipped with the demo project.
 - [ ] Show multiple videos at the same time, to create a a video matrix. Rare useage, but it's fancy.
 - [ ] FmvMaker currently only supports Unitys UI sytstem. We're working on TextMeshPro support.
 - [ ] **Clickables** are currently not resizeable by the configuration file and bound to the prefab size. We're working on it.
-
+- [ ] Item tooltips are not available yet. It's on our list.
+- [ ] It's currently not possible to combine items within the inventory. We're also working on this feature.
 ## Known issues
 * FmvMaker only supports video files, which are supported by Unity (link to Unity docs). Our recommendation: Pls try to use .mp4 files.
 * It's not possible to edit or transform videos within Unity. Pls use an external video editor like Shotcut (https://shotcut.org/) to prepare your videos for use with FmvMaker.
