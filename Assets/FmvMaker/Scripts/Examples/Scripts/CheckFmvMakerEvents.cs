@@ -3,7 +3,7 @@ using FmvMaker.Utilities.Interfaces;
 using UnityEngine;
 
 namespace FmvMaker.Examples.Scripts {
-    public class CheckFmvMakerEvents : MonoBehaviour, IFmvVideoEvents {
+    public class CheckFmvMakerEvents : MonoBehaviour, IFmvMakerVideoEvents {
         public void OnVideoFinished(VideoModel videoModel) {
             Debug.Log($"CustomEvent: Video {videoModel.Name} finished.");
         }

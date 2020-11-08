@@ -76,6 +76,11 @@ Having the player moving from one to the next video file is made possible via th
 }
 ```
 
+| Field | Type | Default value | Optional | Description |
+| --- | --- | --- | --- | --- |
+| Name | string | "" | | A unique name, which is set via the *Name* field and should match the filename of the video file, which sould be played. |
+| NavigationTargets | string[] | [] | | A video can have *1-n* **NavigationTargets** which are represented as an array of **Clickables**. This array contains the name/s of the next video/s. Again the name corresponds to your desired video filename within the Resources folder (FmvMaker/Resources/FmvMakerVideos). Please remember to use the filename without the file extension. When having multiple names, make that the entries are separated via , |
+
 Each name used as **NavigationTarget** must have it's own **Clickable** within our **Clickables** configuration file. Similar to our first video element, the additional video elements can also reference **NagivationTargets**.
 
 Let's try to build a circle, where our player can move from **UniqueVideoName** to **NextUniqueVideoName**. From there to **AnotherUniqueVideoName** and from **AnotherUniqueVideoName** back to **UniqueVideoName**. Usually there is some kind of video elemtent to start. We'll use **UniqueVideoName** for that. As a result we need a fourth video element called **DifferentUniqueVideoName** to have a video transition from **AnotherUniqueVideoName** back to **UniqueVideoName**. This results in a simple circular video route through our game. Pls note that neede the **Clickables** will be created within the next sections.
@@ -140,8 +145,8 @@ After defining our video route, we'll need **Clickables** to navigate through ou
 | Name | string | "" | | Similar to our **VideoData** the **Clickables** also need a unique name, which is set via the *Name* field. |
 | Description | string | "" | x | The *Description* will help to identify the usage. |
 | PickUpVideo | string | "" | | *PickUpVideo* will refer to the video element to play, when the player clicks on this **Clickable**. The refered video element must exist with the same name within the **VideoData** configuration file. |
-| IsNavigation | bool | false | | *IsNavigation* helps to distinguish between pure navigation and collectable items. The item section will explain this in more detail. |
-| RelativeScreenPosition | Vector2 | x=0.5, y=0.5 | x| Last but not least, the *RelativeScreenPosition* will define where this **Clickable** will be shown on screen. Pls make sure to only use values between 0 and 1, where x=0, y=0 refers to the lower left corner, x=0.5,y=0.5 to the center (default) and x=1, y=1 to the upper right corner. | 
+| IsNavigation | bool | false | x | *IsNavigation* helps to distinguish between pure navigation and collectable items. The item section will explain this in more detail. |
+| RelativeScreenPosition | Vector2 | x=0.5, y=0.5 | x | Last but not least, the *RelativeScreenPosition* will define where this **Clickable** will be shown on screen. Pls make sure to only use values between 0 and 1, where x=0, y=0 refers to the lower left corner, x=0.5,y=0.5 to the center (default) and x=1, y=1 to the upper right corner. | 
 
 If you're not providing optional fields, FmvMaker will use the default value. When now taking our already defined video data, we can now create the **Clickables**, which will result in a **Clickables** configuration file with the following content (Pls note that the *RelativeScreenPosition* was not filled in the third **Clickable** to show you the usage of the default values):
 
@@ -611,10 +616,51 @@ Create a **Clickable** and a **VideoData** element for every item you'd like to 
 ```
 
 ## Key bindings and already implemented game mechanics
-Pause, Skip, Quit (ToDo), Show/Hide inventory
+FmvMaker already has common KeyBindings implemented, to help you. These bindings can be changed, when you click on the FmvVideoView objects and select the appropriate key from the dropdown field.
 
+![FmvMaker key bindings](Assets/FmvMaker/Textures/FmvMakerDemo_KeyBindings00.png)
+![FmvMaker key bindings](Assets/FmvMaker/Textures/FmvMakerDemo_KeyBindings01.png)
+
+| Key | Description |
+| --- | --- |
+| P | Pauses/Unpauses the playing video. |
+| Escape | Skips the currently playing video. Note that the videos has to be watched at least once, to be able to skip it. |
+| Q | Quits the game, when running the build. Does not stop the Editor from running. |
+| I | Toggles the inventory visibility. |
 
 ## Use icons for NavigationTargets and Items
+In the previous created FMV prototype, every **NavigationTarget** as well as the **Clickables** were represented by a Unity UI button with a text. To give your game your personal touch, it's possible to add icons to it. The easiest way to do this, is to add your icons (ideally square icons sized 256x256 pixels) to the FmvMaker/Resources/FmvMakerTextures and name them equally to your **Clickable** in your configuration file. FmvMaker will load these icons automatically, when a match is found. There are already a few icons shipped with the package. To prevent fmvMaker from showing the the default text, remove the *DisplayText* field from your configuration file. 
+
+## Adding your own logic
+Sometimes it's necessary to have your own events triggered. FmvMaker offers you events for every type of video interactions (OnVideoStarted, OnVideoPaused, OnVideoSkipped, OnVideoFinished). First you either add the interface **IFmvMakerVideoEvents** to your Monobehaviour or implement the neede methods on your own. The Monobehaviour **CheckFmvMakerEvents** gives you a better idea, of how to use the interface and how the methods must look like. After that, you'll have to register your implemented methods to the FmvMaker events and that's it. An example for console outputs registered with FmvMakers video events is shipped with the package.
+
+![FmvMaker key bindings](Assets/FmvMaker/Textures/FmvMakerEvents.png)
+
+```c#
+using FmvMaker.Core.Models;
+using FmvMaker.Utilities.Interfaces;
+using UnityEngine;
+
+namespace FmvMaker.Examples.Scripts {
+  public class CheckFmvMakerEvents : MonoBehaviour, IFmvMakerVideoEvents {
+    public void OnVideoFinished(VideoModel videoModel) {
+      Debug.Log($"CustomEvent: Video {videoModel.Name} finished.");
+    }
+
+    public void OnVideoPaused(VideoModel videoModel, bool isPaused) {
+      Debug.Log($"CustomEvent: Video {videoModel.Name} paused. Pause: {isPaused}");
+    }
+
+    public void OnVideoSkipped(VideoModel videoModel) {
+      Debug.Log($"CustomEvent: Video {videoModel.Name} skipped.");
+    }
+
+    public void OnVideoStarted(VideoModel videoModel) {
+      Debug.Log($"CustomEvent: Video {videoModel.Name} started. Looping: {videoModel.IsLooping}");
+    }
+  }
+}
+```
 
 ## The full VideoData API
 ```javascript
@@ -657,8 +703,8 @@ Pause, Skip, Quit (ToDo), Show/Hide inventory
 | Name | string | "" | | The video element need a unique name, which is set via the *Name* field. |
 | IsLooping | bool | false | x | The *IsLooping* field can be used to create a looped video state, when set to true. This gives the player a better idea of the scenes by showing various impressions. E.g. wind movement, lively places, traffic, etc… Pls make sure to use loopable videos when using this property. If this field is not used or set to false, the video playing atm will stop at the last frame. After reaching this last frame all possible further actions (**NavigationTargets**, **ItemsToFind**) will be presented to the player (which is usually the way traditional FMV games do).|
 | NavigationTargets | string[] | [] | | A video can have *1-n* **NavigationTargets** which are represented as an array of the current video element. This array contains the name/s of the next video/s. Again the name corresponds to your desired video filename within the Resources folder (FmvMaker/Resources/FmvMakerVideos). Please remember to use the filename without the file extension. When having multiple names, make that the entries are separated via , |
-| ItemsToFind | string[] | [] | | *ItemsToFind* references all items **Clickables** which can be found within this video element. |
-| ItemsToUse | string[] | [] | | *ItemsToFind* references all items **Clickables** which can be used within this video element. To use items, they have to be found first. |
+| ItemsToFind | string[] | [] | x | *ItemsToFind* references all items **Clickables** which can be found within this video element. |
+| ItemsToUse | string[] | [] | x | *ItemsToFind* references all items **Clickables** which can be used within this video element. To use items, they have to be found first. |
 | AlreadyWatched | bool | false | x | *AlreadyWatched* checks if a video was already watched. Players can skip already watched videos by pressing a predefined key. This field should NOT be used within your configuration files. |
 | DisplayText | string | "" | x | *DisplayText* does what it name says. It shows a set text. This field should NOT be used within your configuration files. |
 | RelativeScreenPosition | Vector2 | x=0.5, y=0.5 | x| The *RelativeScreenPosition* should NOT be used within your video configuration file. This field is reserved for further useage to display multiple videos at once. | 
@@ -688,18 +734,16 @@ Pause, Skip, Quit (ToDo), Show/Hide inventory
 | Name | string | "" | | The **Clickable** needs a unique name, which is set via the *Name* field. |
 | Description | string | "" | x | *Description* does what it name says. It shows a set text, maybe as tooltip or something similar. When dealing with an instant **NavigationTarget** this field can be omited, to tell FmvMaker that the next video (linked in *PickUpVideo*) should be instantly played. |
 | PickUpVideo | string | "" |  | The *PickUpVideo* field links to the video element, which should be played, when this **Clickable** item is selected.|
-| UseageVideo | string | "" | | The *UseageVideo* field links to the video element, which should be played, when this **Clickable** item is selected from the inventory in the correct screen. That means this **Clickable** must be referenced as a *ItemToUse* in the current video element. |
+| UseageVideo | string | "" | x | The *UseageVideo* field links to the video element, which should be played, when this **Clickable** item is selected from the inventory in the correct screen. That means this **Clickable** must be referenced as a *ItemToUse* in the current video element. |
 | IsNavigation | bool | false | x | *IsNavigation* helps to distinguish between pure navigation and collectable items. It it's true, the **Clickable** will be used as a **NavigationTarget**. It it's set to false, or the default value is used (by omiting this field), this **Clickable** will be an item. |
 | IsInInventory | bool | false | x | *IsInInventory* checks if this item was already collected or not. It can be used to track the players progress, or preload certain items for the players inventory. |
 | WasUsed | bool | false | x | *WasUsed* checks if item was already used, like intended. Items where this property is true, will not be loaded by FmvMaker. This can be useful for either testing, or tracking player progress. |
 | DisplayText | string | "" | x | *DisplayText* does what it name says. It shows a set text. This field should NOT be used within your configuration files. |
 | RelativeScreenPosition | Vector2 | x=0.5, y=0.5 | x| The *RelativeScreenPosition* places your **Clickable** on the designated screen position. Pls make sure to only use values between 0 and 1, where x=0, y=0 refers to the lower left corner, x=0.5,y=0.5 to the center (default) and x=1, y=1 to the upper right corner. | 
 
-## Adding your own logic
-A more sophisticated example is shipped with the demo project.
-
 ## Future plans
-- [ ] There is already a possility to use events, provided by FmvMaker. We'll extend them in future versions, to give you more possibilties to configure everything for your needs.
+- [ ] It's currently not possible to have 100% transparent **Clickables**. We're on it.
+- [ ] There is already a possility to use events, provided by FmvMaker. We'll extend them in future versions, to give you more possibilties to configure and adjust everything for your needs.
 - [ ] We're already working on a JSON checker, to display possible errors, when reading to configuration files. 
 - [ ] Another extension on our ToDo list is a node-based editor window, to omit the troublesome configuration file writing and make it easier to create your project (like Bolt, VFX graph, etc...). 
 - [ ] Including online videos, as well as locally (outside of Unity) stored videos will also be possible soon.
@@ -709,6 +753,11 @@ A more sophisticated example is shipped with the demo project.
 - [ ] **Clickables** are currently not resizeable by the configuration file and bound to the prefab size. We're working on it.
 - [ ] Item tooltips are not available yet. It's on our list.
 - [ ] It's currently not possible to combine items within the inventory. We're also working on this feature.
+- [ ] It's nowadays common, to show all available, clickable options when pressing Spacebar. We'll implement this feature asap.
+
 ## Known issues
 * FmvMaker only supports video files, which are supported by Unity (link to Unity docs). Our recommendation: Pls try to use .mp4 files.
 * It's not possible to edit or transform videos within Unity. Pls use an external video editor like Shotcut (https://shotcut.org/) to prepare your videos for use with FmvMaker.
+* No UnitTests shipped yet. We run a few of them in the background, but they are not checking every critical point of our package.
+* There is no menu or similar thing, when quitting the game. We're currently investigating a way to give developers a useful template for quitting.
+* We currently only support videos with a ratio from 16:9.

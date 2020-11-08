@@ -3,8 +3,8 @@
 namespace FmvMaker.Core.Provider {
     public class FmvItemInventoryVisibility : MonoBehaviour {
 
-        private const int InventoryVisible = 50;
-        private const int InventoryInvisible = -50;
+        private const int InventoryVisible = 75;
+        private const int InventoryInvisible = -75;
 
         [Header("Key Bindings")]
         [SerializeField]

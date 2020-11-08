@@ -67,6 +67,7 @@ namespace FmvMaker.Core.Provider {
         private void Update() {
             SkipVideo();
             PauseVideo();
+            QuitGame();
         }
 
         private void OnDestroy() {
