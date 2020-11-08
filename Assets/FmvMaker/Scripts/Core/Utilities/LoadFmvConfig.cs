@@ -5,15 +5,15 @@ using UnityEngine;
 namespace FmvMaker.Core.Utilities {
     public static class LoadFmvConfig {
 
-        private static FmvMakerConfig _config;
+        private static FmvMakerConfig config;
 
         public static FmvMakerConfig Config {
             get {
-                if (_config == null) {
-                    string configText = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "FmvMaker", "FmvMakerConfig.json"));
-                    _config = JsonUtility.FromJson<FmvMakerConfig>(configText);
+                if (config == null) {
+                    TextAsset configText = Resources.Load<TextAsset>("FmvMakerConfig");
+                    LoadFmvConfig.config = JsonUtility.FromJson<FmvMakerConfig>(configText.text);
                 }
-                return _config;
+                return config;
             }
         }
     }

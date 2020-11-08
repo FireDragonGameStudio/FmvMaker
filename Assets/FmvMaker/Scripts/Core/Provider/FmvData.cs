@@ -17,8 +17,9 @@ namespace FmvMaker.Core.Provider {
 
         private void Awake() {
             if (!VideoModelData || !ClickableModelData) {
-                VideoModelData = Resources.Load<TextAsset>("FmvMakerDemoVideoData");
-                ClickableModelData = Resources.Load<TextAsset>("FmvMakerDemoClickableData");
+                Debug.LogWarning("No data available for FmvMaker. Check your FmvData references. FmvMaker will try to use DemoData.");
+                VideoModelData = Resources.Load<TextAsset>("DemoVideoData");
+                ClickableModelData = Resources.Load<TextAsset>("DemoClickableData");
             }
         }
 
@@ -32,17 +33,17 @@ namespace FmvMaker.Core.Provider {
         //    }
         //}
 
-        private void ExportVideoDataToLocalFile(VideoModel[] videoElements, string localFilePath) {
-            using (StreamWriter sw = new StreamWriter(Path.Combine(localFilePath, "FmvMakerDemoVideoData"))) {
-                sw.Write(JsonUtility.ToJson(videoElements));
-            }
-        }
+        //private void ExportVideoDataToLocalFile(VideoModel[] videoElements, string localFilePath) {
+        //    using (StreamWriter sw = new StreamWriter(Path.Combine(localFilePath, "FmvMakerDemoVideoData"))) {
+        //        sw.Write(JsonUtility.ToJson(videoElements));
+        //    }
+        //}
 
         public VideoModel[] GenerateVideoDataFromLocalFile() {
             return JsonUtility.FromJson<VideoModelWrapper>(VideoModelData.text).VideoList;
         }
 
-        public ClickableModel[] GenerateItemDataFromLocalFile() {
+        public ClickableModel[] GenerateClickableDataFromLocalFile() {
             return JsonUtility.FromJson<ClickableModelWrapper>(ClickableModelData.text).ClickableList;
         }
     }
