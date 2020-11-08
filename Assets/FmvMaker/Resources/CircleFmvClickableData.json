@@ -1,27 +1,40 @@
 {
-    "ClickableList": [{
-			"Name": "downClickable",
-			"Description": "Downwards.",
-			"PickUpVideo": "Down",
-			"IsNavigation": true,
-			"RelativeScreenPosition": {
-				"x": 0.5,
-				"y": 0.2
-			}
-		}, {
-			"Name": "downLeft",
-			"Description": "Down and left.",
-			"PickUpVideo": "DownLeft",
-			"IsNavigation": true,
-			"RelativeScreenPosition": {
-				"x": 0.2,
-				"y": 0.5
-			}
-		}, {
-			"Name": "instantDownReturn",
-			"Description": "instantDownReturn",
-			"PickUpVideo": "Idle",
-			"IsNavigation": true
-		}
-	]
+  "ClickableList": [{
+      "Name": "UniqueClickable",
+      "Description": "Go to NextUniqueVideo.",
+      "PickUpVideo": "NextUniqueVideoName",
+      "IsNavigation": true,
+      "RelativeScreenPosition": {
+        "x": 0.8,
+        "y": 0.2
+      }
+    }, {
+      "Name": "NextUniqueClickable",
+      "Description": "Go to AnotherUniqueVideo.",
+      "PickUpVideo": "AnotherUniqueVideoName",
+      "IsNavigation": true,
+      "RelativeScreenPosition": {
+        "x": 0.2,
+        "y": 0.5
+      }
+    }, {
+      "Name": "AnotherUniqueClickable",
+      "Description": "Go back to UniqueVideo.",
+      "PickUpVideo": "DifferentUniqueVideoName",
+      "IsNavigation": true
+    }, {
+      "Name": "DifferentUniqueClickable",
+      "Description": "Go to AnotherUniqueVideo.",
+      "PickUpVideo": "UniqueToDifferentVideoName",
+      "IsNavigation": true,
+      "RelativeScreenPosition": {
+        "x": 0.2,
+        "y": 0.2
+      }
+    }, {
+      "Name": "InstantAnotherUniqueClickable",
+      "PickUpVideo": "DifferentUniqueVideoName",
+      "IsNavigation": true
+    }
+  ]
 }
