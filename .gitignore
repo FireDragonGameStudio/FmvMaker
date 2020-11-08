@@ -36,5 +36,5 @@ sysinfo.txt
 *.unitypackage
 
 # Video files
-*.mp4
-*.mp4.meta
+# *.mp4
+# *.mp4.meta
