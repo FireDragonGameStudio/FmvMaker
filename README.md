@@ -134,7 +134,7 @@ If you're not providing optional fields, FmvMaker will use the default value. Wh
 ```javascript
 {
   "ClickableList": [{
-      "Name": "UniqueVideoClickable",
+      "Name": "UniqueClickable",
       "Description": "Go to NextUniqueVideo.",
       "PickUpVideo": "NextUniqueVideoName",
       "IsNavigation": true,
@@ -189,7 +189,7 @@ The new **VideoData** element (DifferentUniqueVideoName) will basically be the s
       "Name": "UniqueVideoName",
       "NavigationTargets": [{
           "Name": "UniqueClickable",
-		  "Name": "DifferentUniqueClickable"
+          "Name": "DifferentUniqueClickable"
         }
       ]
     }, {
@@ -264,7 +264,7 @@ Sometimes you want to jump from video element directly to another, without letti
       "Name": "UniqueVideoName",
       "NavigationTargets": [{
           "Name": "UniqueClickable",
-		  "Name": "DifferentUniqueClickable"
+          "Name": "DifferentUniqueClickable"
         }
       ]
     }, {
@@ -405,7 +405,7 @@ Our "state diagram" has now changed to this:
       "Description": "Description? Try this.",
       "PickUpVideo": "UniqueVideoName",
       "UseageVideo": "AnotherUniqueVideoName",
-	  "IsNavigation": false,
+      "IsNavigation": false,
       "IsInInventory": false,
       "WasUsed": false,
       "DisplayText": "Delicious apple",
