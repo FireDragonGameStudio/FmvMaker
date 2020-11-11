@@ -1,6 +1,6 @@
 # FmvMaker
 
-![FmvMaker Logo small](Assets/FmvMaker/Textures/FmvMakerLogo_social.png)
+![FmvMaker Logo small](https://raw.githubusercontent.com/FireDragonGameStudio/FmvMaker/master/Assets/FmvMaker/Textures/FmvMakerLogo_social.png)
 
 **FmvMaker** was designed for creating FMVs, point'n click adventures, or other types of games/plugins, which use some kind of video playlist with possible interactions. **FmvMaker** uses only (!) native Unity components to ensure a maximum of compatiblity with all of Unity's supported build platforms. If you encounter errors or problems, pls create a new issue at the Github repository. We'll try to help you asap. :)
 
@@ -9,7 +9,7 @@ You can get **FmvMaker** either via the Unity AssetStore (link-->) or the Releas
 
 Important for you are the Resources folder (within the **FmvMaker** folder) where you'll be placing your content (videos, images, etc...) as well as your configuration files. The Prefabs folder contains default prefabs, especially for prototyping. In the Scenes folder are demo scenes, to give you an overview of the comprehensive possibilities of **FmvMaker**.
 
-If you want to use the demo videos provided by us (Unity doesn't like video files in their AssetStore assets), pls check out the Releases section of this repository. Each release will contain a separate .zip file with the current demo videos in it. See https://github.com/FireDragonGameStudio/FmvMaker/releases for details.
+If you want to use the demo videos provided by us (Unity doesn't like video files in their AssetStore assets), pls check out the Releases section of this repository. Each release will contain a separate .zip file with the current demo videos in it. See https://github.com/FireDragonGameStudio/FmvMaker/releases for details. For an easier start, we decided to add an online reference for all demo videos. For how to use videos from within your Assets folder, check the [FmvMaker configuration](#fmvMaker-configuration) section.
 
 **VideoData** for FmvMaker is a configuration file stored within its Resources folder (*FmvMaker/Resources/*) and is basically a JSON list of single video elements, which are qualified via their names. This means that there is no complex hierarchy to build, each video element stands for its own. Please always choose simple, but unique names for your video elements. You can compare a video element to some kind of *state*, which will lead to *1 to n* next *states*. The previous *state* doesn't matter at all. Yes, this leads to a long list of elements, but it also helps to keep things simple.
 
@@ -187,15 +187,15 @@ If you're not providing optional fields, **FmvMaker** will use the default value
 ## Enough explanation, can't we start already?
 YES, we can. With the examples from the previous sections you've already created a simple prototype, which will allow us to navigate between video elements. If you want to use your own .mp4 videos, just copy them into *FmvMaker/Resources/FmvMakerVideos* and replace their names in the **VideoData** and **Clickables** configuration files. For the final touches, open Unity and open the EmptyFmv scenes, located in FmvMaker/Scenes. After selecting the FmvHelper GameObject in the hierarchy, drag the created JSON files into their corresponding fields of the FmvData component.
 
-![Reference config files to FmvData](Assets/FmvMaker/Textures/FmvMakerDemoData_Reference.PNG)
+![Reference config files to FmvData](https://raw.githubusercontent.com/FireDragonGameStudio/FmvMaker/master/Assets/FmvMaker/Textures/FmvMakerDemoData_Reference.PNG)
 
 Select the *FmvMaker/FmvVideoView* from the hierarchy and set the field "Name Of Start Video" to the filename (without file extension) of the video which you want to be the initial/start video. In our example this will be changed to **UniqueVideoName**. This data can also be changed later, to react to the players progress.
 
-![Set start video entry in FmvVideoView](Assets/FmvMaker/Textures/FmvMakerDemoData_SetStartVideo.PNG)
+![Set start video entry in FmvVideoView](https://raw.githubusercontent.com/FireDragonGameStudio/FmvMaker/master/Assets/FmvMaker/Textures/FmvMakerDemoData_SetStartVideo.PNG)
 
 Press play in Unity Editor and watch your **VideoData** play and interact with your configured **Clickables** to navigate. A predefined project (CircleFmv), which is based on the previous sections is also shipped with the FmvMaker package. To give you a better understanding, of how this behaviour works in this example, pls have a look at the following "state diagram". As mentioned before the **UniqueVideoName** and **DifferentUniqueVideoName** video elements are representing **UniqueState**, but offer different approaches to the player. The **Clickables** are transitions from an origin to the target, which is set via the *PickUpVideo* field.
 
-![State overview of CircleFmv demo](Assets/FmvMaker/Textures/FmvMakerCircleDemo_States00.PNG)
+![State overview of CircleFmv demo](https://raw.githubusercontent.com/FireDragonGameStudio/FmvMaker/master/Assets/FmvMaker/Textures/FmvMakerCircleDemo_States00.PNG)
 
 The short explanation for this "state diagram" is:
 * UniqueVideoName starts. After it's finished the FMV is in **UniqueState** and shows the possible **NavigationTargets**
@@ -296,7 +296,7 @@ The new **VideoData** element (DifferentUniqueVideoName) will basically be the s
 ```
 
 Our "state diagram" has now changed to this:
-![State overview of CircleFmv demo](Assets/FmvMaker/Textures/FmvMakerCircleDemo_States01.PNG)
+![State overview of CircleFmv demo](https://raw.githubusercontent.com/FireDragonGameStudio/FmvMaker/master/Assets/FmvMaker/Textures/FmvMakerCircleDemo_States01.PNG)
 
 ### Instant NavigationTargets
 Sometimes you want to jump from video element directly to another, without letting the user decide where to go. This can be useful in storytelling to avoid dead ends, or go quickly back to a video element from where the player can continue. Usually you'd record a video, which shows everything, but as things can become complex and you'll have to somehow have to combine videos, without shipping them multiple times with your projects, "Instant **NavigationTargets** can be rather useful. Let's take our CircleFmv prototype and replace our **AnotherClickable** & **DifferentUniqueClickable** with an "Instant **NavigationTarget**". A possibility for this behavour may be to show the player, that he'll have to approach **AnotherUniqueVideoName** by a different route. To change a **Clickable** into a "Instant **NavigationTarget**" you'll just omit the *Description* and *RelativeScreenPosition* fields. FmvMaker will take care of the rest. In this example the **DifferentUniqueClickable** points to **UniqueToDifferentVideoName**, which then points to **InstantAnotherUniqueClickable** and results in **DifferentUniqueVideoName**.
@@ -387,7 +387,7 @@ Sometimes you want to jump from video element directly to another, without letti
 }
 ```
 Our "state diagram" has now changed to this:
-![State overview if CircleFmv demo](Assets/FmvMaker/Textures/FmvMakerCircleDemo_States02.PNG)
+![State overview if CircleFmv demo](https://raw.githubusercontent.com/FireDragonGameStudio/FmvMaker/master/Assets/FmvMaker/Textures/FmvMakerCircleDemo_States02.PNG)
 
 ### Loopable video elements
 It often makes sense to have some kind of hub, where the player originates from, or can choose multiple ways. A good example for this would be some kind of hanger in a space FMV game (Wing Commander FTW!!!). As a still image doesn't seem lively, a looping video makes sense, to convey an impression of an active environment to the player. For this you can define *Loopable* videos. When combining all configuration details from the previous sections, this is no longer a problem. Let's define our **UniqueState** as *Loopable* and create the necessary configuration, with the help of "Instant **NavigationTargets**.
@@ -488,7 +488,7 @@ It often makes sense to have some kind of hub, where the player originates from,
 ```
 
 Our "state diagram" has now changed to this:
-![State overview if CircleFmv demo](Assets/FmvMaker/Textures/FmvMakerCircleDemo_States03.PNG)
+![State overview if CircleFmv demo](https://raw.githubusercontent.com/FireDragonGameStudio/FmvMaker/master/Assets/FmvMaker/Textures/FmvMakerCircleDemo_States03.PNG)
 
 ## Use Clickable Items to enhanced your game
 For now, we've only focused on the video navigation with the help of **NavigationTargets**. But **Clickables** can be used for a different purposes to. **Items** are basically the same as **NavigationTargets**, but they can be stored in an inventory and used to trigger actions. **FmvMaker** already comes with a basic inventory implementation, which allows you to already build a FMV game with various items. As it's for **NagivationTargets** there can be multiple **Items** (to either find and/or use) per video element. Let's take the example from our CircleFmv and add a few **Items** to enhance the prototype.
@@ -628,8 +628,8 @@ Create a **Clickable** and a **VideoData** element for every **Item** you'd like
 ## Key bindings and already implemented game mechanics
 **FmvMaker** already has common KeyBindings implemented, to help you. These bindings can be changed, when you click on the *FmvMaker/FmvVideoView* within the hierarchy objects and select the appropriate key from the dropdown field on the *FmvVideoView* component.
 
-![FmvMaker key bindings](Assets/FmvMaker/Textures/FmvMakerDemo_KeyBindings00.png)
-![FmvMaker key bindings](Assets/FmvMaker/Textures/FmvMakerDemo_KeyBindings01.png)
+![FmvMaker key bindings](https://raw.githubusercontent.com/FireDragonGameStudio/FmvMaker/master/Assets/FmvMaker/Textures/FmvMakerDemo_KeyBindings00.png)
+![FmvMaker key bindings](https://raw.githubusercontent.com/FireDragonGameStudio/FmvMaker/master/Assets/FmvMaker/Textures/FmvMakerDemo_KeyBindings01.png)
 
 | Key | Description |
 | --- | --- |
@@ -644,7 +644,7 @@ In the previous created FMV prototype, every **NavigationTarget** as well as the
 ## Adding your own logic
 Sometimes it's necessary to have your own events triggered. **FmvMaker** offers you events for every type of video interactions (OnVideoStarted, OnVideoPaused, OnVideoSkipped, OnVideoFinished). First you either add the interface **IFmvMakerVideoEvents** to your Monobehaviour or implement the neede methods on your own. The Monobehaviour **CheckFmvMakerEvents** gives you a better idea, of how to use the interface and how the methods must look like. After that, you'll have to register your implemented methods to the FmvMaker events and that's it. An example for console outputs registered with FmvMakers video events is shipped with the package.
 
-![FmvMaker key bindings](Assets/FmvMaker/Textures/FmvMakerEvents.png)
+![FmvMaker key bindings](https://raw.githubusercontent.com/FireDragonGameStudio/FmvMaker/master/Assets/FmvMaker/Textures/FmvMakerEvents.png)
 
 ```c#
 using FmvMaker.Core.Models;
@@ -750,6 +750,8 @@ namespace FmvMaker.Examples.Scripts {
 | WasUsed | bool | false | x | *WasUsed* checks if item was already used, like intended. Items where this property is true, will not be loaded by FmvMaker. This can be useful for either testing, or tracking player progress. |
 | DisplayText | string | "" | x | *DisplayText* does what it name says. It shows a set text. This field should NOT be used within your configuration files. |
 | RelativeScreenPosition | Vector2 | x=0.5, y=0.5 | x| The *RelativeScreenPosition* places your **Clickable** on the designated screen position. Pls make sure to only use values between 0 and 1, where x=0, y=0 refers to the lower left corner, x=0.5,y=0.5 to the center (default) and x=1, y=1 to the upper right corner. | 
+
+## FmvMaker configuration
 
 ## Future plans
 - [ ] It's currently not possible to have 100% transparent **Clickables**. We're on it.

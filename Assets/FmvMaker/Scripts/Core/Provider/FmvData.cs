@@ -1,4 +1,5 @@
 ﻿using FmvMaker.Core.Models;
+using FmvMaker.Core.Utilities;
 using System.IO;
 using UnityEngine;
 
@@ -11,9 +12,11 @@ namespace FmvMaker.Core.Provider {
 
         [Header("Data references")]
         [SerializeField]
-        private TextAsset VideoModelData;
+        private TextAsset VideoModelData = null;
         [SerializeField]
-        private TextAsset ClickableModelData;
+        private TextAsset ClickableModelData = null;
+        [SerializeField]
+        private TextAsset OnlineVideoSourceMappingData = null;
 
         private void Awake() {
             if (!VideoModelData || !ClickableModelData) {
@@ -39,12 +42,17 @@ namespace FmvMaker.Core.Provider {
         //    }
         //}
 
-        public VideoModel[] GenerateVideoDataFromLocalFile() {
+        public VideoModel[] GenerateVideoDataFromConfigurationFile() {
             return JsonUtility.FromJson<VideoModelWrapper>(VideoModelData.text).VideoList;
         }
 
-        public ClickableModel[] GenerateClickableDataFromLocalFile() {
+        public ClickableModel[] GenerateClickableDataFromConfigurationFile() {
             return JsonUtility.FromJson<ClickableModelWrapper>(ClickableModelData.text).ClickableList;
+        }
+
+        public void GenerateOnlineVideoMappingData() {
+            VideoOnlineSource[] videoMappingData = JsonUtility.FromJson<VideoOnlineSourceWrapper>(OnlineVideoSourceMappingData.text).OnlineVideoSourceMappingList;
+            ResourceVideoInfo.SetOnlineVideoMappungData(videoMappingData);
         }
     }
 }

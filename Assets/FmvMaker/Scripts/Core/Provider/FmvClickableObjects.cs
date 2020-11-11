@@ -32,7 +32,7 @@ namespace FmvMaker.Core.Provider {
         }
 
         private void LoadItems() {
-            allItems.AddRange(fmvData.GenerateClickableDataFromLocalFile().Where((item) => !item.WasUsed));
+            allItems.AddRange(fmvData.GenerateClickableDataFromConfigurationFile().Where((item) => !item.WasUsed));
         }
 
         private void GenerateInventoryItems() {

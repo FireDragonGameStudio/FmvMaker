@@ -43,7 +43,8 @@ namespace FmvMaker.Core.Provider {
         private VideoModel StartVideo => GetVideoModelByName(nameOfStartVideo);
 
         private void Awake() {
-            allVideoElements = data.GenerateVideoDataFromLocalFile();
+            allVideoElements = data.GenerateVideoDataFromConfigurationFile();
+            CheckForOnlineMappingData();
 
             SetupVideoEventTrigger();
         }
@@ -76,6 +77,12 @@ namespace FmvMaker.Core.Provider {
             OnVideoFinished.RemoveAllListeners();
 
             DisposeVideoEventTrigger();
+        }
+
+        private void CheckForOnlineMappingData() {
+            if (LoadFmvConfig.Config.VideoSourceType.Equals("ONLINE")) {
+                data.GenerateOnlineVideoMappingData();
+            }
         }
 
         private void SetupVideoEventTrigger() {

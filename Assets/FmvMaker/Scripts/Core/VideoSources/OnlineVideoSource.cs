@@ -14,7 +14,7 @@ namespace FmvMaker.Core.VideoSources {
         }
 
         public void SetVideoSource(string videoName) {
-            string elementUri = ResourceVideoInfo.LoadVideoClipFromFile(videoName);
+            string elementUri = ResourceVideoInfo.LoadVideoClipFromOnlineSource(videoName);
             if (Uri.TryCreate(elementUri, UriKind.Absolute, out Uri uriResult) && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps)) {
                 videoPlayer.source = VideoSource.Url;
                 videoPlayer.url = ResourceVideoInfo.LoadVideoClipFromOnlineSource(videoName);
