@@ -2,19 +2,12 @@
   "VideoList": [{
       "Name": "DialogIntro",
       "NavigationTargets": [{
-          "Name": "DialogOption1Clickable"
-        }, {
-          "Name": "DialogOption2Clickable"
-        }, {
-          "Name": "DialogOption3Clickable"
-        }, {
-          "Name": "DialogOption4Clickable"
-        }, {
-          "Name": "DialogOption5Clickable"
+          "Name": "DialogIdleInstantClickable"
         }
       ]
     }, {
       "Name": "DialogIdle",
+	  "IsLooping": true,
       "NavigationTargets": [{
           "Name": "DialogOption1Clickable"
         }, {
@@ -30,31 +23,31 @@
     }, {
       "Name": "DialogOption1",
       "NavigationTargets": [{
-          "Name": "DialogIdleClickable"
+          "Name": "DialogIdleInstantClickable"
         }
       ]
     }, {
       "Name": "DialogOption2",
       "NavigationTargets": [{
-          "Name": "DialogIdleClickable"
+          "Name": "DialogIdleInstantClickable"
         }
       ]
     }, {
       "Name": "DialogOption3",
       "NavigationTargets": [{
-          "Name": "DialogIdleClickable"
+          "Name": "DialogIdleInstantClickable"
         }
       ]
     }, {
       "Name": "DialogOption4",
       "NavigationTargets": [{
-          "Name": "DialogIdleClickable"
+          "Name": "DialogIdleInstantClickable"
         }
       ]
     }, {
       "Name": "DialogOption5",
       "NavigationTargets": [{
-          "Name": "DialogIdleClickable"
+          "Name": "DialogIdleInstantClickable"
         }
       ]
     }

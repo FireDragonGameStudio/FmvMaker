@@ -1,12 +1,16 @@
 {
   "ClickableList": [{
+      "Name": "DialogIdleInstantClickable",
+      "PickUpVideo": "DialogIdle",
+      "IsNavigation": true
+    }, {
       "Name": "DialogOption1Clickable",
       "Description": "Go to Option1.",
       "PickUpVideo": "DialogOption1",
       "IsNavigation": true,
       "RelativeScreenPosition": {
         "x": 0.8,
-        "y": 0.8
+        "y": 0.85
       }
     }, {
       "Name": "DialogOption2Clickable",
@@ -24,7 +28,7 @@
       "IsNavigation": true,
       "RelativeScreenPosition": {
         "x": 0.8,
-        "y": 0.6
+        "y": 0.55
       }
     }, {
       "Name": "DialogOption4Clickable",
@@ -33,7 +37,7 @@
 	  "IsNavigation": true,
       "RelativeScreenPosition": {
         "x": 0.8,
-        "y": 0.5
+        "y": 0.4
       }
     }, {
       "Name": "DialogOption5Clickable",
@@ -42,7 +46,7 @@
       "IsNavigation": true,
       "RelativeScreenPosition": {
         "x": 0.8,
-        "y": 0.4
+        "y": 0.25
       }
     }
   ]

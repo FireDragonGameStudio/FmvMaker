@@ -807,7 +807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecbc50e30a69a2a4daf1fd8dd86af343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zAngle: 1
+  zAngle: -0.5
 --- !u!1 &1563772657
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,7 +935,7 @@ MonoBehaviour:
   SkipVideoKey: 27
   PauseVideoKey: 112
   QuitGameKey: 113
-  nameOfStartVideo: UniqueVideoName
+  nameOfStartVideo: DialogIntro
   clickableObjects: {fileID: 1005435514}
   videoView: {fileID: 1563772658}
   data: {fileID: 600364143}

@@ -55,20 +55,18 @@ namespace FmvMaker.Core.Provider {
         private async void Start() {
             // wait a short time for Unity to get correct values for screen height and width
             await Task.Delay(TimeSpan.FromSeconds(0.1));
-
-            OnVideoStarted.AddListener(StopLoadingScreen);
+            
             OnVideoStarted.AddListener(DisablePreviousItems);
             OnVideoStarted.AddListener(DisablePreviousNavigationTargets);
             OnVideoStarted.AddListener(ShowItemsAndNavigationsForLooping);
 
-            OnVideoFinished.AddListener(StartLoadingScreen);
             OnVideoFinished.AddListener(SetVideoToAlreadyWatched);
             OnVideoFinished.AddListener(CheckForInstantNextVideo);
             OnVideoFinished.AddListener(ShowCurrentItems);
             OnVideoFinished.AddListener(ShowCurrentNavigationTargets);
 
             PlayVideo(startVideo);
-            StartLoadingScreen(startVideo);
+            ConfigureLoadingScreen();
         }
 
         private void Update() {
@@ -127,6 +125,17 @@ namespace FmvMaker.Core.Provider {
                 SetVideoToAlreadyWatched(video);
                 ShowCurrentItems(video);
                 ShowCurrentNavigationTargets(video);
+            }
+        }
+
+        private void ConfigureLoadingScreen() {
+            loadingSceen.SetActive(false);
+
+            if (LoadFmvConfig.Config.VideoSourceType != "INTERNAL") {
+                loadingSceen.SetActive(true);
+                OnVideoStarted.AddListener(StopLoadingScreen);
+                OnVideoFinished.AddListener(StartLoadingScreen);
+                StartLoadingScreen(startVideo);
             }
         }
 
