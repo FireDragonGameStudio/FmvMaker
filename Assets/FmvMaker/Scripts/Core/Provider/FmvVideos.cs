@@ -33,14 +33,17 @@ namespace FmvMaker.Core.Provider {
         private FmvVideoView videoView = null;
         [SerializeField]
         private FmvData data = null;
+        [SerializeField]
+        private GameObject loadingSceen = null;
 
         private VideoModel[] allVideoElements;
         private VideoModel currentVideoElement;
 
         private bool itemsLoaded = false;
         private bool navigationsLoaded = false;
+        private bool alreadyLoaded = false;
 
-        private VideoModel StartVideo => GetVideoModelByName(nameOfStartVideo);
+        private VideoModel startVideo => GetVideoModelByName(nameOfStartVideo);
 
         private void Awake() {
             allVideoElements = data.GenerateVideoDataFromConfigurationFile();
@@ -53,16 +56,19 @@ namespace FmvMaker.Core.Provider {
             // wait a short time for Unity to get correct values for screen height and width
             await Task.Delay(TimeSpan.FromSeconds(0.1));
 
+            OnVideoStarted.AddListener(StopLoadingScreen);
             OnVideoStarted.AddListener(DisablePreviousItems);
             OnVideoStarted.AddListener(DisablePreviousNavigationTargets);
             OnVideoStarted.AddListener(ShowItemsAndNavigationsForLooping);
 
+            OnVideoFinished.AddListener(StartLoadingScreen);
             OnVideoFinished.AddListener(SetVideoToAlreadyWatched);
             OnVideoFinished.AddListener(CheckForInstantNextVideo);
             OnVideoFinished.AddListener(ShowCurrentItems);
             OnVideoFinished.AddListener(ShowCurrentNavigationTargets);
 
-            PlayVideo(StartVideo);
+            PlayVideo(startVideo);
+            StartLoadingScreen(startVideo);
         }
 
         private void Update() {
@@ -105,6 +111,11 @@ namespace FmvMaker.Core.Provider {
             }
         }
 
+        private void StopLoadingScreen(VideoModel video) {
+            loadingSceen.SetActive(false);
+            alreadyLoaded = false;
+        }
+
         private void DisablePreviousNavigationTargets(VideoModel video) {
             if (!navigationsLoaded) {
                 clickableObjects.DisableNavigationTargets();
@@ -116,6 +127,13 @@ namespace FmvMaker.Core.Provider {
                 SetVideoToAlreadyWatched(video);
                 ShowCurrentItems(video);
                 ShowCurrentNavigationTargets(video);
+            }
+        }
+
+        private void StartLoadingScreen(VideoModel video) {
+            if (!video.IsLooping && !alreadyLoaded) {
+                loadingSceen.SetActive(true);
+                alreadyLoaded = true;
             }
         }
 

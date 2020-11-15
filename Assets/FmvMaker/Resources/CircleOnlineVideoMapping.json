@@ -1,0 +1,22 @@
+{
+  "OnlineVideoSourceMappingList": [{
+      "Name": "UniqueVideoName",
+      "Link": "https://github.com/FireDragonGameStudio/FmvMaker/blob/master/Assets/FmvMaker/Resources/FmvMakerVideos/UniqueVideoName.mp4?raw=true"
+    }, {
+      "Name": "NextUniqueVideoName",
+      "Link": "https://github.com/FireDragonGameStudio/FmvMaker/blob/master/Assets/FmvMaker/Resources/FmvMakerVideos/NextUniqueVideoName.mp4?raw=true"
+    }, {
+      "Name": "AnotherUniqueVideoName",
+      "Link": "https://github.com/FireDragonGameStudio/FmvMaker/blob/master/Assets/FmvMaker/Resources/FmvMakerVideos/AnotherUniqueVideoName.mp4?raw=true"
+    }, {
+      "Name": "DifferentUniqueVideoName",
+      "Link": "https://github.com/FireDragonGameStudio/FmvMaker/blob/master/Assets/FmvMaker/Resources/FmvMakerVideos/DifferentUniqueVideoName.mp4?raw=true"
+    }, {
+      "Name": "UniqueToDifferentVideoName",
+      "Link": "https://github.com/FireDragonGameStudio/FmvMaker/blob/master/Assets/FmvMaker/Resources/FmvMakerVideos/UniqueToDifferentVideoName.mp4?raw=true"
+    }, {
+      "Name": "UniqueIdleVideoName",
+      "Link": "https://github.com/FireDragonGameStudio/FmvMaker/blob/master/Assets/FmvMaker/Resources/FmvMakerVideos/UniqueIdleVideoName.mp4?raw=true"
+    }
+  ]
+}
