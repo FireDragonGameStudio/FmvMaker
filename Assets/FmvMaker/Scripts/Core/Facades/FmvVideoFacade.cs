@@ -26,12 +26,18 @@ namespace FmvMaker.Core.Facades {
             videoPlayer = GetComponent<VideoPlayer>();
             audioSource = GetComponent<AudioSource>();
 
+            ReleaseRenderTexture();
             SetupVideoPlayerConfig();
             SetupUnityVideoEvents();
         }
 
         private void OnDestroy() {
             DisposeUnityVideoEvents();
+            ReleaseRenderTexture();
+        }
+
+        private void ReleaseRenderTexture() {
+            videoPlayer.targetTexture.Release();
         }
 
         private void SetupVideoPlayerConfig() {

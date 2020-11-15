@@ -21,7 +21,6 @@ namespace FmvMaker.Core.Provider {
         // false -> select second player, true -> select first player
         private bool videoPlayerToggle = true;
 
-        private FmvVideoFacade activePlayer;
         private FmvVideoFacade inactivePlayer;
 
         public FmvVideoFacade ActivePlayer => GetActivePlayer();
@@ -51,6 +50,7 @@ namespace FmvMaker.Core.Provider {
 
         public void PrepareAndPlay(VideoModel videoModel) {
             ActivePlayer.Prepare(videoModel);
+            inactivePlayer.Pause();
         }
 
         private void SetupVideoFacadeEvents() {
@@ -92,11 +92,9 @@ namespace FmvMaker.Core.Provider {
         private FmvVideoFacade GetActivePlayer() {
             if (videoPlayerToggle) {
                 inactivePlayer = secondPlayer;
-                activePlayer = firstPlayer;
                 return firstPlayer;
             }
             inactivePlayer = firstPlayer;
-            activePlayer = secondPlayer;
             return secondPlayer;
         }
     }

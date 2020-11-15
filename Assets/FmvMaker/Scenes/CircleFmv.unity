@@ -574,6 +574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f2a8e37a1f2ac6419b654c061a8285c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blackBackground: {fileID: 2800000, guid: 2bdcc967079f024459d1941b5630f54f, type: 3}
 --- !u!82 &1393773466
 AudioSource:
   m_ObjectHideFlags: 0
@@ -807,7 +808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecbc50e30a69a2a4daf1fd8dd86af343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zAngle: 1
+  zAngle: -0.5
 --- !u!1 &1563772657
 GameObject:
   m_ObjectHideFlags: 0
@@ -1464,3 +1465,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f2a8e37a1f2ac6419b654c061a8285c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blackBackground: {fileID: 2800000, guid: 2bdcc967079f024459d1941b5630f54f, type: 3}

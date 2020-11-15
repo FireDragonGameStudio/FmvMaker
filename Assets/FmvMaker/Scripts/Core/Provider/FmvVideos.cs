@@ -42,6 +42,7 @@ namespace FmvMaker.Core.Provider {
         private bool itemsLoaded = false;
         private bool navigationsLoaded = false;
         private bool alreadyLoaded = false;
+        private bool useLoadingSceen = false;
 
         private VideoModel startVideo => GetVideoModelByName(nameOfStartVideo);
 
@@ -104,7 +105,7 @@ namespace FmvMaker.Core.Provider {
         }
 
         private void DisablePreviousItems(VideoModel video) {
-            if (!itemsLoaded) {
+            if (!itemsLoaded || !video.IsLooping) {
                 clickableObjects.DisableFindableItems();
             }
         }
@@ -115,7 +116,7 @@ namespace FmvMaker.Core.Provider {
         }
 
         private void DisablePreviousNavigationTargets(VideoModel video) {
-            if (!navigationsLoaded) {
+            if (!navigationsLoaded || !video.IsLooping) {
                 clickableObjects.DisableNavigationTargets();
             }
         }
@@ -132,15 +133,15 @@ namespace FmvMaker.Core.Provider {
             loadingSceen.SetActive(false);
 
             if (LoadFmvConfig.Config.VideoSourceType != "INTERNAL") {
+                useLoadingSceen = true;
                 loadingSceen.SetActive(true);
                 OnVideoStarted.AddListener(StopLoadingScreen);
-                OnVideoFinished.AddListener(StartLoadingScreen);
                 StartLoadingScreen(startVideo);
             }
         }
 
         private void StartLoadingScreen(VideoModel video) {
-            if (!video.IsLooping && !alreadyLoaded) {
+            if (useLoadingSceen && !alreadyLoaded) {
                 loadingSceen.SetActive(true);
                 alreadyLoaded = true;
             }
@@ -218,7 +219,9 @@ namespace FmvMaker.Core.Provider {
         }
 
         public void PlayVideoFromNavigationTarget(string navigationTargetName) {
-            PlayVideo(GetVideoModelByName(navigationTargetName));
+            VideoModel videoModel = GetVideoModelByName(navigationTargetName);
+            StartLoadingScreen(videoModel);
+            PlayVideo(videoModel);
         }
     }
 }
