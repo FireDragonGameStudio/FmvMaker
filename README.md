@@ -216,7 +216,7 @@ In case you're using videos provided by an online resource, it's necessary to se
 | Field | Type | Default value | Optional | Description |
 | --- | --- | --- | --- | --- |
 | Name | string | "" | | The name used in the **VideoData** configuration file. As it's the same with video element file names, pls make sure that the name you'll choose here is also unique. |
-| Link | string | "" | | The link which'll provide the static video file to stream within your Unity game. Unity doesn't support direct streaming from platforms like Youtube (yet?). For more information about how to provide a link for the Unity VideoPlayer component, pls check the ![Unity VideoPlayer component documentation](https://docs.unity3d.com/Manual/class-VideoPlayer.html). 
+| Link | string | "" | | The link which'll provide the static video file to stream within your Unity game. Unity doesn't support direct streaming from platforms like Youtube (yet?). For more information about how to provide a link for the Unity VideoPlayer component, pls check the [Unity VideoPlayer component documentation](https://docs.unity3d.com/Manual/class-VideoPlayer.html). 
 
 ## Enough explanation, can't we start already?
 YES, we can. With the examples from the previous sections you've already created a simple prototype, which will allow us to navigate between video elements. If you want to use your own .mp4 videos, just copy them into *FmvMaker/Resources/FmvMakerVideos* and replace their names in the **VideoData** and **Clickables** configuration files. For the final touches, open Unity and open the EmptyFmv scenes, located in FmvMaker/Scenes. After selecting the FmvHelper GameObject in the hierarchy, drag the created JSON files into their corresponding fields of the FmvData component.
