@@ -5,7 +5,7 @@
 **FmvMaker** was designed for creating FMVs, point'n click adventures, or other types of games/plugins, which use some kind of video playlist with possible interactions. **FmvMaker** uses only (!) native Unity components to ensure a maximum of compatiblity with all of Unity's supported build platforms. If you encounter errors or problems, pls create a new issue at the Github repository. We'll try to help you asap. :)
 
 ## Getting started
-You can get **FmvMaker** either via the Unity AssetStore (link-->) or the Releases section of this Github repository. After importing the **FmvMaker** asset into your Unity project, you'll find a separate **FmvMaker** folder as subfolder of your Assets folder. The **FmvMaker** directory contains all necessary data, to get started. Please note, that the music tracks used in our demos are from https://www.bensound.com 
+You can get **FmvMaker** either via the Unity AssetStore (link-->) or the Releases section of this Github repository. After importing the **FmvMaker** asset into your Unity project, you'll find a separate **FmvMaker** folder as subfolder of your Assets folder. The **FmvMaker** directory contains all necessary data, to get started. All examples are currently online videos, provided via static link on github, as Unity does not support Youtube video streaming. Furthermore Unity AssetStore developers are not allowed to ship videos, with their packages. Please note, that the music tracks used in our demos are from https://www.bensound.com
 
 Important for you are the Resources folder (within the **FmvMaker** folder) where you'll be placing your content (videos, images, etc...) as well as your configuration files. The Prefabs folder contains default prefabs, especially for prototyping. In the Scenes folder are demo scenes, to give you an overview of the comprehensive possibilities of **FmvMaker**.
 
@@ -752,6 +752,21 @@ namespace FmvMaker.Examples.Scripts {
 | RelativeScreenPosition | Vector2 | x=0.5, y=0.5 | x| The *RelativeScreenPosition* places your **Clickable** on the designated screen position. Pls make sure to only use values between 0 and 1, where x=0, y=0 refers to the lower left corner, x=0.5,y=0.5 to the center (default) and x=1, y=1 to the upper right corner. | 
 
 ## FmvMaker configuration
+```javascript
+{
+  "AspectRatio": "16:9",
+  "VideoSourceType": "ONLINE",
+  "ImageSourceType": "INTERNAL",
+  "LocalFilePath": "C:\\Data\\UnityProjects\\FmvMakerFiles\\"
+}
+```
+
+| Field | Type | Default value | Optional | Description |
+| --- | --- | --- | --- | --- |
+| AspectRatio | string | "" | | Currently unused. Will be used in future to support different AspectRatios (e.g. 4:3, ...) |
+| VideoSourceType | string | "" | | Tells **FmvMaker** where to look for video files. *ONLINE* will check for a video link provided via a online video mapping configuration file. *INTERNAL* will check for video files matching the video element name from the **VideoData** configuration file. Other types are currently not supported. |
+| ImageSourceType | string | "" | | Tells **FmvMaker** where to look for image files (**Items** and **NagivationTargets**). *INTERNAL* will check for files matching the name from the **Clickable** configuration file. Other types are currently not supported. |
+| LocalFilePath | string | "" | | Currently unused. Intended to load video files from local disk. Future use for prototyping or to keep git repository small. |
 
 ## Future plans
 - [ ] It's currently not possible to have 100% transparent **Clickables**. We're on it.
