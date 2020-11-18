@@ -185,7 +185,7 @@ If you're not providing optional fields, **FmvMaker** will use the default value
 ```
 
 ## Online video mapping configuration
-In case you're using videos provided by an online resource, it's necessary to set your VideoSourceType to *ONLINE* in your [FmvMaker configuration](#fmvMaker-configuration) and provide links to your video data. Platforms like Youtube are currently not supported by native Unity VideoPlayer component. We're trx to provide a workaround asap. To get the correct mapping, you'll have to create a OnlineVideoMapping configuration file. Please check the following sample of our CircleFmv:
+In case you're using videos provided by an online resource, it's necessary to set your **VideoSourceType** to *ONLINE* in your [FmvMaker configuration](#fmvMaker-configuration) and provide links to your video data. Platforms like Youtube are currently not supported by native Unity VideoPlayer component. We're trx to provide a workaround asap. To get the correct mapping, you'll have to create a OnlineVideoMapping configuration file. Please check the following sample of our CircleFmv:
 
 **CircleOnlineVideoMapping.json**
 ```javascript
@@ -676,7 +676,7 @@ Create a **Clickable** and a **VideoData** element for every **Item** you'd like
 In the previous created FMV prototype, every **NavigationTarget** as well as the **Clickables** were represented by a Unity UI button with a text. To give your game your personal touch, it's possible to add icons to it. The easiest way to do this, is to add your icons (ideally square icons sized 256x256 pixels) to the *FmvMaker/Resources/FmvMakerTextures* and name them equally to your **Clickables** in your configuration file. **FmvMaker** will load these icons automatically, when a match is found. There are already a few icons shipped with the package. To prevent **FmvMaker** from showing the the default text, remove the *DisplayText* field from your configuration file. 
 
 ## Adding your own logic
-Sometimes it's necessary to have your own events triggered. **FmvMaker** offers you events for every type of video interactions (OnVideoStarted, OnVideoPaused, OnVideoSkipped, OnVideoFinished). First you either add the interface **IFmvMakerVideoEvents** to your Monobehaviour or implement the neede methods on your own. The Monobehaviour **CheckFmvMakerEvents** gives you a better idea, of how to use the interface and how the methods must look like. After that, you'll have to register your implemented methods to the FmvMaker events and that's it. An example for console outputs registered with FmvMakers video events is shipped with the package.
+Sometimes it's necessary to have your own events triggered. **FmvMaker** offers you events for every type of video interactions (OnVideoStarted, OnVideoPaused, OnVideoSkipped, OnVideoFinished). First you either add the interface **IFmvMakerVideoEvents** to your Monobehaviour or implement the needed methods on your own. The Monobehaviour **CheckFmvMakerEvents** gives you a better idea, of how to use the interface and how the methods must look like. After that, you'll have to register your implemented methods to the FmvMaker events and that's it. An example for console outputs registered with FmvMakers video events is shipped with the package.
 
 ![FmvMaker key bindings](https://raw.githubusercontent.com/FireDragonGameStudio/FmvMaker/master/Assets/FmvMaker/Textures/FmvMakerEvents.png)
 
@@ -706,7 +706,7 @@ namespace FmvMaker.Examples.Scripts {
 }
 ```
 
-## The full VideoData JSON object
+## The full VideoData JSON
 ```javascript
 {
   "VideoList": [{
@@ -753,7 +753,7 @@ namespace FmvMaker.Examples.Scripts {
 | DisplayText | string | "" | x | *DisplayText* does what it name says. It shows a set text. This field should NOT be used within your configuration files. |
 | RelativeScreenPosition | Vector2 | x=0.5, y=0.5 | x| The *RelativeScreenPosition* should NOT be used within your video configuration file. This field is reserved for further useage to display multiple videos at once. | 
 
-## The full Clickable JSON object
+## The full Clickable JSON
 ```javascript
 {
   "ClickableList": [{
@@ -798,9 +798,34 @@ namespace FmvMaker.Examples.Scripts {
 | Field | Type | Default value | Optional | Description |
 | --- | --- | --- | --- | --- |
 | AspectRatio | string | "" | | Currently unused. Will be used in future to support different AspectRatios (e.g. 4:3, ...) |
-| VideoSourceType | string | "" | | Tells **FmvMaker** where to look for video files. *ONLINE* will check for a video link provided via a online video mapping configuration file. *INTERNAL* will check for video files matching the video element name from the **VideoData** configuration file. Other types are currently not supported. |
+| VideoSourceType | string | "" | | Tells **FmvMaker** where to look for video files. *ONLINE* will check for a video link provided via a online **VideoMapping** configuration file. *INTERNAL* will check for video files matching the video element name from the **VideoData** configuration file. Other types are currently not supported. |
 | ImageSourceType | string | "" | | Tells **FmvMaker** where to look for image files (**Items** and **NagivationTargets**). *INTERNAL* will check for files matching the name from the **Clickable** configuration file. Other types are currently not supported. |
 | LocalFilePath | string | "" | | Currently unused. Intended to load video files from local disk. Future use for prototyping or to keep git repository small. |
+
+## The full VideoMapping JSON
+```javascript
+{
+  "OnlineVideoSourceMappingList": [{
+      "Name": "UniqueVideoName",
+      "Link": "https://static.video.link.com/video1.mp4"
+    }, {
+      "Name": "NextUniqueVideoName",
+      "Link": "https://static.video.link.com/video2.mp4"
+    }, {
+      "Name": "AnotherUniqueVideoName",
+      "Link": https://static.video.link.com/video3.mp4"
+    }, {
+      "Name": "DifferentUniqueVideoName",
+      "Link": "https://static.video.link.com/video4.mp4"
+    }
+  ]
+}
+```
+
+| Field | Type | Default value | Optional | Description |
+| --- | --- | --- | --- | --- |
+| Name | string | "" | | The unique name of the video element, which should be used thoughout the configuration. |
+| Link | string | "" | | The static link to the video element. As there is no Unity support for streaming videos from platforms like Youtube, you'll have to provide a static link here yourself. |
 
 ## Future plans
 - [ ] It's currently not possible to have 100% transparent **Clickables**. We're on it.
