@@ -91,6 +91,7 @@ Let's try to build a circle navigation, where our player can move from **UniqueV
 
 IMPORTANT: The **UniqueVideoName** and **DifferentUniqueVideoName** are representing basically the same video element, but offer different approaches.
 
+**FmvVideoData.json**
 ```javascript
 {
   "VideoList": [{
@@ -154,6 +155,7 @@ After defining our video route, we'll need **Clickables** to navigate through ou
 
 If you're not providing optional fields, **FmvMaker** will use the default values. When now taking our already defined video data, we can now create the **Clickables**, which will result in a **Clickables** configuration file with the following content (Pls note that the *RelativeScreenPosition* was not filled in the third **Clickable** to show you a possible usage of the default values):
 
+**FmvClickableData.json**
 ```javascript
 {
   "ClickableList": [{
@@ -187,7 +189,7 @@ If you're not providing optional fields, **FmvMaker** will use the default value
 ## Online video mapping configuration
 In case you're using videos provided by an online resource, it's necessary to set your **VideoSourceType** to *ONLINE* in your [FmvMaker configuration](#fmvMaker-configuration) and provide links to your video data. Platforms like Youtube are currently not supported by native Unity VideoPlayer component. We're trx to provide a workaround asap. To get the correct mapping, you'll have to create a OnlineVideoMapping configuration file. Please check the following sample of our CircleFmv:
 
-**CircleOnlineVideoMapping.json**
+**FmvOnlineVideoMapping.json**
 ```javascript
 {
   "OnlineVideoSourceMappingList": [{
