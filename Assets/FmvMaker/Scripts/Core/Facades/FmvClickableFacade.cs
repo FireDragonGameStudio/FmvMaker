@@ -1,9 +1,7 @@
 ﻿using FmvMaker.Core.Models;
 using FmvMaker.Core.Utilities;
-using System;
-using System.Collections;
+using TMPro;
 using UnityEngine;
-using UnityEngine.Networking;
 using UnityEngine.UI;
 
 namespace FmvMaker.Core.Facades {
@@ -12,19 +10,24 @@ namespace FmvMaker.Core.Facades {
         public ClickableClickEvent OnItemClicked = new ClickableClickEvent();
 
         [SerializeField]
+        private bool isButtonTransparent = false;
+        [SerializeField]
         private Button itemButton;
         [SerializeField]
         private Image itemImage;
         [SerializeField]
-        private Text itemText;
+        private TextMeshProUGUI itemText;
 
         private RectTransform rectTransform;
         private ClickableModel clickableModel;
 
         private void Awake() {
-            itemButton = GetComponent<Button>();
-            itemImage = GetComponent<Image>();
-            itemText = GetComponentInChildren<Text>();
+            if (!itemButton || !itemImage || !itemText) {
+                itemButton = GetComponent<Button>();
+                itemImage = GetComponent<Image>();
+                itemText = GetComponentInChildren<TextMeshProUGUI>();
+            }
+
             rectTransform = GetComponent<RectTransform>();
             DynamicVideoResolution.Instance.ScreenSizeChanged += OnScreenSizeChanged;
         }
@@ -32,6 +35,11 @@ namespace FmvMaker.Core.Facades {
         private void OnDestroy() {
             itemButton.onClick.RemoveAllListeners();
             OnItemClicked.RemoveAllListeners();
+            DynamicVideoResolution.Instance.ScreenSizeChanged -= OnScreenSizeChanged;
+        }
+
+        private void OnScreenSizeChanged(float width, float height) {
+            rectTransform.anchoredPosition = DynamicVideoResolution.GetRelativeScreenPosition(clickableModel.RelativeScreenPosition);
         }
 
         public void SetItemData(ClickableModel model) {
@@ -49,12 +57,21 @@ namespace FmvMaker.Core.Facades {
                 itemText.enabled = true;
             }
 
+            // set to transparent if enabled
+            if (isButtonTransparent) {
+                itemImage.color = new Color(1, 1, 1, 0);
+                itemText.color = new Color(itemText.color.r, itemText.color.g, itemText.color.b, 0);
+            }
+
             rectTransform.anchoredPosition = DynamicVideoResolution.GetRelativeScreenPosition(model.RelativeScreenPosition);
             itemButton.onClick.AddListener(() => OnItemClicked?.Invoke(model));
         }
 
-        private void OnScreenSizeChanged(float width, float height) {
-            rectTransform.anchoredPosition = DynamicVideoResolution.GetRelativeScreenPosition(clickableModel.RelativeScreenPosition);
+        public void ChangeVisibility(int alphaValue) {
+            if (isButtonTransparent) {
+                itemImage.color = new Color(1, 1, 1, alphaValue);
+                itemText.color = new Color(itemText.color.r, itemText.color.g, itemText.color.b, alphaValue);
+            }
         }
 
         //private IEnumerator LoadImageSpriteCoroutine(string spritePath) {

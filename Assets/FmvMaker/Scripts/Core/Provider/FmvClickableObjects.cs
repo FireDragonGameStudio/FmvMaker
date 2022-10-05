@@ -211,5 +211,10 @@ namespace FmvMaker.Core.Provider {
         public void DisableNavigationTargets() {
             allNavigationItems.ForEach(navigation => navigation.gameObject.SetActive(false));
         }
+
+        public void ToggleFindableItems(bool isVisible) {
+            int alphaValue = isVisible ? 255 : 0;
+            allFindableItems.ForEach(item => item.ChangeVisibility(alphaValue));
+        }
     }
 }
