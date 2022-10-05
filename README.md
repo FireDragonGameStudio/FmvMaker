@@ -830,18 +830,18 @@ namespace FmvMaker.Examples.Scripts {
 | Link | string | "" | | The static link to the video element. As there is no Unity support for streaming videos from platforms like Youtube, you'll have to provide a static link here yourself. |
 
 ## Future plans
-- [ ] It's currently not possible to have 100% transparent **Clickables**. We're on it.
+- [x] ~~It's currently not possible to have 100% transparent **Clickables**. We're on it.~~
 - [ ] There is already a possibility to use events, provided by FmvMaker. We'll extend them in future versions, to give you more possibilities to configure and adjust everything for your needs.
 - [ ] We're already working on a JSON checker, to display possible errors, when reading to configuration files. 
 - [ ] Another extension on our ToDo list is a node-based editor window, to omit the troublesome configuration file writing and make it easier to create your project (like Bolt, VFX graph, etc...). 
 - [ ] Including online videos, as well as locally (outside of Unity) stored videos will also be possible soon.
 - [ ] Including online images, as well as locally (outside of Unity) stored images will also be possible soon.
 - [ ] Show multiple videos at the same time, to create some kind video matrix. Rare useage, but it's fancy. ^^
-- [ ] FmvMaker currently only supports the Unity UI system. We're working on TextMeshPro support.
+- [x] ~~FmvMaker currently only supports the Unity UI system. We're working on TextMeshPro support.~~
 - [ ] **Clickables** are currently not resizeable by the configuration file and bound to the prefab size. We're working on it, to make it easier configurable.
 - [ ] Item tooltips are not available yet. It's on our list.
 - [ ] It's currently not possible to combine items within the inventory. We're also working on this feature.
-- [ ] It's nowadays common, to show all available, clickable options when pressing Spacebar. We'll implement this feature asap.
+- [x] ~~It's nowadays common, to show all available, clickable options when pressing Spacebar. We'll implement this feature asap.~~
 
 ## Known issues
 * FmvMaker only supports video files, which are supported by Unity (https://docs.unity3d.com/Manual/VideoSources-FileCompatibility.html). Our recommendation: Pls try to use .mp4 or ogv files.

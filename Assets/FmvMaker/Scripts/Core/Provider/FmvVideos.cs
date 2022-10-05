@@ -21,6 +21,8 @@ namespace FmvMaker.Core.Provider {
         private KeyCode PauseVideoKey = KeyCode.P;
         [SerializeField]
         private KeyCode QuitGameKey = KeyCode.Q;
+        [SerializeField]
+        private KeyCode ShowAllAvailableClickablesKey = KeyCode.Space;
 
         [Header("Settings")]
         [SerializeField]
@@ -56,7 +58,7 @@ namespace FmvMaker.Core.Provider {
         private async void Start() {
             // wait a short time for Unity to get correct values for screen height and width
             await Task.Delay(TimeSpan.FromSeconds(0.1));
-            
+
             OnVideoStarted.AddListener(DisablePreviousItems);
             OnVideoStarted.AddListener(DisablePreviousNavigationTargets);
             OnVideoStarted.AddListener(ShowItemsAndNavigationsForLooping);
@@ -74,6 +76,7 @@ namespace FmvMaker.Core.Provider {
             SkipVideo();
             PauseVideo();
             QuitGame();
+            ToggleAllAvailableClickables();
         }
 
         private void OnDestroy() {
@@ -201,6 +204,16 @@ namespace FmvMaker.Core.Provider {
         private void QuitGame() {
             if (Input.GetKeyUp(QuitGameKey)) {
                 Application.Quit();
+            }
+        }
+
+        private void ToggleAllAvailableClickables() {
+            if (Input.GetKey(KeyCode.Space)) {
+                clickableObjects.ToggleFindableItems(true);
+            }
+
+            if (Input.GetKeyUp(KeyCode.Space)) {
+                clickableObjects.ToggleFindableItems(false);
             }
         }
 
