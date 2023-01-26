@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b96a172d1eb81247846b84afa3b5864, type: 3}
+  m_Name: TestGraph
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 6850408462362804720}
+  - {fileID: 5991096501146041601}
+  - {fileID: 192996725773734564}
+--- !u!114 &192996725773734564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c84d7a4dda749e24a950aa4bb5a45c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NodeName: Float Node
+  NodeRect:
+    serializedVersion: 2
+    x: 110
+    y: 243
+    width: 150
+    height: 65
+  ParentGraph: {fileID: 11400000}
+  Type: 0
+  NodeValue: 0
+--- !u!114 &5991096501146041601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c84d7a4dda749e24a950aa4bb5a45c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NodeName: Float Node
+  NodeRect:
+    serializedVersion: 2
+    x: 209
+    y: 70
+    width: 150
+    height: 65
+  ParentGraph: {fileID: 11400000}
+  Type: 0
+  NodeValue: 0
+--- !u!114 &6850408462362804720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c84d7a4dda749e24a950aa4bb5a45c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NodeName: TestNode
+  NodeRect:
+    serializedVersion: 2
+    x: 403
+    y: 38
+    width: 150
+    height: 65
+  ParentGraph: {fileID: 11400000}
+  Type: 0
+  NodeValue: 0

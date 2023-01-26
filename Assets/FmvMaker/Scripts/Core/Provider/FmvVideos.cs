@@ -208,11 +208,11 @@ namespace FmvMaker.Core.Provider {
         }
 
         private void ToggleAllAvailableClickables() {
-            if (Input.GetKey(KeyCode.Space)) {
+            if (Input.GetKey(ShowAllAvailableClickablesKey)) {
                 clickableObjects.ToggleFindableItems(true);
             }
 
-            if (Input.GetKeyUp(KeyCode.Space)) {
+            if (Input.GetKeyUp(ShowAllAvailableClickablesKey)) {
                 clickableObjects.ToggleFindableItems(false);
             }
         }

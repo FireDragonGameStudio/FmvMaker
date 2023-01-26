@@ -1,20 +1,21 @@
+using Assets.FmvMaker.Scripts.Data;
 using System;
-using UnityEditor;
 using UnityEngine;
 
 namespace Assets.FmvMaker.Scripts.Editor.Views {
     [Serializable]
     public class NodePropertyView : ViewBase {
-        public NodePropertyView() : base("Property View") {
-
+        public NodePropertyView(GUISkin viewSkin) : base("Property View") {
+            this.viewSkin = viewSkin;
         }
 
-        public override void UpdateView(Rect editorRect, Rect percentageRect, Event e) {
-            base.UpdateView(editorRect, percentageRect, e);
-            GUI.Box(ViewRect, ViewTitle);
+        public override void UpdateView(Rect editorRect, Rect percentageRect, Event e, NodeGraph currentNodeGraph) {
+            base.UpdateView(editorRect, percentageRect, e, currentNodeGraph);
+
+            GUI.Box(ViewRect, ViewTitle, viewSkin.GetStyle("GraphViewStyle"));
 
             GUILayout.BeginArea(ViewRect);
-            EditorGUILayout.LabelField("This is a label.");
+
             GUILayout.EndArea();
 
             ProcessEvents(e);
