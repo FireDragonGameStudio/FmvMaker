@@ -10,6 +10,8 @@ namespace Assets.FmvMaker.Scripts.Editor.Views {
     public class NodeWorkView : ViewBase {
 
         private Vector2 mousePosition;
+        private int deleteNodeId = 0;
+        private Event e;
 
         public NodeWorkView(GUISkin viewSkin) : base("Work View") {
             this.viewSkin = viewSkin;
@@ -19,7 +21,8 @@ namespace Assets.FmvMaker.Scripts.Editor.Views {
             base.UpdateView(editorRect, percentageRect, e, currentNodeGraph);
 
             GUI.Box(ViewRect, ViewTitle, viewSkin.GetStyle("GraphViewStyle"));
-
+            NodeUtils.DrawGrid(ViewRect, 100f, 0.15f, Color.white);
+            NodeUtils.DrawGrid(ViewRect, 20f, 0.05f, Color.white);
             GUILayout.BeginArea(ViewRect);
             if (currentNodeGraph != null) {
                 currentNodeGraph.UpdateGraphGUI(e, ViewRect, viewSkin);
@@ -50,24 +53,52 @@ namespace Assets.FmvMaker.Scripts.Editor.Views {
                 if (e.button == 1) {
                     if (e.type == EventType.MouseDown) {
                         mousePosition = e.mousePosition;
-                        ProcessContextMenu(e);
+                        bool overNode = false;
+
+                        if (currentNodeGraph != null) {
+                            if (currentNodeGraph.nodes.Count > 0) {
+                                for (int i = 0; i < currentNodeGraph.nodes.Count; i++) {
+                                    if (currentNodeGraph.nodes[i].NodeRect.Contains(mousePosition)) {
+                                        overNode = true;
+                                        deleteNodeId = i;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        if (!overNode) {
+                            ProcessContextMenu(e, 0);
+                        } else {
+                            ProcessContextMenu(e, 1);
+                        }
                     }
                 }
             }
         }
 
-        private void ProcessContextMenu(Event e) {
+        private void ProcessContextMenu(Event e, int contextId) {
             GenericMenu menu = new GenericMenu();
-            menu.AddItem(new GUIContent("Create Graph"), false, ContextCallback, "0");
-            menu.AddItem(new GUIContent("Load Graph"), false, ContextCallback, "1");
 
-            if (currentNodeGraph != null) {
-                menu.AddSeparator("");
-                menu.AddItem(new GUIContent("Unload Graph"), false, ContextCallback, "2");
+            if (contextId == 0) {
 
-                menu.AddSeparator("");
-                menu.AddItem(new GUIContent("Float Node"), false, ContextCallback, "3");
-                menu.AddItem(new GUIContent("Add Node"), false, ContextCallback, "4");
+                menu.AddItem(new GUIContent("Create Graph"), false, ContextCallback, "0");
+                menu.AddItem(new GUIContent("Load Graph"), false, ContextCallback, "1");
+
+                if (currentNodeGraph != null) {
+                    menu.AddSeparator("");
+                    menu.AddItem(new GUIContent("Unload Graph"), false, ContextCallback, "2");
+
+                    menu.AddSeparator("");
+                    menu.AddItem(new GUIContent("Float Node"), false, ContextCallback, "3");
+                    menu.AddItem(new GUIContent("Add Node"), false, ContextCallback, "4");
+                }
+            }
+
+            if (contextId == 1) {
+                if (currentNodeGraph != null) {
+                    menu.AddItem(new GUIContent("Delete Node"), false, ContextCallback, "5");
+                }
             }
 
             menu.ShowAsContext();
@@ -89,7 +120,10 @@ namespace Assets.FmvMaker.Scripts.Editor.Views {
                     NodeUtils.CreateNode(currentNodeGraph, NodeType.Float, mousePosition);
                     break;
                 case "4":
-
+                    NodeUtils.CreateNode(currentNodeGraph, NodeType.Add, mousePosition);
+                    break;
+                case "5":
+                    NodeUtils.DeleteNode(currentNodeGraph, deleteNodeId);
                     break;
                 default:
                     break;

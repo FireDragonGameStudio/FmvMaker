@@ -44,6 +44,7 @@ namespace Assets.FmvMaker.Scripts.Editor.Windows {
                 position,
                 new Rect(0f, 0f, viewPercentage, 1f),
                 e, CurrentNodeGraph);
+
             propertyView.UpdateView(
                 new Rect(position.width, position.y, position.width, position.height),
                 new Rect(viewPercentage, 0f, 1 - viewPercentage, 1f),
