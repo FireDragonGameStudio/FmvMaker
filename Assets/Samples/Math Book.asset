@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1b94d54a0718749ac226aeb8ef53fc, type: 3}
+  m_Name: Math Book
+  m_EditorClassIdentifier: 
+  m_GraphModel:
+    id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: MathBook, ns: UnityEditor.GraphToolsFoundation.Overdrive.Samples.MathBook,
+        asm: SimpleMathBook}
+      data:
+        m_AssetModel: {fileID: 11400000}
+        m_GraphNodeModels:
+        - id: 1
+        m_EdgeModels: []
+        m_BadgeModels: []
+        m_GraphEdgeModels: []
+        m_PolymorphicEdgeModels: []
+        m_StickyNoteModels: []
+        m_GraphStickyNoteModels: []
+        m_PlacematModels: []
+        m_GraphPlacematModels: []
+        m_GraphVariableModels: []
+        m_GraphPortalModels: []
+        m_Name: 
+        m_StencilTypeName: UnityEditor.GraphToolsFoundation.Overdrive.Samples.MathBook.MathBookStencil,
+          SimpleMathBook, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    00000001:
+      type: {class: SinFunction, ns: UnityEditor.GraphToolsFoundation.Overdrive.Samples.MathBook,
+        asm: SimpleMathBook}
+      data:
+        m_Guid:
+          m_Value0: 11189474997054924083
+          m_Value1: 14852336566562178835
+        m_AssetModel: {fileID: 11400000}
+        m_Color: {r: 0, g: 0, b: 0, a: 0}
+        m_HasUserColor: 0
+        m_Version: 1
+        m_Position: {x: -324.25644, y: -513.9159}
+        m_Title: 
+        m_InputConstantsById:
+          m_KeyList:
+          - f
+          m_ValueList:
+          - id: 2
+        m_State: 0
+        m_Collapsed: 0
+        m_ParameterNames:
+        - f
+    00000002:
+      type: {class: FloatConstant, ns: UnityEditor.GraphToolsFoundation.Overdrive.BasicModel,
+        asm: Unity.GraphTools.Foundation.Overdrive.Model}
+      data:
+        m_Value: 0

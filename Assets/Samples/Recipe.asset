@@ -1,0 +1,211 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769404b436f500e4996e55b576adeed3, type: 3}
+  m_Name: Recipe
+  m_EditorClassIdentifier: 
+  m_GraphModel:
+    id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: RecipeGraphModel, ns: UnityEditor.GraphToolsFoundation.Overdrive.Samples.Recipes,
+        asm: RecipesEditor}
+      data:
+        m_AssetModel: {fileID: 11400000}
+        m_GraphNodeModels:
+        - id: 1
+        - id: 2
+        - id: 3
+        m_EdgeModels: []
+        m_BadgeModels: []
+        m_GraphEdgeModels:
+        - id: 4
+        m_PolymorphicEdgeModels: []
+        m_StickyNoteModels: []
+        m_GraphStickyNoteModels:
+        - id: 5
+        m_PlacematModels: []
+        m_GraphPlacematModels:
+        - id: 6
+        m_GraphVariableModels:
+        - id: 7
+        - id: 8
+        m_GraphPortalModels: []
+        m_Name: 
+        m_StencilTypeName: UnityEditor.GraphToolsFoundation.Overdrive.Samples.Recipes.RecipeStencil,
+          RecipesEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    00000001:
+      type: {class: FryNodeModel, ns: UnityEditor.GraphToolsFoundation.Overdrive.Samples.Recipes,
+        asm: RecipesEditor}
+      data:
+        m_Guid:
+          m_Value0: 14862017760767348771
+          m_Value1: 8130860854499018295
+        m_AssetModel: {fileID: 11400000}
+        m_Color: {r: 0, g: 0, b: 0, a: 0}
+        m_HasUserColor: 0
+        m_Version: 1
+        m_Position: {x: -131.99997, y: 155}
+        m_Title: Fry
+        m_InputConstantsById:
+          m_KeyList: []
+          m_ValueList: []
+        m_State: 0
+        m_Collapsed: 0
+    00000002:
+      type: {class: BakeNodeModel, ns: UnityEditor.GraphToolsFoundation.Overdrive.Samples.Recipes,
+        asm: RecipesEditor}
+      data:
+        m_Guid:
+          m_Value0: 1676414267543776817
+          m_Value1: 3671443069612756750
+        m_AssetModel: {fileID: 11400000}
+        m_Color: {r: 0, g: 0, b: 0, a: 0}
+        m_HasUserColor: 0
+        m_Version: 1
+        m_Position: {x: 93.00002, y: 115}
+        m_Title: Bake
+        m_InputConstantsById:
+          m_KeyList: []
+          m_ValueList: []
+        m_State: 0
+        m_Collapsed: 0
+        m_TemperatureC: 180
+        m_Minutes: 60
+    00000003:
+      type: {class: BeatNodeModel, ns: UnityEditor.GraphToolsFoundation.Overdrive.Samples.Recipes,
+        asm: RecipesEditor}
+      data:
+        m_Guid:
+          m_Value0: 10305334298510185733
+          m_Value1: 15595711548888839174
+        m_AssetModel: {fileID: 11400000}
+        m_Color: {r: 0, g: 0, b: 0, a: 0}
+        m_HasUserColor: 0
+        m_Version: 1
+        m_Position: {x: 391.00003, y: 227}
+        m_Title: Beat
+        m_InputConstantsById:
+          m_KeyList: []
+          m_ValueList: []
+        m_State: 0
+        m_Collapsed: 0
+    00000004:
+      type: {class: EdgeModel, ns: UnityEditor.GraphToolsFoundation.Overdrive.BasicModel,
+        asm: Unity.GraphTools.Foundation.Overdrive.Model}
+      data:
+        m_Guid:
+          m_Value0: 5479267598079551580
+          m_Value1: 13423232097778990580
+        m_AssetModel: {fileID: 11400000}
+        m_Color: {r: 0, g: 0, b: 0, a: 0}
+        m_HasUserColor: 0
+        m_Version: 1
+        m_FromPortReference:
+          m_NodeModelGuid:
+            m_Value0: 14862017760767348771
+            m_Value1: 8130860854499018295
+          m_GraphAssetModel: {fileID: 11400000}
+          m_UniqueId: Result
+        m_ToPortReference:
+          m_NodeModelGuid:
+            m_Value0: 1676414267543776817
+            m_Value1: 3671443069612756750
+          m_GraphAssetModel: {fileID: 11400000}
+          m_UniqueId: Cookware
+        m_EdgeControlPoints: []
+        m_EditMode: 0
+        m_EdgeLabel: 
+    00000005:
+      type: {class: StickyNoteModel, ns: UnityEditor.GraphToolsFoundation.Overdrive.BasicModel,
+        asm: Unity.GraphTools.Foundation.Overdrive.Model}
+      data:
+        m_Guid:
+          m_Value0: 17337743239842105186
+          m_Value1: 4786139433206492561
+        m_AssetModel: {fileID: 11400000}
+        m_Color: {r: 0, g: 0, b: 0, a: 0}
+        m_HasUserColor: 0
+        m_Version: 1
+        m_Title: 
+        m_Contents: 
+        m_ThemeName: Classic
+        m_TextSizeName: Small
+        m_Position:
+          serializedVersion: 2
+          x: 359.00003
+          y: 3
+          width: 200
+          height: 160
+    00000006:
+      type: {class: PlacematModel, ns: UnityEditor.GraphToolsFoundation.Overdrive.BasicModel,
+        asm: Unity.GraphTools.Foundation.Overdrive.Model}
+      data:
+        m_Guid:
+          m_Value0: 12974019785802690224
+          m_Value1: 13004049046371480376
+        m_AssetModel: {fileID: 11400000}
+        m_Color: {r: 0, g: 0, b: 0, a: 0}
+        m_HasUserColor: 0
+        m_Version: 1
+        m_Title: Placemat - TTDD
+        m_Position:
+          serializedVersion: 2
+          x: 106.00002
+          y: 299
+          width: 200
+          height: 200
+        m_Collapsed: 0
+        m_ZOrder: 1
+        m_HiddenElements: []
+    00000007:
+      type: {class: VariableDeclarationModel, ns: UnityEditor.GraphToolsFoundation.Overdrive.BasicModel,
+        asm: Unity.GraphTools.Foundation.Overdrive.Model}
+      data:
+        m_Guid:
+          m_Value0: 15671132908963676649
+          m_Value1: 6851257621921246798
+        m_AssetModel: {fileID: 11400000}
+        m_Color: {r: 0, g: 0, b: 0, a: 0}
+        m_HasUserColor: 0
+        m_Version: 1
+        m_Name: Ingredient
+        m_DataType:
+          Identification: Ingredient
+        m_IsExposed: 1
+        m_Tooltip: 
+        m_InitializationValue:
+          id: 9
+        m_Modifiers: 0
+        variableFlags: 0
+    00000008:
+      type: {class: VariableDeclarationModel, ns: UnityEditor.GraphToolsFoundation.Overdrive.BasicModel,
+        asm: Unity.GraphTools.Foundation.Overdrive.Model}
+      data:
+        m_Guid:
+          m_Value0: 3845842837239428366
+          m_Value1: 10699940412918081812
+        m_AssetModel: {fileID: 11400000}
+        m_Color: {r: 0, g: 0, b: 0, a: 0}
+        m_HasUserColor: 0
+        m_Version: 1
+        m_Name: Cookware
+        m_DataType:
+          Identification: Cookware
+        m_IsExposed: 1
+        m_Tooltip: 
+        m_InitializationValue:
+          id: 9
+        m_Modifiers: 0
+        variableFlags: 0
+    00000009:
+      type: {class: , ns: , asm: }

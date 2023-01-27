@@ -51,6 +51,7 @@ namespace FmvMaker.Core.Provider {
         private void SetEventsForInventoryItem(FmvClickableFacade itemFacade) {
             itemFacade.OnItemClicked.RemoveAllListeners();
             itemFacade.OnItemClicked.AddListener(ItemFromInventoryToUsed);
+            itemFacade.ChangeVisibility(1);
         }
 
         private void GenerateFindableItems() {
