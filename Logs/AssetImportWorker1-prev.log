@@ -1,0 +1,843 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.16f1 (4016570cf34f) revision 4200023'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'en' Physical Memory: 32614 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Data\UnityInstallations\2021.3.16f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+C:/Data/UnityProjects/FmvMaker
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+59731
+Successfully changed project path to: C:/Data/UnityProjects/FmvMaker
+C:/Data/UnityProjects/FmvMaker
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [21556] Host "[IP] 192.168.0.30 [Port] 0 [Flags] 2 [Guid] 1189748402 [EditorId] 1189748402 [Version] 1048832 [Id] WindowsEditor(7,MSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [21556] Host "[IP] 192.168.0.30 [Port] 0 [Flags] 2 [Guid] 1189748402 [EditorId] 1189748402 [Version] 1048832 [Id] WindowsEditor(7,MSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 98.86 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.16f1 (4016570cf34f)
+[Subsystems] Discovering subsystems at path C:/Data/UnityInstallations/2021.3.16f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Data/UnityProjects/FmvMaker/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1070 (ID=0x1ba1)
+    Vendor:   NVIDIA
+    VRAM:     8074 MB
+    Driver:   31.0.15.2824
+Initialize mono
+Mono path[0] = 'C:/Data/UnityInstallations/2021.3.16f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Data/UnityInstallations/2021.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Data/UnityInstallations/2021.3.16f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56200
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Data/UnityInstallations/2021.3.16f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Data/UnityInstallations/2021.3.16f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Data/UnityInstallations/2021.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Data/UnityInstallations/2021.3.16f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
+Registered in 0.009381 seconds.
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 103.75 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.767 seconds
+Domain Reload Profiling:
+	ReloadAssembly (768ms)
+		BeginReloadAssembly (78ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (557ms)
+			LoadAssemblies (75ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (129ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (340ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (67ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (104ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (113ms)
+				ProcessInitializeOnLoadMethodAttributes (54ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.009354 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.92 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.Exception: Error! Visual Scripting: couldn't find visual scripting package
+  at Unity.VisualScripting.PackageVersionUtility.get_version () [0x00025] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\PackageVersionUtility.cs:22 
+  at Unity.VisualScripting.BoltCoreManifest.get_version () [0x00000] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugin\BoltCoreManifest.cs:11 
+  at Unity.VisualScripting.PluginManifest.get_currentVersion () [0x00000] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:33 
+  at Unity.VisualScripting.PluginManifest.get_versionMismatch () [0x00000] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:48 
+  at Unity.VisualScripting.PluginContainer.Initialize () [0x0057d] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:208 
+  at Unity.VisualScripting.PluginContainer.InitializeOnLoad () [0x00012] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:32 
+  at Unity.VisualScripting.VSUsageUtility.DoInitializeOnLoadCalls () [0x00044] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:76 
+  at Unity.VisualScripting.VSUsageUtility.set_isVisualScriptingUsed (System.Boolean value) [0x00037] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:114 
+  at Unity.VisualScripting.VSUsageUtility.CheckAndSetIsVisualScriptingUsed () [0x0003f] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:48 
+  at Unity.VisualScripting.VSUsageUtility..cctor () [0x0000d] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:22 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Package Manager log level set to [2]
+Mono: successfully reloaded assembly
+- Completed reload, in  1.729 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1729ms)
+		BeginReloadAssembly (228ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (131ms)
+		EndReloadAssembly (1390ms)
+			LoadAssemblies (86ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (260ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (60ms)
+			SetupLoadedEditorAssemblies (938ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (28ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (118ms)
+				ProcessInitializeOnLoadAttributes (672ms)
+				ProcessInitializeOnLoadMethodAttributes (110ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4033 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 66 unused Assets / (57.8 KB). Loaded Objects now: 4477.
+Memory consumption went from 136.8 MB to 136.8 MB.
+Total: 12.190300 ms (FindLiveObjects: 0.276900 ms CreateObjectMapping: 0.189600 ms MarkObjects: 11.629900 ms  DeleteObjects: 0.093100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007102 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.89 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.Exception: Error! Visual Scripting: couldn't find visual scripting package
+  at Unity.VisualScripting.PackageVersionUtility.get_version () [0x00025] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\PackageVersionUtility.cs:22 
+  at Unity.VisualScripting.BoltCoreManifest.get_version () [0x00000] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugin\BoltCoreManifest.cs:11 
+  at Unity.VisualScripting.PluginManifest.get_currentVersion () [0x00000] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:33 
+  at Unity.VisualScripting.PluginManifest.get_versionMismatch () [0x00000] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:48 
+  at Unity.VisualScripting.PluginContainer.Initialize () [0x0057d] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:208 
+  at Unity.VisualScripting.PluginContainer.InitializeOnLoad () [0x00012] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:32 
+  at Unity.VisualScripting.VSUsageUtility.DoInitializeOnLoadCalls () [0x00044] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:76 
+  at Unity.VisualScripting.VSUsageUtility.set_isVisualScriptingUsed (System.Boolean value) [0x00037] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:114 
+  at Unity.VisualScripting.VSUsageUtility.CheckAndSetIsVisualScriptingUsed () [0x00013] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:33 
+  at Unity.VisualScripting.VSUsageUtility..cctor () [0x0000d] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:22 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.650 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1651ms)
+		BeginReloadAssembly (185ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (58ms)
+		EndReloadAssembly (1362ms)
+			LoadAssemblies (100ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (261ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (60ms)
+			SetupLoadedEditorAssemblies (697ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (31ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (128ms)
+				ProcessInitializeOnLoadAttributes (430ms)
+				ProcessInitializeOnLoadMethodAttributes (97ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 5.81 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4015 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 55 unused Assets / (33.1 KB). Loaded Objects now: 4481.
+Memory consumption went from 135.5 MB to 135.5 MB.
+Total: 18.208400 ms (FindLiveObjects: 0.293700 ms CreateObjectMapping: 0.256900 ms MarkObjects: 17.621700 ms  DeleteObjects: 0.034900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007635 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.97 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.Exception: Error! Visual Scripting: couldn't find visual scripting package
+  at Unity.VisualScripting.PackageVersionUtility.get_version () [0x00025] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\PackageVersionUtility.cs:22 
+  at Unity.VisualScripting.BoltCoreManifest.get_version () [0x00000] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugin\BoltCoreManifest.cs:11 
+  at Unity.VisualScripting.PluginManifest.get_currentVersion () [0x00000] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:33 
+  at Unity.VisualScripting.PluginManifest.get_versionMismatch () [0x00000] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:48 
+  at Unity.VisualScripting.PluginContainer.Initialize () [0x0057d] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:208 
+  at Unity.VisualScripting.PluginContainer.InitializeOnLoad () [0x00012] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:32 
+  at Unity.VisualScripting.VSUsageUtility.DoInitializeOnLoadCalls () [0x00044] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:76 
+  at Unity.VisualScripting.VSUsageUtility.set_isVisualScriptingUsed (System.Boolean value) [0x00037] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:114 
+  at Unity.VisualScripting.VSUsageUtility.CheckAndSetIsVisualScriptingUsed () [0x00013] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:33 
+  at Unity.VisualScripting.VSUsageUtility..cctor () [0x0000d] in C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:22 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  2.139 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2140ms)
+		BeginReloadAssembly (217ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (11ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (67ms)
+		EndReloadAssembly (1791ms)
+			LoadAssemblies (116ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (375ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (95ms)
+			SetupLoadedEditorAssemblies (891ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (37ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (148ms)
+				ProcessInitializeOnLoadAttributes (566ms)
+				ProcessInitializeOnLoadMethodAttributes (128ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 6.65 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4015 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 55 unused Assets / (33.1 KB). Loaded Objects now: 4485.
+Memory consumption went from 135.5 MB to 135.5 MB.
+Total: 13.794700 ms (FindLiveObjects: 0.258400 ms CreateObjectMapping: 0.164300 ms MarkObjects: 13.330600 ms  DeleteObjects: 0.040200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 25259.284437 seconds.
+  path: Assets/FmvMaker/FmvMaker.asmdef
+  artifactKey: Guid(5b0c611a29b2a6d4aa7f3efcf94c220e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/FmvMaker.asmdef using Guid(5b0c611a29b2a6d4aa7f3efcf94c220e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '357cfe1b894d8621a0893d005110be3c') in 0.142108 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/FmvMaker/Resources/FmvMakerVideos/UniqueToDifferentVideoName.mp4
+  artifactKey: Guid(d5213280dece3784fa3d506d3d197ea8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Resources/FmvMakerVideos/UniqueToDifferentVideoName.mp4 using Guid(d5213280dece3784fa3d506d3d197ea8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '0c4350d5669c26b7b2c744a5fe67ede3') in 0.014841 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Resources/BillingMode.json
+  artifactKey: Guid(27f1d454ad4473b4f9e744cdc1cc3754) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/BillingMode.json using Guid(27f1d454ad4473b4f9e744cdc1cc3754) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '881d592b5d135c2a4a0e90e16b7f32e4') in 0.016458 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/FmvMaker/Resources/FmvMakerTextures/up.png
+  artifactKey: Guid(5f0fbafcc877ddc458c79288d471c838) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Resources/FmvMakerTextures/up.png using Guid(5f0fbafcc877ddc458c79288d471c838) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '786b7f5e2bbb2bb67017a392958e5882') in 0.060618 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+  artifactKey: Guid(2e498d1c8094910479dc3e1b768306a4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset using Guid(2e498d1c8094910479dc3e1b768306a4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '89f4de689e6a62e19e05255271786f00') in 0.013828 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/FmvMaker/Textures/NodeEditor/NodeActive.png
+  artifactKey: Guid(d925fec824d9a2a41a87a52297fca267) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Textures/NodeEditor/NodeActive.png using Guid(d925fec824d9a2a41a87a52297fca267) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c9ee96acc8df98d923f6e5f39897acf8') in 0.010551 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/AssetStoreTools/Editor/AssetStoreTools.dll
+  artifactKey: Guid(db89eddc1931309408191e6d4644d3c7) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/AssetStoreTools/Editor/AssetStoreTools.dll using Guid(db89eddc1931309408191e6d4644d3c7) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '5eb099083f0138495102cfa06607c180') in 0.022954 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc
+  artifactKey: Guid(d930090c0cd643c7b55f19a38538c162) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc using Guid(d930090c0cd643c7b55f19a38538c162) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '778a8b78b534c6240ca9831367bb2552') in 0.013957 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat
+  artifactKey: Guid(79459efec17a4d00a321bdcc27bbc385) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat using Guid(79459efec17a4d00a321bdcc27bbc385) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '86657b26d19a51ec96c239593f930b56') in 0.018538 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/FmvMaker/Resources/CircleFmvVideoData.json
+  artifactKey: Guid(ddc9a741957565f4abad98b63e6ce320) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Resources/CircleFmvVideoData.json using Guid(ddc9a741957565f4abad98b63e6ce320) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2d15cb681b62a0a67b0e9906dd9cce1c') in 0.010891 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader
+  artifactKey: Guid(128e987d567d4e2c824d754223b3f3b0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader using Guid(128e987d567d4e2c824d754223b3f3b0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '83e0793f40cc4f533d98cfaa040567c0') in 0.014905 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/FmvMaker/Resources/FmvMakerVideos/readme.txt
+  artifactKey: Guid(2f975717b219bbc429a5824227f65d18) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Resources/FmvMakerVideos/readme.txt using Guid(2f975717b219bbc429a5824227f65d18) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b939eca28886811a97b219c7f9d285aa') in 0.013383 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMP_SDF.shader
+  artifactKey: Guid(68e6db2ebdc24f95958faec2be5558d6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Shaders/TMP_SDF.shader using Guid(68e6db2ebdc24f95958faec2be5558d6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '58b450f5a219419b398aa24874b6bb86') in 0.010303 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/FmvMaker/Textures/FmvMakerLogo_card.png
+  artifactKey: Guid(40d4d59dc23a9ba49a8d4ca7efa41db9) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Textures/FmvMakerLogo_card.png using Guid(40d4d59dc23a9ba49a8d4ca7efa41db9) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ea6162e90be0f86bd1155635c205efd0') in 0.012417 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/FmvMaker/Scripts/Data/NodeGraph.cs
+  artifactKey: Guid(1b96a172d1eb81247846b84afa3b5864) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Scripts/Data/NodeGraph.cs using Guid(1b96a172d1eb81247846b84afa3b5864) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b12d48d178cbaf87ddeb85c08c0d8ad5') in 0.014180 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/FmvMaker/Resources/FmvMakerVideos/DialogOption5.mp4
+  artifactKey: Guid(7daf484e223a8b24ea386f064c5b504d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Resources/FmvMakerVideos/DialogOption5.mp4 using Guid(7daf484e223a8b24ea386f064c5b504d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4d2cde1cd39c265cf6e81e9b1eef2b8d') in 0.010961 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000108 seconds.
+  path: Assets/FmvMaker/Resources/FmvMakerTextures/default.png
+  artifactKey: Guid(2c18887a2aa8fb347881edd0332b031b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Resources/FmvMakerTextures/default.png using Guid(2c18887a2aa8fb347881edd0332b031b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c7cd0bbd607a823be5c9496ae4916c8d') in 0.011985 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
+  artifactKey: Guid(fe393ace9b354375a9cb14cdbbc28be4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader using Guid(fe393ace9b354375a9cb14cdbbc28be4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'fe4c09e8cd4beef66bc602f0098244f1') in 0.010340 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/FmvMaker/Scripts/Core/Interfaces/IVideoEvents.cs
+  artifactKey: Guid(043aeec433f0150438c1804783b587d3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Scripts/Core/Interfaces/IVideoEvents.cs using Guid(043aeec433f0150438c1804783b587d3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6c35d4aa9bfb21150d90b433371f13e4') in 0.010824 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/FmvMaker/Scripts/Core/Models/ClickableModel.cs
+  artifactKey: Guid(0cc4dc5a3d49ec848b3f691200ca87f4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Scripts/Core/Models/ClickableModel.cs using Guid(0cc4dc5a3d49ec848b3f691200ca87f4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9ba65ba71708b17d9789b26d86edac21') in 0.009890 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/FmvMaker/Scripts/Core/Utilities/ClickableClickEvent.cs
+  artifactKey: Guid(2020d6aade6eb8244be48818cebc9754) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Scripts/Core/Utilities/ClickableClickEvent.cs using Guid(2020d6aade6eb8244be48818cebc9754) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '787e133f286812fb2f204614c18ea29b') in 0.009582 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/FmvMaker/Scripts/Core/Models/VideoOnlineSourceWrapper.cs
+  artifactKey: Guid(90a4c482a9468084abc368f78ccb5eb2) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Scripts/Core/Models/VideoOnlineSourceWrapper.cs using Guid(90a4c482a9468084abc368f78ccb5eb2) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '26533f97f7e86ad7a4623a5b1730ff0c') in 0.010614 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/FmvMaker/Resources/FmvMakerVideos/DialogOption2.mp4
+  artifactKey: Guid(1e6710f20b005424d9cefe24de82b23e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Resources/FmvMakerVideos/DialogOption2.mp4 using Guid(1e6710f20b005424d9cefe24de82b23e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '799895b20d8f70c37146eba6091a2c8b') in 0.009795 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/FmvMaker/Textures/FmvMakerLogo.png
+  artifactKey: Guid(6a14fe23c859679419e7bd2965391341) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Textures/FmvMakerLogo.png using Guid(6a14fe23c859679419e7bd2965391341) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd92b7ca2e0101c1464f365e7a248bfd6') in 0.014132 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader
+  artifactKey: Guid(48bb5f55d8670e349b6e614913f9d910) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader using Guid(48bb5f55d8670e349b6e614913f9d910) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '93bb8313f99b00f4a2307df22084a862') in 0.010824 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader
+  artifactKey: Guid(a02a7d8c237544f1962732b55a9aebf1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader using Guid(a02a7d8c237544f1962732b55a9aebf1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '811ad57542216c5c3dd4d4bfa555fad2') in 0.010903 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/FmvMaker/Scripts/Core/Utilities/VideoBoolEvent.cs
+  artifactKey: Guid(670e25e2d404d6c4f88dbf9123d6a31d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Scripts/Core/Utilities/VideoBoolEvent.cs using Guid(670e25e2d404d6c4f88dbf9123d6a31d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '76ef5166feffebb6ceec085b462d6392') in 0.012295 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader
+  artifactKey: Guid(f7ada0af4f174f0694ca6a487b8f543d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader using Guid(f7ada0af4f174f0694ca6a487b8f543d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a7c8d195c3aca3db4bf2ff54a507c836') in 0.010583 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt
+  artifactKey: Guid(d82c1b31c7e74239bff1220585707d2b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt using Guid(d82c1b31c7e74239bff1220585707d2b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'fba6f150de0c1e2bfb6de122072d8295') in 0.011506 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/FmvMaker/Scenes/CircleFmv.unity
+  artifactKey: Guid(fdd3586aa14a4cf44947d0d6fe2739a4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Scenes/CircleFmv.unity using Guid(fdd3586aa14a4cf44947d0d6fe2739a4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '10348def5f0a2d06d34febfdd91d84a9') in 0.010045 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/FmvMaker/Scripts/Editor/Views/NodePropertyView.cs
+  artifactKey: Guid(e61786f3b9c95eb4684f96ff0b9db172) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Scripts/Editor/Views/NodePropertyView.cs using Guid(e61786f3b9c95eb4684f96ff0b9db172) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '783fcb72523c72124bd29b2e43c3d7a4') in 0.012209 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/FmvMaker/Resources/FmvMakerVideos/UniqueIdleVideoName.mp4
+  artifactKey: Guid(809a0f3631e76c941a9276d55d40886f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Resources/FmvMakerVideos/UniqueIdleVideoName.mp4 using Guid(809a0f3631e76c941a9276d55d40886f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b4540da4e6ebf84fc353a12c714a5838') in 0.011408 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/FmvMaker/Textures/VideoLoading.png
+  artifactKey: Guid(356c4c274451c654d87ac21480ece1b1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Textures/VideoLoading.png using Guid(356c4c274451c654d87ac21480ece1b1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '0f11dc7f2560d0b094dfda760d426549') in 0.012099 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc
+  artifactKey: Guid(c334973cef89a9840b0b0c507e0377ab) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc using Guid(c334973cef89a9840b0b0c507e0377ab) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '955bfb72b7d103eafaeebb229c2d0af9') in 0.011437 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/FmvMaker/Resources/FmvMakerVideos/DialogIdle.mp4
+  artifactKey: Guid(b42819a75b9020444b1a991ddef656dc) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Resources/FmvMakerVideos/DialogIdle.mp4 using Guid(b42819a75b9020444b1a991ddef656dc) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2bb1b437185045629a2f4b813325a7a7') in 0.010471 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/FmvMaker/Resources/FmvMakerTextures/DifferentUniqueClickable.png
+  artifactKey: Guid(6e5da3def3890ce4aab7113bac88e266) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Resources/FmvMakerTextures/DifferentUniqueClickable.png using Guid(6e5da3def3890ce4aab7113bac88e266) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2018455654a316a860fd178b428f0274') in 0.014231 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/FmvMaker/Scripts/Data/Nodes/AddNode.cs
+  artifactKey: Guid(6d5825987ae5d7d4a8687a845f0eeccf) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Scripts/Data/Nodes/AddNode.cs using Guid(6d5825987ae5d7d4a8687a845f0eeccf) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'adde16af2ed6a384893c9e640e80e24b') in 0.011322 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/FmvMaker/Textures/FmvMakerDemo_KeyBindings01.png
+  artifactKey: Guid(9c149d44f1e59324c8cc172d756213a5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Textures/FmvMakerDemo_KeyBindings01.png using Guid(9c149d44f1e59324c8cc172d756213a5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '95aba8c2cd4d54c86781df9134425631') in 0.011911 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db
+  artifactKey: Guid(fefb1a0be5aa6974fb34466ec6b57d3e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db using Guid(fefb1a0be5aa6974fb34466ec6b57d3e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e0da4a859a61d227467ed2e86594ba42') in 0.013162 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/FmvMaker/Scripts/Core/Models/BaseUiElementModel.cs
+  artifactKey: Guid(fe0906981261ad64abc68135bb734cc7) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Scripts/Core/Models/BaseUiElementModel.cs using Guid(fe0906981261ad64abc68135bb734cc7) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'de04fc7fd109544e8fdb83123b159edb') in 0.012635 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/FmvMaker/Resources/FmvMakerVideos/DifferentUniqueVideoName.mp4
+  artifactKey: Guid(6efc7713cb0b92848b6fb251dae8472b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Resources/FmvMakerVideos/DifferentUniqueVideoName.mp4 using Guid(6efc7713cb0b92848b6fb251dae8472b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f17770bce2cb1df2361c479db5185304') in 0.010176 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/FmvMaker/Textures/NodeEditor/NodeViewBG.png
+  artifactKey: Guid(042ba39b06cf5124ead228a4a6a0ee9c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Textures/NodeEditor/NodeViewBG.png using Guid(042ba39b06cf5124ead228a4a6a0ee9c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4d478ecbbfe9fb9caabbe7da634e3b69') in 0.010392 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/FmvMaker/Textures/FmvMakerCircleDemo_States03.PNG
+  artifactKey: Guid(b8f658958dae8a54498c024c688fdd1b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Textures/FmvMakerCircleDemo_States03.PNG using Guid(b8f658958dae8a54498c024c688fdd1b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f533bcdbea88f3e9deb17c7bd18e3a79') in 0.014614 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt
+  artifactKey: Guid(381dcb09d5029d14897e55f98031fca5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt using Guid(381dcb09d5029d14897e55f98031fca5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '5e1f771294c019fc8c2f5868ebd47844') in 0.010858 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/FmvMaker/Textures/FmvMakerLogo_social.png
+  artifactKey: Guid(e060be1af18b47549ad152cdd93520c0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Textures/FmvMakerLogo_social.png using Guid(e060be1af18b47549ad152cdd93520c0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '414bb158656363965b15bc842f8fdcc3') in 0.014484 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/FmvMaker/Resources/FmvMakerTextures/SecondItemClickable.png
+  artifactKey: Guid(3676a0b185daeb54fb257f700ba7ead4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Resources/FmvMakerTextures/SecondItemClickable.png using Guid(3676a0b185daeb54fb257f700ba7ead4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '694b3ae64e0ce75a53b0fbef89cc681f') in 0.016238 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/FmvMaker/Scripts/Editor/Views/ViewBase.cs
+  artifactKey: Guid(2330f775166caf34b8bedc3c0b0ea8bb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Scripts/Editor/Views/ViewBase.cs using Guid(2330f775166caf34b8bedc3c0b0ea8bb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '302c5a1c4e229bafd4501cc80e424f34') in 0.010529 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/FmvMaker/Scripts/Editor/Windows/NodePopupWindow.cs
+  artifactKey: Guid(09e7ae87556113545be832f6873fc73a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Scripts/Editor/Windows/NodePopupWindow.cs using Guid(09e7ae87556113545be832f6873fc73a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2f64402eae2b7809fbce92ee24a22b99') in 0.014465 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat
+  artifactKey: Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat using Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b08324baa242d4cbe0aed3f944f7de13') in 0.011242 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/FmvMaker/Resources/FmvMakerVideos/DialogIntro.mp4
+  artifactKey: Guid(be4b2d5df951fa748befa3a889f85e70) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Resources/FmvMakerVideos/DialogIntro.mp4 using Guid(be4b2d5df951fa748befa3a889f85e70) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '26a000860b2c8495b1e1e922bd8ad1eb') in 0.009500 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/FmvMaker/Resources/DialogOnlineVideoMapping.json
+  artifactKey: Guid(0d14c44b8f85d9644a7acd8ff9829ef0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Resources/DialogOnlineVideoMapping.json using Guid(0d14c44b8f85d9644a7acd8ff9829ef0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd2c6eecb7825719658efc68a97a5a00f') in 0.011170 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/FmvMaker/Resources/CircleFmvClickableData.json
+  artifactKey: Guid(07d218926a1846b4c9cabfcf2a981c10) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Resources/CircleFmvClickableData.json using Guid(07d218926a1846b4c9cabfcf2a981c10) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f1dedfd7402efbc876d40ae19bbac8e2') in 0.010282 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/TextMesh Pro/Resources/TMP Settings.asset
+  artifactKey: Guid(3f5b5dff67a942289a9defa416b206f3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Resources/TMP Settings.asset using Guid(3f5b5dff67a942289a9defa416b206f3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '3f2400a75eeaa330ce8e6b18d741b75a') in 0.013163 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/FmvMaker/Resources/FmvMakerVideos/NextUniqueVideoName.mp4
+  artifactKey: Guid(6de16cf7ead50714189b9adcbc100aac) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Resources/FmvMakerVideos/NextUniqueVideoName.mp4 using Guid(6de16cf7ead50714189b9adcbc100aac) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ee5ad8b7360b65467b5d46b8c7eddc70') in 0.011225 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader
+  artifactKey: Guid(c8d12adcee749c344b8117cf7c7eb912) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader using Guid(c8d12adcee749c344b8117cf7c7eb912) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '87f1033ca55f9beed138ec7358ba5ab9') in 0.011064 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt
+  artifactKey: Guid(fade42e8bc714b018fac513c043d323b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt using Guid(fade42e8bc714b018fac513c043d323b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6dd63f9123ceedde30355303e4e5d11a') in 0.010776 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/FmvMaker/Scripts/Core/Utilities/ResourceVideoInfo.cs
+  artifactKey: Guid(c54b1388d1e79a14eb4a6abf1fd76286) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Scripts/Core/Utilities/ResourceVideoInfo.cs using Guid(c54b1388d1e79a14eb4a6abf1fd76286) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '50c19e0c1f6fd05e94a5b52f93ceab2d') in 0.012531 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/FmvMaker/NodeGraphs/SecondGraph.asset
+  artifactKey: Guid(f746efbd9e1fad54489d3edaf576f748) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/NodeGraphs/SecondGraph.asset using Guid(f746efbd9e1fad54489d3edaf576f748) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f96b257c3a1bc28c6ca0054008496f3a') in 0.012724 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/FmvMaker/Scripts/Core/Interfaces/IVideoSource.cs
+  artifactKey: Guid(7cdfa430a21852d41abc17999553cb34) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Scripts/Core/Interfaces/IVideoSource.cs using Guid(7cdfa430a21852d41abc17999553cb34) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '75d31e90640b9958ed92d6bd1fdf5cfd') in 0.011786 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/FmvMaker/NodeGraphs/TestGraph.asset
+  artifactKey: Guid(8af7caf13fdb57b4aab1bd0b9061e111) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/NodeGraphs/TestGraph.asset using Guid(8af7caf13fdb57b4aab1bd0b9061e111) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '32755b667a7e5acd52c49908d0881caf') in 0.010667 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/FmvMaker/Scripts/Core/Provider/FmvItemInventoryVisibility.cs
+  artifactKey: Guid(59df1829b43b0144e8713d76fa479ada) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Scripts/Core/Provider/FmvItemInventoryVisibility.cs using Guid(59df1829b43b0144e8713d76fa479ada) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9d5c4046f9ca2ce871ec4dcf9b3fd5d6') in 0.013014 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset
+  artifactKey: Guid(f952c082cb03451daed3ee968ac6c63e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset using Guid(f952c082cb03451daed3ee968ac6c63e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '0059fae3afdaa5182f4ea360bc0eaca4') in 0.012224 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMP_Sprite.shader
+  artifactKey: Guid(cf81c85f95fe47e1a27f6ae460cf182c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Shaders/TMP_Sprite.shader using Guid(cf81c85f95fe47e1a27f6ae460cf182c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4d500eb0a6a4f798462a9cf196d676fa') in 0.011919 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/FmvMaker/Scripts/Core/Utilities/DynamicVideoResolution.cs
+  artifactKey: Guid(0385944a5e9601448adc0823112f82fa) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Scripts/Core/Utilities/DynamicVideoResolution.cs using Guid(0385944a5e9601448adc0823112f82fa) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9e253117ead0c1fc11ac43a51587fe4d') in 0.015091 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader
+  artifactKey: Guid(14eb328de4b8eb245bb7cea29e4ac00b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader using Guid(14eb328de4b8eb245bb7cea29e4ac00b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f6b910b07a5243defd672e9d65f0a5ea') in 0.013178 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/FmvMaker/Scripts/Core/Provider/FmvClickableObjects.cs
+  artifactKey: Guid(3a96cc646b921e842a28bae7333cb1f3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Scripts/Core/Provider/FmvClickableObjects.cs using Guid(3a96cc646b921e842a28bae7333cb1f3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7594891598b06f2058061cf5e66c303f') in 0.011271 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader
+  artifactKey: Guid(1e3b057af24249748ff873be7fafee47) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader using Guid(1e3b057af24249748ff873be7fafee47) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '498941b01aecb32a17f330d417deae0b') in 0.011169 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/FmvMaker/Scripts/Core/Provider/FmvVideoView.cs
+  artifactKey: Guid(6a182c7242b24df4898085a0b4dac56a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Scripts/Core/Provider/FmvVideoView.cs using Guid(6a182c7242b24df4898085a0b4dac56a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2f8946606e15bbdb50db5cfd59e63a80') in 0.010339 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/FmvMaker/Textures/FmvMakerCircleDemo_States00.PNG
+  artifactKey: Guid(eec6977f254eb6243a16d093ebc09014) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/FmvMaker/Textures/FmvMakerCircleDemo_States00.PNG using Guid(eec6977f254eb6243a16d093ebc09014) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7dd1d1d62e9cd929ca7661a8d68db73e') in 0.012716 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader
+  artifactKey: Guid(dd89cf5b9246416f84610a006f916af7) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader using Guid(dd89cf5b9246416f84610a006f916af7) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '30debca4b54d63901fd129a4df0dc514') in 0.010776 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
+  artifactKey: Guid(8f586378b4e144a9851e7b34d9b748ee) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset using Guid(8f586378b4e144a9851e7b34d9b748ee) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6327f0a94adad8bb80c1a3bf89e11478') in 0.037435 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
