@@ -15,11 +15,11 @@ C:/Data/UnityProjects/FmvMaker
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-65390
+57254
 Successfully changed project path to: C:/Data/UnityProjects/FmvMaker
 C:/Data/UnityProjects/FmvMaker
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 64.98 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 82.08 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.33f1 (915a7af8b0d5)
 [Subsystems] Discovering subsystems at path C:/Data/UnityInstallations/2020.3.33f1/Editor/Data/Resources/UnitySubsystems
@@ -35,278 +35,93 @@ Initialize mono
 Mono path[0] = 'C:/Data/UnityInstallations/2020.3.33f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Data/UnityInstallations/2020.3.33f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Data/UnityInstallations/2020.3.33f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56484
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56836
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Data/UnityInstallations/2020.3.33f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Data/UnityInstallations/2020.3.33f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003279 seconds.
+Registered in 0.003450 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 72.49 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 67.21 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.822 seconds
+- Completed reload, in  0.791 seconds
 Domain Reload Profiling:
-	ReloadAssembly (822ms)
-		BeginReloadAssembly (64ms)
+	ReloadAssembly (791ms)
+		BeginReloadAssembly (78ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (672ms)
-			LoadAssemblies (63ms)
+		EndReloadAssembly (608ms)
+			LoadAssemblies (77ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (174ms)
+			SetupTypeCache (221ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (40ms)
-			SetupLoadedEditorAssemblies (225ms)
+			RebuildScriptCaches (35ms)
+			SetupLoadedEditorAssemblies (213ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
+				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (73ms)
-				BeforeProcessingInitializeOnLoad (21ms)
-				ProcessInitializeOnLoadAttributes (97ms)
-				ProcessInitializeOnLoadMethodAttributes (28ms)
+				RefreshPlugins (67ms)
+				BeforeProcessingInitializeOnLoad (17ms)
+				ProcessInitializeOnLoadAttributes (88ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006782 seconds.
+Registered in 0.007649 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 66.34 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 87.20 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.521 seconds
+- Completed reload, in  1.616 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3522ms)
-		BeginReloadAssembly (180ms)
+	ReloadAssembly (1618ms)
+		BeginReloadAssembly (193ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (9ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (36ms)
-		EndReloadAssembly (3283ms)
-			LoadAssemblies (102ms)
+			CreateAndSetChildDomain (22ms)
+		EndReloadAssembly (1325ms)
+			LoadAssemblies (141ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (2477ms)
+			SetupTypeCache (419ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (69ms)
-			SetupLoadedEditorAssemblies (460ms)
+			RebuildScriptCaches (61ms)
+			SetupLoadedEditorAssemblies (568ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (66ms)
-				BeforeProcessingInitializeOnLoad (98ms)
-				ProcessInitializeOnLoadAttributes (200ms)
-				ProcessInitializeOnLoadMethodAttributes (84ms)
-				AfterProcessingInitializeOnLoad (6ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.63 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2438 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 98.8 MB.
-System memory in use after: 98.9 MB.
-
-Unloading 60 unused Assets to reduce memory usage. Loaded Objects now: 2852.
-Total: 6.639900 ms (FindLiveObjects: 0.172100 ms CreateObjectMapping: 0.087100 ms MarkObjects: 6.306200 ms  DeleteObjects: 0.073800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  path: Assets/FmvMaker/FmvMaker.asmdef
-  artifactKey: Guid(5b0c611a29b2a6d4aa7f3efcf94c220e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FmvMaker/FmvMaker.asmdef using Guid(5b0c611a29b2a6d4aa7f3efcf94c220e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6205718095db896b7cfc5d942819f71') in 0.037885 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 21.622652 seconds.
-  path: Assets/FmvMaker/FmvMaker.asmdef
-  artifactKey: Guid(5b0c611a29b2a6d4aa7f3efcf94c220e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FmvMaker/FmvMaker.asmdef using Guid(5b0c611a29b2a6d4aa7f3efcf94c220e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4338f7e12c3814d4f5389cfba28494a1') in 0.370994 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006504 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.33 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.701 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1702ms)
-		BeginReloadAssembly (160ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (43ms)
-		EndReloadAssembly (1457ms)
-			LoadAssemblies (132ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (435ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (72ms)
-			SetupLoadedEditorAssemblies (673ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (10ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (180ms)
-				ProcessInitializeOnLoadAttributes (347ms)
-				ProcessInitializeOnLoadMethodAttributes (125ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.21 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2420 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 97.6 MB.
-System memory in use after: 97.8 MB.
-
-Unloading 51 unused Assets to reduce memory usage. Loaded Objects now: 2855.
-Total: 8.886400 ms (FindLiveObjects: 0.218800 ms CreateObjectMapping: 0.144700 ms MarkObjects: 8.468400 ms  DeleteObjects: 0.052600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004898 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.65 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.112 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1113ms)
-		BeginReloadAssembly (134ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (47ms)
-		EndReloadAssembly (916ms)
-			LoadAssemblies (97ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (274ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (57ms)
-			SetupLoadedEditorAssemblies (397ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (108ms)
-				ProcessInitializeOnLoadAttributes (196ms)
-				ProcessInitializeOnLoadMethodAttributes (80ms)
-				AfterProcessingInitializeOnLoad (6ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.65 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2281 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 94.7 MB.
-System memory in use after: 94.9 MB.
-
-Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 2858.
-Total: 6.368800 ms (FindLiveObjects: 0.178500 ms CreateObjectMapping: 0.095000 ms MarkObjects: 6.066500 ms  DeleteObjects: 0.027800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007107 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.76 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.172 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1172ms)
-		BeginReloadAssembly (114ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (33ms)
-		EndReloadAssembly (996ms)
-			LoadAssemblies (110ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (315ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (54ms)
-			SetupLoadedEditorAssemblies (416ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (111ms)
-				ProcessInitializeOnLoadAttributes (206ms)
-				ProcessInitializeOnLoadMethodAttributes (83ms)
+				RefreshPlugins (87ms)
+				BeforeProcessingInitializeOnLoad (116ms)
+				ProcessInitializeOnLoadAttributes (244ms)
+				ProcessInitializeOnLoadMethodAttributes (108ms)
 				AfterProcessingInitializeOnLoad (7ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.79 ms, found 2 plugins.
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.82 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3006 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 113.1 MB.
-System memory in use after: 113.3 MB.
+Unloading 3132 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.7 MB.
+System memory in use after: 116.9 MB.
 
-Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3445.
-Total: 6.756900 ms (FindLiveObjects: 0.210400 ms CreateObjectMapping: 0.121600 ms MarkObjects: 6.392600 ms  DeleteObjects: 0.031500 ms)
+Unloading 62 unused Assets to reduce memory usage. Loaded Objects now: 3545.
+Total: 8.410700 ms (FindLiveObjects: 0.249900 ms CreateObjectMapping: 0.146700 ms MarkObjects: 7.919800 ms  DeleteObjects: 0.093200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -320,180 +135,13 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 283.964689 seconds.
-  path: Assets/Samples/Graph Tools Foundation/0.11.2-preview/Recipes GTF example
-  artifactKey: Guid(387f49247801208499505aa34ee32798) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Graph Tools Foundation/0.11.2-preview/Recipes GTF example using Guid(387f49247801208499505aa34ee32798) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf21fbf1cc6f29456c089d3122ce7d7d') in 0.018502 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.545554 seconds.
-  path: Assets/Samples/Graph Tools Foundation/0.11.2-preview/Simple Graph (Math Book) example
-  artifactKey: Guid(1ee140cb12f58314fa47669f5395a6cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Graph Tools Foundation/0.11.2-preview/Simple Graph (Math Book) example using Guid(1ee140cb12f58314fa47669f5395a6cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fba9687f31a3f9af3b7f457032ba948') in 0.006780 seconds 
+  path: Assets/FmvMaker/Scripts/GTF/Editor/Nodes/StartVideoNodeModel.cs
+  artifactKey: Guid(cfdc4fa5162a3764ba42751d19071fa7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/GTF/Editor/Nodes/StartVideoNodeModel.cs using Guid(cfdc4fa5162a3764ba42751d19071fa7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8b3cf44c96062ebc8bda6ad69ec031e') in 0.044116 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.007301 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.84 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.154 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1154ms)
-		BeginReloadAssembly (125ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (40ms)
-		EndReloadAssembly (968ms)
-			LoadAssemblies (104ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (300ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (56ms)
-			SetupLoadedEditorAssemblies (413ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (116ms)
-				ProcessInitializeOnLoadAttributes (196ms)
-				ProcessInitializeOnLoadMethodAttributes (89ms)
-				AfterProcessingInitializeOnLoad (6ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.74 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3070 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 114.5 MB.
-System memory in use after: 114.7 MB.
-
-Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3512.
-Total: 7.069900 ms (FindLiveObjects: 0.195900 ms CreateObjectMapping: 0.119800 ms MarkObjects: 6.722200 ms  DeleteObjects: 0.031100 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 9.810691 seconds.
-  path: Assets/Samples/Graph Tools Foundation/0.11.2-preview/Simple Graph (Math Book) example/Editor
-  artifactKey: Guid(8a8d4cbe8bfbe154383ad62c1ad3fb21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Graph Tools Foundation/0.11.2-preview/Simple Graph (Math Book) example/Editor using Guid(8a8d4cbe8bfbe154383ad62c1ad3fb21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1aee37cf408d6d3d59318f22b11a51d1') in 0.010318 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 40.676528 seconds.
-  path: Assets/Samples/Recipe.asset
-  artifactKey: Guid(ad300a738d2b55f41bda8890a8823e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Recipe.asset using Guid(ad300a738d2b55f41bda8890a8823e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '206095ebed288b1bab23e9013cc598f8') in 0.025049 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 79.996505 seconds.
-  path: Assets/Samples/Recipe.asset
-  artifactKey: Guid(ad300a738d2b55f41bda8890a8823e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Recipe.asset using Guid(ad300a738d2b55f41bda8890a8823e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '547651d2f5913278e2d58d66a45ced44') in 0.015956 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 134.977778 seconds.
-  path: Assets/Samples/Recipe.asset
-  artifactKey: Guid(ad300a738d2b55f41bda8890a8823e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Recipe.asset using Guid(ad300a738d2b55f41bda8890a8823e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '140715c778ca8e0c763972c9516d99bb') in 0.007479 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 61.766742 seconds.
-  path: Assets/Samples/Graph Tools Foundation/0.11.2-preview/Recipes GTF example/Editor/RecipeState.cs
-  artifactKey: Guid(8c4c9991101547fc81329b8921fad079) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Graph Tools Foundation/0.11.2-preview/Recipes GTF example/Editor/RecipeState.cs using Guid(8c4c9991101547fc81329b8921fad079) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e170c15da2949a76b385eac8726b2d5e') in 0.010189 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.355876 seconds.
-  path: Assets/Samples/Graph Tools Foundation/0.11.2-preview/Recipes GTF example/Editor/RecipeStencil.cs
-  artifactKey: Guid(837b001e588346f083d1230f1714ea3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Graph Tools Foundation/0.11.2-preview/Recipes GTF example/Editor/RecipeStencil.cs using Guid(837b001e588346f083d1230f1714ea3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7472cbf90bba46a8f6b677c6a3b222de') in 0.006024 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 48.943585 seconds.
-  path: Assets/Samples/Graph Tools Foundation/0.11.2-preview/Simple Graph (Math Book) example/Editor/SimpleGraphViewWindow.cs
-  artifactKey: Guid(9cb654b375a04cc4fb78caedd7114626) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Graph Tools Foundation/0.11.2-preview/Simple Graph (Math Book) example/Editor/SimpleGraphViewWindow.cs using Guid(9cb654b375a04cc4fb78caedd7114626) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fd03b10b36ba2f7b191d268d1fbd03b') in 0.006081 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.145582 seconds.
-  path: Assets/Samples/Graph Tools Foundation/0.11.2-preview/Simple Graph (Math Book) example/Editor/ModelInspectorViewFactoryExtensions.cs
-  artifactKey: Guid(18b3da819d3847bb97395b6dc94fc4e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Graph Tools Foundation/0.11.2-preview/Simple Graph (Math Book) example/Editor/ModelInspectorViewFactoryExtensions.cs using Guid(18b3da819d3847bb97395b6dc94fc4e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d3c97e08c579c2449955a91d9384984') in 0.006176 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.859789 seconds.
-  path: Assets/Samples/Graph Tools Foundation/0.11.2-preview/Simple Graph (Math Book) example/Editor/MathBookStencil.cs
-  artifactKey: Guid(e56804f9144a4af188bbb8976ce67600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Graph Tools Foundation/0.11.2-preview/Simple Graph (Math Book) example/Editor/MathBookStencil.cs using Guid(e56804f9144a4af188bbb8976ce67600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41ae0caf93190ae76a13fe1b7516fb4c') in 0.005740 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.217219 seconds.
-  path: Assets/Samples/Graph Tools Foundation/0.11.2-preview/Simple Graph (Math Book) example/Editor/MathBookState.cs
-  artifactKey: Guid(84452ff14242420cba5235ecf3c516dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Graph Tools Foundation/0.11.2-preview/Simple Graph (Math Book) example/Editor/MathBookState.cs using Guid(84452ff14242420cba5235ecf3c516dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bd5df0a27be2bbfb774554e555725e3') in 0.006533 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.060723 seconds.
-  path: Assets/Samples/Graph Tools Foundation/0.11.2-preview/Simple Graph (Math Book) example/Editor/MathBookOnboardingProvider.cs
-  artifactKey: Guid(e21416e88f173314bbd447c54d0878b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Graph Tools Foundation/0.11.2-preview/Simple Graph (Math Book) example/Editor/MathBookOnboardingProvider.cs using Guid(e21416e88f173314bbd447c54d0878b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e81cffcb84b83605da84d7d7d992f9b9') in 0.006163 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.926429 seconds.
-  path: Assets/Samples/Graph Tools Foundation/0.11.2-preview/Simple Graph (Math Book) example/Editor/MathBookMainToolbar.cs
-  artifactKey: Guid(7e6ac51f2ad44ad089c2c25dcda2c200) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Graph Tools Foundation/0.11.2-preview/Simple Graph (Math Book) example/Editor/MathBookMainToolbar.cs using Guid(7e6ac51f2ad44ad089c2c25dcda2c200) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca522e5463e6ebc349ec7257ebd4f91a') in 0.006321 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 9.005200 seconds.
-  path: Assets/Samples/Graph Tools Foundation/0.11.2-preview/Simple Graph (Math Book) example/Editor/MathBookAsset.cs
-  artifactKey: Guid(8a1b94d54a0718749ac226aeb8ef53fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Graph Tools Foundation/0.11.2-preview/Simple Graph (Math Book) example/Editor/MathBookAsset.cs using Guid(8a1b94d54a0718749ac226aeb8ef53fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10769539b023468b71acfe5df9a97bdc') in 0.006007 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.441362 seconds.
-  path: Assets/Samples/Graph Tools Foundation/0.11.2-preview/Simple Graph (Math Book) example/Editor/GraphViewFactoryExtensions.cs
-  artifactKey: Guid(89a9960478b94aeda94d32be53b8859e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Graph Tools Foundation/0.11.2-preview/Simple Graph (Math Book) example/Editor/GraphViewFactoryExtensions.cs using Guid(89a9960478b94aeda94d32be53b8859e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14ac91e6979b5b0870fb21b9428373e0') in 0.005900 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.575677 seconds.
-  path: Assets/Samples/Graph Tools Foundation/0.11.2-preview/Simple Graph (Math Book) example/Editor/GraphElements
-  artifactKey: Guid(f5e4a8e78239f6d468797418dac86f12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Graph Tools Foundation/0.11.2-preview/Simple Graph (Math Book) example/Editor/GraphElements using Guid(f5e4a8e78239f6d468797418dac86f12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e95de748c4ac718e1b2e39f085bdc89') in 0.006438 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 110.829825 seconds.
-  path: Assets/Samples/Graph Tools Foundation/0.11.2-preview/Contexts GTF example
-  artifactKey: Guid(da1588e4e795af44d896a30ff1b0112e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Graph Tools Foundation/0.11.2-preview/Contexts GTF example using Guid(da1588e4e795af44d896a30ff1b0112e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b693e1b493f3c87d46f24ebc26e4672') in 0.006058 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.654766 seconds.
-  path: Assets/Samples/Graph Tools Foundation/0.11.2-preview/Vertical Flow Sample
-  artifactKey: Guid(65b5a76c6db289e4eb7aab1e6eb8c319) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Graph Tools Foundation/0.11.2-preview/Vertical Flow Sample using Guid(65b5a76c6db289e4eb7aab1e6eb8c319) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fae413bb6fa6852698ba2fb7d35097ae') in 0.157726 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007487 seconds.
+Registered in 0.007242 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
 Native extension for WindowsStandalone target not found
@@ -501,236 +149,100 @@ Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 0.75 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.139 seconds
+- Completed reload, in  1.207 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1139ms)
-		BeginReloadAssembly (129ms)
+	ReloadAssembly (1207ms)
+		BeginReloadAssembly (121ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (39ms)
-		EndReloadAssembly (950ms)
-			LoadAssemblies (112ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (287ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (56ms)
-			SetupLoadedEditorAssemblies (407ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (112ms)
-				ProcessInitializeOnLoadAttributes (195ms)
-				ProcessInitializeOnLoadMethodAttributes (87ms)
-				AfterProcessingInitializeOnLoad (6ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.76 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3092 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 115.1 MB.
-System memory in use after: 115.3 MB.
-
-Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3537.
-Total: 6.921900 ms (FindLiveObjects: 0.219500 ms CreateObjectMapping: 0.115600 ms MarkObjects: 6.554200 ms  DeleteObjects: 0.031600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 18.519741 seconds.
-  path: Assets/Samples/Math Book.asset
-  artifactKey: Guid(717cd7d9dd27f5e438bd1dfeb11738c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Math Book.asset using Guid(717cd7d9dd27f5e438bd1dfeb11738c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8494fc7db4b8320751c97361c3093d1') in 0.025148 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 28.157737 seconds.
-  path: Assets/Samples/Contexts.asset
-  artifactKey: Guid(fc7419e52d2356b41ae32163f7cfdaf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Contexts.asset using Guid(fc7419e52d2356b41ae32163f7cfdaf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f61a48ee80515b4f6f100bde9e1431c4') in 0.010705 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 76.557199 seconds.
-  path: Assets/Samples/Contexts.asset
-  artifactKey: Guid(fc7419e52d2356b41ae32163f7cfdaf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Contexts.asset using Guid(fc7419e52d2356b41ae32163f7cfdaf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05dfa1d25dbbb60073703055a06dd15f') in 0.025292 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 51.023177 seconds.
-  path: Assets/FmvMaker/FmvMaker.asmdef
-  artifactKey: Guid(5b0c611a29b2a6d4aa7f3efcf94c220e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FmvMaker/FmvMaker.asmdef using Guid(5b0c611a29b2a6d4aa7f3efcf94c220e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd66da89ef3e6ee92e6980c6b1452d664') in 0.005189 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007888 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.74 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.152 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1152ms)
-		BeginReloadAssembly (128ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (46ms)
-		EndReloadAssembly (965ms)
-			LoadAssemblies (102ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (289ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (58ms)
-			SetupLoadedEditorAssemblies (422ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (113ms)
-				ProcessInitializeOnLoadAttributes (208ms)
-				ProcessInitializeOnLoadMethodAttributes (86ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.76 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3092 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 115.1 MB.
-System memory in use after: 115.3 MB.
-
-Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3540.
-Total: 6.632600 ms (FindLiveObjects: 0.210200 ms CreateObjectMapping: 0.107500 ms MarkObjects: 6.283300 ms  DeleteObjects: 0.031000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 95.761523 seconds.
-  path: Assets/FmvMaker/Resources/CircleFmvVideoData.json
-  artifactKey: Guid(ddc9a741957565f4abad98b63e6ce320) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FmvMaker/Resources/CircleFmvVideoData.json using Guid(ddc9a741957565f4abad98b63e6ce320) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96c5d0d572277d239671ede6ef5f627c') in 0.022627 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.099827 seconds.
-  path: Assets/FmvMaker/Resources/CircleFmvClickableData.json
-  artifactKey: Guid(07d218926a1846b4c9cabfcf2a981c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FmvMaker/Resources/CircleFmvClickableData.json using Guid(07d218926a1846b4c9cabfcf2a981c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ff2ea7576a27b08d82307200b150117') in 0.006722 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 21.165416 seconds.
-  path: Assets/FmvMaker/Scripts/Core/Models/ClickableModel.cs
-  artifactKey: Guid(0cc4dc5a3d49ec848b3f691200ca87f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FmvMaker/Scripts/Core/Models/ClickableModel.cs using Guid(0cc4dc5a3d49ec848b3f691200ca87f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f57799d6daddffd737f9c4b3534e734d') in 0.006703 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.535544 seconds.
-  path: Assets/FmvMaker/Scripts/Core/Models/ClickableModelWrapper.cs
-  artifactKey: Guid(d1bc4fc4cce94c34cbc1ad06e1f71230) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FmvMaker/Scripts/Core/Models/ClickableModelWrapper.cs using Guid(d1bc4fc4cce94c34cbc1ad06e1f71230) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28cfaa1c7b8738861aba5e5f1ec6229c') in 0.006449 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.977397 seconds.
-  path: Assets/FmvMaker/Scripts/Core/Models/VideoModel.cs
-  artifactKey: Guid(351b160929bfbdd4da0bb8803299d651) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FmvMaker/Scripts/Core/Models/VideoModel.cs using Guid(351b160929bfbdd4da0bb8803299d651) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bd4273bf0f781ab807bdec7e38588b6') in 0.006003 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.307375 seconds.
-  path: Assets/FmvMaker/Scripts/Core/Models/BaseUiElementModel.cs
-  artifactKey: Guid(fe0906981261ad64abc68135bb734cc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FmvMaker/Scripts/Core/Models/BaseUiElementModel.cs using Guid(fe0906981261ad64abc68135bb734cc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4c4dae737045aa50d76cf4db59c0418') in 0.006558 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 159.471857 seconds.
-  path: Assets/FmvMaker/Resources/DialogFmvClickableData.json
-  artifactKey: Guid(089dfb8dced05fd4c8f843f43d00d8cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FmvMaker/Resources/DialogFmvClickableData.json using Guid(089dfb8dced05fd4c8f843f43d00d8cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88f8ebed64c4cf709efc7642f0f5c3c9') in 0.006786 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 36.089241 seconds.
-  path: Assets/FmvMaker/Resources/DialogOnlineVideoMapping.json
-  artifactKey: Guid(0d14c44b8f85d9644a7acd8ff9829ef0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FmvMaker/Resources/DialogOnlineVideoMapping.json using Guid(0d14c44b8f85d9644a7acd8ff9829ef0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfee594444ea6513201136da3be9ad95') in 0.006370 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 333.776327 seconds.
-  path: Assets/FmvMaker/Scripts/Core/Facades/FmvClickableFacade.cs
-  artifactKey: Guid(d0451e1e84143fc4caaafcbecc330bf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FmvMaker/Scripts/Core/Facades/FmvClickableFacade.cs using Guid(d0451e1e84143fc4caaafcbecc330bf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50d76fadeabe7d51b0b9f3afd1e9f8cf') in 0.006796 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007091 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.82 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.130 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1131ms)
-		BeginReloadAssembly (119ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (38ms)
-		EndReloadAssembly (953ms)
-			LoadAssemblies (103ms)
+		EndReloadAssembly (1027ms)
+			LoadAssemblies (105ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (288ms)
+			SetupTypeCache (327ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (57ms)
-			SetupLoadedEditorAssemblies (412ms)
+			RebuildScriptCaches (55ms)
+			SetupLoadedEditorAssemblies (425ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
 				BeforeProcessingInitializeOnLoad (114ms)
-				ProcessInitializeOnLoadAttributes (197ms)
-				ProcessInitializeOnLoadMethodAttributes (88ms)
+				ProcessInitializeOnLoadAttributes (211ms)
+				ProcessInitializeOnLoadMethodAttributes (86ms)
 				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.79 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.76 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3092 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 115.0 MB.
-System memory in use after: 115.2 MB.
+Unloading 3114 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.4 MB.
+System memory in use after: 115.7 MB.
 
-Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3543.
-Total: 6.400900 ms (FindLiveObjects: 0.220700 ms CreateObjectMapping: 0.123700 ms MarkObjects: 6.024500 ms  DeleteObjects: 0.031400 ms)
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3548.
+Total: 6.631000 ms (FindLiveObjects: 0.232200 ms CreateObjectMapping: 0.122700 ms MarkObjects: 6.245500 ms  DeleteObjects: 0.030000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007711 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.177 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1177ms)
+		BeginReloadAssembly (124ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (995ms)
+			LoadAssemblies (119ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (310ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (59ms)
+			SetupLoadedEditorAssemblies (415ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (113ms)
+				ProcessInitializeOnLoadAttributes (202ms)
+				ProcessInitializeOnLoadMethodAttributes (86ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.75 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3114 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.5 MB.
+System memory in use after: 115.7 MB.
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3551.
+Total: 7.103100 ms (FindLiveObjects: 0.217500 ms CreateObjectMapping: 0.128300 ms MarkObjects: 6.728600 ms  DeleteObjects: 0.028000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -744,26 +256,78 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 67.070572 seconds.
-  path: Assets/FmvMaker/Scripts/Core/Utilities/ClickableClickEvent.cs
-  artifactKey: Guid(2020d6aade6eb8244be48818cebc9754) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FmvMaker/Scripts/Core/Utilities/ClickableClickEvent.cs using Guid(2020d6aade6eb8244be48818cebc9754) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a37d1875fa93c3079847045425115106') in 0.009018 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 51.494809 seconds.
-  path: Assets/FmvMaker/Scripts/Core/Provider/FmvClickableObjects.cs
-  artifactKey: Guid(3a96cc646b921e842a28bae7333cb1f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FmvMaker/Scripts/Core/Provider/FmvClickableObjects.cs using Guid(3a96cc646b921e842a28bae7333cb1f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '663e44163c0fd705a95bf693fbb21a5a') in 0.006530 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 442.246634 seconds.
-  path: Assets/FmvMaker/Scripts/Core/Provider/FmvClickableObjects.cs
-  artifactKey: Guid(3a96cc646b921e842a28bae7333cb1f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FmvMaker/Scripts/Core/Provider/FmvClickableObjects.cs using Guid(3a96cc646b921e842a28bae7333cb1f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9172e93be0a65b646a0255b54295cef2') in 0.002613 seconds 
+  Time since last request: 568.785430 seconds.
+  path: Assets/FmvMaker/Scripts/GTF/Editor/UI/StartVideoNode.cs
+  artifactKey: Guid(60bc08282c37f6448a85b9111e563c27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/GTF/Editor/UI/StartVideoNode.cs using Guid(60bc08282c37f6448a85b9111e563c27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ac4a228b0a65c31310901ba02a26d1a') in 0.012223 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.007202 seconds.
+Registered in 0.012829 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.76 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.177 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1177ms)
+		BeginReloadAssembly (115ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (1005ms)
+			LoadAssemblies (111ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (317ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (57ms)
+			SetupLoadedEditorAssemblies (421ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (115ms)
+				ProcessInitializeOnLoadAttributes (207ms)
+				ProcessInitializeOnLoadMethodAttributes (85ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.76 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3115 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.5 MB.
+System memory in use after: 115.8 MB.
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3555.
+Total: 6.348600 ms (FindLiveObjects: 0.199600 ms CreateObjectMapping: 0.129300 ms MarkObjects: 5.990100 ms  DeleteObjects: 0.029000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 90.283238 seconds.
+  path: Assets/FmvMaker/Scripts/GTF/Editor/UI/StartVideoNodeInspectorFields.cs
+  artifactKey: Guid(d2fb4740dedcf394f9e13a281cc694fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/GTF/Editor/UI/StartVideoNodeInspectorFields.cs using Guid(d2fb4740dedcf394f9e13a281cc694fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7eff1d96fd542e9d901158d44f7a90b4') in 0.012499 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007309 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
 Native extension for WindowsStandalone target not found
@@ -771,42 +335,246 @@ Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 0.77 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.370 seconds
+- Completed reload, in  1.264 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1371ms)
-		BeginReloadAssembly (133ms)
+	ReloadAssembly (1264ms)
+		BeginReloadAssembly (122ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (39ms)
+		EndReloadAssembly (1083ms)
+			LoadAssemblies (106ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (331ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (60ms)
+			SetupLoadedEditorAssemblies (473ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (141ms)
+				ProcessInitializeOnLoadAttributes (220ms)
+				ProcessInitializeOnLoadMethodAttributes (99ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.79 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3116 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.6 MB.
+System memory in use after: 115.8 MB.
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3559.
+Total: 6.698100 ms (FindLiveObjects: 0.221900 ms CreateObjectMapping: 0.144800 ms MarkObjects: 6.299300 ms  DeleteObjects: 0.031400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 10.769566 seconds.
+  path: Assets/FmvMaker/Scripts/GTF/Editor/UI/ClickableNodeInspectorFields.cs
+  artifactKey: Guid(2b2f3e936bdc1f2499f462e6931ffe0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/GTF/Editor/UI/ClickableNodeInspectorFields.cs using Guid(2b2f3e936bdc1f2499f462e6931ffe0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f5469bf810a6958a925bf76a816f9d7') in 0.010108 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 483.548458 seconds.
+  path: Assets/FmvMaker/Scripts/GTF/Editor/UI/Commands/SetPickUpVideoCommand.cs
+  artifactKey: Guid(6a3cc6e1b30335e4294bf4f33299716e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/GTF/Editor/UI/Commands/SetPickUpVideoCommand.cs using Guid(6a3cc6e1b30335e4294bf4f33299716e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b05923d5a995f628a03a88ed63cb3d87') in 0.010923 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007193 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.328 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1328ms)
+		BeginReloadAssembly (138ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (45ms)
+		EndReloadAssembly (1111ms)
+			LoadAssemblies (118ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (336ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (60ms)
+			SetupLoadedEditorAssemblies (497ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (152ms)
+				ProcessInitializeOnLoadAttributes (227ms)
+				ProcessInitializeOnLoadMethodAttributes (104ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.85 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3117 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.6 MB.
+System memory in use after: 115.8 MB.
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3563.
+Total: 7.557600 ms (FindLiveObjects: 0.253300 ms CreateObjectMapping: 0.125800 ms MarkObjects: 7.137700 ms  DeleteObjects: 0.039600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 62.011648 seconds.
+  path: Assets/FmvMaker/Scripts/GTF/Editor/UI/Commands/SetPickUpVideoCommand.cs
+  artifactKey: Guid(6a3cc6e1b30335e4294bf4f33299716e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/GTF/Editor/UI/Commands/SetPickUpVideoCommand.cs using Guid(6a3cc6e1b30335e4294bf4f33299716e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52962f07e2d76e364a3de864883cb6f8') in 0.006369 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 118.931517 seconds.
+  path: Assets/FmvMaker/Scripts/GTF/Editor/UI/Commands/SetPickUpVideoCommand.cs
+  artifactKey: Guid(6a3cc6e1b30335e4294bf4f33299716e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/GTF/Editor/UI/Commands/SetPickUpVideoCommand.cs using Guid(6a3cc6e1b30335e4294bf4f33299716e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9df6b2d1641d761be69ed45ac906efa6') in 0.002719 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007300 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.76 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.193 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1194ms)
+		BeginReloadAssembly (127ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (7ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (42ms)
-		EndReloadAssembly (1170ms)
-			LoadAssemblies (116ms)
+			CreateAndSetChildDomain (38ms)
+		EndReloadAssembly (999ms)
+			LoadAssemblies (117ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (351ms)
+			SetupTypeCache (302ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (70ms)
-			SetupLoadedEditorAssemblies (518ms)
+			RebuildScriptCaches (64ms)
+			SetupLoadedEditorAssemblies (424ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
+				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (134ms)
-				ProcessInitializeOnLoadAttributes (252ms)
-				ProcessInitializeOnLoadMethodAttributes (114ms)
-				AfterProcessingInitializeOnLoad (8ms)
+				BeforeProcessingInitializeOnLoad (118ms)
+				ProcessInitializeOnLoadAttributes (207ms)
+				ProcessInitializeOnLoadMethodAttributes (86ms)
+				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.79 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.77 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3092 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 115.0 MB.
-System memory in use after: 115.2 MB.
+Unloading 3117 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.6 MB.
+System memory in use after: 115.8 MB.
 
-Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3546.
-Total: 8.243700 ms (FindLiveObjects: 0.368500 ms CreateObjectMapping: 0.239000 ms MarkObjects: 7.599800 ms  DeleteObjects: 0.035400 ms)
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3566.
+Total: 6.421500 ms (FindLiveObjects: 0.234500 ms CreateObjectMapping: 0.119300 ms MarkObjects: 6.035100 ms  DeleteObjects: 0.031600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 209.439500 seconds.
+  path: Assets/FmvMaker/NodeGraphs/GTFTest.asset
+  artifactKey: Guid(673f63e90e5a44e44a8d87ac21c7a055) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/NodeGraphs/GTFTest.asset using Guid(673f63e90e5a44e44a8d87ac21c7a055) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90a4dcd6bbfbc396c3ad5384bd10bdee') in 0.043673 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007208 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.82 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.417 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1417ms)
+		BeginReloadAssembly (144ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (42ms)
+		EndReloadAssembly (1166ms)
+			LoadAssemblies (140ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (355ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (59ms)
+			SetupLoadedEditorAssemblies (510ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (146ms)
+				ProcessInitializeOnLoadAttributes (229ms)
+				ProcessInitializeOnLoadMethodAttributes (118ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.80 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3117 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.6 MB.
+System memory in use after: 115.9 MB.
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3569.
+Total: 7.430000 ms (FindLiveObjects: 0.241700 ms CreateObjectMapping: 0.148500 ms MarkObjects: 7.005900 ms  DeleteObjects: 0.032900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -821,50 +589,50 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.008313 seconds.
+Registered in 0.007651 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.76 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.77 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.165 seconds
+- Completed reload, in  1.234 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1165ms)
-		BeginReloadAssembly (123ms)
+	ReloadAssembly (1234ms)
+		BeginReloadAssembly (120ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (40ms)
-		EndReloadAssembly (978ms)
-			LoadAssemblies (103ms)
+			CreateAndSetChildDomain (39ms)
+		EndReloadAssembly (1052ms)
+			LoadAssemblies (108ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (300ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (57ms)
-			SetupLoadedEditorAssemblies (422ms)
+			SetupTypeCache (342ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (60ms)
+			SetupLoadedEditorAssemblies (443ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (0ms)
+				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (121ms)
-				ProcessInitializeOnLoadAttributes (201ms)
-				ProcessInitializeOnLoadMethodAttributes (87ms)
+				BeforeProcessingInitializeOnLoad (119ms)
+				ProcessInitializeOnLoadAttributes (224ms)
+				ProcessInitializeOnLoadMethodAttributes (86ms)
 				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.74 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.79 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3092 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 115.0 MB.
-System memory in use after: 115.2 MB.
+Unloading 3117 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.6 MB.
+System memory in use after: 115.9 MB.
 
-Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3549.
-Total: 6.791600 ms (FindLiveObjects: 0.206900 ms CreateObjectMapping: 0.107300 ms MarkObjects: 6.449800 ms  DeleteObjects: 0.026900 ms)
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3572.
+Total: 7.238500 ms (FindLiveObjects: 0.211400 ms CreateObjectMapping: 0.112000 ms MarkObjects: 6.885900 ms  DeleteObjects: 0.028500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -876,4 +644,586 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007326 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.96 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.238 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1239ms)
+		BeginReloadAssembly (117ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (1063ms)
+			LoadAssemblies (104ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (346ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (67ms)
+			SetupLoadedEditorAssemblies (441ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (124ms)
+				ProcessInitializeOnLoadAttributes (215ms)
+				ProcessInitializeOnLoadMethodAttributes (88ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.80 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3117 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.6 MB.
+System memory in use after: 115.9 MB.
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3575.
+Total: 7.027900 ms (FindLiveObjects: 0.205500 ms CreateObjectMapping: 0.130100 ms MarkObjects: 6.663800 ms  DeleteObjects: 0.027900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008303 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.250 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1251ms)
+		BeginReloadAssembly (131ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (1053ms)
+			LoadAssemblies (125ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (308ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (57ms)
+			SetupLoadedEditorAssemblies (468ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (140ms)
+				ProcessInitializeOnLoadAttributes (204ms)
+				ProcessInitializeOnLoadMethodAttributes (110ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.76 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3117 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.7 MB.
+System memory in use after: 115.9 MB.
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3578.
+Total: 6.643100 ms (FindLiveObjects: 0.226300 ms CreateObjectMapping: 0.114900 ms MarkObjects: 6.270500 ms  DeleteObjects: 0.030800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007401 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.76 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.203 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1203ms)
+		BeginReloadAssembly (115ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (1027ms)
+			LoadAssemblies (102ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (333ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (56ms)
+			SetupLoadedEditorAssemblies (422ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (116ms)
+				ProcessInitializeOnLoadAttributes (200ms)
+				ProcessInitializeOnLoadMethodAttributes (92ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.54 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3117 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.7 MB.
+System memory in use after: 115.9 MB.
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3581.
+Total: 7.951100 ms (FindLiveObjects: 0.236600 ms CreateObjectMapping: 0.125200 ms MarkObjects: 7.544900 ms  DeleteObjects: 0.043200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007626 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.169 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1169ms)
+		BeginReloadAssembly (122ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (987ms)
+			LoadAssemblies (108ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (308ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (59ms)
+			SetupLoadedEditorAssemblies (417ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (114ms)
+				ProcessInitializeOnLoadAttributes (204ms)
+				ProcessInitializeOnLoadMethodAttributes (86ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.81 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3117 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.7 MB.
+System memory in use after: 115.9 MB.
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3584.
+Total: 6.902900 ms (FindLiveObjects: 0.216700 ms CreateObjectMapping: 0.154000 ms MarkObjects: 6.504800 ms  DeleteObjects: 0.026700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008840 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.76 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.166 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1166ms)
+		BeginReloadAssembly (121ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (38ms)
+		EndReloadAssembly (984ms)
+			LoadAssemblies (104ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (301ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (58ms)
+			SetupLoadedEditorAssemblies (422ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (118ms)
+				ProcessInitializeOnLoadAttributes (203ms)
+				ProcessInitializeOnLoadMethodAttributes (88ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.78 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3117 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.7 MB.
+System memory in use after: 115.9 MB.
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3587.
+Total: 7.229300 ms (FindLiveObjects: 0.218000 ms CreateObjectMapping: 0.114400 ms MarkObjects: 6.865100 ms  DeleteObjects: 0.031000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 656.413529 seconds.
+  path: Assets/FmvMaker/NodeGraphs/GTFTest.asset
+  artifactKey: Guid(673f63e90e5a44e44a8d87ac21c7a055) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/NodeGraphs/GTFTest.asset using Guid(673f63e90e5a44e44a8d87ac21c7a055) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f28c3be678e08a354c9a7c33e95bff0e') in 0.039986 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.010297 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.138 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1138ms)
+		BeginReloadAssembly (117ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (962ms)
+			LoadAssemblies (104ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (297ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (56ms)
+			SetupLoadedEditorAssemblies (411ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (111ms)
+				ProcessInitializeOnLoadAttributes (203ms)
+				ProcessInitializeOnLoadMethodAttributes (84ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.82 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3117 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.7 MB.
+System memory in use after: 115.9 MB.
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3590.
+Total: 6.957400 ms (FindLiveObjects: 0.216100 ms CreateObjectMapping: 0.116800 ms MarkObjects: 6.595500 ms  DeleteObjects: 0.028300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 237.635496 seconds.
+  path: Assets/FmvMaker/Scripts/GTF/Editor/FmvMakerGraphViewFactoryExtensions.cs
+  artifactKey: Guid(f58247894b81e4c42a302028a09ca1ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/GTF/Editor/FmvMakerGraphViewFactoryExtensions.cs using Guid(f58247894b81e4c42a302028a09ca1ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdba16f6c037cf3689dfe2703eb81681') in 0.012823 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.224739 seconds.
+  path: Assets/FmvMaker/Scripts/GTF/Editor/FmvMakerState.cs
+  artifactKey: Guid(7617b2c78065fc640b03dae4b5c1b97f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/GTF/Editor/FmvMakerState.cs using Guid(7617b2c78065fc640b03dae4b5c1b97f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bf401b44797322bbf259b350122c647') in 0.006123 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.968777 seconds.
+  path: Assets/FmvMaker/Scripts/GTF/Editor/FmvMakerStencil.cs
+  artifactKey: Guid(81cd30597ba409b4a9595ad7bc8734dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/GTF/Editor/FmvMakerStencil.cs using Guid(81cd30597ba409b4a9595ad7bc8734dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3741c506e6c20d49807fd774fda47c1a') in 0.005854 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.806650 seconds.
+  path: Assets/FmvMaker/Scripts/GTF/Editor/Nodes/MixNodeModel.cs
+  artifactKey: Guid(1a6d7155f9e5fdb498937a98fddc9deb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/GTF/Editor/Nodes/MixNodeModel.cs using Guid(1a6d7155f9e5fdb498937a98fddc9deb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b539620c87e8b64cc5a54d8c43342593') in 0.002414 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.386290 seconds.
+  path: Assets/FmvMaker/Scripts/GTF/Editor/UI/ClickableNode.cs
+  artifactKey: Guid(8f8f15b97df360e41aff1068df8ab2b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/GTF/Editor/UI/ClickableNode.cs using Guid(8f8f15b97df360e41aff1068df8ab2b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7d920edc893dc7e82f980de730d0406') in 0.006516 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.045961 seconds.
+  path: Assets/FmvMaker/Scripts/GTF/Editor/UI/StartVideoNode.cs
+  artifactKey: Guid(60bc08282c37f6448a85b9111e563c27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/GTF/Editor/UI/StartVideoNode.cs using Guid(60bc08282c37f6448a85b9111e563c27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4836773aacee772c82f9634263745255') in 0.002933 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007269 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.74 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.154 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1155ms)
+		BeginReloadAssembly (121ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (973ms)
+			LoadAssemblies (107ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (295ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (59ms)
+			SetupLoadedEditorAssemblies (421ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (120ms)
+				ProcessInitializeOnLoadAttributes (200ms)
+				ProcessInitializeOnLoadMethodAttributes (87ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.77 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3117 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.7 MB.
+System memory in use after: 115.9 MB.
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3593.
+Total: 6.528800 ms (FindLiveObjects: 0.233200 ms CreateObjectMapping: 0.154200 ms MarkObjects: 6.110500 ms  DeleteObjects: 0.030300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 424.925788 seconds.
+  path: Assets/FmvMaker/NodeGraphs/GTFTest.asset
+  artifactKey: Guid(673f63e90e5a44e44a8d87ac21c7a055) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/NodeGraphs/GTFTest.asset using Guid(673f63e90e5a44e44a8d87ac21c7a055) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78431ae71e49a707d826e42903cb949b') in 0.027996 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007185 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.76 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.152 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1152ms)
+		BeginReloadAssembly (116ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (977ms)
+			LoadAssemblies (102ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (294ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (60ms)
+			SetupLoadedEditorAssemblies (418ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (115ms)
+				ProcessInitializeOnLoadAttributes (204ms)
+				ProcessInitializeOnLoadMethodAttributes (86ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.76 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3117 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.7 MB.
+System memory in use after: 115.9 MB.
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3596.
+Total: 7.060700 ms (FindLiveObjects: 0.214400 ms CreateObjectMapping: 0.123700 ms MarkObjects: 6.690200 ms  DeleteObjects: 0.031400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 101.868037 seconds.
+  path: Assets/FmvMaker/Scripts/GTF/Editor/UI/ClickablePart.cs
+  artifactKey: Guid(05e4ec0bbfc440f4a8e3ba07f6d3730e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/GTF/Editor/UI/ClickablePart.cs using Guid(05e4ec0bbfc440f4a8e3ba07f6d3730e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d34b7f90d83baa383dc4f21eb987db2') in 0.009242 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007484 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Data\UnityProjects\FmvMaker\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.78 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.283 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1283ms)
+		BeginReloadAssembly (127ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (1091ms)
+			LoadAssemblies (114ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (346ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (65ms)
+			SetupLoadedEditorAssemblies (458ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (126ms)
+				ProcessInitializeOnLoadAttributes (220ms)
+				ProcessInitializeOnLoadMethodAttributes (97ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.82 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3117 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.7 MB.
+System memory in use after: 115.9 MB.
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 3599.
+Total: 7.082100 ms (FindLiveObjects: 0.482400 ms CreateObjectMapping: 0.174300 ms MarkObjects: 6.389800 ms  DeleteObjects: 0.033900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1323.925732 seconds.
+  path: Assets/FmvMaker/NodeGraphs/GTFTest.asset
+  artifactKey: Guid(673f63e90e5a44e44a8d87ac21c7a055) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/NodeGraphs/GTFTest.asset using Guid(673f63e90e5a44e44a8d87ac21c7a055) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33cf5c17b548955c95a682e19e87e11f') in 0.037444 seconds 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

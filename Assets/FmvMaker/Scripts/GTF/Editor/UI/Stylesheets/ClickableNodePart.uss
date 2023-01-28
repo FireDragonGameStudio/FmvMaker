@@ -1,0 +1,7 @@
+.ge-clickable-node-part {
+    flex-direction: row;
+}
+
+.ge-clickable-node-part .ge-editable-label {
+    flex-grow: 1;
+}

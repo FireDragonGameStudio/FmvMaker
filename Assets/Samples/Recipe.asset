@@ -29,16 +29,17 @@ MonoBehaviour:
         m_BadgeModels: []
         m_GraphEdgeModels:
         - id: 4
+        - id: 5
         m_PolymorphicEdgeModels: []
         m_StickyNoteModels: []
         m_GraphStickyNoteModels:
-        - id: 5
+        - id: 6
         m_PlacematModels: []
         m_GraphPlacematModels:
-        - id: 6
-        m_GraphVariableModels:
         - id: 7
+        m_GraphVariableModels:
         - id: 8
+        - id: 9
         m_GraphPortalModels: []
         m_Name: 
         m_StencilTypeName: UnityEditor.GraphToolsFoundation.Overdrive.Samples.Recipes.RecipeStencil,
@@ -126,6 +127,32 @@ MonoBehaviour:
         m_EditMode: 0
         m_EdgeLabel: 
     00000005:
+      type: {class: EdgeModel, ns: UnityEditor.GraphToolsFoundation.Overdrive.BasicModel,
+        asm: Unity.GraphTools.Foundation.Overdrive.Model}
+      data:
+        m_Guid:
+          m_Value0: 8791282682766768829
+          m_Value1: 4894558864730398680
+        m_AssetModel: {fileID: 11400000}
+        m_Color: {r: 0, g: 0, b: 0, a: 0}
+        m_HasUserColor: 0
+        m_Version: 1
+        m_FromPortReference:
+          m_NodeModelGuid:
+            m_Value0: 1676414267543776817
+            m_Value1: 3671443069612756750
+          m_GraphAssetModel: {fileID: 11400000}
+          m_UniqueId: Result
+        m_ToPortReference:
+          m_NodeModelGuid:
+            m_Value0: 10305334298510185733
+            m_Value1: 15595711548888839174
+          m_GraphAssetModel: {fileID: 11400000}
+          m_UniqueId: Ingredient
+        m_EdgeControlPoints: []
+        m_EditMode: 0
+        m_EdgeLabel: 
+    00000006:
       type: {class: StickyNoteModel, ns: UnityEditor.GraphToolsFoundation.Overdrive.BasicModel,
         asm: Unity.GraphTools.Foundation.Overdrive.Model}
       data:
@@ -146,7 +173,7 @@ MonoBehaviour:
           y: 3
           width: 200
           height: 160
-    00000006:
+    00000007:
       type: {class: PlacematModel, ns: UnityEditor.GraphToolsFoundation.Overdrive.BasicModel,
         asm: Unity.GraphTools.Foundation.Overdrive.Model}
       data:
@@ -167,7 +194,7 @@ MonoBehaviour:
         m_Collapsed: 0
         m_ZOrder: 1
         m_HiddenElements: []
-    00000007:
+    00000008:
       type: {class: VariableDeclarationModel, ns: UnityEditor.GraphToolsFoundation.Overdrive.BasicModel,
         asm: Unity.GraphTools.Foundation.Overdrive.Model}
       data:
@@ -184,10 +211,10 @@ MonoBehaviour:
         m_IsExposed: 1
         m_Tooltip: 
         m_InitializationValue:
-          id: 9
+          id: 10
         m_Modifiers: 0
         variableFlags: 0
-    00000008:
+    00000009:
       type: {class: VariableDeclarationModel, ns: UnityEditor.GraphToolsFoundation.Overdrive.BasicModel,
         asm: Unity.GraphTools.Foundation.Overdrive.Model}
       data:
@@ -204,8 +231,8 @@ MonoBehaviour:
         m_IsExposed: 1
         m_Tooltip: 
         m_InitializationValue:
-          id: 9
+          id: 10
         m_Modifiers: 0
         variableFlags: 0
-    00000009:
+    0000000A:
       type: {class: , ns: , asm: }

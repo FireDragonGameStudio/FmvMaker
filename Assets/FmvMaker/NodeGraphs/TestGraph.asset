@@ -9,38 +9,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b96a172d1eb81247846b84afa3b5864, type: 3}
+  m_Script: {fileID: 11500000, guid: 8efc0ec566c33e44bb6da0c01e13dd72, type: 3}
   m_Name: TestGraph
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 362514938662682820}
-  Name: TestGraph
-  SelectedNode: {fileID: 0}
-  WantsConnection: 0
-  ConnectionNode: {fileID: 362514938662682820}
-  ShowNodeProperties: 0
---- !u!114 &362514938662682820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c84d7a4dda749e24a950aa4bb5a45c49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NodeName: Float Node
-  NodeRect:
-    serializedVersion: 2
-    x: 282
-    y: 228
-    width: 150
-    height: 65
-  ParentGraph: {fileID: 11400000}
-  Type: 0
-  IsSelected: 0
-  NodeValue: 0
-  Output:
-    IsOccupied: 0
+  m_GraphModel:
+    id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: FmvMakerGraphModel, ns: FmvMaker.Core.GTF, asm: FmvMaker}
+      data:
+        m_AssetModel: {fileID: 11400000}
+        m_GraphNodeModels: []
+        m_EdgeModels: []
+        m_BadgeModels: []
+        m_GraphEdgeModels: []
+        m_PolymorphicEdgeModels: []
+        m_StickyNoteModels: []
+        m_GraphStickyNoteModels: []
+        m_PlacematModels: []
+        m_GraphPlacematModels: []
+        m_GraphVariableModels: []
+        m_GraphPortalModels: []
+        m_Name: 
+        m_StencilTypeName: FmvMaker.Core.GTF.FmvMakerStencil, FmvMaker, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
