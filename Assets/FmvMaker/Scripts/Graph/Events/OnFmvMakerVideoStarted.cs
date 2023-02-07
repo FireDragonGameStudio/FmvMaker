@@ -1,9 +1,9 @@
+using FmvMaker.Core.Models;
 using Unity.VisualScripting;
-using UnityEngine.Video;
 
 [UnitTitle("On FmvMaker Video Started")]
 [UnitCategory("Events\\FmvMaker")]
-public class OnFmvMakerVideoStarted : EventUnit<VideoPlayer> {
+public class OnFmvMakerVideoStarted : EventUnit<VideoModel> {
 
     [DoNotSerialize]
     public ValueOutput result { get; private set; }// The Event output data to return when the Event is triggered.
@@ -18,10 +18,10 @@ public class OnFmvMakerVideoStarted : EventUnit<VideoPlayer> {
     protected override void Definition() {
         base.Definition();
 
-        result = ValueOutput<VideoPlayer>(nameof(result));
+        result = ValueOutput<VideoModel>(nameof(result));
     }
 
-    protected override void AssignArguments(Flow flow, VideoPlayer data) {
+    protected override void AssignArguments(Flow flow, VideoModel data) {
         flow.SetValue(result, data);
     }
 }

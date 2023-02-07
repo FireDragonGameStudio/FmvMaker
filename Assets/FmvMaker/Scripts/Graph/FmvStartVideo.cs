@@ -56,6 +56,7 @@ namespace FmvMaker.Graph {
             videoPlayer.Play();
             audioPlayer.Play();
             Debug.Log("Playing?");
+
         }
     }
 }

@@ -49,10 +49,10 @@ namespace FmvMaker.Core.Provider {
         private VideoModel startVideo => GetVideoModelByName(nameOfStartVideo);
 
         private void Awake() {
-            allVideoElements = data.GenerateVideoDataFromConfigurationFile();
-            CheckForOnlineMappingData();
+            //allVideoElements = data.GenerateVideoDataFromConfigurationFile();
+            //CheckForOnlineMappingData();
 
-            SetupVideoEventTrigger();
+            //SetupVideoEventTrigger();
         }
 
         private async void Start() {

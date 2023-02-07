@@ -125,6 +125,68 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &53351218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 53351219}
+  - component: {fileID: 53351221}
+  - component: {fileID: 53351220}
+  m_Layer: 0
+  m_Name: FmvHelper (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &53351219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53351218}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1611264351}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &53351220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53351218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7d63537cad47a3499e1c4ff3a386b10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VideoModelData: {fileID: 4900000, guid: ddc9a741957565f4abad98b63e6ce320, type: 3}
+  ClickableModelData: {fileID: 4900000, guid: 07d218926a1846b4c9cabfcf2a981c10, type: 3}
+  OnlineVideoSourceMappingData: {fileID: 4900000, guid: fb5e19b8cc5eb6a4db068565a0ad4927,
+    type: 3}
+--- !u!114 &53351221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53351218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0385944a5e9601448adc0823112f82fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fmvVideoElementPanel: {fileID: 1771585202}
 --- !u!1 &186860399
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +317,71 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1611264351}
-  m_RootOrder: 4
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &378737869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 378737872}
+  - component: {fileID: 378737871}
+  - component: {fileID: 378737870}
+  m_Layer: 0
+  m_Name: FmvStateMachine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &378737870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378737869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efe58df89b5b74a97a123b5ed2b70422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
+    _objectReferences:
+    - {fileID: 11400000, guid: bda5af3f4c03f214cb902484c02fbd89, type: 2}
+--- !u!114 &378737871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378737869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
+    _objectReferences: []
+--- !u!4 &378737872
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378737869}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &383087581
 GameObject:
@@ -549,7 +675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &585371631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -606,14 +732,13 @@ GameObject:
   m_Component:
   - component: {fileID: 600364141}
   - component: {fileID: 600364142}
-  - component: {fileID: 600364143}
   m_Layer: 0
   m_Name: FmvHelper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &600364141
 Transform:
   m_ObjectHideFlags: 0
@@ -642,22 +767,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fmvVideoElementPanel: {fileID: 1771585202}
---- !u!114 &600364143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600364140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7d63537cad47a3499e1c4ff3a386b10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VideoModelData: {fileID: 4900000, guid: ddc9a741957565f4abad98b63e6ce320, type: 3}
-  ClickableModelData: {fileID: 4900000, guid: 07d218926a1846b4c9cabfcf2a981c10, type: 3}
-  OnlineVideoSourceMappingData: {fileID: 4900000, guid: fb5e19b8cc5eb6a4db068565a0ad4927,
-    type: 3}
 --- !u!1 &736910559
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,7 +976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fmvVideos: {fileID: 1563772660}
-  fmvData: {fileID: 600364143}
+  fmvData: {fileID: 0}
   videoElementsPanel: {fileID: 1771585202}
   inventoryElementsPanel: {fileID: 383087582}
   clickableObjectPrefab: {fileID: 1133256870980526, guid: 8f59b351c229fff41a2450726cdb69f2,
@@ -934,7 +1043,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1393773465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1111,7 +1220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1400030740
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1227,9 +1336,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _json: '{"declarations":{"Kind":"Scene","collection":{"$content":[{"name":"FmvVideoView","value":{"$content":0,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"FmvCanvas","value":{"$content":1,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.Canvas,
+      UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"VideoElementsPanel","value":{"$content":2,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"ClickableObjectPrefab","value":{"$content":3,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
     - {fileID: 1563772657}
+    - {fileID: 1648255340}
+    - {fileID: 1771585201}
+    - {fileID: 1133256870980526, guid: 8f59b351c229fff41a2450726cdb69f2, type: 3}
 --- !u!4 &1428846498
 Transform:
   m_ObjectHideFlags: 0
@@ -1262,7 +1377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1563772658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1299,7 +1414,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563772657}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18c8ac5e1a844de4db82a41175820da7, type: 3}
   m_Name: 
@@ -1375,7 +1490,7 @@ MonoBehaviour:
   nameOfStartVideo: UniqueVideoName
   clickableObjects: {fileID: 1005435514}
   videoView: {fileID: 1563772658}
-  data: {fileID: 600364143}
+  data: {fileID: 0}
   loadingSceen: {fileID: 1400030739}
 --- !u!1 &1611264349
 GameObject:
@@ -1409,6 +1524,7 @@ Transform:
   - {fileID: 494334020}
   - {fileID: 1005435512}
   - {fileID: 600364141}
+  - {fileID: 53351219}
   - {fileID: 352578382}
   m_Father: {fileID: 0}
   m_RootOrder: 1

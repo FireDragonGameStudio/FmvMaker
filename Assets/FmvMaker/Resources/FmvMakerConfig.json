@@ -1,6 +1,6 @@
 {
   "AspectRatio": "16:9",
-  "VideoSourceType": "ONLINE",
+  "VideoSourceType": "INTERNAL",
   "ImageSourceType": "INTERNAL",
   "LocalFilePath": "C:\\Data\\UnityProjects\\FmvMakerFiles\\"
 }
