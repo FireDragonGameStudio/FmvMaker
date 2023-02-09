@@ -1,3 +1,4 @@
+using FmvMaker.Core.Models;
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -13,6 +14,14 @@ namespace FmvMaker.Graph {
             VideoName = videoName;
             IsLooping = isLooping;
             RelativeScreenPosition = relativeScreenPosition;
+        }
+
+        public VideoModel GetVideoModel() {
+            return new VideoModel() {
+                Name = VideoName,
+                IsLooping = IsLooping,
+                RelativeScreenPosition = RelativeScreenPosition,
+            };
         }
     }
 }

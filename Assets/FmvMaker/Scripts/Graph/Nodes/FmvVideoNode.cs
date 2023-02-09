@@ -1,6 +1,5 @@
 using FmvMaker.Core.Facades;
 using FmvMaker.Core.Models;
-using FmvMaker.Core.Provider;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
@@ -35,7 +34,7 @@ namespace FmvMaker.Graph {
         }
 
         private GameObject inputValueVideoView;
-        private FmvVideoView fmvVideoView;
+        private FmvGraphVideos fmvGraphVideos;
         private FmvGraphElementData fmvTargetClickable;
         private List<FmvGraphElementData> nodeElements = new List<FmvGraphElementData>();
         private List<GameObject> findables = new List<GameObject>();
@@ -43,8 +42,6 @@ namespace FmvMaker.Graph {
         protected override void Definition() {
             InputTrigger = ControlInput(nameof(InputTrigger), TriggerFmvVideoNode);
             OutputTrigger = ControlOutput(nameof(OutputTrigger));
-
-            //FmvTargetVideo = ValueInput<FmvGraphElementData>(nameof(FmvTargetVideo));
 
             Clickables.Clear();
             for (var i = 0; i < ClickablesCount; i++) {
@@ -56,76 +53,88 @@ namespace FmvMaker.Graph {
 
         private ControlOutput TriggerFmvVideoNode(Flow flow) {
             inputValueVideoView = Variables.Scene(SceneManager.GetActiveScene()).Get("FmvVideoView") as GameObject;
-            //fmvTargetClickable = flow.GetValue<FmvGraphElementData>(FmvTargetVideo);
 
             fmvTargetClickable = Variables.Scene(SceneManager.GetActiveScene()).Get("CurrentVideoTarget") as FmvGraphElementData;
 
-            fmvVideoView = inputValueVideoView.GetComponent<FmvVideoView>();
-            fmvVideoView.OnVideoStarted += OnVideoStarted;
-            fmvVideoView.OnVideoFinished += OnVideoFinished;
-            fmvVideoView.PrepareAndPlay(new VideoModel() {
-                Name = fmvTargetClickable.VideoName,
-                IsLooping = fmvTargetClickable.IsLooping,
-            });
+            fmvGraphVideos = inputValueVideoView.GetComponent<FmvGraphVideos>();
+            fmvGraphVideos.OnVideoStarted.AddListener(OnVideoStarted);
+            fmvGraphVideos.OnVideoPaused.AddListener(OnVideoPaused);
+            fmvGraphVideos.OnVideoFinished.AddListener(OnVideoFinished);
+            fmvGraphVideos.OnVideoSkipped.AddListener(OnVideoSkipped);
+            fmvGraphVideos.PlayVideo(fmvTargetClickable.GetVideoModel());
 
             nodeElements.Clear();
             for (var i = 0; i < ClickablesCount; i++) {
                 nodeElements.Add(flow.GetValue<FmvGraphElementData>(Clickables[i]));
             }
 
-            Debug.Log("Video started event registered for " + fmvTargetClickable.VideoName);
-
             return OutputTrigger;
         }
 
         private void OnVideoStarted(VideoModel videoModel) {
             if (fmvTargetClickable.VideoName.Equals(videoModel.Name)) {
-                EventBus.Trigger(FmvMakerGraphEventNames.OnFmvMakerVideoStarted,
-                    new FmvGraphElementData(videoModel.Name, videoModel.IsLooping, videoModel.RelativeScreenPosition));
+                OnFmvVideoStarted.Trigger(fmvTargetClickable);
+            }
+        }
+
+        private void OnVideoPaused(VideoModel videoModel, bool isPaused) {
+            if (fmvTargetClickable.VideoName.Equals(videoModel.Name)) {
+                OnFmvVideoPaused.Trigger(fmvTargetClickable);
             }
         }
 
         private void OnVideoFinished(VideoModel videoModel) {
-            // generate buttons for clicking
-            for (var i = 0; i < nodeElements.Count; i++) {
-                GameObject targetObject = GameObject.Instantiate(Variables.Scene(SceneManager.GetActiveScene()).Get("ClickableObjectPrefab") as GameObject);
-                targetObject.SetActive(true);
-                targetObject.transform.SetParent((Variables.Scene(SceneManager.GetActiveScene()).Get("VideoElementsPanel") as GameObject).transform);
-                targetObject.transform.localScale = Vector3.one;
-                FmvClickableFacade itemFacade = targetObject.GetComponent<FmvClickableFacade>();
+            if (!videoModel.IsLooping) {
+                // generate buttons for clicking
+                for (var i = 0; i < nodeElements.Count; i++) {
+                    GameObject targetObject = GameObject.Instantiate(Variables.Scene(SceneManager.GetActiveScene()).Get("ClickableObjectPrefab") as GameObject);
+                    targetObject.SetActive(true);
+                    targetObject.transform.SetParent((Variables.Scene(SceneManager.GetActiveScene()).Get("VideoElementsPanel") as GameObject).transform);
+                    targetObject.transform.localScale = Vector3.one;
+                    FmvClickableFacade itemFacade = targetObject.GetComponent<FmvClickableFacade>();
 
-                // add the item model from the inputs
-                itemFacade.SetItemData(new ClickableModel() {
-                    Name = "Click-" + nodeElements[i].VideoName,
-                    Description = "Description",
-                    PickUpVideo = nodeElements[i].VideoName,
-                    UseageVideo = "",
-                    IsNavigation = true,
-                    IsInInventory = false,
-                    WasUsed = false,
-                    RelativeScreenPosition = nodeElements[i].RelativeScreenPosition,
-                });
+                    // add the item model from the inputs
+                    itemFacade.SetItemData(new ClickableModel() {
+                        Name = "Click-" + nodeElements[i].VideoName,
+                        Description = "Description",
+                        PickUpVideo = nodeElements[i].VideoName,
+                        UseageVideo = "",
+                        IsNavigation = true,
+                        IsInInventory = false,
+                        WasUsed = false,
+                        RelativeScreenPosition = nodeElements[i].RelativeScreenPosition,
+                    });
 
-                // adding the clicking events
-                itemFacade.OnItemClicked.RemoveAllListeners();
-                itemFacade.OnItemClicked.AddListener(ClickNavigationTarget);
+                    // adding the clicking events
+                    itemFacade.OnItemClicked.RemoveAllListeners();
+                    itemFacade.OnItemClicked.AddListener(ClickNavigationTarget);
 
-                findables.Add(targetObject);
+                    findables.Add(targetObject);
+                }
+
+                if (fmvTargetClickable.VideoName.Equals(videoModel.Name)) {
+                    OnFmvVideoFinished.Trigger(fmvTargetClickable);
+                }
             }
+        }
 
+        private void OnVideoSkipped(VideoModel videoModel) {
             if (fmvTargetClickable.VideoName.Equals(videoModel.Name)) {
-                EventBus.Trigger(FmvMakerGraphEventNames.OnFmvMakerVideoFinished, fmvTargetClickable);
+                OnFmvVideoSkipped.Trigger(fmvTargetClickable);
             }
         }
 
         private void ClickNavigationTarget(ClickableModel clickableModel) {
-            fmvVideoView.OnVideoStarted -= OnVideoStarted;
-            fmvVideoView.OnVideoFinished -= OnVideoFinished;
+            fmvGraphVideos.OnVideoStarted.RemoveListener(OnVideoStarted);
+            fmvGraphVideos.OnVideoPaused.RemoveListener(OnVideoPaused);
+            fmvGraphVideos.OnVideoFinished.RemoveListener(OnVideoFinished);
+            fmvGraphVideos.OnVideoSkipped.RemoveListener(OnVideoSkipped);
             for (int i = 0; i < findables.Count; i++) {
                 GameObject.Destroy(findables[i]);
             }
-            EventBus.Trigger(FmvMakerGraphEventNames.OnFmvMakerClickableClicked,
-                nodeElements.FirstOrDefault((nodeElement) => nodeElement.VideoName.Equals(clickableModel.PickUpVideo)));
+            OnFmvClickableClicked.Trigger(nodeElements.FirstOrDefault((nodeElement) =>
+                nodeElement.VideoName.Equals(clickableModel.PickUpVideo))
+            );
         }
     }
 }

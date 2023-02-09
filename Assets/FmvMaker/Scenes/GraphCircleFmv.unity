@@ -137,12 +137,12 @@ GameObject:
   - component: {fileID: 53351221}
   - component: {fileID: 53351220}
   m_Layer: 0
-  m_Name: FmvHelper (1)
+  m_Name: FmvHelper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &53351219
 Transform:
   m_ObjectHideFlags: 0
@@ -156,7 +156,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1611264351}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &53351220
 MonoBehaviour:
@@ -170,8 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d63537cad47a3499e1c4ff3a386b10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VideoModelData: {fileID: 4900000, guid: ddc9a741957565f4abad98b63e6ce320, type: 3}
-  ClickableModelData: {fileID: 4900000, guid: 07d218926a1846b4c9cabfcf2a981c10, type: 3}
+  VideoModelData: {fileID: 0}
+  ClickableModelData: {fileID: 0}
   OnlineVideoSourceMappingData: {fileID: 4900000, guid: fb5e19b8cc5eb6a4db068565a0ad4927,
     type: 3}
 --- !u!114 &53351221
@@ -253,7 +253,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1611264351}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &383087581
 GameObject:
@@ -389,51 +389,6 @@ Transform:
   m_Father: {fileID: 1611264351}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &600364140
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 600364141}
-  - component: {fileID: 600364142}
-  m_Layer: 0
-  m_Name: FmvHelper
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &600364141
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600364140}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1611264351}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &600364142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600364140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0385944a5e9601448adc0823112f82fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fmvVideoElementPanel: {fileID: 1771585202}
 --- !u!1 &736910559
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,7 +482,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1005435512}
-  - component: {fileID: 1005435514}
   - component: {fileID: 1005435513}
   m_Layer: 0
   m_Name: FmvUI
@@ -559,31 +513,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1005435511}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59df1829b43b0144e8713d76fa479ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   InventoryToogle: 105
   inventoryElementsPanel: {fileID: 383087582}
---- !u!114 &1005435514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1005435511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a96cc646b921e842a28bae7333cb1f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fmvVideos: {fileID: 1563772660}
-  fmvData: {fileID: 0}
-  videoElementsPanel: {fileID: 1771585202}
-  inventoryElementsPanel: {fileID: 383087582}
-  clickableObjectPrefab: {fileID: 1133256870980526, guid: 8f59b351c229fff41a2450726cdb69f2,
-    type: 3}
 --- !u!1 &1312612943
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,7 +530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1312612946}
   - component: {fileID: 1312612945}
-  - component: {fileID: 1312612944}
+  - component: {fileID: 1312612947}
   m_Layer: 0
   m_Name: FmvStateMachine
   m_TagString: Untagged
@@ -602,22 +538,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1312612944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312612943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efe58df89b5b74a97a123b5ed2b70422, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
-    _objectReferences:
-    - {fileID: 11400000, guid: 770dfbebab2aa804eb29562bc41aff1c, type: 2}
 --- !u!114 &1312612945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,6 +568,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1312612947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312612943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efe58df89b5b74a97a123b5ed2b70422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
+    _objectReferences:
+    - {fileID: 11400000, guid: 438e18697dbc9a04fbab70930a57b040, type: 2}
 --- !u!1 &1370328298
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,7 +600,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1370328299
 Transform:
   m_ObjectHideFlags: 0
@@ -887,7 +823,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1400030740
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1082,9 +1018,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563772657}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18c8ac5e1a844de4db82a41175820da7, type: 3}
+  m_Script: {fileID: 11500000, guid: 67b4777c1a8293340933a0550cfeb729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnVideoStarted:
@@ -1092,7 +1028,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1370328300}
         m_TargetAssemblyTypeName: FmvMaker.Examples.Scripts.CheckFmvMakerEvents,
-          Assembly-CSharp
+          FmvMaker
         m_MethodName: OnVideoStarted
         m_Mode: 0
         m_Arguments:
@@ -1108,7 +1044,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1370328300}
         m_TargetAssemblyTypeName: FmvMaker.Examples.Scripts.CheckFmvMakerEvents,
-          Assembly-CSharp
+          FmvMaker
         m_MethodName: OnVideoPaused
         m_Mode: 0
         m_Arguments:
@@ -1124,7 +1060,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1370328300}
         m_TargetAssemblyTypeName: FmvMaker.Examples.Scripts.CheckFmvMakerEvents,
-          Assembly-CSharp
+          FmvMaker
         m_MethodName: OnVideoSkipped
         m_Mode: 0
         m_Arguments:
@@ -1140,7 +1076,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1370328300}
         m_TargetAssemblyTypeName: FmvMaker.Examples.Scripts.CheckFmvMakerEvents,
-          Assembly-CSharp
+          FmvMaker
         m_MethodName: OnVideoFinished
         m_Mode: 0
         m_Arguments:
@@ -1155,10 +1091,8 @@ MonoBehaviour:
   PauseVideoKey: 112
   QuitGameKey: 113
   ShowAllAvailableClickablesKey: 32
-  nameOfStartVideo: UniqueVideoName
-  clickableObjects: {fileID: 1005435514}
   videoView: {fileID: 1563772658}
-  data: {fileID: 0}
+  data: {fileID: 53351220}
   loadingSceen: {fileID: 1400030739}
 --- !u!1 &1611264349
 GameObject:
@@ -1191,7 +1125,6 @@ Transform:
   - {fileID: 1563772659}
   - {fileID: 494334020}
   - {fileID: 1005435512}
-  - {fileID: 600364141}
   - {fileID: 53351219}
   - {fileID: 352578382}
   m_Father: {fileID: 0}

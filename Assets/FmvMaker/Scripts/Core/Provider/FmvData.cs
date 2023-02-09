@@ -1,6 +1,5 @@
 ﻿using FmvMaker.Core.Models;
 using FmvMaker.Core.Utilities;
-using System.IO;
 using UnityEngine;
 
 namespace FmvMaker.Core.Provider {
@@ -19,7 +18,7 @@ namespace FmvMaker.Core.Provider {
         private TextAsset OnlineVideoSourceMappingData = null;
 
         private void Awake() {
-            if (!VideoModelData || !ClickableModelData) {
+            if (!VideoModelData && !ClickableModelData && !OnlineVideoSourceMappingData) {
                 Debug.LogWarning("No data available for FmvMaker. Check your FmvData references. FmvMaker will try to use DemoData.");
                 VideoModelData = Resources.Load<TextAsset>("DemoVideoData");
                 ClickableModelData = Resources.Load<TextAsset>("DemoClickableData");

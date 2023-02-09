@@ -25,10 +25,10 @@ namespace FmvMaker.Core.Provider {
         private List<FmvClickableFacade> allNavigationItems = new List<FmvClickableFacade>();
 
         private void Awake() {
-            //LoadItems();
-            //GenerateInventoryItems();
-            //GenerateFindableItems();
-            //GenerateNavigationTargetItems();
+            LoadItems();
+            GenerateInventoryItems();
+            GenerateFindableItems();
+            GenerateNavigationTargetItems();
         }
 
         private void LoadItems() {

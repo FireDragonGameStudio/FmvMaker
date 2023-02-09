@@ -49,10 +49,10 @@ namespace FmvMaker.Core.Provider {
         private VideoModel startVideo => GetVideoModelByName(nameOfStartVideo);
 
         private void Awake() {
-            //allVideoElements = data.GenerateVideoDataFromConfigurationFile();
-            //CheckForOnlineMappingData();
+            allVideoElements = data.GenerateVideoDataFromConfigurationFile();
+            CheckForOnlineMappingData();
 
-            //SetupVideoEventTrigger();
+            SetupVideoEventTrigger();
         }
 
         private async void Start() {
@@ -196,7 +196,7 @@ namespace FmvMaker.Core.Provider {
         }
 
         private void PauseVideo() {
-            if (Input.GetKeyUp(PauseVideoKey)) {
+            if (Input.GetKeyUp(PauseVideoKey) && !currentVideoElement.IsLooping && videoView.ActivePlayer.IsPlaying) {
                 videoView.PauseVideoClip(currentVideoElement);
             }
         }
@@ -208,7 +208,7 @@ namespace FmvMaker.Core.Provider {
         }
 
         private void ToggleAllAvailableClickables() {
-            if (Input.GetKey(ShowAllAvailableClickablesKey)) {
+            if (Input.GetKeyDown(ShowAllAvailableClickablesKey)) {
                 clickableObjects.ToggleFindableItems(true);
             }
 
