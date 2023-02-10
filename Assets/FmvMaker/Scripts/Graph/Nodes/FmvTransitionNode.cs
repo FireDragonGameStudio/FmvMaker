@@ -37,7 +37,7 @@ namespace FmvMaker.Graph {
         private ControlOutput TriggerFmvTransition(Flow flow) {
             triggeredNavigationTarget = flow.GetValue<FmvGraphElementData>(FmvTargetVideo);
 
-            if (triggeredNavigationTarget.VideoName.Equals(TransitionVideo.ToString())) {
+            if (triggeredNavigationTarget.VideoTarget == TransitionVideo) {
                 Variables.Scene(SceneManager.GetActiveScene()).Set("CurrentVideoTarget", triggeredNavigationTarget);
                 return IfTrue;
             }

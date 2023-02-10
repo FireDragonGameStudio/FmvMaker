@@ -39,8 +39,8 @@ namespace FmvMaker.Graph {
         public ControlOutput EnterTrigger(Flow flow) {
             var fmvTargetValue = flow.GetValue<FmvGraphElementData>(FmvTargetVideo);
 
-            if (branches.ContainsKey(fmvTargetValue.VideoName)) {
-                return branches[fmvTargetValue.VideoName];
+            if (branches.ContainsKey(fmvTargetValue.VideoTarget.ToString())) {
+                return branches[fmvTargetValue.VideoTarget.ToString()];
             }
             return null;
         }

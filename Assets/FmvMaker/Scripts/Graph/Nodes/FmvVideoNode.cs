@@ -72,13 +72,13 @@ namespace FmvMaker.Graph {
         }
 
         private void OnVideoStarted(VideoModel videoModel) {
-            if (fmvTargetClickable.VideoName.Equals(videoModel.Name)) {
+            if (fmvTargetClickable.VideoTarget.Equals(videoModel.Name)) {
                 OnFmvVideoStarted.Trigger(fmvTargetClickable);
             }
         }
 
         private void OnVideoPaused(VideoModel videoModel, bool isPaused) {
-            if (fmvTargetClickable.VideoName.Equals(videoModel.Name)) {
+            if (fmvTargetClickable.VideoTarget.Equals(videoModel.Name)) {
                 OnFmvVideoPaused.Trigger(fmvTargetClickable);
             }
         }
@@ -87,54 +87,59 @@ namespace FmvMaker.Graph {
             if (!videoModel.IsLooping) {
                 // generate buttons for clicking
                 for (var i = 0; i < nodeElements.Count; i++) {
-                    GameObject targetObject = GameObject.Instantiate(Variables.Scene(SceneManager.GetActiveScene()).Get("ClickableObjectPrefab") as GameObject);
-                    targetObject.SetActive(true);
-                    targetObject.transform.SetParent((Variables.Scene(SceneManager.GetActiveScene()).Get("VideoElementsPanel") as GameObject).transform);
-                    targetObject.transform.localScale = Vector3.one;
-                    FmvClickableFacade itemFacade = targetObject.GetComponent<FmvClickableFacade>();
+                    if (!nodeElements[i].IsInInventory && !nodeElements[i].WasUsed) {
+                        GameObject targetObject = GameObject.Instantiate(Variables.Scene(SceneManager.GetActiveScene()).Get("ClickableObjectPrefab") as GameObject);
+                        targetObject.SetActive(true);
+                        targetObject.transform.SetParent((Variables.Scene(SceneManager.GetActiveScene()).Get("VideoElementsPanel") as GameObject).transform);
+                        targetObject.transform.localScale = Vector3.one;
+                        FmvClickableFacade itemFacade = targetObject.GetComponent<FmvClickableFacade>();
 
-                    // add the item model from the inputs
-                    itemFacade.SetItemData(new ClickableModel() {
-                        Name = "Click-" + nodeElements[i].VideoName,
-                        Description = "Description",
-                        PickUpVideo = nodeElements[i].VideoName,
-                        UseageVideo = "",
-                        IsNavigation = true,
-                        IsInInventory = false,
-                        WasUsed = false,
-                        RelativeScreenPosition = nodeElements[i].RelativeScreenPosition,
-                    });
+                        // add the item model from the inputs
+                        itemFacade.SetItemData(nodeElements[i].GetItemModel());
 
-                    // adding the clicking events
-                    itemFacade.OnItemClicked.RemoveAllListeners();
-                    itemFacade.OnItemClicked.AddListener(ClickNavigationTarget);
+                        // adding the clicking events
+                        itemFacade.OnItemClicked.RemoveAllListeners();
+                        itemFacade.OnItemClicked.AddListener(ClickNavigationTarget);
 
-                    findables.Add(targetObject);
+                        findables.Add(targetObject);
+                    }
                 }
 
-                if (fmvTargetClickable.VideoName.Equals(videoModel.Name)) {
+                if (fmvTargetClickable.VideoTarget.Equals(videoModel.Name)) {
                     OnFmvVideoFinished.Trigger(fmvTargetClickable);
                 }
             }
         }
 
         private void OnVideoSkipped(VideoModel videoModel) {
-            if (fmvTargetClickable.VideoName.Equals(videoModel.Name)) {
+            if (fmvTargetClickable.VideoTarget.Equals(videoModel.Name)) {
                 OnFmvVideoSkipped.Trigger(fmvTargetClickable);
             }
         }
 
         private void ClickNavigationTarget(ClickableModel clickableModel) {
+            var graphElementData = nodeElements.FirstOrDefault((nodeElement) =>
+                nodeElement.VideoTarget.ToString().Equals(clickableModel.PickUpVideo));
+            if (graphElementData == null) {
+                Debug.LogError("No nodeElement found: " + clickableModel.PickUpVideo);
+                return;
+            }
+
+            if (graphElementData.IsItem && !graphElementData.IsInInventory && !graphElementData.WasUsed) {
+                graphElementData.IsInInventory = true;
+            }
+
             fmvGraphVideos.OnVideoStarted.RemoveListener(OnVideoStarted);
             fmvGraphVideos.OnVideoPaused.RemoveListener(OnVideoPaused);
             fmvGraphVideos.OnVideoFinished.RemoveListener(OnVideoFinished);
             fmvGraphVideos.OnVideoSkipped.RemoveListener(OnVideoSkipped);
             for (int i = 0; i < findables.Count; i++) {
-                GameObject.Destroy(findables[i]);
+                if (!nodeElements[i].IsInInventory) {
+                    GameObject.Destroy(findables[i]);
+                }
             }
-            OnFmvClickableClicked.Trigger(nodeElements.FirstOrDefault((nodeElement) =>
-                nodeElement.VideoName.Equals(clickableModel.PickUpVideo))
-            );
+
+            OnFmvClickableClicked.Trigger(graphElementData);
         }
     }
 }
