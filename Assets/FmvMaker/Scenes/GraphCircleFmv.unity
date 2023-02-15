@@ -170,9 +170,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d63537cad47a3499e1c4ff3a386b10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VideoModelData: {fileID: 0}
-  ClickableModelData: {fileID: 0}
-  OnlineVideoSourceMappingData: {fileID: 4900000, guid: fb5e19b8cc5eb6a4db068565a0ad4927,
+  ExportKey: 120
+  loadDebugData: 0
+  videoModelData: {fileID: 0}
+  clickableModelData: {fileID: 0}
+  onlineVideoSourceMappingData: {fileID: 4900000, guid: fb5e19b8cc5eb6a4db068565a0ad4927,
     type: 3}
 --- !u!114 &53351221
 MonoBehaviour:
@@ -943,12 +945,14 @@ MonoBehaviour:
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"InventoryElementsPanel","value":{"$content":2,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"ClickableObjectPrefab","value":{"$content":3,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"CurrentVideoTarget","value":null,"typeHandle":{"Identification":"FmvMaker.Graph.FmvGraphElementData,
-      FmvMaker, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+      FmvMaker, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"FmvData","value":{"$content":4,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
     - {fileID: 1563772657}
     - {fileID: 1771585201}
     - {fileID: 383087581}
     - {fileID: 1133256870980526, guid: 8f59b351c229fff41a2450726cdb69f2, type: 3}
+    - {fileID: 53351218}
 --- !u!4 &1428846498
 Transform:
   m_ObjectHideFlags: 0

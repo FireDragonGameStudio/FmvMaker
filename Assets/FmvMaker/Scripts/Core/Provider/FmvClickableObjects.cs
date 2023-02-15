@@ -173,7 +173,7 @@ namespace FmvMaker.Core.Provider {
         }
 
         private void TriggerUseageNavigationTarget(ClickableModel model) {
-            fmvVideos.PlayVideoFromNavigationTarget(model.UseageVideo);
+            fmvVideos.PlayVideoFromNavigationTarget(model.UsageVideo);
         }
 
         private void ItemFromInventoryToUsed(ClickableModel model) {

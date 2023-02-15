@@ -27,7 +27,7 @@ namespace FmvMaker.Graph {
         public ValueOutput FmvGraphElementData { get; private set; }
 
         public IGraphElementData CreateData() {
-            return new FmvGraphElementData(VideoTarget, UsageTarget, IsInInventory, WasUsed, RelativeScreenPosition);
+            return new FmvGraphElementData(Name, VideoTarget, UsageTarget, IsInInventory, WasUsed, RelativeScreenPosition);
         }
 
         protected override void Definition() {
