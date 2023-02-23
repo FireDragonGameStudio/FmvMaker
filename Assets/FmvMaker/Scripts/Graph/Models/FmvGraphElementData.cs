@@ -48,6 +48,15 @@ namespace FmvMaker.Graph {
             };
         }
 
+        public VideoModel GetItemUsageVideoModel() {
+            return new VideoModel() {
+                Name = this.Id,
+                VideoTarget = this.UsageTarget.ToString(),
+                IsLooping = this.IsLooping,
+                RelativeScreenPosition = this.RelativeScreenPosition,
+            };
+        }
+
         public ClickableModel GetItemModel() {
             return new ClickableModel() {
                 Name = this.Id,

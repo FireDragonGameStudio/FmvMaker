@@ -14,6 +14,7 @@ namespace FmvMaker.Core.Provider {
         private RectTransform inventoryElementsPanel = null;
 
         private bool inventoryToggle;
+        private bool externalInventoryToggle;
 
         private void Start() {
             ToggleInventoryVisibility();
@@ -24,16 +25,21 @@ namespace FmvMaker.Core.Provider {
         }
 
         private void ToggleInventory() {
-            if (Input.GetKeyUp(InventoryToogle)) {
-                ToggleInventoryVisibility();
+            if (Input.GetKeyUp(InventoryToogle) || externalInventoryToggle) {
+                externalInventoryToggle = false;
+                InventoryVisibility();
             }
         }
 
-        private void ToggleInventoryVisibility() {
+        private void InventoryVisibility() {
             float yPos = inventoryToggle ? InventoryVisible : InventoryInvisible;
             inventoryElementsPanel.position = new Vector3(
                 inventoryElementsPanel.position.x, yPos, inventoryElementsPanel.position.z);
             inventoryToggle = !inventoryToggle;
+        }
+
+        public void ToggleInventoryVisibility() {
+            externalInventoryToggle = true;
         }
     }
 }

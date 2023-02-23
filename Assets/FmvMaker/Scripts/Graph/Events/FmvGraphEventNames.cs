@@ -9,6 +9,8 @@ namespace FmvMaker.Graph {
         public static string OnFmvSkipVideo = "OnFmvSkipVideo";
         public static string OnFmvPauseVideo = "OnFmvPauseVideo";
 
-        public static string OnFmvClickableClicked = "OnFmvClickableClicked";
+        public static string OnFmvNavigationClicked = "OnFmvNavigationClicked";
+        public static string OnFmvInventoryClicked = "OnFmvInventoryClicked";
+        public static string OnFmvItemPickupClicked = "OnFmvItemPickupClicked";
     }
 }
