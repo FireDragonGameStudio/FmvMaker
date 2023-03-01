@@ -9,11 +9,6 @@ namespace FmvMaker.Core.Provider {
     public class FmvData : MonoBehaviour {
 
         public Dictionary<string, FmvGraphElementData> gameData { get; set; } = new Dictionary<string, FmvGraphElementData>();
-        public Dictionary<string, FmvGraphElementData> inventoryData { get; set; } = new Dictionary<string, FmvGraphElementData>();
-
-        [Header("Key Bindings")]
-        [SerializeField]
-        private KeyCode ExportKey = KeyCode.X;
 
         [Header("Debug Settings")]
         [SerializeField]
@@ -38,29 +33,20 @@ namespace FmvMaker.Core.Provider {
             }
         }
 
-        private void Update() {
-            ExportVideoData();
+        public void ExportVideoData() {
+            //ExportGameDatatoLocalFile();
         }
 
-        private void ExportVideoData() {
-            if (Input.GetKeyUp(ExportKey)) {
-                //ExportVideoDataToLocalFile(allVideoElements, LoadFmvConfig.Config.LocalFilePath);
-                ExportGameDatatoLocalFile();
-            }
+        public void ExportGraphVideoData() {
+            ExportGraphGameDatatoLocalFile();
         }
 
-        //private void ExportVideoDataToLocalFile(VideoModel[] videoElements, string localFilePath) {
-        //    using (StreamWriter sw = new StreamWriter(Path.Combine(localFilePath, "FmvMakerDemoVideoData"))) {
-        //        sw.Write(JsonUtility.ToJson(videoElements));
-        //    }
-        //}
-
-        private void ExportGameDatatoLocalFile() {
+        private void ExportGraphGameDatatoLocalFile() {
             List<SaveGameModel> saveGameModelData = new List<SaveGameModel>();
             foreach (FmvGraphElementData elementData in gameData.Values) {
-                saveGameModelData.Add(elementData.GetSaveGameModel());
+                saveGameModelData.Add(new SaveGameModel(elementData));
             }
-            //using (StreamWriter sw = new StreamWriter(Path.Combine(Application.persistentDataPath, "SaveGame.json"))) {
+
             using (StreamWriter sw = new StreamWriter(Path.Combine(Application.persistentDataPath, "SaveGameData.json"))) {
                 SaveGameModelWrapper gameDataModelWrapper = new SaveGameModelWrapper();
                 gameDataModelWrapper.GameDataList = saveGameModelData.ToArray();

@@ -20,6 +20,8 @@ namespace FmvMaker.Graph {
         [SerializeField]
         private KeyCode PauseVideoKey = KeyCode.P;
         [SerializeField]
+        private KeyCode SaveGameKey = KeyCode.S;
+        [SerializeField]
         private KeyCode QuitGameKey = KeyCode.Q;
         [SerializeField]
         private KeyCode ShowAllAvailableClickablesKey = KeyCode.Space;
@@ -52,6 +54,7 @@ namespace FmvMaker.Graph {
         private void Update() {
             SkipVideo();
             PauseVideo();
+            SaveGame();
             QuitGame();
             ToggleAllAvailableClickables();
         }
@@ -119,6 +122,12 @@ namespace FmvMaker.Graph {
         private void PauseVideo() {
             if (Input.GetKeyUp(PauseVideoKey) && !currentVideoElement.IsLooping && videoView.ActivePlayer.IsPlaying) {
                 videoView.PauseVideoClip(currentVideoElement);
+            }
+        }
+
+        private void SaveGame() {
+            if (Input.GetKeyUp(SaveGameKey)) {
+                data.ExportGraphVideoData();
             }
         }
 

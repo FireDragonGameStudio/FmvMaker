@@ -1,23 +1,23 @@
 Using pre-set license
 Built from '2021.3/staging' branch; Version is '2021.3.16f1 (4016570cf34f) revision 4200023'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'en' Physical Memory: 32614 MB
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'en' Physical Memory: 32471 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Data\UnityInstallations\2021.3.16f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2021.3.16f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/Data/UnityProjects/FmvMaker
+C:/Users/marku/Documents/UnityProjects/FmvMaker
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-49967
-Successfully changed project path to: C:/Data/UnityProjects/FmvMaker
-C:/Data/UnityProjects/FmvMaker
+54530
+Successfully changed project path to: C:/Users/marku/Documents/UnityProjects/FmvMaker
+C:/Users/marku/Documents/UnityProjects/FmvMaker
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,70 +47,2691 @@ C:/Data/UnityProjects/FmvMaker
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [14112] Host "[IP] 192.168.0.30 [Port] 0 [Flags] 2 [Guid] 1699050867 [EditorId] 1699050867 [Version] 1048832 [Id] WindowsEditor(7,MSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [6568] Host "[IP] 172.17.112.1 [Port] 0 [Flags] 2 [Guid] 351824432 [EditorId] 351824432 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-FFEU38RJ) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [14112] Host "[IP] 192.168.0.30 [Port] 0 [Flags] 2 [Guid] 1699050867 [EditorId] 1699050867 [Version] 1048832 [Id] WindowsEditor(7,MSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [6568] Host "[IP] 172.17.112.1 [Port] 0 [Flags] 2 [Guid] 351824432 [EditorId] 351824432 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-FFEU38RJ) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 147.61 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 53.19 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.16f1 (4016570cf34f)
-[Subsystems] Discovering subsystems at path C:/Data/UnityInstallations/2021.3.16f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Data/UnityProjects/FmvMaker/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/marku/Documents/UnityProjects/FmvMaker/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1070 (ID=0x1ba1)
+    Renderer: NVIDIA RTX A5000 Laptop GPU (ID=0x24b6)
     Vendor:   NVIDIA
-    VRAM:     8074 MB
+    VRAM:     16191 MB
     Driver:   31.0.15.2849
 Initialize mono
-Mono path[0] = 'C:/Data/UnityInstallations/2021.3.16f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Data/UnityInstallations/2021.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Data/UnityInstallations/2021.3.16f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56628
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56156
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Data/UnityInstallations/2021.3.16f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
-Register platform support module: C:/Data/UnityInstallations/2021.3.16f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Register platform support module: C:/Data/UnityInstallations/2021.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Register platform support module: C:/Data/UnityInstallations/2021.3.16f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
-Registered in 0.334886 seconds.
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
+Registered in 0.006280 seconds.
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 78.68 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 54.91 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  5.541 seconds
+- Completed reload, in  0.482 seconds
 Domain Reload Profiling:
-	ReloadAssembly (5541ms)
-		BeginReloadAssembly (3593ms)
+	ReloadAssembly (483ms)
+		BeginReloadAssembly (55ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (1275ms)
-			LoadAssemblies (3603ms)
+		EndReloadAssembly (346ms)
+			LoadAssemblies (54ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (858ms)
+			SetupTypeCache (79ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (32ms)
-			SetupLoadedEditorAssemblies (317ms)
+			RebuildScriptCaches (22ms)
+			SetupLoadedEditorAssemblies (206ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (58ms)
+				InitializePlatformSupportModulesInManaged (42ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (79ms)
-				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (111ms)
-				ProcessInitializeOnLoadMethodAttributes (66ms)
+				RefreshPlugins (55ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (74ms)
+				ProcessInitializeOnLoadMethodAttributes (33ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006768 seconds.
-Android Extension - Scanning For ADB Devices 4663 ms
+Registered in 0.003596 seconds.
 Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.Exception: Error! Visual Scripting: couldn't find visual scripting package
+  at Unity.VisualScripting.PackageVersionUtility.get_version () [0x00025] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\PackageVersionUtility.cs:22 
+  at Unity.VisualScripting.BoltCoreManifest.get_version () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugin\BoltCoreManifest.cs:11 
+  at Unity.VisualScripting.PluginManifest.get_currentVersion () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:33 
+  at Unity.VisualScripting.PluginManifest.get_versionMismatch () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:48 
+  at Unity.VisualScripting.PluginContainer.Initialize () [0x0057d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:208 
+  at Unity.VisualScripting.PluginContainer.InitializeOnLoad () [0x00012] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:32 
+  at Unity.VisualScripting.VSUsageUtility.DoInitializeOnLoadCalls () [0x00044] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:76 
+  at Unity.VisualScripting.VSUsageUtility.set_isVisualScriptingUsed (System.Boolean value) [0x00037] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:114 
+  at Unity.VisualScripting.VSUsageUtility.CheckAndSetIsVisualScriptingUsed () [0x0003f] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:48 
+  at Unity.VisualScripting.VSUsageUtility..cctor () [0x0000d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:22 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.098 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1099ms)
+		BeginReloadAssembly (195ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (126ms)
+		EndReloadAssembly (835ms)
+			LoadAssemblies (61ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (164ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (42ms)
+			SetupLoadedEditorAssemblies (541ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (18ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (63ms)
+				ProcessInitializeOnLoadAttributes (429ms)
+				ProcessInitializeOnLoadMethodAttributes (24ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.53 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3446 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 28 unused Assets / (56.5 KB). Loaded Objects now: 3915.
+Memory consumption went from 119.4 MB to 119.4 MB.
+Total: 8.658300 ms (FindLiveObjects: 0.243000 ms CreateObjectMapping: 0.098100 ms MarkObjects: 8.232500 ms  DeleteObjects: 0.083100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1134436.134048 seconds.
+  path: Assets/FmvMaker/Scripts/Graph/Events/OnFmvInventoryClicked.cs
+  artifactKey: Guid(d71768e79b1cd814498dc40faddf7dd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/Graph/Events/OnFmvInventoryClicked.cs using Guid(d71768e79b1cd814498dc40faddf7dd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd66b7d7794cf00983ea6e038e56154b0') in 0.020252 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 205.155841 seconds.
+  path: Assets/FmvMaker/Scripts/Graph/Events/FmvGraphEventNames.cs
+  artifactKey: Guid(015c9b86df2d05a45b706fee2ffdc597) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/Graph/Events/FmvGraphEventNames.cs using Guid(015c9b86df2d05a45b706fee2ffdc597) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ba1720827a662212283b973329f193f') in 0.006744 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.454206 seconds.
+  path: Assets/FmvMaker/Scripts/Graph/Events/OnFmvNavigationClicked.cs
+  artifactKey: Guid(27981875936def149a12683f5de62864) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/Graph/Events/OnFmvNavigationClicked.cs using Guid(27981875936def149a12683f5de62864) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99e7c93a6f1d43704f6c1208445fe174') in 0.006693 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.686888 seconds.
+  path: Assets/FmvMaker/Scripts/Graph/Events/OnFmvVideoFinished.cs
+  artifactKey: Guid(71a5ec79a9ba2594eae288d10f4b5c83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/Graph/Events/OnFmvVideoFinished.cs using Guid(71a5ec79a9ba2594eae288d10f4b5c83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bab5d467820f3fb7fb8310f8bd2a17ae') in 0.006285 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.848990 seconds.
+  path: Assets/FmvMaker/Scripts/Graph/Events/OnFmvVideoPaused.cs
+  artifactKey: Guid(73174e5443cb7e144a55145fad1c8059) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/Graph/Events/OnFmvVideoPaused.cs using Guid(73174e5443cb7e144a55145fad1c8059) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '426f2d1651271db1ef5f60e800cedb6b') in 0.007176 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.641248 seconds.
+  path: Assets/FmvMaker/Scripts/Graph/Events/OnFmvVideoSkipped.cs
+  artifactKey: Guid(569328d9de226f84187f434c9cd98548) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/Graph/Events/OnFmvVideoSkipped.cs using Guid(569328d9de226f84187f434c9cd98548) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4dbd31a9226f4314825643cb0084a6e') in 0.006534 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.573005 seconds.
+  path: Assets/FmvMaker/Scripts/Graph/Events/OnFmvVideoStarted.cs
+  artifactKey: Guid(0b540479c792a1a4eb06c77ca533661a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/Graph/Events/OnFmvVideoStarted.cs using Guid(0b540479c792a1a4eb06c77ca533661a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e398cc6fc44fd18bd96337dbac873d1') in 0.007662 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.573927 seconds.
+  path: Assets/FmvMaker/Scripts/Graph/Models/FmvGraphElementData.cs
+  artifactKey: Guid(b92bc48b7cc0d104daaf857f205cff5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/Graph/Models/FmvGraphElementData.cs using Guid(b92bc48b7cc0d104daaf857f205cff5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f6e61070c70ec51c85a17d4a182befa') in 0.006264 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 30.701535 seconds.
+  path: Assets/FmvMaker/Scripts/Graph/Models/FmvVideoNodeData.cs
+  artifactKey: Guid(243a1dfeed9699e47b069c86a84a85ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/Graph/Models/FmvVideoNodeData.cs using Guid(243a1dfeed9699e47b069c86a84a85ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15327e7ba920c05a7dbcd8de4b12af2f') in 0.005994 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 30.080522 seconds.
+  path: Assets/FmvMaker/Scripts/Graph/Nodes/FmvClickableNode.cs
+  artifactKey: Guid(9f89a62ff52d02348b61215180182dcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/Graph/Nodes/FmvClickableNode.cs using Guid(9f89a62ff52d02348b61215180182dcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cbd1fc8381f30f7679b43849442004c') in 0.008506 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.685927 seconds.
+  path: Assets/FmvMaker/Scripts/Graph/Nodes/FmvClickableNode.cs
+  artifactKey: Guid(9f89a62ff52d02348b61215180182dcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/Graph/Nodes/FmvClickableNode.cs using Guid(9f89a62ff52d02348b61215180182dcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '232d5c6d0fa10d0d04bc1f0b2d29b173') in 0.001901 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003394 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.62 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.Exception: Error! Visual Scripting: couldn't find visual scripting package
+  at Unity.VisualScripting.PackageVersionUtility.get_version () [0x00025] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\PackageVersionUtility.cs:22 
+  at Unity.VisualScripting.BoltCoreManifest.get_version () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugin\BoltCoreManifest.cs:11 
+  at Unity.VisualScripting.PluginManifest.get_currentVersion () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:33 
+  at Unity.VisualScripting.PluginManifest.get_versionMismatch () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:48 
+  at Unity.VisualScripting.PluginContainer.Initialize () [0x0057d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:208 
+  at Unity.VisualScripting.PluginContainer.InitializeOnLoad () [0x00012] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:32 
+  at Unity.VisualScripting.VSUsageUtility.DoInitializeOnLoadCalls () [0x00044] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:76 
+  at Unity.VisualScripting.VSUsageUtility.set_isVisualScriptingUsed (System.Boolean value) [0x00037] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:114 
+  at Unity.VisualScripting.VSUsageUtility.CheckAndSetIsVisualScriptingUsed () [0x00013] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:33 
+  at Unity.VisualScripting.VSUsageUtility..cctor () [0x0000d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:22 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  0.995 seconds
+Domain Reload Profiling:
+	ReloadAssembly (995ms)
+		BeginReloadAssembly (126ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (39ms)
+		EndReloadAssembly (796ms)
+			LoadAssemblies (65ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (166ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (396ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (18ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (50ms)
+				ProcessInitializeOnLoadAttributes (295ms)
+				ProcessInitializeOnLoadMethodAttributes (25ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.67 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3427 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (24.7 KB). Loaded Objects now: 3919.
+Memory consumption went from 117.9 MB to 117.9 MB.
+Total: 8.119400 ms (FindLiveObjects: 0.228600 ms CreateObjectMapping: 0.090900 ms MarkObjects: 7.763200 ms  DeleteObjects: 0.035800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 39.128043 seconds.
+  path: Assets/FmvMaker/Scripts/Graph/Nodes/FmvNavigationNode.cs
+  artifactKey: Guid(9f89a62ff52d02348b61215180182dcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/Graph/Nodes/FmvNavigationNode.cs using Guid(9f89a62ff52d02348b61215180182dcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4add4b505218cef2edc8bd4db8833a6') in 0.011432 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003471 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.51 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.Exception: Error! Visual Scripting: couldn't find visual scripting package
+  at Unity.VisualScripting.PackageVersionUtility.get_version () [0x00025] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\PackageVersionUtility.cs:22 
+  at Unity.VisualScripting.BoltCoreManifest.get_version () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugin\BoltCoreManifest.cs:11 
+  at Unity.VisualScripting.PluginManifest.get_currentVersion () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:33 
+  at Unity.VisualScripting.PluginManifest.get_versionMismatch () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:48 
+  at Unity.VisualScripting.PluginContainer.Initialize () [0x0057d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:208 
+  at Unity.VisualScripting.PluginContainer.InitializeOnLoad () [0x00012] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:32 
+  at Unity.VisualScripting.VSUsageUtility.DoInitializeOnLoadCalls () [0x00044] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:76 
+  at Unity.VisualScripting.VSUsageUtility.set_isVisualScriptingUsed (System.Boolean value) [0x00037] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:114 
+  at Unity.VisualScripting.VSUsageUtility.CheckAndSetIsVisualScriptingUsed () [0x00013] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:33 
+  at Unity.VisualScripting.VSUsageUtility..cctor () [0x0000d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:22 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  0.981 seconds
+Domain Reload Profiling:
+	ReloadAssembly (982ms)
+		BeginReloadAssembly (115ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (796ms)
+			LoadAssemblies (55ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (174ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (33ms)
+			SetupLoadedEditorAssemblies (384ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (18ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (50ms)
+				ProcessInitializeOnLoadAttributes (288ms)
+				ProcessInitializeOnLoadMethodAttributes (22ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.46 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3427 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (24.6 KB). Loaded Objects now: 3923.
+Memory consumption went from 117.9 MB to 117.9 MB.
+Total: 8.093700 ms (FindLiveObjects: 0.292200 ms CreateObjectMapping: 0.110900 ms MarkObjects: 7.661400 ms  DeleteObjects: 0.028300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 14.278536 seconds.
+  path: Assets/FmvMaker/Scripts/Graph/Nodes/FmvItemNode.cs
+  artifactKey: Guid(79b52a11b64f5084e8821d064eeace7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/Graph/Nodes/FmvItemNode.cs using Guid(79b52a11b64f5084e8821d064eeace7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f06481fc3e4896c244e07916f4628e2') in 0.011261 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003127 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.Exception: Error! Visual Scripting: couldn't find visual scripting package
+  at Unity.VisualScripting.PackageVersionUtility.get_version () [0x00025] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\PackageVersionUtility.cs:22 
+  at Unity.VisualScripting.BoltCoreManifest.get_version () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugin\BoltCoreManifest.cs:11 
+  at Unity.VisualScripting.PluginManifest.get_currentVersion () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:33 
+  at Unity.VisualScripting.PluginManifest.get_versionMismatch () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:48 
+  at Unity.VisualScripting.PluginContainer.Initialize () [0x0057d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:208 
+  at Unity.VisualScripting.PluginContainer.InitializeOnLoad () [0x00012] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:32 
+  at Unity.VisualScripting.VSUsageUtility.DoInitializeOnLoadCalls () [0x00044] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:76 
+  at Unity.VisualScripting.VSUsageUtility.set_isVisualScriptingUsed (System.Boolean value) [0x00037] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:114 
+  at Unity.VisualScripting.VSUsageUtility.CheckAndSetIsVisualScriptingUsed () [0x00013] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:33 
+  at Unity.VisualScripting.VSUsageUtility..cctor () [0x0000d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:22 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  0.999 seconds
+Domain Reload Profiling:
+	ReloadAssembly (999ms)
+		BeginReloadAssembly (124ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (801ms)
+			LoadAssemblies (66ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (178ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (385ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (19ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (50ms)
+				ProcessInitializeOnLoadAttributes (288ms)
+				ProcessInitializeOnLoadMethodAttributes (21ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.46 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3427 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (24.7 KB). Loaded Objects now: 3927.
+Memory consumption went from 118.0 MB to 118.0 MB.
+Total: 7.838800 ms (FindLiveObjects: 0.226100 ms CreateObjectMapping: 0.090600 ms MarkObjects: 7.490700 ms  DeleteObjects: 0.030500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 17.906253 seconds.
+  path: Assets/FmvMaker/Scripts/Graph/Nodes/FmvItemNode.cs
+  artifactKey: Guid(79b52a11b64f5084e8821d064eeace7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/Graph/Nodes/FmvItemNode.cs using Guid(79b52a11b64f5084e8821d064eeace7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '753cfafc5001ed185fdbc29766860c9e') in 0.007322 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003237 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.51 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.Exception: Error! Visual Scripting: couldn't find visual scripting package
+  at Unity.VisualScripting.PackageVersionUtility.get_version () [0x00025] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\PackageVersionUtility.cs:22 
+  at Unity.VisualScripting.BoltCoreManifest.get_version () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugin\BoltCoreManifest.cs:11 
+  at Unity.VisualScripting.PluginManifest.get_currentVersion () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:33 
+  at Unity.VisualScripting.PluginManifest.get_versionMismatch () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:48 
+  at Unity.VisualScripting.PluginContainer.Initialize () [0x0057d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:208 
+  at Unity.VisualScripting.PluginContainer.InitializeOnLoad () [0x00012] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:32 
+  at Unity.VisualScripting.VSUsageUtility.DoInitializeOnLoadCalls () [0x00044] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:76 
+  at Unity.VisualScripting.VSUsageUtility.set_isVisualScriptingUsed (System.Boolean value) [0x00037] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:114 
+  at Unity.VisualScripting.VSUsageUtility.CheckAndSetIsVisualScriptingUsed () [0x00013] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:33 
+  at Unity.VisualScripting.VSUsageUtility..cctor () [0x0000d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:22 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  0.950 seconds
+Domain Reload Profiling:
+	ReloadAssembly (951ms)
+		BeginReloadAssembly (120ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (759ms)
+			LoadAssemblies (64ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (154ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (371ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (18ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (48ms)
+				ProcessInitializeOnLoadAttributes (278ms)
+				ProcessInitializeOnLoadMethodAttributes (20ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.49 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3427 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (24.6 KB). Loaded Objects now: 3931.
+Memory consumption went from 118.1 MB to 118.0 MB.
+Total: 8.248800 ms (FindLiveObjects: 0.243100 ms CreateObjectMapping: 0.087900 ms MarkObjects: 7.887700 ms  DeleteObjects: 0.028200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 67.871621 seconds.
+  path: Assets/FmvMaker/Graphs/GraphCircleFmv.asset
+  artifactKey: Guid(438e18697dbc9a04fbab70930a57b040) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Graphs/GraphCircleFmv.asset using Guid(438e18697dbc9a04fbab70930a57b040) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Deserialization Failure Data
+
+Object References: 
+(None)
+
+JSON: 
+{
+    "graph": {
+        "title": "GraphCircleFmv",
+        "summary": "Test graph for circle fmv sample",
+        "pan": {
+            "x": 119.5508,
+            "y": -37.24699
+        },
+        "zoom": 1.0,
+        "elements": [
+            {
+                "nest": {
+                    "source": "Embed",
+                    "macro": null,
+                    "embed": {
+                        "variables": {
+                            "Kind": "Flow",
+                            "collection": {
+                                "$content": [],
+                                "$version": "A"
+                            },
+                            "$version": "A"
+                        },
+                        "controlInputDefinitions": [],
+                        "controlOutputDefinitions": [],
+                        "valueInputDefinitions": [],
+                        "valueOutputDefinitions": [],
+                        "title": "Start",
+                        "summary": null,
+                        "pan": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "zoom": 1.0,
+                        "elements": [],
+                        "$version": "A"
+                    }
+                },
+                "isStart": true,
+                "position": {
+                    "x": -169.0,
+                    "y": -226.0
+                },
+                "width": 170.0,
+                "guid": "54595a69-fd72-446d-8c16-bdd085ba9e9e",
+                "$version": "A",
+                "$type": "Unity.VisualScripting.FlowState",
+                "$id": "3"
+            },
+            {
+                "nest": {
+                    "source": "Embed",
+                    "macro": null,
+                    "embed": {
+                        "variables": {
+                            "Kind": "Flow",
+                            "collection": {
+                                "$content": [],
+                                "$version": "A"
+                            },
+                            "$version": "A"
+                        },
+                        "controlInputDefinitions": [],
+                        "controlOutputDefinitions": [],
+                        "valueInputDefinitions": [],
+                        "valueOutputDefinitions": [],
+                        "title": "UniqueState",
+                        "summary": null,
+                        "pan": {
+                            "x": 13.8996,
+                            "y": 24.0
+                        },
+                        "zoom": 1.0,
+                        "elements": [
+                            {
+                                "coroutine": false,
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -322.0,
+                                    "y": -260.0
+                                },
+                                "guid": "6d6c40ae-7d1c-42cc-b47d-8c2ce8eef4ee",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.OnFmvVideoFinished",
+                                "$id": "23"
+                            },
+                            {
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -85.0,
+                                    "y": -239.0
+                                },
+                                "guid": "58ca846f-8781-4af3-a0e0-bfee4b299b97",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.SwitchOnFmvVideoEnum",
+                                "$id": "25"
+                            },
+                            {
+                                "TransitionVideo": "UniqueIdleVideoName",
+                                "ClickablesCount": 0,
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -71.0,
+                                    "y": 30.0
+                                },
+                                "guid": "7ab405ab-9695-49fc-ba19-da338ef68067",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.FmvVideoNode",
+                                "$id": "27"
+                            },
+                            {
+                                "Name": "UniqueIdle",
+                                "VideoTarget": "UniqueIdleVideoName",
+                                "IsLooping": true,
+                                "RelativeScreenPosition": {
+                                    "x": 0.0,
+                                    "y": 0.0
+                                },
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -328.0,
+                                    "y": 127.0
+                                },
+                                "guid": "e0747851-7d15-42f3-8b65-fffb50ab14f1",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.FmvClickableNode",
+                                "$id": "29"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "23"
+                                },
+                                "sourceKey": "trigger",
+                                "destinationUnit": {
+                                    "$ref": "25"
+                                },
+                                "destinationKey": "enter",
+                                "guid": "93c5db18-27ab-43db-abb5-41494a8b0cc4",
+                                "$type": "Unity.VisualScripting.ControlConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "25"
+                                },
+                                "sourceKey": "%UniqueVideoName",
+                                "destinationUnit": {
+                                    "$ref": "27"
+                                },
+                                "destinationKey": "InputTrigger",
+                                "guid": "a474229c-88ea-4bf3-b9cc-8a311dddccc3",
+                                "$type": "Unity.VisualScripting.ControlConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "25"
+                                },
+                                "sourceKey": "%DifferentUniqueVideoName",
+                                "destinationUnit": {
+                                    "$ref": "27"
+                                },
+                                "destinationKey": "InputTrigger",
+                                "guid": "35e6b9a8-da5a-4134-876a-50c84ddfcfec",
+                                "$type": "Unity.VisualScripting.ControlConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "23"
+                                },
+                                "sourceKey": "result",
+                                "destinationUnit": {
+                                    "$ref": "25"
+                                },
+                                "destinationKey": "FmvTargetVideo",
+                                "guid": "5edefc43-c310-4db3-b0ba-27b328978908",
+                                "$type": "Unity.VisualScripting.ValueConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "29"
+                                },
+                                "sourceKey": "FmvGraphElementData",
+                                "destinationUnit": {
+                                    "$ref": "27"
+                                },
+                                "destinationKey": "FmvTargetVideo",
+                                "guid": "80240f82-ea93-4a99-beb8-f4befcc2437c",
+                                "$type": "Unity.VisualScripting.ValueConnection"
+                            }
+                        ],
+                        "$version": "A"
+                    }
+                },
+                "isStart": false,
+                "position": {
+                    "x": -105.0,
+                    "y": -81.0
+                },
+                "width": 170.0,
+                "guid": "5ab66827-19a7-4fa0-9402-9b10edb1e84a",
+                "$version": "A",
+                "$type": "Unity.VisualScripting.FlowState",
+                "$id": "13"
+            },
+            {
+                "nest": {
+                    "source": "Embed",
+                    "macro": null,
+                    "embed": {
+                        "variables": {
+                            "Kind": "Flow",
+                            "collection": {
+                                "$content": [],
+                                "$version": "A"
+                            },
+                            "$version": "A"
+                        },
+                        "controlInputDefinitions": [],
+                        "controlOutputDefinitions": [],
+                        "valueInputDefinitions": [],
+                        "valueOutputDefinitions": [],
+                        "title": "NextState",
+                        "summary": null,
+                        "pan": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "zoom": 1.0,
+                        "elements": [],
+                        "$version": "A"
+                    }
+                },
+                "isStart": false,
+                "position": {
+                    "x": 188.0,
+                    "y": 52.0
+                },
+                "width": 170.0,
+                "guid": "b926bbf2-b76f-4b6f-90fe-f88efc408f3a",
+                "$version": "A",
+                "$type": "Unity.VisualScripting.FlowState",
+                "$id": "36"
+            },
+            {
+                "nest": {
+                    "source": "Embed",
+                    "macro": null,
+                    "embed": {
+                        "variables": {
+                            "Kind": "Flow",
+                            "collection": {
+                                "$content": [],
+                                "$version": "A"
+                            },
+                            "$version": "A"
+                        },
+                        "controlInputDefinitions": [],
+                        "controlOutputDefinitions": [],
+                        "valueInputDefinitions": [],
+                        "valueOutputDefinitions": [],
+                        "title": "AnotherState",
+                        "summary": null,
+                        "pan": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "zoom": 1.0,
+                        "elements": [],
+                        "$version": "A"
+                    }
+                },
+                "isStart": false,
+                "position": {
+                    "x": -98.0,
+                    "y": 115.0
+                },
+                "width": 170.0,
+                "guid": "bce6d756-6593-4467-b82a-87aeffbc83af",
+                "$version": "A",
+                "$type": "Unity.VisualScripting.FlowState",
+                "$id": "46"
+            },
+            {
+                "nest": {
+                    "source": "Embed",
+                    "macro": null,
+                    "embed": {
+                        "variables": {
+                            "Kind": "Flow",
+                            "collection": {
+                                "$content": [],
+                                "$version": "A"
+                            },
+                            "$version": "A"
+                        },
+                        "controlInputDefinitions": [],
+                        "controlOutputDefinitions": [],
+                        "valueInputDefinitions": [],
+                        "valueOutputDefinitions": [],
+                        "title": "StartIntroVideo",
+                        "summary": null,
+                        "pan": {
+                            "x": -64.59586,
+                            "y": -60.41319
+                        },
+                        "zoom": 0.9083334,
+                        "elements": [
+                            {
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": 165.0,
+                                    "y": -154.0
+                                },
+                                "guid": "2bbcf561-a6cb-4041-9959-4436976fccd2",
+                                "$version": "A",
+                                "$type": "Unity.VisualScripting.TriggerStateTransition",
+                                "$id": "66"
+                            },
+                            {
+                                "TransitionVideo": "UniqueVideoName",
+                                "ClickablesCount": 2,
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -121.0,
+                                    "y": -352.0
+                                },
+                                "guid": "1caeeaa7-9053-4082-80cd-618dc5987406",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.FmvVideoNode",
+                                "$id": "68"
+                            },
+                            {
+                                "Name": "GoToNext",
+                                "VideoTarget": "NextUniqueVideoName",
+                                "IsLooping": false,
+                                "RelativeScreenPosition": {
+                                    "x": 0.7,
+                                    "y": 0.2
+                                },
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -435.0,
+                                    "y": -92.0
+                                },
+                                "guid": "2866df21-c5a1-4b10-9921-d61ec958b8b8",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.FmvClickableNode",
+                                "$id": "70"
+                            },
+                            {
+                                "Name": "FirstItem",
+                                "VideoTarget": "UniqueToDifferentVideoName",
+                                "UsageTarget": "NextUniqueVideoName",
+                                "IsInInventory": false,
+                                "WasUsed": false,
+                                "RelativeScreenPosition": {
+                                    "x": 0.5,
+                                    "y": 0.5
+                                },
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -438.0,
+                                    "y": 74.0
+                                },
+                                "guid": "8e32d4b7-2557-400a-b87e-23cbb75f1a50",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.FmvClickableItemNode",
+                                "$id": "72"
+                            },
+                            {
+                                "coroutine": false,
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -353.0,
+                                    "y": -378.0
+                                },
+                                "guid": "7d8ab1b6-7c94-4f1d-9d67-f973cf2a54f2",
+                                "$version": "A",
+                                "$type": "Unity.VisualScripting.Start",
+                                "$id": "74"
+                            },
+                            {
+                                "Name": "StartVideo",
+                                "VideoTarget": "UniqueVideoName",
+                                "IsLooping": false,
+                                "RelativeScreenPosition": {
+                                    "x": 0.0,
+                                    "y": 0.0
+                                },
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -446.0,
+                                    "y": -268.0
+                                },
+                                "guid": "b72a8ac1-ac87-45de-a220-d1ce438aa2a2",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.FmvClickableNode",
+                                "$id": "76"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "74"
+                                },
+                                "sourceKey": "trigger",
+                                "destinationUnit": {
+                                    "$ref": "68"
+                                },
+                                "destinationKey": "InputTrigger",
+                                "guid": "1c29358b-cf4a-4ae1-9c1d-88b797a229bb",
+                                "$type": "Unity.VisualScripting.ControlConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "68"
+                                },
+                                "sourceKey": "OutputTrigger",
+                                "destinationUnit": {
+                                    "$ref": "66"
+                                },
+                                "destinationKey": "trigger",
+                                "guid": "79c8f3f5-96bf-4145-83ac-74a6e2fa18b0",
+                                "$type": "Unity.VisualScripting.ControlConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "76"
+                                },
+                                "sourceKey": "FmvGraphElementData",
+                                "destinationUnit": {
+                                    "$ref": "68"
+                                },
+                                "destinationKey": "FmvTargetVideo",
+                                "guid": "d278ac91-9dfc-4a68-985d-70dc8db8693f",
+                                "$type": "Unity.VisualScripting.ValueConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "70"
+                                },
+                                "sourceKey": "FmvGraphElementData",
+                                "destinationUnit": {
+                                    "$ref": "68"
+                                },
+                                "destinationKey": "ClickableTarget00",
+                                "guid": "940a623b-25dd-4a00-b772-d3d452e860d4",
+                                "$type": "Unity.VisualScripting.ValueConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "72"
+                                },
+                                "sourceKey": "FmvGraphElementData",
+                                "destinationUnit": {
+                                    "$ref": "68"
+                                },
+                                "destinationKey": "ClickableTarget01",
+                                "guid": "adc3e2f6-0296-4d86-8c8c-104a638e33ba",
+                                "$type": "Unity.VisualScripting.ValueConnection"
+                            }
+                        ],
+                        "$version": "A"
+                    }
+                },
+                "source": {
+                    "$ref": "3"
+                },
+                "destination": {
+                    "$ref": "13"
+                },
+                "guid": "c74ef830-d8c7-47c6-adb9-fa75132cdec4",
+                "$version": "A",
+                "$type": "Unity.VisualScripting.FlowStateTransition"
+            },
+            {
+                "nest": {
+                    "source": "Embed",
+                    "macro": null,
+                    "embed": {
+                        "variables": {
+                            "Kind": "Flow",
+                            "collection": {
+                                "$content": [],
+                                "$version": "A"
+                            },
+                            "$version": "A"
+                        },
+                        "controlInputDefinitions": [],
+                        "controlOutputDefinitions": [],
+                        "valueInputDefinitions": [],
+                        "valueOutputDefinitions": [],
+                        "title": "NextViaNavigation",
+                        "summary": null,
+                        "pan": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "zoom": 1.0,
+                        "elements": [
+                            {
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": 189.0,
+                                    "y": -144.0
+                                },
+                                "guid": "1b099f70-ba44-415f-a2a7-e1d63674456c",
+                                "$version": "A",
+                                "$type": "Unity.VisualScripting.TriggerStateTransition",
+                                "$id": "93"
+                            },
+                            {
+                                "TransitionVideo": "NextUniqueVideoName",
+                                "ClickablesCount": 1,
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -88.0,
+                                    "y": -271.0
+                                },
+                                "guid": "18046c62-b60a-4eb9-9bb0-4703b90d4914",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.FmvVideoNode",
+                                "$id": "95"
+                            },
+                            {
+                                "Name": "GoToAnotherState",
+                                "VideoTarget": "AnotherUniqueVideoName",
+                                "IsLooping": false,
+                                "RelativeScreenPosition": {
+                                    "x": 0.2,
+                                    "y": 0.2
+                                },
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -337.0,
+                                    "y": -78.0
+                                },
+                                "guid": "6fbdbb38-b8d5-494d-a171-54ee8e73d70d",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.FmvClickableNode",
+                                "$id": "97"
+                            },
+                            {
+                                "coroutine": false,
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -352.0,
+                                    "y": -256.0
+                                },
+                                "guid": "e50fa080-05f2-42bb-a556-b681b836b8b8",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.OnFmvNavigationClicked",
+                                "$id": "99"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "95"
+                                },
+                                "sourceKey": "OutputTrigger",
+                                "destinationUnit": {
+                                    "$ref": "93"
+                                },
+                                "destinationKey": "trigger",
+                                "guid": "ce70d083-60b5-45f2-a304-42b8e24359a5",
+                                "$type": "Unity.VisualScripting.ControlConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "99"
+                                },
+                                "sourceKey": "trigger",
+                                "destinationUnit": {
+                                    "$ref": "95"
+                                },
+                                "destinationKey": "InputTrigger",
+                                "guid": "54001970-f350-43a0-89af-17ac94eaccae",
+                                "$type": "Unity.VisualScripting.ControlConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "97"
+                                },
+                                "sourceKey": "FmvGraphElementData",
+                                "destinationUnit": {
+                                    "$ref": "95"
+                                },
+                                "destinationKey": "ClickableTarget00",
+                                "guid": "d5cdd9cc-1f2a-477d-a60f-1b206d140c87",
+                                "$type": "Unity.VisualScripting.ValueConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "99"
+                                },
+                                "sourceKey": "result",
+                                "destinationUnit": {
+                                    "$ref": "95"
+                                },
+                                "destinationKey": "FmvTargetVideo",
+                                "guid": "1d06019c-bd46-4026-99ec-0d4142b09e69",
+                                "$type": "Unity.VisualScripting.ValueConnection"
+                            }
+                        ],
+                        "$version": "A"
+                    }
+                },
+                "source": {
+                    "$ref": "13"
+                },
+                "destination": {
+                    "$ref": "36"
+                },
+                "guid": "9bc00208-c24d-4762-8c3b-f71086354c54",
+                "$version": "A",
+                "$type": "Unity.VisualScripting.FlowStateTransition"
+            },
+            {
+                "nest": {
+                    "source": "Embed",
+                    "macro": null,
+                    "embed": {
+                        "variables": {
+                            "Kind": "Flow",
+                            "collection": {
+                                "$content": [],
+                                "$version": "A"
+                            },
+                            "$version": "A"
+                        },
+                        "controlInputDefinitions": [],
+                        "controlOutputDefinitions": [],
+                        "valueInputDefinitions": [],
+                        "valueOutputDefinitions": [],
+                        "title": "GotToAnotherViaNavigation",
+                        "summary": null,
+                        "pan": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "zoom": 1.0,
+                        "elements": [
+                            {
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": 171.0,
+                                    "y": -68.0
+                                },
+                                "guid": "3f8d11a1-068f-4159-8a86-6ef8fe9dcee4",
+                                "$version": "A",
+                                "$type": "Unity.VisualScripting.TriggerStateTransition",
+                                "$id": "115"
+                            },
+                            {
+                                "coroutine": false,
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -332.0,
+                                    "y": -262.0
+                                },
+                                "guid": "6078d09a-3884-4688-a8cb-28f154a03217",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.OnFmvNavigationClicked",
+                                "$id": "117"
+                            },
+                            {
+                                "TransitionVideo": "AnotherUniqueVideoName",
+                                "ClickablesCount": 1,
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -48.0,
+                                    "y": -275.0
+                                },
+                                "guid": "d52b31e6-43d5-4eae-aeaf-9e5b3234ada7",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.FmvVideoNode",
+                                "$id": "119"
+                            },
+                            {
+                                "Name": "GoToUniqueState",
+                                "VideoTarget": "DifferentUniqueVideoName",
+                                "IsLooping": false,
+                                "RelativeScreenPosition": {
+                                    "x": 0.5,
+                                    "y": 0.7
+                                },
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -329.0,
+                                    "y": -82.0
+                                },
+                                "guid": "07bd1b89-af41-472b-bca8-74d3c0e8dfd1",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.FmvClickableNode",
+                                "$id": "121"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "117"
+                                },
+                                "sourceKey": "trigger",
+                                "destinationUnit": {
+                                    "$ref": "119"
+                                },
+                                "destinationKey": "InputTrigger",
+                                "guid": "a11313f2-ac85-475b-94de-ae0f40d0fa07",
+                                "$type": "Unity.VisualScripting.ControlConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "119"
+                                },
+                                "sourceKey": "OutputTrigger",
+                                "destinationUnit": {
+                                    "$ref": "115"
+                                },
+                                "destinationKey": "trigger",
+                                "guid": "60155609-fc04-49a8-9026-1bf67e1a8fc8",
+                                "$type": "Unity.VisualScripting.ControlConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "117"
+                                },
+                                "sourceKey": "result",
+                                "destinationUnit": {
+                                    "$ref": "119"
+                                },
+                                "destinationKey": "FmvTargetVideo",
+                                "guid": "75a780d1-52f4-40f4-921b-be8b62efd8b6",
+                                "$type": "Unity.VisualScripting.ValueConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "121"
+                                },
+                                "sourceKey": "FmvGraphElementData",
+                                "destinationUnit": {
+                                    "$ref": "119"
+                                },
+                                "destinationKey": "ClickableTarget00",
+                                "guid": "89f05e35-0879-4c47-bc74-fb4bf24db94c",
+                                "$type": "Unity.VisualScripting.ValueConnection"
+                            }
+                        ],
+                        "$version": "A"
+                    }
+                },
+                "source": {
+                    "$ref": "36"
+                },
+                "destination": {
+                    "$ref": "46"
+                },
+                "guid": "67cfd5dc-797e-44fa-93fc-45099ce14cbb",
+                "$version": "A",
+                "$type": "Unity.VisualScripting.FlowStateTransition"
+            },
+            {
+                "nest": {
+                    "source": "Embed",
+                    "macro": null,
+                    "embed": {
+                        "variables": {
+                            "Kind": "Flow",
+                            "collection": {
+                                "$content": [],
+                                "$version": "A"
+                            },
+                            "$version": "A"
+                        },
+                        "controlInputDefinitions": [],
+                        "controlOutputDefinitions": [],
+                        "valueInputDefinitions": [],
+                        "valueOutputDefinitions": [],
+                        "title": "AnotherToUniqueViaNavigation",
+                        "summary": null,
+                        "pan": {
+                            "x": -54.0,
+                            "y": -14.0
+                        },
+                        "zoom": 1.0,
+                        "elements": [
+                            {
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": 194.0,
+                                    "y": -65.0
+                                },
+                                "guid": "8338263d-a605-4278-892e-b85ce0e5018e",
+                                "$version": "A",
+                                "$type": "Unity.VisualScripting.TriggerStateTransition",
+                                "$id": "137"
+                            },
+                            {
+                                "coroutine": false,
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -333.0,
+                                    "y": -271.0
+                                },
+                                "guid": "58747a04-9516-4746-890e-df2d5e1d5760",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.OnFmvNavigationClicked",
+                                "$id": "139"
+                            },
+                            {
+                                "TransitionVideo": "DifferentUniqueVideoName",
+                                "ClickablesCount": 2,
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -50.0,
+                                    "y": -283.0
+                                },
+                                "guid": "31a8b6e4-8220-450c-b133-0e33e5f0aa69",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.FmvVideoNode",
+                                "$id": "141"
+                            },
+                            {
+                                "Name": "GoToNext",
+                                "VideoTarget": "NextUniqueVideoName",
+                                "IsLooping": false,
+                                "RelativeScreenPosition": {
+                                    "x": 0.7,
+                                    "y": 0.2
+                                },
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -330.0,
+                                    "y": -148.0
+                                },
+                                "guid": "e268e2ab-f8d3-41e3-ab3b-95ad8ae67f04",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.FmvClickableNode",
+                                "$id": "143"
+                            },
+                            {
+                                "Name": "FirstItem",
+                                "VideoTarget": "UniqueToDifferentVideoName",
+                                "UsageTarget": "NextUniqueVideoName",
+                                "IsInInventory": false,
+                                "WasUsed": false,
+                                "RelativeScreenPosition": {
+                                    "x": 0.5,
+                                    "y": 0.5
+                                },
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -333.0,
+                                    "y": 19.0
+                                },
+                                "guid": "91d117ff-df71-487f-bf15-e144768bfa24",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.FmvClickableItemNode",
+                                "$id": "145"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "139"
+                                },
+                                "sourceKey": "trigger",
+                                "destinationUnit": {
+                                    "$ref": "141"
+                                },
+                                "destinationKey": "InputTrigger",
+                                "guid": "065b1313-00bc-4053-9617-7ce2bae60c93",
+                                "$type": "Unity.VisualScripting.ControlConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "141"
+                                },
+                                "sourceKey": "OutputTrigger",
+                                "destinationUnit": {
+                                    "$ref": "137"
+                                },
+                                "destinationKey": "trigger",
+                                "guid": "a874bb6e-d08a-425d-a0e3-7a699b47f16f",
+                                "$type": "Unity.VisualScripting.ControlConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "139"
+                                },
+                                "sourceKey": "result",
+                                "destinationUnit": {
+                                    "$ref": "141"
+                                },
+                                "destinationKey": "FmvTargetVideo",
+                                "guid": "af2a6456-b349-46d1-bbd2-66776fbeee96",
+                                "$type": "Unity.VisualScripting.ValueConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "143"
+                                },
+                                "sourceKey": "FmvGraphElementData",
+                                "destinationUnit": {
+                                    "$ref": "141"
+                                },
+                                "destinationKey": "ClickableTarget00",
+                                "guid": "3993c742-7f39-4bf7-8d35-fd926f636dc5",
+                                "$type": "Unity.VisualScripting.ValueConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "145"
+                                },
+                                "sourceKey": "FmvGraphElementData",
+                                "destinationUnit": {
+                                    "$ref": "141"
+                                },
+                                "destinationKey": "ClickableTarget01",
+                                "guid": "7ebce2b9-f8f7-4902-ad63-5dc10c324bd2",
+                                "$type": "Unity.VisualScripting.ValueConnection"
+                            }
+                        ],
+                        "$version": "A"
+                    }
+                },
+                "source": {
+                    "$ref": "46"
+                },
+                "destination": {
+                    "$ref": "13"
+                },
+                "guid": "14d7c531-fad6-4722-b9f3-6cf0ed226be1",
+                "$version": "A",
+                "$type": "Unity.VisualScripting.FlowStateTransition"
+            },
+            {
+                "nest": {
+                    "source": "Embed",
+                    "macro": null,
+                    "embed": {
+                        "variables": {
+                            "Kind": "Flow",
+                            "collection": {
+                                "$content": [],
+                                "$version": "A"
+                            },
+                            "$version": "A"
+                        },
+                        "controlInputDefinitions": [],
+                        "controlOutputDefinitions": [],
+                        "valueInputDefinitions": [],
+                        "valueOutputDefinitions": [],
+                        "title": "UniqueToAnotherViaItemPickup",
+                        "summary": null,
+                        "pan": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "zoom": 1.0,
+                        "elements": [
+                            {
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": 198.0,
+                                    "y": -85.0
+                                },
+                                "guid": "7b04c84b-36b8-4859-81e1-44fba90a7f30",
+                                "$version": "A",
+                                "$type": "Unity.VisualScripting.TriggerStateTransition",
+                                "$id": "162"
+                            },
+                            {
+                                "coroutine": false,
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -336.0,
+                                    "y": -272.0
+                                },
+                                "guid": "67d9a450-0817-4c1e-a3d5-a024b71421d0",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.OnFmvItemPickupClicked",
+                                "$id": "164"
+                            },
+                            {
+                                "TransitionVideo": "UniqueToDifferentVideoName",
+                                "ClickablesCount": 1,
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -69.0,
+                                    "y": -278.0
+                                },
+                                "guid": "92884ee6-3a5a-4660-8a20-a95f13bc244a",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.FmvVideoNode",
+                                "$id": "166"
+                            },
+                            {
+                                "Name": "GoToUniqueState",
+                                "VideoTarget": "DifferentUniqueVideoName",
+                                "IsLooping": false,
+                                "RelativeScreenPosition": {
+                                    "x": 0.5,
+                                    "y": 0.7
+                                },
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -324.0,
+                                    "y": -75.0
+                                },
+                                "guid": "aaf3597c-4a4d-4b20-af80-d4cb0b7c7796",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.FmvClickableNode",
+                                "$id": "168"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "164"
+                                },
+                                "sourceKey": "trigger",
+                                "destinationUnit": {
+                                    "$ref": "166"
+                                },
+                                "destinationKey": "InputTrigger",
+                                "guid": "e8c20fc8-b1a0-454c-817a-62642331e07f",
+                                "$type": "Unity.VisualScripting.ControlConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "166"
+                                },
+                                "sourceKey": "OutputTrigger",
+                                "destinationUnit": {
+                                    "$ref": "162"
+                                },
+                                "destinationKey": "trigger",
+                                "guid": "f80acbc1-e819-469d-91b9-a816bce13abe",
+                                "$type": "Unity.VisualScripting.ControlConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "168"
+                                },
+                                "sourceKey": "FmvGraphElementData",
+                                "destinationUnit": {
+                                    "$ref": "166"
+                                },
+                                "destinationKey": "ClickableTarget00",
+                                "guid": "5910713f-636d-4e6f-9fa1-c9fd5a6e4f2f",
+                                "$type": "Unity.VisualScripting.ValueConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "164"
+                                },
+                                "sourceKey": "result",
+                                "destinationUnit": {
+                                    "$ref": "166"
+                                },
+                                "destinationKey": "FmvTargetVideo",
+                                "guid": "1fb8f9c6-a0ff-4a62-b3f0-84e3c64f5b8b",
+                                "$type": "Unity.VisualScripting.ValueConnection"
+                            }
+                        ],
+                        "$version": "A"
+                    }
+                },
+                "source": {
+                    "$ref": "13"
+                },
+                "destination": {
+                    "$ref": "46"
+                },
+                "guid": "583621fb-2fbd-4366-ac5d-a2a455274682",
+                "$version": "A",
+                "$type": "Unity.VisualScripting.FlowStateTransition"
+            },
+            {
+                "nest": {
+                    "source": "Embed",
+                    "macro": null,
+                    "embed": {
+                        "variables": {
+                            "Kind": "Flow",
+                            "collection": {
+                                "$content": [],
+                                "$version": "A"
+                            },
+                            "$version": "A"
+                        },
+                        "controlInputDefinitions": [],
+                        "controlOutputDefinitions": [],
+                        "valueInputDefinitions": [],
+                        "valueOutputDefinitions": [],
+                        "title": "NextViaItemUsage",
+                        "summary": null,
+                        "pan": {
+                            "x": 14.0,
+                            "y": -143.0
+                        },
+                        "zoom": 1.0,
+                        "elements": [
+                            {
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": 185.0,
+                                    "y": -69.0
+                                },
+                                "guid": "20a7a9e8-296d-43ee-9d54-e9134f0d0831",
+                                "$version": "A",
+                                "$type": "Unity.VisualScripting.TriggerStateTransition",
+                                "$id": "184"
+                            },
+                            {
+                                "TransitionVideo": "NextUniqueVideoName",
+                                "ClickablesCount": 1,
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -79.0,
+                                    "y": -258.0
+                                },
+                                "guid": "f95ff071-8261-4efe-b0f8-08164444b14f",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.FmvVideoNode",
+                                "$id": "186"
+                            },
+                            {
+                                "Name": "GoToAnotherState",
+                                "VideoTarget": "AnotherUniqueVideoName",
+                                "IsLooping": false,
+                                "RelativeScreenPosition": {
+                                    "x": 0.2,
+                                    "y": 0.2
+                                },
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -339.0,
+                                    "y": -131.0
+                                },
+                                "guid": "8ed54d16-130c-43fe-b4a2-ef7752e6442b",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.FmvClickableNode",
+                                "$id": "188"
+                            },
+                            {
+                                "coroutine": false,
+                                "defaultValues": {
+
+                                },
+                                "position": {
+                                    "x": -340.0,
+                                    "y": -270.0
+                                },
+                                "guid": "e7b94125-ee43-4cb9-993d-24572137593f",
+                                "$version": "A",
+                                "$type": "FmvMaker.Graph.OnFmvInventoryClicked",
+                                "$id": "190"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "186"
+                                },
+                                "sourceKey": "OutputTrigger",
+                                "destinationUnit": {
+                                    "$ref": "184"
+                                },
+                                "destinationKey": "trigger",
+                                "guid": "2ccc3814-61ef-4a1c-be8e-cc118c1e9944",
+                                "$type": "Unity.VisualScripting.ControlConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "190"
+                                },
+                                "sourceKey": "trigger",
+                                "destinationUnit": {
+                                    "$ref": "186"
+                                },
+                                "destinationKey": "InputTrigger",
+                                "guid": "a56bd010-9902-45ae-a0b0-4332abba1854",
+                                "$type": "Unity.VisualScripting.ControlConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "188"
+                                },
+                                "sourceKey": "FmvGraphElementData",
+                                "destinationUnit": {
+                                    "$ref": "186"
+                                },
+                                "destinationKey": "ClickableTarget00",
+                                "guid": "f64f00f0-1743-4a8f-aaaa-7b99ed5bb3c8",
+                                "$type": "Unity.VisualScripting.ValueConnection"
+                            },
+                            {
+                                "sourceUnit": {
+                                    "$ref": "190"
+                                },
+                                "sourceKey": "result",
+                                "destinationUnit": {
+                                    "$ref": "186"
+                                },
+                                "destinationKey": "FmvTargetVideo",
+                                "guid": "73340508-47a9-4f0d-9a9e-c27e2b6e6bcf",
+                                "$type": "Unity.VisualScripting.ValueConnection"
+                            }
+                        ],
+                        "$version": "A"
+                    }
+                },
+                "source": {
+                    "$ref": "13"
+                },
+                "destination": {
+                    "$ref": "36"
+                },
+                "guid": "b9920b60-a9a9-4a64-972d-c79dda8b4acf",
+                "$version": "A",
+                "$type": "Unity.VisualScripting.FlowStateTransition"
+            }
+        ],
+        "$version": "A"
+    }
+}
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogWarning (object,UnityEngine.Object)
+Unity.VisualScripting.Serialization:DeserializeInto (Unity.VisualScripting.SerializationData,object&,bool) (at Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Serialization/Serialization.cs:133)
+Unity.VisualScripting.LudiqScriptableObject:UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize () (at Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Unity/LudiqScriptableObject.cs:52)
+
+(Filename: Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Serialization/Serialization.cs Line: 133)
+
+Failed to deserialize scriptable object.
+System.Runtime.Serialization.SerializationException: Deserialization into 'Unity.VisualScripting.StateGraphAsset' failed. ---> System.InvalidOperationException: Internal Deserialization Error - Object definition has not been encountered for object with id=29; have you reordered or modified the serialized data? If this is an issue with an unmodified Full Serializer implementation and unmodified serialization data, please report an issue with an included test case.
+  at Unity.VisualScripting.FullSerializer.Internal.fsCyclicReferenceManager.GetReferenceObject (System.Int32 id) [0x00015] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\Internal\fsCyclicReferenceManager.cs:44 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_1_CycleReference (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x00027] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:706 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.TryDeserialize (Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Type overrideConverterType, System.Object& result) [0x00048] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:664 
+  at Unity.VisualScripting.FullSerializer.fsReflectedConverter.TryDeserialize (Unity.VisualScripting.FullSerializer.fsData data, System.Object& instance, System.Type storageType) [0x000a4] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\Converters\fsReflectedConverter.cs:97 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_5_Converter (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type resultType, System.Object& result) [0x0001f] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:897 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_4_Cycles (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type resultType, System.Object& result) [0x00038] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:887 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_3_Inheritance (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x001a3] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:862 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_2_Version (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x00158] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:766 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_1_CycleReference (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x0004f] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:711 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.TryDeserialize (Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Type overrideConverterType, System.Object& result) [0x00048] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:664 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.TryDeserialize (Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result) [0x00001] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:635 
+  at Unity.VisualScripting.FullSerializer.fsIEnumerableConverter.TryDeserialize (Unity.VisualScripting.FullSerializer.fsData data, System.Object& instance_, System.Type storageType) [0x00069] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\Converters\fsIEnumerableConverter.cs:100 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_5_Converter (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type resultType, System.Object& result) [0x0001f] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:897 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_4_Cycles (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type resultType, System.Object& result) [0x00038] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:887 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_3_Inheritance (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x001a3] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:862 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_2_Version (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x00158] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:766 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_1_CycleReference (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x0004f] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:711 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.TryDeserialize (Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Type overrideConverterType, System.Object& result) [0x00048] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:664 
+  at Unity.VisualScripting.FullSerializer.fsReflectedConverter.TryDeserialize (Unity.VisualScripting.FullSerializer.fsData data, System.Object& instance, System.Type storageType) [0x000a4] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\Converters\fsReflectedConverter.cs:97 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_5_Converter (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type resultType, System.Object& result) [0x0001f] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:897 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_4_Cycles (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type resultType, System.Object& result) [0x00038] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:887 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_3_Inheritance (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x001a3] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:862 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_2_Version (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x00158] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:766 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_1_CycleReference (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x0004f] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:711 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.TryDeserialize (Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Type overrideConverterType, System.Object& result) [0x00048] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:664 
+  at Unity.VisualScripting.FullSerializer.fsReflectedConverter.TryDeserialize (Unity.VisualScripting.FullSerializer.fsData data, System.Object& instance, System.Type storageType) [0x000a4] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\Converters\fsReflectedConverter.cs:97 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_5_Converter (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type resultType, System.Object& result) [0x0001f] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:897 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_4_Cycles (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type resultType, System.Object& result) [0x00038] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:887 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_3_Inheritance (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x001a3] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:862 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_2_Version (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x00158] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:766 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_1_CycleReference (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x0004f] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:711 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.TryDeserialize (Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Type overrideConverterType, System.Object& result) [0x00048] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:664 
+  at Unity.VisualScripting.FullSerializer.fsReflectedConverter.TryDeserialize (Unity.VisualScripting.FullSerializer.fsData data, System.Object& instance, System.Type storageType) [0x000a4] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\Converters\fsReflectedConverter.cs:97 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_5_Converter (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type resultType, System.Object& result) [0x0001f] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:897 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_4_Cycles (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type resultType, System.Object& result) [0x00038] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:887 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_3_Inheritance (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x001a3] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:862 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_2_Version (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x00158] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:766 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_1_CycleReference (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x0004f] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:711 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.TryDeserialize (Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Type overrideConverterType, System.Object& result) [0x00048] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:664 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.TryDeserialize (Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result) [0x00001] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:635 
+  at Unity.VisualScripting.FullSerializer.fsIEnumerableConverter.TryDeserialize (Unity.VisualScripting.FullSerializer.fsData data, System.Object& instance_, System.Type storageType) [0x00069] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\Converters\fsIEnumerableConverter.cs:100 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_5_Converter (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type resultType, System.Object& result) [0x0001f] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:897 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_4_Cycles (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type resultType, System.Object& result) [0x00038] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:887 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_3_Inheritance (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x001a3] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:862 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_2_Version (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x00158] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:766 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_1_CycleReference (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x0004f] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:711 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.TryDeserialize (Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Type overrideConverterType, System.Object& result) [0x00048] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:664 
+  at Unity.VisualScripting.FullSerializer.fsReflectedConverter.TryDeserialize (Unity.VisualScripting.FullSerializer.fsData data, System.Object& instance, System.Type storageType) [0x000a4] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\Converters\fsReflectedConverter.cs:97 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_5_Converter (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type resultType, System.Object& result) [0x0001f] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:897 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_4_Cycles (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type resultType, System.Object& result) [0x00038] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:887 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_3_Inheritance (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x001a3] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:862 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_2_Version (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x00158] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:766 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_1_CycleReference (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x0004f] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:711 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.TryDeserialize (Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Type overrideConverterType, System.Object& result) [0x00048] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:664 
+  at Unity.VisualScripting.FullSerializer.fsReflectedConverter.TryDeserialize (Unity.VisualScripting.FullSerializer.fsData data, System.Object& instance, System.Type storageType) [0x000a4] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\Converters\fsReflectedConverter.cs:97 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_5_Converter (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type resultType, System.Object& result) [0x0001f] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:897 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_4_Cycles (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type resultType, System.Object& result) [0x00038] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:887 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_3_Inheritance (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x001a3] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:862 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_2_Version (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x00158] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:766 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.InternalDeserialize_1_CycleReference (System.Type overrideConverterType, Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Object& result, System.Collections.Generic.List`1[Unity.VisualScripting.FullSerializer.fsObjectProcessor]& processors) [0x0004f] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:711 
+  at Unity.VisualScripting.FullSerializer.fsSerializer.TryDeserialize (Unity.VisualScripting.FullSerializer.fsData data, System.Type storageType, System.Type overrideConverterType, System.Object& result) [0x00048] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsSerializer.cs:664 
+  at Unity.VisualScripting.Serialization.DeserializeJsonUtil (Unity.VisualScripting.FullSerializer.fsSerializer serializer, System.String json, System.Object& instance, System.Boolean forceReflected) [0x0000e] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Serialization\Serialization.cs:182 
+  at Unity.VisualScripting.Serialization.DeserializeJson (Unity.VisualScripting.FullSerializer.fsSerializer serializer, System.String json, System.Object& instance, System.Boolean forceReflected) [0x0000d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Serialization\Serialization.cs:196 
+  at Unity.VisualScripting.Serialization.DeserializeInto (Unity.VisualScripting.SerializationData data, System.Object& instance, System.Boolean forceReflected) [0x00035] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Serialization\Serialization.cs:122 
+   --- End of inner exception stack trace ---
+  at Unity.VisualScripting.Serialization.DeserializeInto (Unity.VisualScripting.SerializationData data, System.Object& instance, System.Boolean forceReflected) [0x000a2] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Serialization\Serialization.cs:140 
+  at Unity.VisualScripting.LudiqScriptableObject.UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize () [0x0001e] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Core\Unity\LudiqScriptableObject.cs:52 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogError (object,UnityEngine.Object)
+Unity.VisualScripting.LudiqScriptableObject:UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize () (at Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Unity/LudiqScriptableObject.cs:59)
+
+(Filename: Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Unity/LudiqScriptableObject.cs Line: 59)
+
+ -> (artifact id: 'd7ee5836ab7a526aae24c1b08f997ed3') in 0.442333 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003247 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.Exception: Error! Visual Scripting: couldn't find visual scripting package
+  at Unity.VisualScripting.PackageVersionUtility.get_version () [0x00025] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\PackageVersionUtility.cs:22 
+  at Unity.VisualScripting.BoltCoreManifest.get_version () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugin\BoltCoreManifest.cs:11 
+  at Unity.VisualScripting.PluginManifest.get_currentVersion () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:33 
+  at Unity.VisualScripting.PluginManifest.get_versionMismatch () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:48 
+  at Unity.VisualScripting.PluginContainer.Initialize () [0x0057d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:208 
+  at Unity.VisualScripting.PluginContainer.InitializeOnLoad () [0x00012] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:32 
+  at Unity.VisualScripting.VSUsageUtility.DoInitializeOnLoadCalls () [0x00044] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:76 
+  at Unity.VisualScripting.VSUsageUtility.set_isVisualScriptingUsed (System.Boolean value) [0x00037] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:114 
+  at Unity.VisualScripting.VSUsageUtility.CheckAndSetIsVisualScriptingUsed () [0x00013] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:33 
+  at Unity.VisualScripting.VSUsageUtility..cctor () [0x0000d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:22 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.079 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1079ms)
+		BeginReloadAssembly (134ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (47ms)
+		EndReloadAssembly (874ms)
+			LoadAssemblies (65ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (189ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (415ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (20ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (53ms)
+				ProcessInitializeOnLoadAttributes (311ms)
+				ProcessInitializeOnLoadMethodAttributes (22ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.43 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3427 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (24.7 KB). Loaded Objects now: 3936.
+Memory consumption went from 118.2 MB to 118.2 MB.
+Total: 9.007100 ms (FindLiveObjects: 0.316000 ms CreateObjectMapping: 0.148000 ms MarkObjects: 8.516400 ms  DeleteObjects: 0.025400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004514 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.50 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.Exception: Error! Visual Scripting: couldn't find visual scripting package
+  at Unity.VisualScripting.PackageVersionUtility.get_version () [0x00025] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\PackageVersionUtility.cs:22 
+  at Unity.VisualScripting.BoltCoreManifest.get_version () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugin\BoltCoreManifest.cs:11 
+  at Unity.VisualScripting.PluginManifest.get_currentVersion () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:33 
+  at Unity.VisualScripting.PluginManifest.get_versionMismatch () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:48 
+  at Unity.VisualScripting.PluginContainer.Initialize () [0x0057d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:208 
+  at Unity.VisualScripting.PluginContainer.InitializeOnLoad () [0x00012] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:32 
+  at Unity.VisualScripting.VSUsageUtility.DoInitializeOnLoadCalls () [0x00044] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:76 
+  at Unity.VisualScripting.VSUsageUtility.set_isVisualScriptingUsed (System.Boolean value) [0x00037] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:114 
+  at Unity.VisualScripting.VSUsageUtility.CheckAndSetIsVisualScriptingUsed () [0x00013] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:33 
+  at Unity.VisualScripting.VSUsageUtility..cctor () [0x0000d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:22 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  0.949 seconds
+Domain Reload Profiling:
+	ReloadAssembly (950ms)
+		BeginReloadAssembly (117ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (764ms)
+			LoadAssemblies (57ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (165ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (36ms)
+			SetupLoadedEditorAssemblies (367ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (17ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (46ms)
+				ProcessInitializeOnLoadAttributes (274ms)
+				ProcessInitializeOnLoadMethodAttributes (24ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.33 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3427 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (24.7 KB). Loaded Objects now: 3940.
+Memory consumption went from 118.2 MB to 118.2 MB.
+Total: 7.851200 ms (FindLiveObjects: 0.224300 ms CreateObjectMapping: 0.080600 ms MarkObjects: 7.522900 ms  DeleteObjects: 0.021900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003215 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.60 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.Exception: Error! Visual Scripting: couldn't find visual scripting package
+  at Unity.VisualScripting.PackageVersionUtility.get_version () [0x00025] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\PackageVersionUtility.cs:22 
+  at Unity.VisualScripting.BoltCoreManifest.get_version () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugin\BoltCoreManifest.cs:11 
+  at Unity.VisualScripting.PluginManifest.get_currentVersion () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:33 
+  at Unity.VisualScripting.PluginManifest.get_versionMismatch () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:48 
+  at Unity.VisualScripting.PluginContainer.Initialize () [0x0057d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:208 
+  at Unity.VisualScripting.PluginContainer.InitializeOnLoad () [0x00012] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:32 
+  at Unity.VisualScripting.VSUsageUtility.DoInitializeOnLoadCalls () [0x00044] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:76 
+  at Unity.VisualScripting.VSUsageUtility.set_isVisualScriptingUsed (System.Boolean value) [0x00037] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:114 
+  at Unity.VisualScripting.VSUsageUtility.CheckAndSetIsVisualScriptingUsed () [0x00013] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:33 
+  at Unity.VisualScripting.VSUsageUtility..cctor () [0x0000d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:22 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  0.947 seconds
+Domain Reload Profiling:
+	ReloadAssembly (948ms)
+		BeginReloadAssembly (118ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (759ms)
+			LoadAssemblies (60ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (157ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (369ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (20ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (46ms)
+				ProcessInitializeOnLoadAttributes (273ms)
+				ProcessInitializeOnLoadMethodAttributes (24ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.29 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3427 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (24.7 KB). Loaded Objects now: 3944.
+Memory consumption went from 118.3 MB to 118.2 MB.
+Total: 7.786700 ms (FindLiveObjects: 0.222600 ms CreateObjectMapping: 0.073000 ms MarkObjects: 7.449100 ms  DeleteObjects: 0.041000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003773 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.47 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.Exception: Error! Visual Scripting: couldn't find visual scripting package
+  at Unity.VisualScripting.PackageVersionUtility.get_version () [0x00025] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\PackageVersionUtility.cs:22 
+  at Unity.VisualScripting.BoltCoreManifest.get_version () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugin\BoltCoreManifest.cs:11 
+  at Unity.VisualScripting.PluginManifest.get_currentVersion () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:33 
+  at Unity.VisualScripting.PluginManifest.get_versionMismatch () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:48 
+  at Unity.VisualScripting.PluginContainer.Initialize () [0x0057d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:208 
+  at Unity.VisualScripting.PluginContainer.InitializeOnLoad () [0x00012] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:32 
+  at Unity.VisualScripting.VSUsageUtility.DoInitializeOnLoadCalls () [0x00044] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:76 
+  at Unity.VisualScripting.VSUsageUtility.set_isVisualScriptingUsed (System.Boolean value) [0x00037] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:114 
+  at Unity.VisualScripting.VSUsageUtility.CheckAndSetIsVisualScriptingUsed () [0x00013] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:33 
+  at Unity.VisualScripting.VSUsageUtility..cctor () [0x0000d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:22 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  0.961 seconds
+Domain Reload Profiling:
+	ReloadAssembly (962ms)
+		BeginReloadAssembly (127ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (39ms)
+		EndReloadAssembly (757ms)
+			LoadAssemblies (69ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (159ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (359ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (17ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (47ms)
+				ProcessInitializeOnLoadAttributes (268ms)
+				ProcessInitializeOnLoadMethodAttributes (19ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.41 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3427 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (24.7 KB). Loaded Objects now: 3948.
+Memory consumption went from 118.3 MB to 118.2 MB.
+Total: 9.051100 ms (FindLiveObjects: 0.207600 ms CreateObjectMapping: 0.081500 ms MarkObjects: 8.739000 ms  DeleteObjects: 0.022100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003435 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.Exception: Error! Visual Scripting: couldn't find visual scripting package
+  at Unity.VisualScripting.PackageVersionUtility.get_version () [0x00025] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\PackageVersionUtility.cs:22 
+  at Unity.VisualScripting.BoltCoreManifest.get_version () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugin\BoltCoreManifest.cs:11 
+  at Unity.VisualScripting.PluginManifest.get_currentVersion () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:33 
+  at Unity.VisualScripting.PluginManifest.get_versionMismatch () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:48 
+  at Unity.VisualScripting.PluginContainer.Initialize () [0x0057d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:208 
+  at Unity.VisualScripting.PluginContainer.InitializeOnLoad () [0x00012] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:32 
+  at Unity.VisualScripting.VSUsageUtility.DoInitializeOnLoadCalls () [0x00044] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:76 
+  at Unity.VisualScripting.VSUsageUtility.set_isVisualScriptingUsed (System.Boolean value) [0x00037] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:114 
+  at Unity.VisualScripting.VSUsageUtility.CheckAndSetIsVisualScriptingUsed () [0x00013] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:33 
+  at Unity.VisualScripting.VSUsageUtility..cctor () [0x0000d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:22 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  0.960 seconds
+Domain Reload Profiling:
+	ReloadAssembly (961ms)
+		BeginReloadAssembly (120ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (767ms)
+			LoadAssemblies (64ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (160ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (363ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (18ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (44ms)
+				ProcessInitializeOnLoadAttributes (270ms)
+				ProcessInitializeOnLoadMethodAttributes (24ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.35 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3427 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (24.7 KB). Loaded Objects now: 3952.
+Memory consumption went from 118.3 MB to 118.3 MB.
+Total: 8.236700 ms (FindLiveObjects: 0.225000 ms CreateObjectMapping: 0.106600 ms MarkObjects: 7.868100 ms  DeleteObjects: 0.035900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003237 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.Exception: Error! Visual Scripting: couldn't find visual scripting package
+  at Unity.VisualScripting.PackageVersionUtility.get_version () [0x00025] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\PackageVersionUtility.cs:22 
+  at Unity.VisualScripting.BoltCoreManifest.get_version () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugin\BoltCoreManifest.cs:11 
+  at Unity.VisualScripting.PluginManifest.get_currentVersion () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:33 
+  at Unity.VisualScripting.PluginManifest.get_versionMismatch () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:48 
+  at Unity.VisualScripting.PluginContainer.Initialize () [0x0057d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:208 
+  at Unity.VisualScripting.PluginContainer.InitializeOnLoad () [0x00012] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:32 
+  at Unity.VisualScripting.VSUsageUtility.DoInitializeOnLoadCalls () [0x00044] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:76 
+  at Unity.VisualScripting.VSUsageUtility.set_isVisualScriptingUsed (System.Boolean value) [0x00037] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:114 
+  at Unity.VisualScripting.VSUsageUtility.CheckAndSetIsVisualScriptingUsed () [0x00013] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:33 
+  at Unity.VisualScripting.VSUsageUtility..cctor () [0x0000d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:22 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  0.961 seconds
+Domain Reload Profiling:
+	ReloadAssembly (962ms)
+		BeginReloadAssembly (130ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (43ms)
+		EndReloadAssembly (748ms)
+			LoadAssemblies (60ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (159ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (359ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (18ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (45ms)
+				ProcessInitializeOnLoadAttributes (265ms)
+				ProcessInitializeOnLoadMethodAttributes (24ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.37 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3427 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (24.7 KB). Loaded Objects now: 3956.
+Memory consumption went from 118.3 MB to 118.3 MB.
+Total: 8.245900 ms (FindLiveObjects: 0.225200 ms CreateObjectMapping: 0.084500 ms MarkObjects: 7.914200 ms  DeleteObjects: 0.021100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004466 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.60 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.Exception: Error! Visual Scripting: couldn't find visual scripting package
+  at Unity.VisualScripting.PackageVersionUtility.get_version () [0x00025] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\PackageVersionUtility.cs:22 
+  at Unity.VisualScripting.BoltCoreManifest.get_version () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugin\BoltCoreManifest.cs:11 
+  at Unity.VisualScripting.PluginManifest.get_currentVersion () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:33 
+  at Unity.VisualScripting.PluginManifest.get_versionMismatch () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:48 
+  at Unity.VisualScripting.PluginContainer.Initialize () [0x0057d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:208 
+  at Unity.VisualScripting.PluginContainer.InitializeOnLoad () [0x00012] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:32 
+  at Unity.VisualScripting.VSUsageUtility.DoInitializeOnLoadCalls () [0x00044] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:76 
+  at Unity.VisualScripting.VSUsageUtility.set_isVisualScriptingUsed (System.Boolean value) [0x00037] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:114 
+  at Unity.VisualScripting.VSUsageUtility.CheckAndSetIsVisualScriptingUsed () [0x00013] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:33 
+  at Unity.VisualScripting.VSUsageUtility..cctor () [0x0000d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:22 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  0.986 seconds
+Domain Reload Profiling:
+	ReloadAssembly (986ms)
+		BeginReloadAssembly (127ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (39ms)
+		EndReloadAssembly (786ms)
+			LoadAssemblies (65ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (159ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (380ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (19ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (58ms)
+				ProcessInitializeOnLoadAttributes (273ms)
+				ProcessInitializeOnLoadMethodAttributes (23ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.30 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3427 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (24.7 KB). Loaded Objects now: 3960.
+Memory consumption went from 118.3 MB to 118.3 MB.
+Total: 10.000600 ms (FindLiveObjects: 0.256600 ms CreateObjectMapping: 0.118600 ms MarkObjects: 9.593300 ms  DeleteObjects: 0.031200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004719 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.47 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.Exception: Error! Visual Scripting: couldn't find visual scripting package
+  at Unity.VisualScripting.PackageVersionUtility.get_version () [0x00025] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\PackageVersionUtility.cs:22 
+  at Unity.VisualScripting.BoltCoreManifest.get_version () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugin\BoltCoreManifest.cs:11 
+  at Unity.VisualScripting.PluginManifest.get_currentVersion () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:33 
+  at Unity.VisualScripting.PluginManifest.get_versionMismatch () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:48 
+  at Unity.VisualScripting.PluginContainer.Initialize () [0x0057d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:208 
+  at Unity.VisualScripting.PluginContainer.InitializeOnLoad () [0x00012] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:32 
+  at Unity.VisualScripting.VSUsageUtility.DoInitializeOnLoadCalls () [0x00044] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:76 
+  at Unity.VisualScripting.VSUsageUtility.set_isVisualScriptingUsed (System.Boolean value) [0x00037] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:114 
+  at Unity.VisualScripting.VSUsageUtility.CheckAndSetIsVisualScriptingUsed () [0x00013] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:33 
+  at Unity.VisualScripting.VSUsageUtility..cctor () [0x0000d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:22 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  0.957 seconds
+Domain Reload Profiling:
+	ReloadAssembly (957ms)
+		BeginReloadAssembly (124ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (750ms)
+			LoadAssemblies (62ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (155ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (362ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (17ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (45ms)
+				ProcessInitializeOnLoadAttributes (273ms)
+				ProcessInitializeOnLoadMethodAttributes (21ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.33 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3427 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (24.7 KB). Loaded Objects now: 3964.
+Memory consumption went from 118.3 MB to 118.3 MB.
+Total: 7.923500 ms (FindLiveObjects: 0.223300 ms CreateObjectMapping: 0.080700 ms MarkObjects: 7.601800 ms  DeleteObjects: 0.017000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004298 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.Exception: Error! Visual Scripting: couldn't find visual scripting package
+  at Unity.VisualScripting.PackageVersionUtility.get_version () [0x00025] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\PackageVersionUtility.cs:22 
+  at Unity.VisualScripting.BoltCoreManifest.get_version () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugin\BoltCoreManifest.cs:11 
+  at Unity.VisualScripting.PluginManifest.get_currentVersion () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:33 
+  at Unity.VisualScripting.PluginManifest.get_versionMismatch () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:48 
+  at Unity.VisualScripting.PluginContainer.Initialize () [0x0057d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:208 
+  at Unity.VisualScripting.PluginContainer.InitializeOnLoad () [0x00012] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:32 
+  at Unity.VisualScripting.VSUsageUtility.DoInitializeOnLoadCalls () [0x00044] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:76 
+  at Unity.VisualScripting.VSUsageUtility.set_isVisualScriptingUsed (System.Boolean value) [0x00037] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:114 
+  at Unity.VisualScripting.VSUsageUtility.CheckAndSetIsVisualScriptingUsed () [0x00013] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:33 
+  at Unity.VisualScripting.VSUsageUtility..cctor () [0x0000d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:22 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.046 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1046ms)
+		BeginReloadAssembly (132ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (834ms)
+			LoadAssemblies (73ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (183ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (33ms)
+			SetupLoadedEditorAssemblies (391ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (19ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (52ms)
+				ProcessInitializeOnLoadAttributes (291ms)
+				ProcessInitializeOnLoadMethodAttributes (21ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.38 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3427 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (24.7 KB). Loaded Objects now: 3968.
+Memory consumption went from 118.3 MB to 118.3 MB.
+Total: 8.045200 ms (FindLiveObjects: 0.225200 ms CreateObjectMapping: 0.081400 ms MarkObjects: 7.717000 ms  DeleteObjects: 0.020500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 4337.811446 seconds.
+  path: Assets/FmvMaker/Scripts/Graph/Provider/FmvGraphVideos.cs
+  artifactKey: Guid(67b4777c1a8293340933a0550cfeb729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/Graph/Provider/FmvGraphVideos.cs using Guid(67b4777c1a8293340933a0550cfeb729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'badadb0a2d47ec009d757edb6876bf02') in 0.013904 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 460.747012 seconds.
+  path: Assets/FmvMaker/Scripts/Graph/Provider/FmvGraphVideos.cs
+  artifactKey: Guid(67b4777c1a8293340933a0550cfeb729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FmvMaker/Scripts/Graph/Provider/FmvGraphVideos.cs using Guid(67b4777c1a8293340933a0550cfeb729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '651979ea7418c387a6b478883a90120a') in 0.002313 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003446 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.57 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.Exception: Error! Visual Scripting: couldn't find visual scripting package
+  at Unity.VisualScripting.PackageVersionUtility.get_version () [0x00025] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\PackageVersionUtility.cs:22 
+  at Unity.VisualScripting.BoltCoreManifest.get_version () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugin\BoltCoreManifest.cs:11 
+  at Unity.VisualScripting.PluginManifest.get_currentVersion () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:33 
+  at Unity.VisualScripting.PluginManifest.get_versionMismatch () [0x00000] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginManifest.cs:48 
+  at Unity.VisualScripting.PluginContainer.Initialize () [0x0057d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:208 
+  at Unity.VisualScripting.PluginContainer.InitializeOnLoad () [0x00012] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugins\PluginContainer.cs:32 
+  at Unity.VisualScripting.VSUsageUtility.DoInitializeOnLoadCalls () [0x00044] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:76 
+  at Unity.VisualScripting.VSUsageUtility.set_isVisualScriptingUsed (System.Boolean value) [0x00037] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:114 
+  at Unity.VisualScripting.VSUsageUtility.CheckAndSetIsVisualScriptingUsed () [0x00013] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:33 
+  at Unity.VisualScripting.VSUsageUtility..cctor () [0x0000d] in C:\Users\marku\Documents\UnityProjects\FmvMaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Utilities\VSUsageUtility.cs:22 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.013 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1013ms)
+		BeginReloadAssembly (124ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (816ms)
+			LoadAssemblies (60ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (171ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (393ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (18ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (48ms)
+				ProcessInitializeOnLoadAttributes (299ms)
+				ProcessInitializeOnLoadMethodAttributes (21ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.41 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3427 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (24.7 KB). Loaded Objects now: 3972.
+Memory consumption went from 118.3 MB to 118.3 MB.
+Total: 8.573900 ms (FindLiveObjects: 0.231400 ms CreateObjectMapping: 0.084200 ms MarkObjects: 8.227500 ms  DeleteObjects: 0.029700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 

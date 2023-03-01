@@ -67,17 +67,5 @@ namespace FmvMaker.Graph {
                 RelativeScreenPosition = this.RelativeScreenPosition,
             };
         }
-
-        public SaveGameModel GetSaveGameModel() {
-            return new SaveGameModel() {
-                Id = this.Id,
-                VideoTarget = this.VideoTarget,
-                UsageTarget = this.UsageTarget,
-                IsItem = this.IsItem,
-                IsInInventory = this.IsInInventory,
-                WasUsed = this.WasUsed,
-                RelativeScreenPosition = this.RelativeScreenPosition,
-            };
-        }
     }
 }
