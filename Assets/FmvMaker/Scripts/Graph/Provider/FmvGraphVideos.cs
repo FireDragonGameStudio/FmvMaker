@@ -120,7 +120,7 @@ namespace FmvMaker.Graph {
         }
 
         private void PauseVideo() {
-            if (Input.GetKeyUp(PauseVideoKey) && !currentVideoElement.IsLooping && videoView.ActivePlayer.IsPlaying) {
+            if (Input.GetKeyUp(PauseVideoKey) && !currentVideoElement.IsLooping) {
                 videoView.PauseVideoClip(currentVideoElement);
             }
         }

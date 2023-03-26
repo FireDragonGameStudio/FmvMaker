@@ -170,8 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d63537cad47a3499e1c4ff3a386b10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExportKey: 120
-  loadDebugData: 0
+  loadDebugData: 1
   videoModelData: {fileID: 0}
   clickableModelData: {fileID: 0}
   onlineVideoSourceMappingData: {fileID: 4900000, guid: fb5e19b8cc5eb6a4db068565a0ad4927,
@@ -1092,6 +1091,7 @@ MonoBehaviour:
         m_CallState: 2
   SkipVideoKey: 27
   PauseVideoKey: 112
+  SaveGameKey: 115
   QuitGameKey: 113
   ShowAllAvailableClickablesKey: 32
   videoView: {fileID: 1563772658}

@@ -22,6 +22,8 @@ namespace FmvMaker.Core.Provider {
         [SerializeField]
         private TextAsset onlineVideoSourceMappingData = null;
 
+        private string SaveFilePath => Path.Combine(Application.persistentDataPath, "SaveGameData.json");
+
         private void Awake() {
             if (!videoModelData && !clickableModelData && !onlineVideoSourceMappingData) {
                 Debug.LogWarning("No data available for FmvMaker. Check your FmvData references. FmvMaker will try to use DemoData.");
@@ -47,23 +49,29 @@ namespace FmvMaker.Core.Provider {
                 saveGameModelData.Add(new SaveGameModel(elementData));
             }
 
-            using (StreamWriter sw = new StreamWriter(Path.Combine(Application.persistentDataPath, "SaveGameData.json"))) {
+            using (StreamWriter sw = new StreamWriter(SaveFilePath)) {
                 SaveGameModelWrapper gameDataModelWrapper = new SaveGameModelWrapper();
                 gameDataModelWrapper.GameDataList = saveGameModelData.ToArray();
                 sw.Write(JsonUtility.ToJson(gameDataModelWrapper));
             }
+
+            Debug.Log($"Data saved at: {SaveFilePath}");
         }
 
         private void LoadGameDataFromLocalFile() {
             string saveGameData = "";
-            using (StreamReader sr = new StreamReader(Path.Combine(Application.persistentDataPath, "SaveGameData.json"))) {
-                saveGameData = sr.ReadToEnd();
-            }
+            if (File.Exists(SaveFilePath)) {
+                using (StreamReader sr = new StreamReader(SaveFilePath)) {
+                    saveGameData = sr.ReadToEnd();
+                }
 
-            SaveGameModelWrapper gameDataModelWrapper = JsonUtility.FromJson<SaveGameModelWrapper>(saveGameData);
-            gameData.Clear();
-            foreach (SaveGameModel gameModelData in gameDataModelWrapper.GameDataList) {
-                gameData.Add(gameModelData.Id, new FmvGraphElementData(gameModelData));
+                SaveGameModelWrapper gameDataModelWrapper = JsonUtility.FromJson<SaveGameModelWrapper>(saveGameData);
+                gameData.Clear();
+                foreach (SaveGameModel gameModelData in gameDataModelWrapper.GameDataList) {
+                    gameData.Add(gameModelData.Id, new FmvGraphElementData(gameModelData));
+                }
+
+                Debug.Log($"Data loaded from: {SaveFilePath}");
             }
         }
 

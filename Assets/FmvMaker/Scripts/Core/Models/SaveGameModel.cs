@@ -9,6 +9,7 @@ namespace FmvMaker.Core.Models {
         public FmvVideoEnum VideoTarget;
         public FmvVideoEnum UsageTarget;
         public bool IsLooping;
+        public bool AlreadyWatched;
         public bool IsItem;
         public bool IsInInventory;
         public bool WasUsed;
@@ -18,6 +19,7 @@ namespace FmvMaker.Core.Models {
             this.Id = videoModel.Name;
             this.VideoTarget = (FmvVideoEnum)Enum.Parse(typeof(FmvVideoEnum), videoModel.VideoTarget);
             this.IsLooping = videoModel.IsLooping;
+            this.AlreadyWatched = videoModel.AlreadyWatched;
             this.RelativeScreenPosition = videoModel.RelativeScreenPosition;
         }
 
@@ -36,6 +38,7 @@ namespace FmvMaker.Core.Models {
             this.VideoTarget = graphElementData.VideoTarget;
             this.UsageTarget = graphElementData.UsageTarget;
             this.IsLooping = graphElementData.IsLooping;
+            this.AlreadyWatched = graphElementData.AlreadyWatched;
             this.IsItem = graphElementData.IsItem;
             this.IsInInventory = graphElementData.IsInInventory;
             this.WasUsed = graphElementData.WasUsed;

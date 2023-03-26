@@ -14,6 +14,9 @@ namespace FmvMaker.Graph {
         [Serialize, Inspectable, UnitHeaderInspectable(nameof(IsLooping))]
         public bool IsLooping { get; private set; }
 
+        [Serialize, Inspectable, UnitHeaderInspectable(nameof(AlreadyWatched))]
+        public bool AlreadyWatched { get; private set; }
+
         [Serialize, Inspectable, UnitHeaderInspectable(nameof(RelativeScreenPosition))]
         public Vector2 RelativeScreenPosition { get; private set; }
 
@@ -21,7 +24,7 @@ namespace FmvMaker.Graph {
         public ValueOutput FmvGraphElementData { get; private set; }
 
         public IGraphElementData CreateData() {
-            return new FmvGraphElementData(Name, VideoTarget, IsLooping, RelativeScreenPosition);
+            return new FmvGraphElementData(Name, VideoTarget, IsLooping, AlreadyWatched, RelativeScreenPosition);
         }
 
         protected override void Definition() {
