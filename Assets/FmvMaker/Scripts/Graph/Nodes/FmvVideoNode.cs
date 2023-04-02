@@ -156,29 +156,22 @@ namespace FmvMaker.Graph {
                     }
                 }
 
-                //// TODO: Integrate Inventory Data into nodeData/gameData once onGameStart
-                //// set click listener for inventory
-                //FmvClickableFacade[] fmvInventoryItemObjects = fmvInventoryElementsPanel.GetComponentsInChildren<FmvClickableFacade>();
-                //foreach (FmvClickableFacade itemFacade in fmvInventoryItemObjects) {
-                //    itemFacade.OnItemClicked.RemoveAllListeners();
-                //    itemFacade.OnItemClicked.AddListener(ClickInventoryItem);
-                //}
+                // update game data
+                if (fmvData.gameData.ContainsKey(videoModel.Name) && !fmvData.gameData[videoModel.Name].AlreadyWatched) {
+                    fmvData.gameData[videoModel.Name].AlreadyWatched = true;
+                }
 
                 if (CheckForFmvTargetVideo(videoModel.VideoTarget, fmvTargetClickable.VideoTarget)) {
-                    RemoveClickListeners();
                     OnFmvVideoFinished.Trigger(fmvTargetClickable);
                 }
             }
         }
 
         private void ClickNavigationTarget(ClickableModel clickableModel) {
-            RemoveClickListeners();
             OnFmvNavigationClicked.Trigger(GetCurrentGameData(clickableModel.Name));
         }
 
         private void ClickPickupItem(ClickableModel clickableModel) {
-
-            RemoveClickListeners();
 
             // add item to inventory
             int targetObjectIndex = nodeData.FindIndex((item) => item.Details.Id == clickableModel.Name);
@@ -201,7 +194,6 @@ namespace FmvMaker.Graph {
         }
 
         private void ClickInventoryItem(ClickableModel clickableModel) {
-            RemoveClickListeners();
             FmvGraphElementData fmvGraphElementData = fmvData.gameData[clickableModel.Name];
             OnFmvInventoryClicked.Trigger(fmvGraphElementData);
         }
@@ -247,13 +239,6 @@ namespace FmvMaker.Graph {
             fmvClickablePrefab = Variables.ActiveScene.Get("ClickableObjectPrefab") as GameObject;
             fmvVideoElementsPanel = Variables.ActiveScene.Get("VideoElementsPanel") as GameObject;
             fmvInventoryElementsPanel = Variables.ActiveScene.Get("InventoryElementsPanel") as GameObject;
-        }
-
-        private void RemoveClickListeners() {
-            fmvGraphVideos.OnVideoStarted.RemoveAllListeners();
-            fmvGraphVideos.OnVideoPaused.RemoveAllListeners();
-            fmvGraphVideos.OnVideoFinished.RemoveAllListeners();
-            fmvGraphVideos.OnVideoSkipped.RemoveAllListeners();
         }
     }
 }

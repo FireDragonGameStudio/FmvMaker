@@ -11,7 +11,7 @@ namespace FmvMaker.Graph {
         public FmvVideoEnum VideoTarget { get; private set; }
         public FmvVideoEnum UsageTarget { get; private set; }
         public bool IsLooping { get; private set; } = false;
-        public bool AlreadyWatched { get; private set; } = false;
+        public bool AlreadyWatched { get; set; } = false;
         public bool IsItem { get; set; } = false;
         public bool IsInInventory { get; set; } = false;
         public bool WasUsed { get; set; } = false;

@@ -36,6 +36,7 @@ namespace FmvMaker.Graph {
 
         private bool alreadyLoaded = false;
         private bool useLoadingSceen = false;
+        private bool isCurrentlyPaused = false;
 
         private VideoModel currentVideoElement;
 
@@ -53,7 +54,7 @@ namespace FmvMaker.Graph {
 
         private void Update() {
             SkipVideo();
-            PauseVideo();
+            PauseResumeVideo();
             SaveGame();
             QuitGame();
             ToggleAllAvailableClickables();
@@ -114,15 +115,31 @@ namespace FmvMaker.Graph {
         }
 
         private void SkipVideo() {
-            if (Input.GetKeyUp(SkipVideoKey) && !currentVideoElement.IsLooping && currentVideoElement.AlreadyWatched && videoView.ActivePlayer.IsPlaying) {
-                videoView.SkipVideoClip(currentVideoElement);
+            if (Input.GetKeyUp(SkipVideoKey)) {
+                if (!currentVideoElement.IsLooping && currentVideoElement.AlreadyWatched && videoView.ActivePlayer.IsPlaying) {
+                    videoView.SkipVideoClip(currentVideoElement);
+                }
+            }
+        }
+
+        private void PauseResumeVideo() {
+            if (Input.GetKeyUp(PauseVideoKey) && !currentVideoElement.IsLooping) {
+                if (videoView.ActivePlayer.IsPlaying && !isCurrentlyPaused) {
+                    PauseVideo();
+                } else if (!videoView.ActivePlayer.IsPlaying && isCurrentlyPaused) {
+                    ResumeVideo();
+                }
             }
         }
 
         private void PauseVideo() {
-            if (Input.GetKeyUp(PauseVideoKey) && !currentVideoElement.IsLooping) {
-                videoView.PauseVideoClip(currentVideoElement);
-            }
+            isCurrentlyPaused = true;
+            videoView.PauseVideoClip(currentVideoElement);
+        }
+
+        private void ResumeVideo() {
+            isCurrentlyPaused = false;
+            videoView.ResumeVideoClip(currentVideoElement);
         }
 
         private void SaveGame() {

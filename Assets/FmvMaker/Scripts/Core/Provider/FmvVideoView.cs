@@ -39,12 +39,12 @@ namespace FmvMaker.Core.Provider {
         }
 
         public void PauseVideoClip(VideoModel video) {
-            if (ActivePlayer.IsPlaying) {
-                ActivePlayer.Pause();
-            } else {
-                ActivePlayer.Play();
-            }
+            ActivePlayer.Pause();
+            OnVideoPaused?.Invoke(video, !ActivePlayer.IsPlaying);
+        }
 
+        public void ResumeVideoClip(VideoModel video) {
+            ActivePlayer.Play();
             OnVideoPaused?.Invoke(video, !ActivePlayer.IsPlaying);
         }
 

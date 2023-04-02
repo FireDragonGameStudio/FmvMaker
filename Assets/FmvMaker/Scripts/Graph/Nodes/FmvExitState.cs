@@ -12,31 +12,55 @@ namespace FmvMaker.Graph {
         [DoNotSerialize, PortLabelHidden]
         public ControlOutput OutputTrigger { get; private set; }
 
+        private FmvGraphVideos fmvGraphVideos;
+
         private GameObject fmvVideoElementsPanel;
+        private GameObject inputValueVideoView;
 
         protected override void Definition() {
             InputTrigger = ControlInput(nameof(InputTrigger), CleanUpStateData);
+            OutputTrigger = ControlOutput(nameof(OutputTrigger));
+
+            Succession(InputTrigger, OutputTrigger);
         }
 
         private ControlOutput CleanUpStateData(Flow flow) {
             GetSceneVariables();
+            GetGraphVideosObject();
             DestroyGameObjectsExceptInventory();
+            RemoveClickListeners();
 
             return OutputTrigger;
         }
 
         private void GetSceneVariables() {
-            if (Variables.ExistInActiveScene && Variables.ActiveScene.IsDefined("VideoElementsPanel")) {
+            if (Variables.ExistInActiveScene && Variables.ActiveScene.IsDefined("VideoElementsPanel") && Variables.ActiveScene.IsDefined("FmvVideoView")) {
                 fmvVideoElementsPanel = Variables.ActiveScene.Get("VideoElementsPanel") as GameObject;
+                inputValueVideoView = Variables.ActiveScene.Get("FmvVideoView") as GameObject;
+            }
+        }
+
+        private void GetGraphVideosObject() {
+            if (inputValueVideoView) {
+                fmvGraphVideos = inputValueVideoView.GetComponent<FmvGraphVideos>();
             }
         }
 
         private void DestroyGameObjectsExceptInventory() {
             if (fmvVideoElementsPanel) {
-                foreach (FmvClickableFacade clickableNavOrItemFacade in fmvVideoElementsPanel.GetComponentsInChildren<FmvClickableFacade>()) {
-                    GameObject.Destroy(clickableNavOrItemFacade.gameObject);
-
+                FmvClickableFacade[] fmvClickableObjects = fmvVideoElementsPanel.GetComponentsInChildren<FmvClickableFacade>();
+                foreach (FmvClickableFacade clickableFacade in fmvClickableObjects) {
+                    GameObject.Destroy(clickableFacade.gameObject);
                 }
+            }
+        }
+
+        private void RemoveClickListeners() {
+            if (fmvGraphVideos) {
+                fmvGraphVideos.OnVideoStarted.RemoveAllListeners();
+                fmvGraphVideos.OnVideoPaused.RemoveAllListeners();
+                fmvGraphVideos.OnVideoFinished.RemoveAllListeners();
+                fmvGraphVideos.OnVideoSkipped.RemoveAllListeners();
             }
         }
     }
