@@ -34,10 +34,8 @@ namespace FmvMaker.Graph {
         }
 
         private void GetSceneVariables() {
-            if (Variables.ExistInActiveScene && Variables.ActiveScene.IsDefined("VideoElementsPanel") && Variables.ActiveScene.IsDefined("FmvVideoView")) {
-                fmvVideoElementsPanel = Variables.ActiveScene.Get("VideoElementsPanel") as GameObject;
-                inputValueVideoView = Variables.ActiveScene.Get("FmvVideoView") as GameObject;
-            }
+            fmvVideoElementsPanel = FmvSceneVariables.VideoElementsPanel;
+            inputValueVideoView = FmvSceneVariables.VideoView;
         }
 
         private void GetGraphVideosObject() {

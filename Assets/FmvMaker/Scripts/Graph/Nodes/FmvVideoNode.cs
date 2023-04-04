@@ -82,8 +82,6 @@ namespace FmvMaker.Graph {
             fmvGraphVideos.OnVideoSkipped.AddListener(OnVideoSkipped);
             fmvGraphVideos.PlayVideo(fmvTargetClickable.GetVideoModel());
 
-            Variables.ActiveScene.Set("CurrentVideoTarget", fmvTargetClickable);
-
             // play navigation and item pickup video
             if (fmvTargetClickable.VideoTarget == TransitionVideo) {
                 fmvGraphVideos.PlayVideo(fmvTargetClickable.GetVideoModel());
@@ -119,51 +117,49 @@ namespace FmvMaker.Graph {
         }
 
         private void OnVideoFinished(VideoModel videoModel) {
-            if (!videoModel.IsLooping) {
-                // generate buttons for navigation and item pickup
-                for (int i = 0; i < nodeData.Count; i++) {
-                    if (!fmvData.gameData.ContainsKey(nodeData[i].Details.Id)) {
-                        fmvData.gameData.Add(nodeData[i].Details.Id, nodeData[i].Details);
+            // generate buttons for navigation and item pickup
+            for (int i = 0; i < nodeData.Count; i++) {
+                if (!fmvData.gameData.ContainsKey(nodeData[i].Details.Id)) {
+                    fmvData.gameData.Add(nodeData[i].Details.Id, nodeData[i].Details);
+                }
+
+                // get current data for clickable
+                nodeData[i].Details = GetCurrentGameData(nodeData[i].Details.Id);
+
+                // set all navigation clickables and findable clickables
+                if (!nodeData[i].Details.IsItem || (!nodeData[i].Details.IsInInventory && !nodeData[i].Details.WasUsed)) {
+
+                    // generate clickable object
+                    GameObject targetObject = GameObject.Instantiate(fmvClickablePrefab);
+                    targetObject.SetActive(true);
+                    targetObject.transform.SetParent(fmvVideoElementsPanel.transform);
+                    targetObject.transform.localScale = Vector3.one;
+
+                    // get clickable facade
+                    FmvClickableFacade itemFacade = targetObject.GetComponent<FmvClickableFacade>();
+                    itemFacade.SetItemData(nodeData[i].Details.GetItemModel());
+
+                    // adding the clicking events
+                    itemFacade.OnItemClicked.RemoveAllListeners();
+
+                    if (nodeData[i].Details.IsItem) {
+                        itemFacade.OnItemClicked.AddListener(ClickPickupItem);
+                    } else {
+                        itemFacade.OnItemClicked.AddListener(ClickNavigationTarget);
                     }
 
-                    // get current data for clickable
-                    nodeData[i].Details = GetCurrentGameData(nodeData[i].Details.Id);
-
-                    // set all navigation clickables and findable clickables
-                    if (!nodeData[i].Details.IsItem || (!nodeData[i].Details.IsInInventory && !nodeData[i].Details.WasUsed)) {
-
-                        // generate clickable object
-                        GameObject targetObject = GameObject.Instantiate(fmvClickablePrefab);
-                        targetObject.SetActive(true);
-                        targetObject.transform.SetParent(fmvVideoElementsPanel.transform);
-                        targetObject.transform.localScale = Vector3.one;
-
-                        // get clickable facade
-                        FmvClickableFacade itemFacade = targetObject.GetComponent<FmvClickableFacade>();
-                        itemFacade.SetItemData(nodeData[i].Details.GetItemModel());
-
-                        // adding the clicking events
-                        itemFacade.OnItemClicked.RemoveAllListeners();
-
-                        if (nodeData[i].Details.IsItem) {
-                            itemFacade.OnItemClicked.AddListener(ClickPickupItem);
-                        } else {
-                            itemFacade.OnItemClicked.AddListener(ClickNavigationTarget);
-                        }
-
-                        // add to findables
-                        nodeData[i].Object = targetObject;
-                    }
+                    // add to findables
+                    nodeData[i].Object = targetObject;
                 }
+            }
 
-                // update game data
-                if (fmvData.gameData.ContainsKey(videoModel.Name) && !fmvData.gameData[videoModel.Name].AlreadyWatched) {
-                    fmvData.gameData[videoModel.Name].AlreadyWatched = true;
-                }
+            // update game data
+            if (fmvData.gameData.ContainsKey(videoModel.Name) && !fmvData.gameData[videoModel.Name].AlreadyWatched) {
+                fmvData.gameData[videoModel.Name].AlreadyWatched = true;
+            }
 
-                if (CheckForFmvTargetVideo(videoModel.VideoTarget, fmvTargetClickable.VideoTarget)) {
-                    OnFmvVideoFinished.Trigger(fmvTargetClickable);
-                }
+            if (CheckForFmvTargetVideo(videoModel.VideoTarget, fmvTargetClickable.VideoTarget)) {
+                OnFmvVideoFinished.Trigger(fmvTargetClickable);
             }
         }
 
@@ -234,11 +230,11 @@ namespace FmvMaker.Graph {
         }
 
         private void GetSceneVariables() {
-            inputValueVideoView = Variables.ActiveScene.Get("FmvVideoView") as GameObject;
-            fmvData = (Variables.ActiveScene.Get("FmvData") as GameObject).GetComponent<FmvData>();
-            fmvClickablePrefab = Variables.ActiveScene.Get("ClickableObjectPrefab") as GameObject;
-            fmvVideoElementsPanel = Variables.ActiveScene.Get("VideoElementsPanel") as GameObject;
-            fmvInventoryElementsPanel = Variables.ActiveScene.Get("InventoryElementsPanel") as GameObject;
+            inputValueVideoView = FmvSceneVariables.VideoView;
+            fmvData = FmvSceneVariables.FmvData;
+            fmvClickablePrefab = FmvSceneVariables.ClickablePrefab;
+            fmvVideoElementsPanel = FmvSceneVariables.VideoElementsPanel;
+            fmvInventoryElementsPanel = FmvSceneVariables.InventoryElementsPanel;
         }
     }
 }

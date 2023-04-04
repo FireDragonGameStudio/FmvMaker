@@ -30,9 +30,9 @@ namespace FmvMaker.Graph {
         }
 
         private void GetSceneVariables() {
-            fmvData = (Variables.ActiveScene.Get("FmvData") as GameObject).GetComponent<FmvData>();
-            fmvClickablePrefab = Variables.ActiveScene.Get("ClickableObjectPrefab") as GameObject;
-            fmvInventoryElementsPanel = Variables.ActiveScene.Get("InventoryElementsPanel") as GameObject;
+            fmvData = FmvSceneVariables.FmvData;
+            fmvClickablePrefab = FmvSceneVariables.ClickablePrefab;
+            fmvInventoryElementsPanel = FmvSceneVariables.InventoryElementsPanel;
         }
 
         private void LoadInventoryItems() {

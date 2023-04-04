@@ -10,5 +10,12 @@ namespace FmvMaker.Graph {
         DifferentUniqueVideoName,
         UniqueToDifferentVideoName,
         UniqueIdleVideoName,
+        DialogIntro,
+        DialogIdle,
+        DialogOption1,
+        DialogOption2,
+        DialogOption3,
+        DialogOption4,
+        DialogOption5,
     }
 }
