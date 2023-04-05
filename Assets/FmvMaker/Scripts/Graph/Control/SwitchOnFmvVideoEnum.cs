@@ -39,18 +39,6 @@ namespace FmvMaker.Graph {
                     Succession(enter, branch);
                 }
             }
-
-            //foreach (var valueByName in EnumUtility.ValuesByNames(typeof(FmvVideoEnum))) {
-            //    var enumName = valueByName.Key;
-
-            //    // Just like in C#, duplicate switch labels for the same underlying value is prohibited
-            //    if (!branches.ContainsKey(enumName)) {
-            //        var branch = ControlOutput("%" + enumName);
-            //        branches.Add(enumName, branch);
-
-            //        Succession(enter, branch);
-            //    }
-            //}
         }
 
         public ControlOutput EnterTrigger(Flow flow) {
