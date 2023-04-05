@@ -8,7 +8,7 @@
         - [The FmvMaker Nodes](#nodes-fmvmaker)
         - [The FmvMaker Event Nodes](#event-nodes-fmvmaker)
         - [The FmvMaker Control Nodes](#control-nodes-fmvmaker)
-- [Using JSON files (the complicated approach)](#complicated-approach)
+- [Using JSON files (the complex approach)](#complex-approach)
 	- [How do I build a video JSON list?](#json-basics)
 	- [What does a “VideoElement” look like?](#video-element)
         - [Basic structure](#basic-structure-video)
@@ -41,7 +41,7 @@ You can get **FmvMaker** either via the Unity AssetStore (https://assetstore.uni
 
 Important for you are the Resources folder (within the **FmvMaker** folder) where you'll be placing your content (videos, images, etc...) as well as your configuration files. The Prefabs folder contains default prefabs, especially for prototyping. In the Scenes folder are demo scenes, to give you an overview of the comprehensive possibilities of **FmvMaker**.
 
-If you want to use the demo videos provided by us (Unity doesn't like video files in their AssetStore assets), pls check out the Releases section of this repository. Each release will contain a separate .zip file with the current demo videos in it. See https://github.com/FireDragonGameStudio/FmvMaker/releases for details. For an easier start, we decided to add an online reference for all demo videos. For how to use videos from within your Assets folder, check the [FmvMaker configuration](#fmvMaker-configuration) section.
+If you want to use the demo videos provided by us (Unity doesn't like video files in their AssetStore assets), pls check out the Releases section of this repository. Each release will contain a separate .zip file with the current demo videos in it. See https://github.com/FireDragonGameStudio/FmvMaker/releases for details. For an easier start, we decided to add an online reference for all demo videos. For how to use videos from within your Assets folder, check the [**FmvMaker** configuration](#configuration) section.
 
 <a name="simple-approach"></a>
 # Using the visual editor (the simple approach)
@@ -59,7 +59,7 @@ The next chapters will explain how the various nodes work and what they are doin
 ### The FmvMaker Nodes
 These nodes are used to control the flow of the graph. Although not every output trigger is needed, we added them in case someone wants to add custom logic or graph elements.
 
-All the event nodes can be found under the script graph context menu category **FmvMaker\**.
+All the event nodes can be found under the script graph context menu category **FmvMaker/**.
 
 #### Fmv Video Node
 The main node, which handles video playback and creation of the current "state". The **Clickables** property lets the user define how many **Clickables** are within the current screen and is clamped between 0 and 10.  Which video should be played is handled by the selection of dropdown, which consists of every video entered in **FmvVideoEnum**.
@@ -70,6 +70,8 @@ On the left upper corner is the **InputTrigger** for receiving the graph flow. O
 
 **FmvTargetVideo** either gets the **FmvGraphElementData** from a previous flow node, or an **ItemNode** or a **NagivationNode**.
 
+![image](https://user-images.githubusercontent.com/23502690/230207845-ea1360b8-6f65-496f-80b6-a92059d8b3d3.png)
+
 | Field | Type | Default value | Optional | Description |
 | --- | --- | --- | --- | --- |
 | ClickablesCount | int | 2 | | The number of clickables, that are available in the current "state". |
@@ -78,6 +80,8 @@ On the left upper corner is the **InputTrigger** for receiving the graph flow. O
 #### Fmv LoopVideo Node
 In general the same node as **FmvVideoNode**, but this video is looping, which makes it perfect for idle states or "background videos".
 
+![image](https://user-images.githubusercontent.com/23502690/230208081-4662d6e2-a037-4021-b889-040850b64af3.png)
+
 | Field | Type | Default value | Optional | Description |
 | --- | --- | --- | --- | --- |
 | ClickablesCount | int | 2 | | The number of clickables, that are available in the current "state". |
@@ -85,6 +89,8 @@ In general the same node as **FmvVideoNode**, but this video is looping, which m
 
 #### Fmv Navigation Node
 Used for creating a **Clickable**, which enables a transition between "states". This **Clickable** is NOT an item and can be configured via the graph inspector. The node creates an **FmvGraphElementData**, which can be used as input for e.g. an **FmvVideoNode**.
+
+![image](https://user-images.githubusercontent.com/23502690/230208230-766a685e-d351-4036-9d11-7ac37fbe52fc.png)
 
 | Field | Type | Default value | Optional | Description |
 | --- | --- | --- | --- | --- |
@@ -96,6 +102,8 @@ Used for creating a **Clickable**, which enables a transition between "states". 
 
 #### Fmv Item Node
 Again creating a **Clickable**, but this time it's an item, which can be added to the players inventory by clicking on it. Similar to the **FmvNavigationNade** a video is played when picking it up. But in addtion, another video is played, when used in the right "state".
+
+![image](https://user-images.githubusercontent.com/23502690/230208321-aa16fc7e-8165-4a74-a02c-d2cd1a4f1cbd.png)
 
 | Field | Type | Default value | Optional | Description |
 | --- | --- | --- | --- | --- |
@@ -109,25 +117,31 @@ Again creating a **Clickable**, but this time it's an item, which can be added t
 #### Fmv Exit State Node
 As we're talking about "states", which are not real states, this node is used to clean up after leaving "states". Originally this was part of **FmvVideoNode** and **FmvLoopVideoNode**, but in order to give users more flexibility, this was implemented as a separte node, which will just be integrated into the graph flow.
 
+![image](https://user-images.githubusercontent.com/23502690/230208460-4e613fd8-b8fb-4253-b896-2a076856d550.png)
+
 #### Fmv Load Inventory Node
 The name already explains, what this node is doing. Placed at the start of our graph, this node will load inventory items, if present.
+
+![image](https://user-images.githubusercontent.com/23502690/230208549-a6101584-16c5-4961-8af0-2cdcb53b6903.png)
 
 <a name="event-nodes-fmvmaker"></a>
 ### The FmvMaker Event Nodes
 All events available via **FmvMaker** can be used via event nodes too. These event nodes are fired, when a connected state triggerd a corresponding event. E.g. if a **FmvNavigationNode** **Clickable** is clicked in a "state", all connected **OnFmvNavigationClicked** events are fired. The result of such an event is a **FmvGraphElementData** object, which can be used as input for other **FvmMaker** nodes.
 
 The available events are:
-    - OnFmvInventoryClicked
-    - OnFmvItemPickupClicked
-    - OnFmvNavigationClicked
-    - OnFmvVideoPaused
-    - OnFmvVideoSkipped
-    - OnFmvVideoStarted
-    - OnFmvVideoFinished
+* OnFmvInventoryClicked
+* OnFmvItemPickupClicked
+* OnFmvNavigationClicked
+* OnFmvVideoPaused
+* OnFmvVideoSkipped
+* OnFmvVideoStarted
+* OnFmvVideoFinished
 
 Users can furthermore add custom logic to theses events, without having to use C# code and the **IFmvMakerVideoEvents** interface.
 
-All the event nodes can be found under the the script graph context menu category **Events\FmvMaker\**.
+All the event nodes can be found under the the script graph context menu category **Events/FmvMaker/**.
+
+![image](https://user-images.githubusercontent.com/23502690/230208973-80b351c0-ecf9-4be8-b4b7-7529b41e3bd0.png)
 
 <a name="control-nodes-fmvmaker"></a>
 ### The FmvMaker Control Nodes
@@ -135,15 +149,19 @@ While Unity's VisualScripting already contains a bunch of control nodes, one had
 
 The upper left corner hat the **InputTrigger** for the graph flow. Each switch option is an **OutputTrigger** to pass on the graph flow to the next node. The second input entry, is an **FmvGraphElementData** element to do the selection on. This is usually set  via an event node, where the values may vary, depending which "state" you're coming from.
 
-All the control nodes can be found under the the script graph context menu category **Control\FmvMaker\**.
+All the control nodes can be found under the the script graph context menu category **Control/FmvMaker/**.
+
+![image](https://user-images.githubusercontent.com/23502690/230209100-560a0c7a-82c2-42ca-aacf-cb78e82c82c7.png)
 
 | Field | Type | Default value | Optional | Description |
 | --- | --- | --- | --- | --- |
 | StartIndex | int | 0 | | The inclusive start index. |
 | EndIndex | int | **FmvVideoEnum** length | | The inclusive end index of all videos in **FmvVideoEnum**. |
 
-<a name="complicated-approach"></a>
-# Using JSON files (the complicated approach)
+<br><br>
+
+<a name="complex-approach"></a>
+# Using JSON files (the complex approach)
 **VideoData** for FmvMaker is a configuration file stored within its Resources folder (*FmvMaker/Resources/*) and is basically a JSON list of single video elements, which are qualified via their names. This means that there is no complex hierarchy to build, each video element stands for its own. Please always choose simple, but unique names for your video elements. You can compare a video element to some kind of *state*, which will lead to *1 to n* next *states*. The previous *state* doesn't matter at all. Yes, this leads to a long list of elements, but it also helps to keep things simple.
 
 The next kind of important data are so called **Clickables**. Information about **Clickables** is also stored within the **FmvMaker** Resources folder in the Unity project (*FmvMaker/Resources/*) in a separate configuration file. These elements stand for triggering actions when clicking on it. It doesn't matter if these actions are e.g. items or the trigger for the next video. The only difference is the item handling, of which a basic version is already included in **FmvMaker** and will be explained in the further sections.
@@ -417,6 +435,7 @@ The new **VideoData** element (DifferentUniqueVideoName) will basically be the s
 {
   "VideoList": [{
       "Name": "UniqueVideoName",
+      "VideoTarget": "UniqueVideoName",
       "NavigationTargets": [{
           "Name": "UniqueClickable"
         }, {
@@ -425,18 +444,21 @@ The new **VideoData** element (DifferentUniqueVideoName) will basically be the s
       ]
     }, {
       "Name": "NextUniqueVideoName",
+      "VideoTarget": "NextUniqueVideoName",
       "NavigationTargets": [{
           "Name": "NextClickable"
         }
       ]
     }, {
       "Name": "AnotherUniqueVideoName",
+      "VideoTarget": "AnotherUniqueVideoName",
       "NavigationTargets": [{
           "Name": "AnotherClickable"
         }
       ]
     }, {
       "Name": "DifferentUniqueVideoName",
+      "VideoTarget": "DifferentUniqueVideoName",
       "NavigationTargets": [{
           "Name": "UniqueClickable"
         }, {
@@ -445,6 +467,7 @@ The new **VideoData** element (DifferentUniqueVideoName) will basically be the s
       ]
     }, {
       "Name": "UniqueToDifferentVideoName",
+      "VideoTarget": "UniqueToDifferentVideoName",
       "NavigationTargets": [{
           "Name": "AnotherClickable"
         }
@@ -505,6 +528,7 @@ Sometimes you want to jump from video element directly to another, without letti
 {
   "VideoList": [{
       "Name": "UniqueVideoName",
+      "VideoTarget": "UniqueVideoName",
       "NavigationTargets": [{
           "Name": "UniqueClickable"
         }, {
@@ -513,18 +537,21 @@ Sometimes you want to jump from video element directly to another, without letti
       ]
     }, {
       "Name": "NextUniqueVideoName",
+      "VideoTarget": "NextUniqueVideoName",
       "NavigationTargets": [{
           "Name": "NextClickable"
         }
       ]
     }, {
       "Name": "AnotherUniqueVideoName",
+      "VideoTarget": "AnotherUniqueVideoName",
       "NavigationTargets": [{
           "Name": "AnotherClickable"
         }
       ]
     }, {
       "Name": "DifferentUniqueVideoName",
+      "VideoTarget": "DifferentUniqueVideoName",
       "NavigationTargets": [{
           "Name": "UniqueClickable"
         }, {
@@ -533,6 +560,7 @@ Sometimes you want to jump from video element directly to another, without letti
       ]
     }, {
       "Name": "UniqueToDifferentVideoName",
+      "VideoTarget": "UniqueToDifferentVideoName",
       "NavigationTargets": [{
           "Name": "InstantAnotherUniqueClickable"
         }
@@ -596,36 +624,42 @@ It often makes sense to have some kind of hub, where the player originates from,
 {
   "VideoList": [{
       "Name": "UniqueVideoName",
+      "VideoTarget": "UniqueVideoName",
       "NavigationTargets": [{
           "Name": "InstantUniqueIdleClickable"
         }
       ]
     }, {
       "Name": "NextUniqueVideoName",
+      "VideoTarget": "NextUniqueVideoName",
       "NavigationTargets": [{
           "Name": "NextClickable"
         }
       ]
     }, {
       "Name": "AnotherUniqueVideoName",
+      "VideoTarget": "AnotherUniqueVideoName",
       "NavigationTargets": [{
           "Name": "AnotherClickable"
         }
       ]
     }, {
       "Name": "DifferentUniqueVideoName",
+      "VideoTarget": "DifferentUniqueVideoName",
       "NavigationTargets": [{
           "Name": "InstantUniqueIdleClickable"
         }
       ]
     }, {
       "Name": "UniqueToDifferentVideoName",
+      "VideoTarget": "UniqueToDifferentVideoName",
       "NavigationTargets": [{
           "Name": "InstantAnotherUniqueClickable"
         }
       ]
     }, {
       "Name": "UniqueIdleVideoName",
+      "VideoTarget": "UniqueIdleVideoName",
       "IsLooping": true,
       "NavigationTargets": [{
           "Name": "UniqueClickable"
@@ -701,18 +735,21 @@ Create a **Clickable** and a **VideoData** element for every **Item** you'd like
 {
   "VideoList": [{
       "Name": "UniqueVideoName",
+      "VideoTarget": "UniqueVideoName",
       "NavigationTargets": [{
           "Name": "InstantUniqueIdleClickable"
         }
       ]
     }, {
       "Name": "NextUniqueVideoName",
+      "VideoTarget": "NextUniqueVideoName",
       "NavigationTargets": [{
           "Name": "NextClickable"
         }
       ]
     }, {
       "Name": "AnotherUniqueVideoName",
+      "VideoTarget": "AnotherUniqueVideoName",
       "NavigationTargets": [{
           "Name": "AnotherClickable"
         }
@@ -723,18 +760,21 @@ Create a **Clickable** and a **VideoData** element for every **Item** you'd like
       ]
     }, {
       "Name": "DifferentUniqueVideoName",
+      "VideoTarget": "DifferentUniqueVideoName",
       "NavigationTargets": [{
           "Name": "InstantUniqueIdleClickable"
         }
       ]
     }, {
       "Name": "UniqueToDifferentVideoName",
+      "VideoTarget": "UniqueToDifferentVideoName",
       "NavigationTargets": [{
           "Name": "InstantAnotherUniqueClickable"
         }
       ]
     }, {
       "Name": "UniqueIdleVideoName",
+      "VideoTarget": "UniqueIdleVideoName",
       "IsLooping": true,
       "NavigationTargets": [{
           "Name": "UniqueClickable"
@@ -837,6 +877,7 @@ Create a **Clickable** and a **VideoData** element for every **Item** you'd like
 | P | Pauses/Unpauses the playing video. |
 | Escape | Skips the currently playing video. Note that the videos has to be watched at least once, to be able to skip it. |
 | Q | Quits the game, when running the build. Doesn't stop the Editor from running. |
+| S | Saves game data. Will be loaded automatically if game data is present. |
 | I | Toggles the inventory visibility. |
 
 <a name="icons"></a>
@@ -849,6 +890,7 @@ In the previous created FMV prototype, every **NavigationTarget** as well as the
 {
   "VideoList": [{
       "Name": "UniqueVideoNameToChoose",
+      "VideoTarget": "UniqueVideoNameToChoose",
       "IsLooping": false,
       "NavigationTargets": [{
           "Name": "..."
