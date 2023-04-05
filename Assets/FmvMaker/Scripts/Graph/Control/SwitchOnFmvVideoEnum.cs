@@ -1,8 +1,9 @@
+using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 
 namespace FmvMaker.Graph {
-    [UnitCategory("FmvMaker")]
+    [UnitCategory("Control\\FmvMaker")]
     [TypeIcon(typeof(IBranchUnit))]
     public class SwitchOnFmvVideoEnum : Unit, IBranchUnit {
         [DoNotSerialize]
@@ -14,6 +15,12 @@ namespace FmvMaker.Graph {
         [DoNotSerialize, PortLabelHidden]
         public ValueInput FmvTargetVideo { get; private set; }
 
+        [Serialize, Inspectable, UnitHeaderInspectable("StartIndex (incl.)")]
+        public int StartIndex { get; set; } = 0;
+
+        [Serialize, Inspectable, UnitHeaderInspectable("EndIndex (incl.)")]
+        public int EndIndex { get; set; } = Enum.GetNames(typeof(FmvVideoEnum)).Length - 1;
+
         protected override void Definition() {
             branches = new Dictionary<string, ControlOutput>();
 
@@ -23,17 +30,27 @@ namespace FmvMaker.Graph {
 
             Requirement(FmvTargetVideo, enter);
 
-            foreach (var valueByName in EnumUtility.ValuesByNames(typeof(FmvVideoEnum))) {
-                var enumName = valueByName.Key;
-
-                // Just like in C#, duplicate switch labels for the same underlying value is prohibited
-                if (!branches.ContainsKey(enumName)) {
-                    var branch = ControlOutput("%" + enumName);
-                    branches.Add(enumName, branch);
+            string[] enumNames = Enum.GetNames(typeof(FmvVideoEnum));
+            for (int i = StartIndex; i <= EndIndex; i++) {
+                if (!branches.ContainsKey(enumNames[i])) {
+                    var branch = ControlOutput("%" + enumNames[i]);
+                    branches.Add(enumNames[i], branch);
 
                     Succession(enter, branch);
                 }
             }
+
+            //foreach (var valueByName in EnumUtility.ValuesByNames(typeof(FmvVideoEnum))) {
+            //    var enumName = valueByName.Key;
+
+            //    // Just like in C#, duplicate switch labels for the same underlying value is prohibited
+            //    if (!branches.ContainsKey(enumName)) {
+            //        var branch = ControlOutput("%" + enumName);
+            //        branches.Add(enumName, branch);
+
+            //        Succession(enter, branch);
+            //    }
+            //}
         }
 
         public ControlOutput EnterTrigger(Flow flow) {
