@@ -30,16 +30,12 @@ namespace FmvMaker.Core.Provider {
                 videoModelData = Resources.Load<TextAsset>("DemoVideoData");
                 clickableModelData = Resources.Load<TextAsset>("DemoClickableData");
             }
-            if (loadDebugData) {
+            if (!loadDebugData) {
                 LoadGameDataFromLocalFile();
             }
         }
 
-        public void ExportVideoData() {
-            //ExportGameDatatoLocalFile();
-        }
-
-        public void ExportGraphVideoData() {
+        public void ExportGraphGameData() {
             ExportGraphGameDatatoLocalFile();
         }
 

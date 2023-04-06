@@ -20,8 +20,6 @@ namespace FmvMaker.Core.Provider {
         [SerializeField]
         private KeyCode PauseVideoKey = KeyCode.P;
         [SerializeField]
-        private KeyCode SaveGameKey = KeyCode.S;
-        [SerializeField]
         private KeyCode QuitGameKey = KeyCode.Q;
         [SerializeField]
         private KeyCode ShowAllAvailableClickablesKey = KeyCode.Space;
@@ -77,7 +75,6 @@ namespace FmvMaker.Core.Provider {
         private void Update() {
             SkipVideo();
             PauseVideo();
-            SaveGame();
             QuitGame();
             ToggleAllAvailableClickables();
         }
@@ -201,12 +198,6 @@ namespace FmvMaker.Core.Provider {
         private void PauseVideo() {
             if (Input.GetKeyUp(PauseVideoKey) && !currentVideoElement.IsLooping) {
                 videoView.PauseVideoClip(currentVideoElement);
-            }
-        }
-
-        private void SaveGame() {
-            if (Input.GetKeyUp(SaveGameKey)) {
-                data.ExportVideoData();
             }
         }
 

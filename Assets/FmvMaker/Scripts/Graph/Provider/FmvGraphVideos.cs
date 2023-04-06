@@ -26,6 +26,10 @@ namespace FmvMaker.Graph {
         [SerializeField]
         private KeyCode ShowAllAvailableClickablesKey = KeyCode.Space;
 
+        [Header("Settings")]
+        [SerializeField]
+        private bool useLoadingScreen = true;
+
         [Header("Internal references")]
         [SerializeField]
         private FmvVideoView videoView = null;
@@ -34,8 +38,6 @@ namespace FmvMaker.Graph {
         [SerializeField]
         private GameObject loadingSceen = null;
 
-        private bool alreadyLoaded = false;
-        private bool useLoadingSceen = false;
         private bool isCurrentlyPaused = false;
 
         private VideoModel currentVideoElement;
@@ -88,29 +90,26 @@ namespace FmvMaker.Graph {
 
         private void StopLoadingScreen(VideoModel video) {
             loadingSceen.SetActive(false);
-            alreadyLoaded = false;
         }
 
         private void ConfigureLoadingScreen() {
             loadingSceen.SetActive(false);
 
-            if (LoadFmvConfig.Config.VideoSourceType != "INTERNAL") {
-                useLoadingSceen = true;
+            if (LoadFmvConfig.Config.VideoSourceType != "INTERNAL" && useLoadingScreen) {
                 loadingSceen.SetActive(true);
-                OnVideoStarted.AddListener(StopLoadingScreen);
-                StartLoadingScreen();
             }
         }
 
         private void StartLoadingScreen() {
-            if (useLoadingSceen && !alreadyLoaded) {
+            if (useLoadingScreen) {
                 loadingSceen.SetActive(true);
-                alreadyLoaded = true;
             }
         }
 
         public void PlayVideo(VideoModel video) {
             currentVideoElement = video;
+            OnVideoStarted.AddListener(StopLoadingScreen);
+            StartLoadingScreen();
             videoView.PrepareAndPlay(video);
         }
 
@@ -144,7 +143,7 @@ namespace FmvMaker.Graph {
 
         private void SaveGame() {
             if (Input.GetKeyUp(SaveGameKey)) {
-                data.ExportGraphVideoData();
+                data.ExportGraphGameData();
             }
         }
 

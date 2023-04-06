@@ -43,6 +43,9 @@ Important for you are the Resources folder (within the **FmvMaker** folder) wher
 
 If you want to use the demo videos provided by us (Unity doesn't like video files in their AssetStore assets), pls check out the Releases section of this repository. Each release will contain a separate .zip file with the current demo videos in it. See https://github.com/FireDragonGameStudio/FmvMaker/releases for details. For an easier start, we decided to add an online reference for all demo videos. For how to use videos from within your Assets folder, check the [**FmvMaker** configuration](#configuration) section.
 
+**PLEASE NOTE THAT THE JSON VERSION WILL NOT BE MAINTAINED IN FUTURE AND IS VERY LIKELY TO BE OMITTED!**
+**THE GRAPH (SIMPLER) VERSION IS OUR MAIN FOCUS!**
+
 <a name="simple-approach"></a>
 # Using the visual editor (the simple approach)
 Based in Unitys VisualScripting (https://docs.unity3d.com/Packages/com.unity.visualscripting@1.8/manual/index.html), which is installed by default as a package from Unity Editor version 2021.1 onward, **FmvMaker** integrates smoothly within this environment. Every node, control and event added by **FmvMaker** is based on the default VisualScripting nodes and can therefore seemingly be used with the other nodes (although you don't have to).

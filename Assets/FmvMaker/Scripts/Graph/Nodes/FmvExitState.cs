@@ -15,7 +15,6 @@ namespace FmvMaker.Graph {
         private FmvGraphVideos fmvGraphVideos;
 
         private GameObject fmvVideoElementsPanel;
-        private GameObject inputValueVideoView;
 
         protected override void Definition() {
             InputTrigger = ControlInput(nameof(InputTrigger), CleanUpStateData);
@@ -26,7 +25,6 @@ namespace FmvMaker.Graph {
 
         private ControlOutput CleanUpStateData(Flow flow) {
             GetSceneVariables();
-            GetGraphVideosObject();
             DestroyGameObjectsExceptInventory();
             RemoveClickListeners();
 
@@ -35,13 +33,7 @@ namespace FmvMaker.Graph {
 
         private void GetSceneVariables() {
             fmvVideoElementsPanel = FmvSceneVariables.VideoElementsPanel;
-            inputValueVideoView = FmvSceneVariables.VideoView;
-        }
-
-        private void GetGraphVideosObject() {
-            if (inputValueVideoView) {
-                fmvGraphVideos = inputValueVideoView.GetComponent<FmvGraphVideos>();
-            }
+            fmvGraphVideos = FmvSceneVariables.VideoView.GetComponent<FmvGraphVideos>();
         }
 
         private void DestroyGameObjectsExceptInventory() {

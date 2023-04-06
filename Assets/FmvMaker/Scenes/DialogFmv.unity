@@ -352,11 +352,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d63537cad47a3499e1c4ff3a386b10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadDebugData: 1
   videoModelData: {fileID: 4900000, guid: 5cfcbc7340e76584e9629f8bac576a40, type: 3}
   clickableModelData: {fileID: 4900000, guid: 089dfb8dced05fd4c8f843f43d00d8cd, type: 3}
   onlineVideoSourceMappingData: {fileID: 4900000, guid: 0d14c44b8f85d9644a7acd8ff9829ef0,
     type: 3}
-  saveGameData: {fileID: 0}
 --- !u!1 &736910559
 GameObject:
   m_ObjectHideFlags: 0
