@@ -51,6 +51,7 @@ namespace FmvMaker.Core.Provider {
         private void SetEventsForInventoryItem(FmvClickableFacade itemFacade) {
             itemFacade.OnItemClicked.RemoveAllListeners();
             itemFacade.OnItemClicked.AddListener(ItemFromInventoryToUsed);
+            itemFacade.ChangeVisibility(1);
         }
 
         private void GenerateFindableItems() {
@@ -172,7 +173,7 @@ namespace FmvMaker.Core.Provider {
         }
 
         private void TriggerUseageNavigationTarget(ClickableModel model) {
-            fmvVideos.PlayVideoFromNavigationTarget(model.UseageVideo);
+            fmvVideos.PlayVideoFromNavigationTarget(model.UsageVideo);
         }
 
         private void ItemFromInventoryToUsed(ClickableModel model) {

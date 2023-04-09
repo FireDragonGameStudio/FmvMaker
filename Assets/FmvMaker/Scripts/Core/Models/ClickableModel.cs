@@ -6,7 +6,7 @@ namespace FmvMaker.Core.Models {
         public string Name;
         public string Description;
         public string PickUpVideo;
-        public string UseageVideo;
+        public string UsageVideo;
         public bool IsNavigation;
         public bool IsInInventory;
         public bool WasUsed;

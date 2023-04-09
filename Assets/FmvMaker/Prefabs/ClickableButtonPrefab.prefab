@@ -31,6 +31,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 424010470739667056}
   m_Father: {fileID: 0}
@@ -138,7 +139,7 @@ MonoBehaviour:
   OnItemClicked:
     m_PersistentCalls:
       m_Calls: []
-  isButtonTransparent: 1
+  isButtonTransparent: 0
   itemButton: {fileID: 114130167375815458}
   itemImage: {fileID: -7522525910291765187}
   itemText: {fileID: 1326586547044006202}
@@ -183,6 +184,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 224362476461695362}
   m_RootOrder: 0

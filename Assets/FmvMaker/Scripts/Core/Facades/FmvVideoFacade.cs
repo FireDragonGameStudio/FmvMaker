@@ -1,7 +1,7 @@
 ﻿using FmvMaker.Core.Interfaces;
-using FmvMaker.Core.VideoSources;
 using FmvMaker.Core.Models;
 using FmvMaker.Core.Utilities;
+using FmvMaker.Core.VideoSources;
 using System;
 using UnityEngine;
 using UnityEngine.Video;
@@ -95,7 +95,7 @@ namespace FmvMaker.Core.Facades {
 
         public void Prepare(VideoModel videoElement) {
             videoModel = videoElement;
-            videoSource.SetVideoSource(videoElement.Name);
+            videoSource.SetVideoSource(videoElement.VideoTarget);
             videoPlayer.isLooping = videoElement.IsLooping;
             videoPlayer.Prepare();
         }

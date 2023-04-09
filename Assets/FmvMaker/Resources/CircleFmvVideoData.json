@@ -1,18 +1,21 @@
 {
   "VideoList": [{
       "Name": "UniqueVideoName",
+	  "VideoTarget": "UniqueVideoName",
       "NavigationTargets": [{
           "Name": "InstantUniqueIdleClickable"
         }
       ]
     }, {
       "Name": "NextUniqueVideoName",
+	  "VideoTarget": "NextUniqueVideoName",
       "NavigationTargets": [{
           "Name": "NextClickable"
         }
       ]
     }, {
       "Name": "AnotherUniqueVideoName",
+	  "VideoTarget": "AnotherUniqueVideoName",
       "NavigationTargets": [{
           "Name": "AnotherClickable"
         }
@@ -23,18 +26,21 @@
       ]
     }, {
       "Name": "DifferentUniqueVideoName",
+	  "VideoTarget": "DifferentUniqueVideoName",
       "NavigationTargets": [{
           "Name": "InstantUniqueIdleClickable"
         }
       ]
     }, {
       "Name": "UniqueToDifferentVideoName",
+	  "VideoTarget": "UniqueToDifferentVideoName",
       "NavigationTargets": [{
           "Name": "InstantAnotherUniqueClickable"
         }
       ]
     }, {
       "Name": "UniqueIdleVideoName",
+	  "VideoTarget": "UniqueIdleVideoName",
       "IsLooping": true,
       "NavigationTargets": [{
           "Name": "UniqueClickable"

@@ -1,20 +1,175 @@
-# FmvMaker
-
 ![FmvMaker Logo small](https://raw.githubusercontent.com/FireDragonGameStudio/FmvMaker/master/Assets/FmvMaker/Textures/FmvMakerLogo_social.png)
+
+- [FmvMaker](#fmvmaker)
+- [Getting started](#getting-started)
+- [Using the visual editor (the simple approach)](#simple-approach)
+    - [How does it work?](#how-to-visual)
+    - [The different nodes](#nodes-overview)
+        - [The FmvMaker Nodes](#nodes-fmvmaker)
+        - [The FmvMaker Event Nodes](#event-nodes-fmvmaker)
+        - [The FmvMaker Control Nodes](#control-nodes-fmvmaker)
+- [Using JSON files (the complex approach)](#complex-approach)
+	- [How do I build a video JSON list?](#json-basics)
+	- [What does a “VideoElement” look like?](#video-element)
+        - [Basic structure](#basic-structure-video)
+        - [Add navigation actions](#navigation-actions-video)
+    - [What does a “ClickableElement” look like?](#clickable-element)
+        - [Basic structure](#basic-structure-clickable)
+        - [Add Clickable data](#clickable-data)
+    - [Online video mapping configuration](#online-video-mapping)
+    - [Enough explanation, can't we start already?](#start-now)
+    - [Advanced video navigation](#advanced)
+    - [Use Clickable Items to enhance your game](#enhance)
+    - [Key bindings and already implemented game mechanics](#key-bindings)
+    - [Use icons for NavigationTargets and Items](#icons)
+    - [The full VideoData JSON](#full-video-data)
+    - [The full Clickable JSON](#full-clickable-data)
+- [FmvMaker configuration](#configuration)
+- [The full VideoMapping JSON](#video-mapping)
+- [Adding your own logic](#custom-logic)
+- [Future plans](#future-plans)
+- [Known issues](#known-issues)
+
+<a name="fmvmaker"></a>
+# FmvMaker
 
 **FmvMaker** was designed for creating FMVs, point'n click adventures, or other types of games/plugins, which use some kind of video playlist with possible interactions. **FmvMaker** uses only (!) native Unity components to ensure a maximum of compatibility with all of Unity's supported build platforms. If you encounter errors or problems, pls create a new issue at the Github repository. We'll try to help you asap. :)
 
-## Getting started
+<a name="getting-started"></a>
+# Getting started
 You can get **FmvMaker** either via the Unity AssetStore (https://assetstore.unity.com/packages/tools/video/fmvmaker-182868) or the Releases section of this Github repository. After importing the **FmvMaker** asset into your Unity project, you'll find a separate **FmvMaker** folder as subfolder of your Assets folder. The **FmvMaker** directory contains all necessary data, to get started. All examples are currently online videos, provided via static link on github, as Unity does not support Youtube video streaming. Furthermore Unity AssetStore developers are not allowed to ship videos, with their packages. Please note, that the music tracks used in our demos are from https://www.bensound.com
 
 Important for you are the Resources folder (within the **FmvMaker** folder) where you'll be placing your content (videos, images, etc...) as well as your configuration files. The Prefabs folder contains default prefabs, especially for prototyping. In the Scenes folder are demo scenes, to give you an overview of the comprehensive possibilities of **FmvMaker**.
 
-If you want to use the demo videos provided by us (Unity doesn't like video files in their AssetStore assets), pls check out the Releases section of this repository. Each release will contain a separate .zip file with the current demo videos in it. See https://github.com/FireDragonGameStudio/FmvMaker/releases for details. For an easier start, we decided to add an online reference for all demo videos. For how to use videos from within your Assets folder, check the [FmvMaker configuration](#fmvMaker-configuration) section.
+If you want to use the demo videos provided by us (Unity doesn't like video files in their AssetStore assets), pls check out the Releases section of this repository. Each release will contain a separate .zip file with the current demo videos in it. See https://github.com/FireDragonGameStudio/FmvMaker/releases for details. For an easier start, we decided to add an online reference for all demo videos. For how to use videos from within your Assets folder, check the [**FmvMaker** configuration](#configuration) section.
 
+**PLEASE NOTE THAT THE JSON VERSION WILL NOT BE MAINTAINED IN FUTURE AND IS VERY LIKELY TO BE OMITTED!**
+**THE GRAPH (SIMPLER) VERSION IS OUR MAIN FOCUS!**
+
+<a name="simple-approach"></a>
+# Using the visual editor (the simple approach)
+Based in Unitys VisualScripting (https://docs.unity3d.com/Packages/com.unity.visualscripting@1.8/manual/index.html), which is installed by default as a package from Unity Editor version 2021.1 onward, **FmvMaker** integrates smoothly within this environment. Every node, control and event added by **FmvMaker** is based on the default VisualScripting nodes and can therefore seemingly be used with the other nodes (although you don't have to).
+
+<a name="how-to-visual"></a>
+## How does it work?
+It's basically building a VisualScripting state machine. You define states, create transitions between them and act accordingly to events, that take place within your created graph. For a in-depth explanation check out the tutorial video here -> ... This should give you a good impression, how to work with the **FmvMaker** State-Graph in Unity.
+
+<a name="nodes-overview"></a>
+## The different nodes
+The next chapters will explain how the various nodes work and what they are doing to create your FMV game with **FmvMaker**.
+
+<a name="nodes-fmvmaker"></a>
+### The FmvMaker Nodes
+These nodes are used to control the flow of the graph. Although not every output trigger is needed, we added them in case someone wants to add custom logic or graph elements.
+
+All the event nodes can be found under the script graph context menu category **FmvMaker/**.
+
+#### Fmv Video Node
+The main node, which handles video playback and creation of the current "state". The **Clickables** property lets the user define how many **Clickables** are within the current screen and is clamped between 0 and 10.  Which video should be played is handled by the selection of dropdown, which consists of every video entered in **FmvVideoEnum**.
+
+On the left upper corner is the **InputTrigger** for receiving the graph flow. On the right upper corner are 2 green arrows, where the upper one is for handling the flow **OutputTrigger** and the second one handling the output, when the wrong video was played. The *OutputTrigger*s are not used, but maybe you'll find a way to make use of them. :)
+
+**ClickableTargets** can be either used for pure navigation or items.
+
+**FmvTargetVideo** either gets the **FmvGraphElementData** from a previous flow node, or an **ItemNode** or a **NagivationNode**.
+
+![image](https://user-images.githubusercontent.com/23502690/230207845-ea1360b8-6f65-496f-80b6-a92059d8b3d3.png)
+
+| Field | Type | Default value | Optional | Description |
+| --- | --- | --- | --- | --- |
+| ClickablesCount | int | 2 | | The number of clickables, that are available in the current "state". |
+| TransitionVideo | enum | None | | Which video should be played is handled by the selection of dropdown, which consists of every video entered in **FmvVideoEnum**. |
+
+#### Fmv LoopVideo Node
+In general the same node as **FmvVideoNode**, but this video is looping, which makes it perfect for idle states or "background videos".
+
+![image](https://user-images.githubusercontent.com/23502690/230208081-4662d6e2-a037-4021-b889-040850b64af3.png)
+
+| Field | Type | Default value | Optional | Description |
+| --- | --- | --- | --- | --- |
+| ClickablesCount | int | 2 | | The number of clickables, that are available in the current "state". |
+| TransitionVideo | enum | None | | Which video should be played is handled by the selection of dropdown, which consists of every video entered in **FmvVideoEnum**. |
+
+#### Fmv Navigation Node
+Used for creating a **Clickable**, which enables a transition between "states". This **Clickable** is NOT an item and can be configured via the graph inspector. The node creates an **FmvGraphElementData**, which can be used as input for e.g. an **FmvVideoNode**.
+
+![image](https://user-images.githubusercontent.com/23502690/230208230-766a685e-d351-4036-9d11-7ac37fbe52fc.png)
+
+| Field | Type | Default value | Optional | Description |
+| --- | --- | --- | --- | --- |
+| Name | string | "" | | The video element needs a unique name, which is set via the *Name* field. |
+| VideoTarget | enum | None | | This is set via the *VideoTarget* field and should match the filename of the video file, which should be played. |
+| IsLooping | bool | false | x | The *IsLooping* field can be used to create a looped video state, when set to true. This gives the player a better idea of the scenes by showing various impressions. E.g. wind movement, lively places, traffic, etc… Pls make sure to use loopable videos when using this property. If this field is not used or set to false, the video playing atm will stop at the last frame. |
+| AlreadyWatched | bool | false | x | This is set to true after first watching the **VideoTarget** clip and enables video skipping. |
+| RelativeScreenPosition | Vector2 | x=0.5, y=0.5 | x| The *RelativeScreenPosition* will define where this **Clickable** will be shown on screen. Pls make sure to only use values between 0 and 1, where x=0, y=0 refers to the lower left corner, x=0.5,y=0.5 to the center (default) and x=1, y=1 to the upper right corner. |
+
+#### Fmv Item Node
+Again creating a **Clickable**, but this time it's an item, which can be added to the players inventory by clicking on it. Similar to the **FmvNavigationNade** a video is played when picking it up. But in addtion, another video is played, when used in the right "state".
+
+![image](https://user-images.githubusercontent.com/23502690/230208321-aa16fc7e-8165-4a74-a02c-d2cd1a4f1cbd.png)
+
+| Field | Type | Default value | Optional | Description |
+| --- | --- | --- | --- | --- |
+| Name | string | "" | | The video element needs a unique name, which is set via the *Name* field. |
+| VideoTarget | enum | None | | This is set via the *VideoTarget* field and should match the filename of the video file, which should be played, when picking the item up. |
+| UsageTarget | enum | None | | This is set via the *UsageTarget* field and should match the filename of the video file, which should be played, when using the item in the right "state". |
+| IsInInventory | bool | false | x | The *IsInInventory* field indicates it this particular item is already in the players inventory. If that's the case, it will no longer be visible in the current "state". |
+| WasUsed | bool | false | x | This is set to true after using the item in the correct "state" and will prevent **FmvMaker** from showing it either in "states" or the inventory. |
+| RelativeScreenPosition | Vector2 | x=0.5, y=0.5 | x| The *RelativeScreenPosition* will define where this **Clickable** will be shown on screen. Pls make sure to only use values between 0 and 1, where x=0, y=0 refers to the lower left corner, x=0.5,y=0.5 to the center (default) and x=1, y=1 to the upper right corner. | 
+
+#### Fmv Exit State Node
+As we're talking about "states", which are not real states, this node is used to clean up after leaving "states". Originally this was part of **FmvVideoNode** and **FmvLoopVideoNode**, but in order to give users more flexibility, this was implemented as a separte node, which will just be integrated into the graph flow.
+
+![image](https://user-images.githubusercontent.com/23502690/230208460-4e613fd8-b8fb-4253-b896-2a076856d550.png)
+
+#### Fmv Load Inventory Node
+The name already explains, what this node is doing. Placed at the start of our graph, this node will load inventory items, if present.
+
+![image](https://user-images.githubusercontent.com/23502690/230208549-a6101584-16c5-4961-8af0-2cdcb53b6903.png)
+
+<a name="event-nodes-fmvmaker"></a>
+### The FmvMaker Event Nodes
+All events available via **FmvMaker** can be used via event nodes too. These event nodes are fired, when a connected state triggerd a corresponding event. E.g. if a **FmvNavigationNode** **Clickable** is clicked in a "state", all connected **OnFmvNavigationClicked** events are fired. The result of such an event is a **FmvGraphElementData** object, which can be used as input for other **FvmMaker** nodes.
+
+The available events are:
+* OnFmvInventoryClicked
+* OnFmvItemPickupClicked
+* OnFmvNavigationClicked
+* OnFmvVideoPaused
+* OnFmvVideoSkipped
+* OnFmvVideoStarted
+* OnFmvVideoFinished
+
+Users can furthermore add custom logic to theses events, without having to use C# code and the **IFmvMakerVideoEvents** interface.
+
+All the event nodes can be found under the the script graph context menu category **Events/FmvMaker/**.
+
+![image](https://user-images.githubusercontent.com/23502690/230208973-80b351c0-ecf9-4be8-b4b7-7529b41e3bd0.png)
+
+<a name="control-nodes-fmvmaker"></a>
+### The FmvMaker Control Nodes
+While Unity's VisualScripting already contains a bunch of control nodes, one had to be added for **FmvMaker**, the **SwitchOnFmvVideoEnum**, to enable users check for specific videos, when entering a "state". This switch will always contain ALL videos from **FmvVideoEnum**, but this list can be quite long, so we added 2 index fields, for limiting the available possibilities by only displaying options within a certain range. For this to work property, users must ensure to create the **FmvVideoEnum** in a "chuncked" way, where e.g. videos from chapters are on close positions within the **FmvVideoEnum**.
+
+The upper left corner hat the **InputTrigger** for the graph flow. Each switch option is an **OutputTrigger** to pass on the graph flow to the next node. The second input entry, is an **FmvGraphElementData** element to do the selection on. This is usually set  via an event node, where the values may vary, depending which "state" you're coming from.
+
+All the control nodes can be found under the the script graph context menu category **Control/FmvMaker/**.
+
+![image](https://user-images.githubusercontent.com/23502690/230209100-560a0c7a-82c2-42ca-aacf-cb78e82c82c7.png)
+
+| Field | Type | Default value | Optional | Description |
+| --- | --- | --- | --- | --- |
+| StartIndex | int | 0 | | The inclusive start index. |
+| EndIndex | int | **FmvVideoEnum** length | | The inclusive end index of all videos in **FmvVideoEnum**. |
+
+<br><br>
+
+<a name="complex-approach"></a>
+# Using JSON files (the complex approach)
 **VideoData** for FmvMaker is a configuration file stored within its Resources folder (*FmvMaker/Resources/*) and is basically a JSON list of single video elements, which are qualified via their names. This means that there is no complex hierarchy to build, each video element stands for its own. Please always choose simple, but unique names for your video elements. You can compare a video element to some kind of *state*, which will lead to *1 to n* next *states*. The previous *state* doesn't matter at all. Yes, this leads to a long list of elements, but it also helps to keep things simple.
 
 The next kind of important data are so called **Clickables**. Information about **Clickables** is also stored within the **FmvMaker** Resources folder in the Unity project (*FmvMaker/Resources/*) in a separate configuration file. These elements stand for triggering actions when clicking on it. It doesn't matter if these actions are e.g. items or the trigger for the next video. The only difference is the item handling, of which a basic version is already included in **FmvMaker** and will be explained in the further sections.
 
+<a name="json-basics"></a>
 ## How do I build a video JSON list?
 For those who are not familiar with JSON everything you need to know for now is, that there is a certain structure that has to be followed. Everything where a single "Element" (either **VideoData** or **Clickables**) belongs, is represented by … 
 
@@ -45,9 +200,11 @@ Please make sure, you don't forget the brackets or commas in your configuration 
 
 We'll create a simple prototype called CircleFmv along the next sections. This prototype is also shipped as demo project within **FmvMaker**.
 
+<a name="video-element"></a>
 ## What does a “VideoElement” look like?
 In this section we'll start to create our configuration file for our **VideoData** as well as our first video element. We'll add data step by step, so pls make sure to follow along and don't skip a section. First create a new configuration file (e.g. DemoVideoData.json) within the **FmvMaker** Resources folder (*FmvMaker/Resources/*), which will hold the **VideoData** information.
 
+<a name="basic-structure-video"></a>
 ### Basic structure
 The version, including a basic structure of our **VideoData** file will look like this:
 
@@ -55,13 +212,15 @@ The version, including a basic structure of our **VideoData** file will look lik
 {
   "VideoList": [{
       "Name": "UniqueVideoName",
+      "VideoTarget": "UniqueVideoName",
     }
   ]
 }
 ```
 
-This is the minimum configuration for a single video elememt. It has a *Name* field, which corresponds to your desired video filename within the **FmvMaker** Resources video folder (*FmvMaker/Resources/FmvMakerVideos*). Please remember to use the filename without the file extension within the configuration files.
+This is the minimum configuration for a single video elememt. It has a *Name* field, which can be chosen by you. Make sure to keep it UNIQUE, because it will be used as a reference to this specific video. The *VideoTarget* field corresponds to your desired video filename within the **FmvMaker** Resources video folder (*FmvMaker/Resources/FmvMakerVideos*). Please remember to use the filename without the file extension within the configuration files.
 
+<a name="navigation-actions-video"></a>
 ### Add navigation actions
 Having the player moving from one to the next video file is made possible via the so called **NavigationTargets**. A video can have *1-n* **NavigationTargets** which are represented as an array of so called **Clickables**. This array contains the name/s of objects which control the next video/s and actions. Dont't forget: the value of the *Name* field (in this Case UniqueVideName) corresponds to your desired video filename within the Resources folder (*FmvMaker/Resources/FmvMakerVideos*). Remember to use the filename without the file extension. The *Name* field/s of the **NavigationTargets** corresponds to **Clickables** which are defined in a separate configuration file. When having multiple **NavigationTargets**, make sure that the entries are separated via ,
 
@@ -69,6 +228,7 @@ Having the player moving from one to the next video file is made possible via th
 {
   "VideoList": [{
       "Name": "UniqueVideoName",
+      "VideoTarget": "UniqueVideoName",
       "NavigationTargets": [{
           "Name": "NextUniqueClickable"
         }, {
@@ -82,7 +242,8 @@ Having the player moving from one to the next video file is made possible via th
 
 | Field | Type | Default value | Optional | Description |
 | --- | --- | --- | --- | --- |
-| Name | string | "" | | A unique name, which is set via the *Name* field and should match the filename of the video file, which should be played. |
+| Name | string | "" | | A unique name, which is set via the *Name* field. |
+| VideoTarget | string | "" | | This is set via the *VideoTarget* field and should match the filename of the video file, which should be played. |
 | NavigationTargets | string[] | [] | | A video can have *1-n* **NavigationTargets** which are represented as an array of so called **Clickables**. This array contains the name/s of objects which control the next video/s and actions. |
 
 Each name used as **NavigationTarget** must have its own **Clickable** within our **Clickables** configuration file. Similar to our first video element, the additional video elements can also reference **NagivationTargets**.
@@ -96,24 +257,28 @@ IMPORTANT: The **UniqueVideoName** and **DifferentUniqueVideoName** are represen
 {
   "VideoList": [{
       "Name": "UniqueVideoName",
+      "VideoTarget": "UniqueVideoName",
       "NavigationTargets": [{
           "Name": "UniqueClickable"
         }
       ]
     }, {
       "Name": "NextUniqueVideoName",
+      "VideoTarget": "NextUniqueVideoName",
       "NavigationTargets": [{
           "Name": "NextClickable"
         }
       ]
     }, {
       "Name": "AnotherUniqueVideoName",
+      "VideoTarget": "AnotherUniqueVideoName",
       "NavigationTargets": [{
           "Name": "AnotherClickable"
         }
       ]
     }, {
       "Name": "DifferentUniqueVideoName",
+      "VideoTarget": "DifferentUniqueVideoName",
       "NavigationTargets": [{
           "Name": "UniqueClickable"
         }
@@ -122,10 +287,25 @@ IMPORTANT: The **UniqueVideoName** and **DifferentUniqueVideoName** are represen
   ]
 }
 ```
-
+<a name="clickable-element"></a>
 ## What does a “ClickableElement” look like?
 In this section we'll start to create our configuration file for our **Clickables** as well as reference our video elements to our **Clickables**. We'll add data step by step, so pls make sure to follow along and don't skip a section.
 
+<a name="basic-structure-clickable"></a>
+### Basic structure
+The version, including a basic structure of our **Clickables** file will look like this:
+
+```javascript
+{
+  "ClickableList": [{
+      "Name": "ClickableMe",
+      "PickUpVideo": "WhichVideoToPlayOnClick",
+    }
+  ]
+}
+```
+
+<a name="clickable-data"></a>
 ### Add Clickable data
 After defining our video route, we'll need **Clickables** to navigate through our defined route. This will we configured in our **Clickables** configuration file. Create a new file (e.g. DemoClickableData.json) in *FmvMaker/Resources/*, which will hold the **Clickables** information. A basic structure with one **Clickable** element will look like this:
 
@@ -186,6 +366,7 @@ If you're not providing optional fields, **FmvMaker** will use the default value
 }
 ```
 
+<a name="online-video-mapping"></a>
 ## Online video mapping configuration
 In case you're using videos provided by an online resource, it's necessary to set your **VideoSourceType** to *ONLINE* in your [FmvMaker configuration](#fmvMaker-configuration) and provide links to your video data. Platforms like Youtube are currently not supported by native Unity VideoPlayer component. We're trying to provide a workaround asap. To get the correct mapping, you'll have to create a OnlineVideoMapping configuration file. Please check the following sample of our CircleFmv:
 
@@ -220,6 +401,7 @@ In case you're using videos provided by an online resource, it's necessary to se
 | Name | string | "" | | The name used in the **VideoData** configuration file. As it's the same with video element file names, pls make sure that the name you'll choose here is also unique. |
 | Link | string | "" | | The link which'll provide the static video file to stream within your Unity game. Unity doesn't support direct streaming from platforms like Youtube (yet?). For more information about how to provide a link for the Unity VideoPlayer component, pls check the [Unity VideoPlayer component documentation](https://docs.unity3d.com/Manual/class-VideoPlayer.html). 
 
+<a name="start-now"></a>
 ## Enough explanation, can't we start already?
 YES, we can. With the examples from the previous sections you've already created a simple prototype, which will allow us to navigate between video elements. If you want to use your own .mp4 videos, just copy them into *FmvMaker/Resources/FmvMakerVideos* and replace their names in the **VideoData** and **Clickables** configuration files. For the final touches, open Unity and open the EmptyFmv scenes, located in FmvMaker/Scenes. After selecting the FmvHelper GameObject in the hierarchy, drag the created JSON files into their corresponding fields of the FmvData component.
 
@@ -239,8 +421,10 @@ The short explanation for this "state diagram" is:
 * Clicking on **NextClickable**, after the video has finished, will transition to **AnotherState**, where all **NavigationTargets** of **AnotherUniqueVideoName** will be shown.
 * Clicking on **AnotherClickable** will transfer us to **DifferentUniqueVideoName** which is basically the same as **UniqueVideoName**, but without the intro video part.
 
+<a name="advanced"></a>
 ## Advanced video navigation
 The previous sections showed how to create a very simple FMV game. But **FmvMaker** will enable you to create far more complex games. 
+
 
 ### Multiple NavigationTargets in one screen
 As you may already have noticed, each **VideoData** element has the possility to hold multiple **NavigationTargets**. This JSON array will accept multiple **Clickables**, as long as they are present in the **Clickables** configuration file.
@@ -254,6 +438,7 @@ The new **VideoData** element (DifferentUniqueVideoName) will basically be the s
 {
   "VideoList": [{
       "Name": "UniqueVideoName",
+      "VideoTarget": "UniqueVideoName",
       "NavigationTargets": [{
           "Name": "UniqueClickable"
         }, {
@@ -262,18 +447,21 @@ The new **VideoData** element (DifferentUniqueVideoName) will basically be the s
       ]
     }, {
       "Name": "NextUniqueVideoName",
+      "VideoTarget": "NextUniqueVideoName",
       "NavigationTargets": [{
           "Name": "NextClickable"
         }
       ]
     }, {
       "Name": "AnotherUniqueVideoName",
+      "VideoTarget": "AnotherUniqueVideoName",
       "NavigationTargets": [{
           "Name": "AnotherClickable"
         }
       ]
     }, {
       "Name": "DifferentUniqueVideoName",
+      "VideoTarget": "DifferentUniqueVideoName",
       "NavigationTargets": [{
           "Name": "UniqueClickable"
         }, {
@@ -282,6 +470,7 @@ The new **VideoData** element (DifferentUniqueVideoName) will basically be the s
       ]
     }, {
       "Name": "UniqueToDifferentVideoName",
+      "VideoTarget": "UniqueToDifferentVideoName",
       "NavigationTargets": [{
           "Name": "AnotherClickable"
         }
@@ -342,6 +531,7 @@ Sometimes you want to jump from video element directly to another, without letti
 {
   "VideoList": [{
       "Name": "UniqueVideoName",
+      "VideoTarget": "UniqueVideoName",
       "NavigationTargets": [{
           "Name": "UniqueClickable"
         }, {
@@ -350,18 +540,21 @@ Sometimes you want to jump from video element directly to another, without letti
       ]
     }, {
       "Name": "NextUniqueVideoName",
+      "VideoTarget": "NextUniqueVideoName",
       "NavigationTargets": [{
           "Name": "NextClickable"
         }
       ]
     }, {
       "Name": "AnotherUniqueVideoName",
+      "VideoTarget": "AnotherUniqueVideoName",
       "NavigationTargets": [{
           "Name": "AnotherClickable"
         }
       ]
     }, {
       "Name": "DifferentUniqueVideoName",
+      "VideoTarget": "DifferentUniqueVideoName",
       "NavigationTargets": [{
           "Name": "UniqueClickable"
         }, {
@@ -370,6 +563,7 @@ Sometimes you want to jump from video element directly to another, without letti
       ]
     }, {
       "Name": "UniqueToDifferentVideoName",
+      "VideoTarget": "UniqueToDifferentVideoName",
       "NavigationTargets": [{
           "Name": "InstantAnotherUniqueClickable"
         }
@@ -416,7 +610,7 @@ Sometimes you want to jump from video element directly to another, without letti
     }, {
       "Name": "InstantAnotherUniqueClickable",
       "PickUpVideo": "UniqueVideoName",
-        "IsNavigation": true
+      "IsNavigation": true
       }
     }
   ]
@@ -433,36 +627,42 @@ It often makes sense to have some kind of hub, where the player originates from,
 {
   "VideoList": [{
       "Name": "UniqueVideoName",
+      "VideoTarget": "UniqueVideoName",
       "NavigationTargets": [{
           "Name": "InstantUniqueIdleClickable"
         }
       ]
     }, {
       "Name": "NextUniqueVideoName",
+      "VideoTarget": "NextUniqueVideoName",
       "NavigationTargets": [{
           "Name": "NextClickable"
         }
       ]
     }, {
       "Name": "AnotherUniqueVideoName",
+      "VideoTarget": "AnotherUniqueVideoName",
       "NavigationTargets": [{
           "Name": "AnotherClickable"
         }
       ]
     }, {
       "Name": "DifferentUniqueVideoName",
+      "VideoTarget": "DifferentUniqueVideoName",
       "NavigationTargets": [{
           "Name": "InstantUniqueIdleClickable"
         }
       ]
     }, {
       "Name": "UniqueToDifferentVideoName",
+      "VideoTarget": "UniqueToDifferentVideoName",
       "NavigationTargets": [{
           "Name": "InstantAnotherUniqueClickable"
         }
       ]
     }, {
       "Name": "UniqueIdleVideoName",
+      "VideoTarget": "UniqueIdleVideoName",
       "IsLooping": true,
       "NavigationTargets": [{
           "Name": "UniqueClickable"
@@ -526,7 +726,8 @@ It often makes sense to have some kind of hub, where the player originates from,
 Our "state diagram" has now changed to this:
 ![State overview if CircleFmv demo](https://raw.githubusercontent.com/FireDragonGameStudio/FmvMaker/master/Assets/FmvMaker/Textures/FmvMakerCircleDemo_States03.PNG)
 
-## Use Clickable Items to enhanced your game
+<a name="enhance"></a>
+## Use Clickable Items to enhance your game
 For now, we've only focused on the video navigation with the help of **NavigationTargets**. But **Clickables** can be used for different purposes to. **Items** are basically the same as **NavigationTargets**, but they can be stored in an inventory and used to trigger actions. **FmvMaker** already comes with a basic inventory implementation, which allows you to already build a FMV game with various items. As it's for **NagivationTargets** there can be multiple **Items** (to either find and/or use) per video element. Let's take the example from our CircleFmv and add a few **Items** to enhance the prototype.
 
 ### Items to find and use
@@ -537,18 +738,21 @@ Create a **Clickable** and a **VideoData** element for every **Item** you'd like
 {
   "VideoList": [{
       "Name": "UniqueVideoName",
+      "VideoTarget": "UniqueVideoName",
       "NavigationTargets": [{
           "Name": "InstantUniqueIdleClickable"
         }
       ]
     }, {
       "Name": "NextUniqueVideoName",
+      "VideoTarget": "NextUniqueVideoName",
       "NavigationTargets": [{
           "Name": "NextClickable"
         }
       ]
     }, {
       "Name": "AnotherUniqueVideoName",
+      "VideoTarget": "AnotherUniqueVideoName",
       "NavigationTargets": [{
           "Name": "AnotherClickable"
         }
@@ -559,18 +763,21 @@ Create a **Clickable** and a **VideoData** element for every **Item** you'd like
       ]
     }, {
       "Name": "DifferentUniqueVideoName",
+      "VideoTarget": "DifferentUniqueVideoName",
       "NavigationTargets": [{
           "Name": "InstantUniqueIdleClickable"
         }
       ]
     }, {
       "Name": "UniqueToDifferentVideoName",
+      "VideoTarget": "UniqueToDifferentVideoName",
       "NavigationTargets": [{
           "Name": "InstantAnotherUniqueClickable"
         }
       ]
     }, {
       "Name": "UniqueIdleVideoName",
+      "VideoTarget": "UniqueIdleVideoName",
       "IsLooping": true,
       "NavigationTargets": [{
           "Name": "UniqueClickable"
@@ -661,58 +868,32 @@ Create a **Clickable** and a **VideoData** element for every **Item** you'd like
 }
 ```
 
+<a name="key-bindings"></a>
 ## Key bindings and already implemented game mechanics
 **FmvMaker** already has common KeyBindings implemented, to help you. These bindings can be changed, when you click on the *FmvMaker/FmvVideoView* within the hierarchy objects and select the appropriate key from the dropdown field on the *FmvVideoView* component.
 
-![FmvMaker key bindings](https://raw.githubusercontent.com/FireDragonGameStudio/FmvMaker/master/Assets/FmvMaker/Textures/FmvMakerDemo_KeyBindings00.png)
-![FmvMaker key bindings](https://raw.githubusercontent.com/FireDragonGameStudio/FmvMaker/master/Assets/FmvMaker/Textures/FmvMakerDemo_KeyBindings01.png)
+![FmvMaker key bindings0](https://raw.githubusercontent.com/FireDragonGameStudio/FmvMaker/master/Assets/FmvMaker/Textures/FmvMakerDemo_KeyBindings00.png)
+![FmvMaker key bindings1](https://raw.githubusercontent.com/FireDragonGameStudio/FmvMaker/master/Assets/FmvMaker/Textures/FmvMakerDemo_KeyBindings01.png)
 
 | Key | Description |
 | --- | --- |
 | P | Pauses/Unpauses the playing video. |
 | Escape | Skips the currently playing video. Note that the videos has to be watched at least once, to be able to skip it. |
 | Q | Quits the game, when running the build. Doesn't stop the Editor from running. |
+| S | Saves game data. Will be loaded automatically if game data is present. |
 | I | Toggles the inventory visibility. |
 
+<a name="icons"></a>
 ## Use icons for NavigationTargets and Items
 In the previous created FMV prototype, every **NavigationTarget** as well as the **Clickables** were represented by a Unity UI button with a text. To give your game your personal touch, it's possible to add icons to it. The easiest way to do this, is to add your icons (ideally square icons sized 256x256 pixels) to the *FmvMaker/Resources/FmvMakerTextures* and name them equally to your **Clickables** in your configuration file. **FmvMaker** will load these icons automatically, when a match is found. There are already a few icons shipped with the package. To prevent **FmvMaker** from showing the default text, remove the *DisplayText* field from your configuration file. 
 
-## Adding your own logic
-Sometimes it's necessary to have your own events triggered. **FmvMaker** offers you events for every type of video interactions (OnVideoStarted, OnVideoPaused, OnVideoSkipped, OnVideoFinished). First you either add the interface **IFmvMakerVideoEvents** to your Monobehaviour or implement the needed methods on your own. The Monobehaviour **CheckFmvMakerEvents** gives you a better idea, of how to use the interface and how the methods must look like. After that, you'll have to register your implemented methods to the FmvMaker events and that's it. An example for console outputs registered with FmvMakers video events is shipped with the package.
-
-![FmvMaker key bindings](https://raw.githubusercontent.com/FireDragonGameStudio/FmvMaker/master/Assets/FmvMaker/Textures/FmvMakerEvents.png)
-
-```c#
-using FmvMaker.Core.Models;
-using FmvMaker.Utilities.Interfaces;
-using UnityEngine;
-
-namespace FmvMaker.Examples.Scripts {
-  public class CheckFmvMakerEvents : MonoBehaviour, IFmvMakerVideoEvents {
-    public void OnVideoFinished(VideoModel videoModel) {
-      Debug.Log($"CustomEvent: Video {videoModel.Name} finished.");
-    }
-
-    public void OnVideoPaused(VideoModel videoModel, bool isPaused) {
-      Debug.Log($"CustomEvent: Video {videoModel.Name} paused. Pause: {isPaused}");
-    }
-
-    public void OnVideoSkipped(VideoModel videoModel) {
-      Debug.Log($"CustomEvent: Video {videoModel.Name} skipped.");
-    }
-
-    public void OnVideoStarted(VideoModel videoModel) {
-      Debug.Log($"CustomEvent: Video {videoModel.Name} started. Looping: {videoModel.IsLooping}");
-    }
-  }
-}
-```
-
+<a name="full-video-data"></a>
 ## The full VideoData JSON
 ```javascript
 {
   "VideoList": [{
       "Name": "UniqueVideoNameToChoose",
+      "VideoTarget": "UniqueVideoNameToChoose",
       "IsLooping": false,
       "NavigationTargets": [{
           "Name": "..."
@@ -747,6 +928,7 @@ namespace FmvMaker.Examples.Scripts {
 | Field | Type | Default value | Optional | Description |
 | --- | --- | --- | --- | --- |
 | Name | string | "" | | The video element need a unique name, which is set via the *Name* field. |
+| VideoTarget | string | "" | | This is set via the *VideoTarget* field and should match the filename of the video file, which should be played. |
 | IsLooping | bool | false | x | The *IsLooping* field can be used to create a looped video state, when set to true. This gives the player a better idea of the scenes by showing various impressions. E.g. wind movement, lively places, traffic, etc… Pls make sure to use loopable videos when using this property. If this field is not used or set to false, the video playing atm will stop at the last frame. After reaching this last frame all possible further actions (**NavigationTargets**, **ItemsToFind**) will be presented to the player (which is usually the way traditional FMV games do).|
 | NavigationTargets | string[] | [] | | A video can have *1-n* **NavigationTargets** which are represented as an array of the current video element. This array contains the name/s of the next video/s. Again the name corresponds to your desired video filename within the Resources folder (FmvMaker/Resources/FmvMakerVideos). Please remember to use the filename without the file extension. When having multiple names, make that the entries are separated via , |
 | ItemsToFind | string[] | [] | x | *ItemsToFind* references all items **Clickables** which can be found within this video element. |
@@ -755,6 +937,7 @@ namespace FmvMaker.Examples.Scripts {
 | DisplayText | string | "" | x | *DisplayText* does what it name says. It shows a set text. This field should NOT be used within your configuration files. |
 | RelativeScreenPosition | Vector2 | x=0.5, y=0.5 | x| The *RelativeScreenPosition* should NOT be used within your video configuration file. This field is reserved for further usage to display multiple videos at once. | 
 
+<a name="full-clickable-data"></a>
 ## The full Clickable JSON
 ```javascript
 {
@@ -787,7 +970,8 @@ namespace FmvMaker.Examples.Scripts {
 | DisplayText | string | "" | x | *DisplayText* does what it name says. It shows a set text. This field should NOT be used within your configuration files. |
 | RelativeScreenPosition | Vector2 | x=0.5, y=0.5 | x| The *RelativeScreenPosition* places your **Clickable** on the designated screen position. Pls make sure to only use values between 0 and 1, where x=0, y=0 refers to the lower left corner, x=0.5,y=0.5 to the center (default) and x=1, y=1 to the upper right corner. | 
 
-## FmvMaker configuration
+<a name="configuration"></a>
+# FmvMaker configuration
 ```javascript
 {
   "AspectRatio": "16:9",
@@ -804,7 +988,8 @@ namespace FmvMaker.Examples.Scripts {
 | ImageSourceType | string | "" | | Tells **FmvMaker** where to look for image files (**Items** and **NagivationTargets**). *INTERNAL* will check for files matching the name from the **Clickable** configuration file. Other types are currently not supported. |
 | LocalFilePath | string | "" | | Currently unused. Intended to load video files from local disk. Future use for prototyping or to keep git repository small. |
 
-## The full VideoMapping JSON
+<a name="video-mapping"></a>
+# The full VideoMapping JSON
 ```javascript
 {
   "OnlineVideoSourceMappingList": [{
@@ -829,11 +1014,44 @@ namespace FmvMaker.Examples.Scripts {
 | Name | string | "" | | The unique name of the video element, which should be used throughout the configuration. |
 | Link | string | "" | | The static link to the video element. As there is no Unity support for streaming videos from platforms like Youtube, you'll have to provide a static link here yourself. |
 
-## Future plans
+<a name="custom-logic"></a>
+# Adding your own logic
+Sometimes it's necessary to have your own events triggered. **FmvMaker** offers you events for every type of video interactions (OnVideoStarted, OnVideoPaused, OnVideoSkipped, OnVideoFinished). First you either add the interface **IFmvMakerVideoEvents** to your Monobehaviour or implement the needed methods on your own. The Monobehaviour **CheckFmvMakerEvents** gives you a better idea, of how to use the interface and how the methods must look like. After that, you'll have to register your implemented methods to the FmvMaker events and that's it. An example for console outputs registered with FmvMakers video events is shipped with the package.
+
+![FmvMaker Events](https://raw.githubusercontent.com/FireDragonGameStudio/FmvMaker/master/Assets/FmvMaker/Textures/FmvMakerEvents.png)
+
+```c#
+using FmvMaker.Core.Models;
+using FmvMaker.Utilities.Interfaces;
+using UnityEngine;
+
+namespace FmvMaker.Examples.Scripts {
+  public class CheckFmvMakerEvents : MonoBehaviour, IFmvMakerVideoEvents {
+    public void OnVideoFinished(VideoModel videoModel) {
+      Debug.Log($"CustomEvent: Video {videoModel.Name} finished.");
+    }
+
+    public void OnVideoPaused(VideoModel videoModel, bool isPaused) {
+      Debug.Log($"CustomEvent: Video {videoModel.Name} paused. Pause: {isPaused}");
+    }
+
+    public void OnVideoSkipped(VideoModel videoModel) {
+      Debug.Log($"CustomEvent: Video {videoModel.Name} skipped.");
+    }
+
+    public void OnVideoStarted(VideoModel videoModel) {
+      Debug.Log($"CustomEvent: Video {videoModel.Name} started. Looping: {videoModel.IsLooping}");
+    }
+  }
+}
+```
+
+<a name="future-plans"></a>
+# Future plans
 - [x] ~~It's currently not possible to have 100% transparent **Clickables**. We're on it.~~
 - [ ] There is already a possibility to use events, provided by FmvMaker. We'll extend them in future versions, to give you more possibilities to configure and adjust everything for your needs.
 - [ ] We're already working on a JSON checker, to display possible errors, when reading to configuration files. 
-- [ ] Another extension on our ToDo list is a node-based editor window, to omit the troublesome configuration file writing and make it easier to create your project (like Bolt, VFX graph, etc...). 
+- [x] ~~Another extension on our ToDo list is a node-based editor window, to omit the troublesome configuration file writing and make it easier to create your project (like Bolt, VFX graph, etc...).~~
 - [ ] Including online videos, as well as locally (outside of Unity) stored videos will also be possible soon.
 - [ ] Including online images, as well as locally (outside of Unity) stored images will also be possible soon.
 - [ ] Show multiple videos at the same time, to create some kind video matrix. Rare useage, but it's fancy. ^^
@@ -843,7 +1061,8 @@ namespace FmvMaker.Examples.Scripts {
 - [ ] It's currently not possible to combine items within the inventory. We're also working on this feature.
 - [x] ~~It's nowadays common, to show all available, clickable options when pressing Spacebar. We'll implement this feature asap.~~
 
-## Known issues
+<a name="known-issues"></a>
+# Known issues
 * FmvMaker only supports video files, which are supported by Unity (https://docs.unity3d.com/Manual/VideoSources-FileCompatibility.html). Our recommendation: Pls try to use .mp4 or ogv files.
 * It's not possible to edit or transform videos within Unity. Pls use an external video editor like Shotcut (https://shotcut.org/) to prepare your videos for use with FmvMaker.
 * No UnitTests shipped yet. We run a few of them in the background, but they are not checking every critical point of our package.

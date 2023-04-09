@@ -196,7 +196,7 @@ namespace FmvMaker.Core.Provider {
         }
 
         private void PauseVideo() {
-            if (Input.GetKeyUp(PauseVideoKey)) {
+            if (Input.GetKeyUp(PauseVideoKey) && !currentVideoElement.IsLooping) {
                 videoView.PauseVideoClip(currentVideoElement);
             }
         }
@@ -208,11 +208,11 @@ namespace FmvMaker.Core.Provider {
         }
 
         private void ToggleAllAvailableClickables() {
-            if (Input.GetKey(KeyCode.Space)) {
+            if (Input.GetKeyDown(ShowAllAvailableClickablesKey)) {
                 clickableObjects.ToggleFindableItems(true);
             }
 
-            if (Input.GetKeyUp(KeyCode.Space)) {
+            if (Input.GetKeyUp(ShowAllAvailableClickablesKey)) {
                 clickableObjects.ToggleFindableItems(false);
             }
         }
