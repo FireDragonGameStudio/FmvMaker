@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8113544998094880139}
   - component: {fileID: 3000159632771378118}
   m_Layer: 5
-  m_Name: ClickableButtonPrefab
+  m_Name: OpaqueClickableButtonPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -173,7 +173,7 @@ MonoBehaviour:
   loadDebugData: 0
   videoModelData: {fileID: 0}
   clickableModelData: {fileID: 0}
-  onlineVideoSourceMappingData: {fileID: 4900000, guid: fb5e19b8cc5eb6a4db068565a0ad4927,
+  onlineVideoSourceMappingData: {fileID: 4900000, guid: 0d14c44b8f85d9644a7acd8ff9829ef0,
     type: 3}
 --- !u!114 &53351221
 MonoBehaviour:
@@ -949,7 +949,7 @@ MonoBehaviour:
     - {fileID: 1563772657}
     - {fileID: 1771585201}
     - {fileID: 383087581}
-    - {fileID: 1133256870980526, guid: 8f59b351c229fff41a2450726cdb69f2, type: 3}
+    - {fileID: 1133256870980526, guid: b5f01041257b8c54c8df3bc11358f69a, type: 3}
     - {fileID: 53351218}
 --- !u!4 &1428846498
 Transform:
@@ -1094,6 +1094,7 @@ MonoBehaviour:
   SaveGameKey: 115
   QuitGameKey: 113
   ShowAllAvailableClickablesKey: 32
+  useLoadingScreen: 1
   videoView: {fileID: 1563772658}
   data: {fileID: 53351220}
   loadingSceen: {fileID: 1400030739}

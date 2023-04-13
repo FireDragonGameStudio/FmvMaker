@@ -187,6 +187,8 @@ namespace FmvMaker.Graph {
 
             // set new clicklisteners
             FmvClickableFacade itemFacade = nodeData[targetObjectIndex].Object.transform.GetComponent<FmvClickableFacade>();
+            itemFacade.ChangeVisibility(1);
+            itemFacade.IsButtonTransparent = false;
             itemFacade.OnItemClicked.RemoveAllListeners();
             itemFacade.OnItemClicked.AddListener(ClickInventoryItem);
 

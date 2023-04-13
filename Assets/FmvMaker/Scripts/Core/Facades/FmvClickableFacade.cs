@@ -9,6 +9,11 @@ namespace FmvMaker.Core.Facades {
 
         public ClickableClickEvent OnItemClicked = new ClickableClickEvent();
 
+        public bool IsButtonTransparent {
+            get => isButtonTransparent;
+            set => isButtonTransparent = value;
+        }
+
         [SerializeField]
         private bool isButtonTransparent = false;
         [SerializeField]
