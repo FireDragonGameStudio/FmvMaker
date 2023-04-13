@@ -1,3 +1,4 @@
+using FmvMaker.Core.Facades;
 using FmvMaker.Core.Models;
 using FmvMaker.Core.Provider;
 using FmvMaker.Core.Utilities;
@@ -155,10 +156,18 @@ namespace FmvMaker.Graph {
 
         private void ToggleAllAvailableClickables() {
             if (Input.GetKeyDown(ShowAllAvailableClickablesKey)) {
+                FmvClickableFacade[] clickables = FmvSceneVariables.VideoElementsPanel.GetComponentsInChildren<FmvClickableFacade>();
+                for (int i = 0; i < clickables.Length; i++) {
+                    clickables[i].ChangeVisibility(1);
+                }
                 //clickableObjects.ToggleFindableItems(true);
             }
 
             if (Input.GetKeyUp(ShowAllAvailableClickablesKey)) {
+                FmvClickableFacade[] clickables = FmvSceneVariables.VideoElementsPanel.GetComponentsInChildren<FmvClickableFacade>();
+                for (int i = 0; i < clickables.Length; i++) {
+                    clickables[i].ChangeVisibility(0);
+                }
                 //clickableObjects.ToggleFindableItems(false);
             }
         }
