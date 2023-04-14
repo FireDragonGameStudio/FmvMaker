@@ -44,9 +44,10 @@ namespace FmvMaker.Graph {
                     targetObject.transform.SetParent(fmvInventoryElementsPanel.transform);
                     targetObject.transform.localScale = Vector3.one;
 
-                    // get clickable facade
+                    // get clickable facade and make sure it's visible
                     FmvClickableFacade itemFacade = targetObject.GetComponent<FmvClickableFacade>();
                     itemFacade.SetItemData(gameDataEntry.GetItemModel());
+                    itemFacade.ChangeVisibility(1);
                     itemFacade.OnItemClicked.RemoveAllListeners();
                     itemFacade.OnItemClicked.AddListener(ClickInventoryItem);
 
