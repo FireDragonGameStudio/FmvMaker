@@ -160,7 +160,6 @@ namespace FmvMaker.Graph {
                 for (int i = 0; i < clickables.Length; i++) {
                     clickables[i].ChangeVisibility(1);
                 }
-                //clickableObjects.ToggleFindableItems(true);
             }
 
             if (Input.GetKeyUp(ShowAllAvailableClickablesKey)) {
@@ -168,7 +167,6 @@ namespace FmvMaker.Graph {
                 for (int i = 0; i < clickables.Length; i++) {
                     clickables[i].ChangeVisibility(0);
                 }
-                //clickableObjects.ToggleFindableItems(false);
             }
         }
     }
