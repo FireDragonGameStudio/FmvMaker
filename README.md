@@ -52,7 +52,7 @@ Based in Unitys VisualScripting (https://docs.unity3d.com/Packages/com.unity.vis
 
 <a name="how-to-visual"></a>
 ## How does it work?
-It's basically building a VisualScripting state machine. You define states, create transitions between them and act accordingly to events, that take place within your created graph. For a in-depth explanation check out the tutorial video here -> ... This should give you a good impression, how to work with the **FmvMaker** State-Graph in Unity.
+It's basically building a VisualScripting state machine. You define states, create transitions between them and act accordingly to events, that take place within your created graph. For a in-depth explanation check out the tutorial video here -> https://www.youtube.com/watch?v=D8sc7XC06cg This should give you a good impression, how to work with the **FmvMaker** State-Graph in Unity.
 
 <a name="nodes-overview"></a>
 ## The different nodes
