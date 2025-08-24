@@ -1,0 +1,21 @@
+{
+    "name": "Unity.GraphToolkit.Samples.VisualNovelDirector.Editor",
+    "rootNamespace": "Unity.GraphToolkit.Samples.VisualNovelDirector.Editor",
+    "references": [
+        "Unity.GraphToolkit.Common.Editor",
+        "Unity.GraphToolkit.Utility.Editor",
+        "Unity.GraphToolkit.Samples.VisualNovelDirector",
+        "Unity.GraphToolkit.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

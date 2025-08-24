@@ -1,0 +1,18 @@
+{
+    "name": "Unity.GraphToolkit.Samples.TextureMaker.Editor",
+    "rootNamespace": "Unity.GraphToolkit.Samples.TextureMaker.Editor",
+    "references": [
+        "Unity.GraphToolkit.Editor",
+        "Unity.GraphToolkit.Common.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "noEngineReferences": false
+}

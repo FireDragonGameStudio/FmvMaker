@@ -1,0 +1,5 @@
+{
+  "displayName": "TextureMaker Sample",
+  "description": "A sample illustrating how to create a graph tool with basic texture generation",
+  "createSeparatePackage": false
+}

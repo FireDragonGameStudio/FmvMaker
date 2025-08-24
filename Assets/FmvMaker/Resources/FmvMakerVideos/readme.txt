@@ -1,1 +1,0 @@
-Place the FmvMaker demo videos from the latest release (https://github.com/FireDragonGameStudio/FmvMaker/releases) in here. Don't forget to unzip them!!!
