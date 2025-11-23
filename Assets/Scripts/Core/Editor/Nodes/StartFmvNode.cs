@@ -4,9 +4,12 @@ using Unity.GraphToolkit.Editor;
 namespace FmvMaker.Core {
     [Serializable]
     public class StartFmvNode : Node {
-        protected override void OnDefineOptions(INodeOptionDefinition context) {
-            context.AddNodeOption("NodeId", null, null, true, 0, null, Guid.NewGuid().ToString());
-            context.AddNodeOption<string>("Name");
+        protected override void OnDefineOptions(IOptionDefinitionContext context) {
+            context.AddOption<string>("NodeId")
+                .ShowInInspectorOnly()
+                .WithDefaultValue(Guid.NewGuid().ToString());
+
+            context.AddOption<string>("Name");
         }
 
         protected override void OnDefinePorts(IPortDefinitionContext context) {

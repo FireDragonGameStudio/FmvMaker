@@ -1,4 +1,5 @@
 using FmvMaker.Models;
+using FmvMaker.Provider;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.GraphToolkit.Editor;
@@ -40,6 +41,9 @@ namespace FmvMaker.Core {
                 if (node is VideoContextNode videoElementContextNode) {
                     ProcessContextNode(videoElementContextNode, runtimeNode, nodeIdMap);
                 }
+                if (node is VideoNode videoElementNode) {
+                    ProcessVideoNode(videoElementNode, runtimeNode, nodeIdMap);
+                }
 
                 runtimeGraph.AllFmvMakerNodes.Add(runtimeNode);
             }
@@ -51,12 +55,11 @@ namespace FmvMaker.Core {
         private void ProcessContextNode(VideoContextNode node, FmvMakerNode runtimeNode, Dictionary<INode, string> nodeIdMap) {
             runtimeNode.VideoClip = GetNodeOption<VideoClip>(node.GetNodeOptionByName("VideoClip"));
             runtimeNode.IsLooping = GetNodeOption<bool>(node.GetNodeOptionByName("IsLooping"));
+            runtimeNode.HasDecisionData = node.blockCount > 0;
 
-            // TODO: use the selected block node for continuation of the graph
             foreach (var block in node.blockNodes) {
                 var nextNodePort = block.GetOutputPortByName("out")?.firstConnectedPort;
                 var blockName = GetNodeOption<string>(block.GetNodeOptionByName("Name"));
-                var videoClip = GetNodeOption<VideoClip>(block.GetNodeOptionByName("VideoClip"));
                 var relativePosition = GetNodeOption<Vector2>(block.GetNodeOptionByName("RelativePosition"));
                 var relativeSize = GetNodeOption<Vector2>(block.GetNodeOptionByName("RelativeSize"));
 
@@ -64,8 +67,8 @@ namespace FmvMaker.Core {
                     var decisionData = new FmvMakerDecisionData() {
                         DecisionText = blockName,
                         DestinationId = nodeIdMap[nextNodePort.GetNode()],
-                        VideoClip = videoClip,
                         RelativePosition = relativePosition,
+                        RelativeSize = relativeSize
                     };
 
                     runtimeNode.DecisionData.Add(decisionData);
@@ -75,6 +78,17 @@ namespace FmvMaker.Core {
             //if (nextNodePort != null) {
             //    runtimeNode.NextNodeId = nodeIdMap[nextNodePort.GetNode()];
             //}
+        }
+
+        private void ProcessVideoNode(VideoNode node, FmvMakerNode runtimeNode, Dictionary<INode, string> nodeIdMap) {
+            runtimeNode.VideoClip = GetNodeOption<VideoClip>(node.GetNodeOptionByName("VideoClip"));
+            runtimeNode.NeededItem = GetNodeOption<FmvInventoryItem>(node.GetNodeOptionByName("NeededItem"));
+            runtimeNode.GivingItem = GetNodeOption<FmvInventoryItem>(node.GetNodeOptionByName("GivingItem"));
+
+            var nextNodePort = node.GetOutputPortByName("out")?.firstConnectedPort;
+            if (nextNodePort != null) {
+                runtimeNode.NextNodeId = nodeIdMap[nextNodePort.GetNode()];
+            }
         }
 
         private T GetPortValue<T>(IPort port) {

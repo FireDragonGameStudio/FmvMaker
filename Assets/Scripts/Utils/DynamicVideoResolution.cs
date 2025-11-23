@@ -32,13 +32,17 @@ namespace FmvMaker.Utilities {
             ScreenSizeChanged?.Invoke(width, height);
         }
 
-        public static Vector2 GetRelativeScreenPosition(float offsetFactorX, float offsetFactorY) {
+        public static Vector2 GetRelativeScreenValues(float offsetFactorX, float offsetFactorY) {
             return new Vector2(Instance.lastScreenSize.x * offsetFactorX,
                 Instance.lastScreenSize.y * offsetFactorY);
         }
 
         public static Vector2 GetRelativeScreenPosition(Vector2 relativePosition) {
-            return GetRelativeScreenPosition(relativePosition.x, relativePosition.y);
+            return GetRelativeScreenValues(relativePosition.x, relativePosition.y);
+        }
+
+        public static Vector2 GetRelativeScreenSize(Vector2 relativeSize) {
+            return GetRelativeScreenValues(relativeSize.x, relativeSize.y);
         }
     }
 }

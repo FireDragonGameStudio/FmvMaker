@@ -931,6 +931,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &826092046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 826092047}
+  - component: {fileID: 826092048}
+  m_Layer: 0
+  m_Name: NavigationElementsPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &826092047
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826092046}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1121464820}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &826092048
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826092046}
+  m_CullTransparentMesh: 1
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,67 +1086,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e82b16cba7f67a4d8cc80ce7b29d341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FmvMaker.Core.Provider.FmvVideos
-  RuntimeGraph: {fileID: 3965311268370046156, guid: 81759c02570e0c046a1aff451699f4dc, type: 3}
+  RuntimeGraph: {fileID: 3965311268370046156, guid: f8ef361f010847a4fa367836f9b20f02, type: 3}
   OnVideoStarted:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 875351727}
-        m_TargetAssemblyTypeName: FmvMaker.Examples.CheckFmvMakerEvents, Assembly-CSharp
-        m_MethodName: OnVideoStarted
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnVideoPaused:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 875351727}
-        m_TargetAssemblyTypeName: FmvMaker.Examples.CheckFmvMakerEvents, Assembly-CSharp
-        m_MethodName: OnVideoPaused
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnVideoSkipped:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 875351727}
-        m_TargetAssemblyTypeName: FmvMaker.Examples.CheckFmvMakerEvents, Assembly-CSharp
-        m_MethodName: OnVideoSkipped
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnVideoFinished:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 875351727}
-        m_TargetAssemblyTypeName: FmvMaker.Examples.CheckFmvMakerEvents, Assembly-CSharp
-        m_MethodName: OnVideoFinished
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  videoView: {fileID: 875351725}
+  inventory: {fileID: 1164523470}
+  navigationElementsParent: {fileID: 826092047}
+  navigationButtonPrefab: {fileID: 3558269130044744310, guid: 65ee7ad5fdfc60044917bb4894ed4caf, type: 3}
 --- !u!114 &875351727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1179,6 +1179,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1309271896}
+  - {fileID: 826092047}
   m_Father: {fileID: 994300422}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1244,11 +1245,56 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1164523468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1164523469}
+  - component: {fileID: 1164523470}
+  m_Layer: 0
+  m_Name: FmvInventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1164523469
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164523468}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2125266780}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1164523470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164523468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b292e2da42bc7524980673d84085c193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FmvMaker.Core.Facades.FmvInventory
+  items: []
 --- !u!1 &1309271895
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,6 +1459,7 @@ Transform:
   - {fileID: 875351724}
   - {fileID: 994300422}
   - {fileID: 1665272323}
+  - {fileID: 1164523469}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807

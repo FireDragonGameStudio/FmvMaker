@@ -14,20 +14,15 @@ namespace FmvMaker.Provider {
         public event Action<VideoClip> OnVideoFinished;
 
         [Header("Internal references")]
-        [SerializeField]
-        private FmvVideoFacade firstPlayer = null;
-        [SerializeField]
-        private FmvVideoFacade secondPlayer = null;
+        [SerializeField] private FmvVideoFacade firstPlayer = null;
+        [SerializeField] private FmvVideoFacade secondPlayer = null;
 
         // false -> select second player, true -> select first player
-        private bool videoPlayerToggle = true;
+        private bool videoPlayerToggle = false;
 
         private FmvVideoFacade inactivePlayer;
 
         public FmvVideoFacade ActivePlayer => GetActivePlayer();
-
-        private bool isActivePlayerLooping;
-        private bool loopingPlayerToggle;
 
         private void Awake() {
             SetupVideoFacadeEvents();
@@ -57,6 +52,7 @@ namespace FmvMaker.Provider {
         }
 
         public void PrepareAndPlay(VideoModel videoModel) {
+            videoPlayerToggle = !videoPlayerToggle;
             ActivePlayer.Prepare(videoModel);
             inactivePlayer.Pause();
         }
@@ -90,24 +86,10 @@ namespace FmvMaker.Provider {
             await Task.Delay(TimeSpan.FromSeconds(0.1f));
             inactivePlayer.Stop();
             OnVideoStarted?.Invoke(video);
-
-            isActivePlayerLooping = ActivePlayer.IsLooping;
-            loopingPlayerToggle = false;
         }
 
         private void LoopPointReached(VideoClip video) {
-            // don't fire OnVideoFinished for every loop of looping video
-            // and don't toggle player every time looping video is finished
-            if (isActivePlayerLooping) {
-                if (!loopingPlayerToggle) {
-                    loopingPlayerToggle = true;
-                    videoPlayerToggle = !videoPlayerToggle;
-                }
-                return;
-            }
-
-            videoPlayerToggle = !videoPlayerToggle;
-            OnVideoFinished(video);
+            OnVideoFinished.Invoke(video);
         }
 
         private FmvVideoFacade GetActivePlayer() {
