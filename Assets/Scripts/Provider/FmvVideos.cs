@@ -23,11 +23,9 @@ namespace FmvMaker.Provider {
         public VideoEvent OnVideoSkipped = new VideoEvent();
         public VideoEvent OnVideoFinished = new VideoEvent();
 
-        //[Header("Key Bindings")]
-        //[SerializeField]
-        //private KeyCode SkipVideoKey = KeyCode.Escape;
-        //[SerializeField]
-        //private KeyCode PauseVideoKey = KeyCode.P;
+        [Header("Key Bindings")]
+        [SerializeField] private InputActionReference playPauseVideo;
+        [SerializeField] private InputActionReference skipVideo;
         //[SerializeField]
         //private KeyCode QuitGameKey = KeyCode.Q;
         //[SerializeField]
@@ -78,6 +76,13 @@ namespace FmvMaker.Provider {
             //PlayVideo(startVideo);
 
             DynamicVideoResolution.Instance.ScreenSizeChanged += OnScreenSizeChanged;
+        }
+
+        private void Update() {
+            SkipVideo();
+            PauseVideo();
+            //    QuitGame();
+            //    ToggleAllAvailableClickables();
         }
 
         private void CheckForVideoStart(VideoClip videoclip) {
@@ -230,17 +235,21 @@ namespace FmvMaker.Provider {
             videoView.StopVideoClip();
         }
 
-        //private void SkipVideo() {
-        //    if (Input.GetKeyUp(SkipVideoKey) && !currentVideoElement.IsLooping && currentVideoElement.AlreadyWatched && videoView.ActivePlayer.IsPlaying) {
-        //        videoView.SkipVideoClip(currentVideoElement);
-        //    }
-        //}
+        private void SkipVideo() {
+            if (skipVideo.action.WasPerformedThisFrame() && !videoView.ActivePlayer.IsLooping && videoView.ActivePlayer.IsPlaying) {
+                videoView.SkipVideoClip();
+            }
+        }
 
-        //private void PauseVideo() {
-        //    if (Input.GetKeyUp(PauseVideoKey) && !currentVideoElement.IsLooping) {
-        //        videoView.PauseVideoClip(currentVideoElement);
-        //    }
-        //}
+        private void PauseVideo() {
+            if (playPauseVideo.action.WasPerformedThisFrame()) {
+                if (videoView.ActivePlayer.IsPlaying) {
+                    videoView.PauseVideoClip();
+                } else {
+                    videoView.ResumeVideoClip();
+                }
+            }
+        }
 
         //private void QuitGame() {
         //    if (Input.GetKeyUp(QuitGameKey)) {

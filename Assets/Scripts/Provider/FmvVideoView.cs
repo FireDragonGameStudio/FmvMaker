@@ -36,19 +36,19 @@ namespace FmvMaker.Provider {
             ActivePlayer.Stop();
         }
 
-        public void SkipVideoClip(VideoClip video) {
+        public void SkipVideoClip() {
             ActivePlayer.Skip();
-            OnVideoSkipped?.Invoke(video);
+            OnVideoSkipped?.Invoke(ActivePlayer.VideoClip);
         }
 
-        public void PauseVideoClip(VideoClip video) {
+        public void PauseVideoClip() {
             ActivePlayer.Pause();
-            OnVideoPaused?.Invoke(video, !ActivePlayer.IsPlaying);
+            OnVideoPaused?.Invoke(ActivePlayer.VideoClip, !ActivePlayer.IsPlaying);
         }
 
-        public void ResumeVideoClip(VideoClip video) {
+        public void ResumeVideoClip() {
             ActivePlayer.Play();
-            OnVideoPaused?.Invoke(video, !ActivePlayer.IsPlaying);
+            OnVideoPaused?.Invoke(ActivePlayer.VideoClip, !ActivePlayer.IsPlaying);
         }
 
         public void PrepareAndPlay(VideoModel videoModel) {
