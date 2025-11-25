@@ -26,10 +26,7 @@ namespace FmvMaker.Provider {
         [Header("Key Bindings")]
         [SerializeField] private InputActionReference playPauseVideo;
         [SerializeField] private InputActionReference skipVideo;
-        //[SerializeField]
-        //private KeyCode QuitGameKey = KeyCode.Q;
-        //[SerializeField]
-        //private KeyCode ShowAllAvailableClickablesKey = KeyCode.Space;
+        [SerializeField] private InputActionReference muteUnmuteVideo;
 
         [Header("Internal references")]
         [SerializeField] private FmvVideoView videoView = null;
@@ -65,15 +62,7 @@ namespace FmvMaker.Provider {
             }
 
             OnVideoStarted.AddListener(CheckForVideoStart);
-            //OnVideoStarted.AddListener(DisablePreviousNavigationTargets);
-            //OnVideoStarted.AddListener(ShowItemsAndNavigationsForLooping);
-
             OnVideoFinished.AddListener(CheckForNextVideo);
-            //OnVideoFinished.AddListener(CheckForInstantNextVideo);
-            //OnVideoFinished.AddListener(ShowCurrentItems);
-            //OnVideoFinished.AddListener(ShowCurrentNavigationTargets);
-
-            //PlayVideo(startVideo);
 
             DynamicVideoResolution.Instance.ScreenSizeChanged += OnScreenSizeChanged;
         }
@@ -81,8 +70,7 @@ namespace FmvMaker.Provider {
         private void Update() {
             SkipVideo();
             PauseVideo();
-            //    QuitGame();
-            //    ToggleAllAvailableClickables();
+            MuteVideo();
         }
 
         private void CheckForVideoStart(VideoClip videoclip) {
@@ -120,14 +108,23 @@ namespace FmvMaker.Provider {
             for (int i = 0; i < currentNode.DecisionData?.Count; i++) {
 
                 // check if item is needed here and if user has the item in his inventory
-                // or the item can be found and the user already has it
                 var nextVideo = nodeLookup[currentNode.DecisionData[i].DestinationId];
-                if ((nextVideo.NeededItem != null && !inventory.ContainsItem(nextVideo.NeededItem)) ||
-                    (nextVideo.GivingItem != null && inventory.ContainsItem(nextVideo.GivingItem))) {
+                var neededItem = nextVideo.NeededItem;
+                if (neededItem != null && !inventory.ContainsItem(neededItem)) {
+                    continue;
+                }
+                // the item can be found and the user already has it
+                var givingItem = nextVideo.GivingItem;
+                if (givingItem != null && inventory.ContainsItem(givingItem)) {
+                    continue;
+                }
+                // if item is needed, is in inventory, is not multi-use and was used alread
+                if (neededItem != null && inventory.ContainsItem(neededItem) && !neededItem.MultiUse && neededItem.WasUsed) {
                     continue;
                 }
 
                 var navigationButton = GameObject.Instantiate(navigationButtonPrefab);
+                navigationButton.name = nextVideo.NodeId;
                 navigationButton.transform.SetParent(navigationElementsParent, false);
 
                 // set position and size
@@ -139,45 +136,19 @@ namespace FmvMaker.Provider {
                 // set click action
                 var button = navigationButton.GetComponent<Button>();
                 var decisionData = currentNode.DecisionData[i];
-                button.onClick.AddListener(() => PlayVideo(decisionData.DestinationId));
+                button.onClick.AddListener(() => {
+
+                    // use item, if applicable
+                    if (neededItem != null && inventory.ContainsItem(neededItem) && (neededItem.MultiUse || !neededItem.WasUsed)) {
+                        neededItem.WasUsed = true;
+                    }
+
+                    PlayVideo(decisionData.DestinationId);
+                });
 
                 clickableObjects.Add(navigationButton);
             }
         }
-
-        //private void Update() {
-        //    SkipVideo();
-        //    PauseVideo();
-        //    QuitGame();
-        //    ToggleAllAvailableClickables();
-        //}
-
-        //private void Update() {
-        //if (Mouse.current.leftButton.wasPressedThisFrame && currentNode != null) {
-        //    if (currentNode.VideoClip != null) {
-        //        PlayVideo(currentNode);
-        //    } else {
-        //        PlayVideo(currentNode.DecisionData[0]);
-        //    }
-        //if (!string.IsNullOrEmpty(currentNode.DecisionData[0].DestinationId)) {
-        //    ShowNode(currentNode.DecisionData[0].DestinationId);
-        //} else {
-        //    EndFmvMaker();
-        //}
-        //}
-
-        //if (currentNode?.DecisionData?.Count > 1) {
-        //    if (Keyboard.current.digit1Key.wasPressedThisFrame) {
-        //        PlayVideoDecision(currentNode.DecisionData[0]);
-        //    } else if (Keyboard.current.digit2Key.wasPressedThisFrame) {
-        //        PlayVideoDecision(currentNode.DecisionData[1]);
-        //    } else if (Keyboard.current.digit3Key.wasPressedThisFrame) {
-        //        PlayVideoDecision(currentNode.DecisionData[2]);
-        //    } else if (Keyboard.current.digit4Key.wasPressedThisFrame) {
-        //        PlayVideoDecision(currentNode.DecisionData[3]);
-        //    }
-        //}
-        //}
 
         private void OnDestroy() {
             OnVideoStarted.RemoveAllListeners();
@@ -251,28 +222,15 @@ namespace FmvMaker.Provider {
             }
         }
 
-        //private void QuitGame() {
-        //    if (Input.GetKeyUp(QuitGameKey)) {
-        //        Application.Quit();
-        //    }
-        //}
-
-        //private void ShowNode(string nodeId) {
-        //    if (!nodeLookup.ContainsKey(nodeId)) {
-        //        EndFmvMaker();
-        //        return;
-        //    }
-
-        //    currentNode = nodeLookup[nodeId];
-
-        //    // play video and set ui elements for navigation
-        //    Debug.Log(currentNode.NodeName);
-        //    if (currentNode.VideoClip != null) {
-        //        PlayVideo(currentNode);
-        //    } else {
-        //        PlayVideo(currentNode.DecisionData[0]);
-        //    }
-        //}
+        private void MuteVideo() {
+            if (muteUnmuteVideo.action.WasPerformedThisFrame()) {
+                if (videoView.ActivePlayer.AudioClip.volume >= 1f) {
+                    videoView.ActivePlayer.AudioClip.volume = 0f;
+                } else {
+                    videoView.ActivePlayer.AudioClip.volume = 1f;
+                }
+            }
+        }
 
         private void OnScreenSizeChanged(float width, float height) {
             //rectTransform.anchoredPosition = DynamicVideoResolution.GetRelativeScreenPosition(clickableModel.RelativeScreenPosition);

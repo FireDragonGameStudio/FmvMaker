@@ -7,5 +7,8 @@ namespace FmvMaker.Provider {
     public class FmvInventoryItem : ScriptableObject {
         public string Id;        // Internal Id
         public string DisplayName;
+        public Sprite DisplayImage;
+        public bool MultiUse;
+        public bool WasUsed;
     }
 }

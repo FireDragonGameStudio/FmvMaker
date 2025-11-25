@@ -17,6 +17,7 @@ namespace FmvMaker.Core.Facades {
         public bool IsLooping => videoPlayer.isLooping;
         public bool IsPlaying => videoPlayer.isPlaying;
         public VideoClip VideoClip => videoPlayer.clip;
+        public AudioSource AudioClip => videoPlayer.GetTargetAudioSource(0);
 
         private void Awake() {
             videoPlayer = GetComponent<VideoPlayer>();

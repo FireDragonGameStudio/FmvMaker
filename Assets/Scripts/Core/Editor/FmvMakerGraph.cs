@@ -3,7 +3,7 @@ using Unity.GraphToolkit.Editor;
 using UnityEditor;
 
 namespace FmvMaker.Core {
-    [Graph(AssetExtension)]
+    [Graph(AssetExtension, GraphOptions.SupportsSubgraphs)]
     [Serializable]
     public class FmvMakerGraph : Graph {
         public const string AssetExtension = "fmvmkr";

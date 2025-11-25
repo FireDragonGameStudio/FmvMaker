@@ -1,21 +1,34 @@
 using FmvMaker.Provider;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace FmvMaker.Core.Facades {
     public class FmvInventory : MonoBehaviour {
-        [SerializeField] private List<FmvInventoryItem> items = new List<FmvInventoryItem>();
+
+        public FmvInventoryItemList ItemList;
+
+        [Header("Debug Settings")]
+        [SerializeField] private bool resetInventoryOnStart;
+
+        private void Awake() {
+            if (resetInventoryOnStart) {
+                foreach (var item in ItemList.Items) {
+                    item.WasUsed = false;
+                }
+
+                ItemList.Items.Clear();
+            }
+        }
 
         public bool ContainsItem(FmvInventoryItem item) {
-            return items.Contains(item);
+            return ItemList.Items.Find(i => item.Id == i.Id);
         }
 
         public void AddEntry(FmvInventoryItem entry) {
-            items.Add(entry);
+            ItemList.Items.Add(entry);
         }
 
         public void RemoveEntry(FmvInventoryItem entry) {
-            items.Remove(entry);
+            ItemList.Items.Remove(entry);
         }
     }
 }

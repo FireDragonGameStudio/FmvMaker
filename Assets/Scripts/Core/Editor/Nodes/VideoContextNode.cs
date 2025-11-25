@@ -1,3 +1,4 @@
+using FmvMaker.Provider;
 using System;
 using Unity.GraphToolkit.Editor;
 using UnityEngine.Video;
@@ -19,6 +20,10 @@ namespace FmvMaker.Core {
 
             context.AddOption<bool>("IsLooping")
                 .WithDisplayName("Is Looping?");
+
+            context.AddOption<FmvInventoryItem>("NeededItem")
+                .WithDisplayName("Needed item")
+                .WithTooltip("Select the item, that is needed to go here. Leave blank if no item is needed.");
         }
 
         protected override void OnDefinePorts(IPortDefinitionContext context) {

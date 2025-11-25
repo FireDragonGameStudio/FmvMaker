@@ -55,6 +55,7 @@ namespace FmvMaker.Core {
         private void ProcessContextNode(VideoContextNode node, FmvMakerNode runtimeNode, Dictionary<INode, string> nodeIdMap) {
             runtimeNode.VideoClip = GetNodeOption<VideoClip>(node.GetNodeOptionByName("VideoClip"));
             runtimeNode.IsLooping = GetNodeOption<bool>(node.GetNodeOptionByName("IsLooping"));
+            runtimeNode.NeededItem = GetNodeOption<FmvInventoryItem>(node.GetNodeOptionByName("NeededItem"));
             runtimeNode.HasDecisionData = node.blockCount > 0;
 
             foreach (var block in node.blockNodes) {
@@ -74,6 +75,7 @@ namespace FmvMaker.Core {
                     runtimeNode.DecisionData.Add(decisionData);
                 }
             }
+            // sample code for get port value
             //var nextNodePort = node.GetOutputPortByName("out")?.firstConnectedPort;
             //if (nextNodePort != null) {
             //    runtimeNode.NextNodeId = nodeIdMap[nextNodePort.GetNode()];

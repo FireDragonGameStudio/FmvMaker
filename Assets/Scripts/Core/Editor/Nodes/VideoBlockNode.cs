@@ -14,7 +14,8 @@ namespace FmvMaker.Core {
                 .ShowInInspectorOnly();
 
             context.AddOption<string>("Name")
-                .WithDisplayName("Node Name");
+                .WithDisplayName("Node Name")
+                .Delayed();
 
             context.AddOption<Vector2>("RelativePosition")
                 .WithDisplayName("Relative Position (0-1)")
@@ -24,7 +25,7 @@ namespace FmvMaker.Core {
             context.AddOption<Vector2>("RelativeSize")
                 .WithDisplayName("Relative Size (0-1)")
                 .WithTooltip("The size is always relative to screen size, so 0 means no size and 1 is for full screen widht or height.")
-                .WithDefaultValue(new Vector2(0f, 0f));
+                .WithDefaultValue(new Vector2(0.1f, 0.1f));
         }
         protected override void OnDefinePorts(IPortDefinitionContext context) {
             context.AddOutputPort("out").Build();
