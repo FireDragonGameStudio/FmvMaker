@@ -6,17 +6,12 @@ namespace FmvMaker.Core.Facades {
 
         public FmvInventoryItemList ItemList;
 
-        [Header("Debug Settings")]
-        [SerializeField] private bool resetInventoryOnStart;
-
-        private void Awake() {
-            if (resetInventoryOnStart) {
-                foreach (var item in ItemList.Items) {
-                    item.WasUsed = false;
-                }
-
-                ItemList.Items.Clear();
+        public void ResetInventory() {
+            foreach (var item in ItemList.Items) {
+                item.WasUsed = false;
             }
+
+            ItemList.Items.Clear();
         }
 
         public bool ContainsItem(FmvInventoryItem item) {

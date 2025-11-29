@@ -39,6 +39,7 @@ namespace FmvMaker.Provider {
         private List<GameObject> clickableObjects = new();
 
         private string navigationNotSpawnedNodeId = "";
+        private float navigationUiAlphaValue;
 
         private void Awake() {
             if (!videoView) {
@@ -146,6 +147,10 @@ namespace FmvMaker.Provider {
                     PlayVideo(decisionData.DestinationId);
                 });
 
+                // set visibility
+                var image = navigationButton.GetComponent<Image>();
+                image.color = new Color(image.color.r, image.color.g, image.color.b, navigationUiAlphaValue);
+
                 clickableObjects.Add(navigationButton);
             }
         }
@@ -240,6 +245,14 @@ namespace FmvMaker.Provider {
             Debug.Log("FmvMaker ended!");
             currentNode = null;
             StopVideo();
+        }
+
+        public void SaveProgress() {
+            RuntimeGraph.EntryNodeId = currentNode.NodeId;
+        }
+
+        public void SetNavigationUiVisibility(int alphaValue) {
+            navigationUiAlphaValue = alphaValue;
         }
     }
 }

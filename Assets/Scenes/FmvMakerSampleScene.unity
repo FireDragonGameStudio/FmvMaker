@@ -1235,7 +1235,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FmvMaker.Core.Facades.FmvInventory
   ItemList: {fileID: 11400000, guid: ec78442514e1a604889db774bb5c42bc, type: 2}
-  resetInventoryOnStart: 1
 --- !u!1 &1309271895
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,6 +1487,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2125266780}
+  - component: {fileID: 2125266781}
   m_Layer: 0
   m_Name: FmvMaker
   m_TagString: Untagged
@@ -1514,6 +1514,23 @@ Transform:
   - {fileID: 1164523469}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2125266781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125266779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c9b7bba1164d04daafd916f92b8701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FmvSettings
+  resetInventoryOnStart: 1
+  alwaysStartFromBeginning: 0
+  showNavigationUiButtons: 1
+  fmvVideos: {fileID: 875351726}
+  inventory: {fileID: 1164523470}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
