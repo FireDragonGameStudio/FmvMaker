@@ -1,7 +1,5 @@
 ﻿using FmvMaker.Core.Interfaces;
-using FmvMaker.Core.Models;
-using FmvMaker.Core.Utilities;
-using FmvMaker.Core.VideoSources;
+using FmvMaker.Models;
 using System;
 using UnityEngine;
 using UnityEngine.Video;
@@ -10,24 +8,22 @@ namespace FmvMaker.Core.Facades {
     public class FmvVideoFacade : MonoBehaviour, IVideoEvents {
 
         public event Action OnPreparationCompleted;
-        public event Action<VideoModel> OnPlayerStarted;
-        public event Action<VideoModel> OnLoopPointReached;
+        public event Action<VideoClip> OnPlayerStarted;
+        public event Action<VideoClip> OnLoopPointReached;
 
         private VideoPlayer videoPlayer;
         private AudioSource audioSource;
-        private VideoModel videoModel;
-        private IVideoSource videoSource;
 
         public bool IsLooping => videoPlayer.isLooping;
-
         public bool IsPlaying => videoPlayer.isPlaying;
+        public VideoClip VideoClip => videoPlayer.clip;
+        public AudioSource AudioClip => videoPlayer.GetTargetAudioSource(0);
 
         private void Awake() {
             videoPlayer = GetComponent<VideoPlayer>();
             audioSource = GetComponent<AudioSource>();
 
             ReleaseRenderTexture();
-            SetupVideoPlayerConfig();
             SetupUnityVideoEvents();
         }
 
@@ -38,20 +34,6 @@ namespace FmvMaker.Core.Facades {
 
         private void ReleaseRenderTexture() {
             videoPlayer.targetTexture.Release();
-        }
-
-        private void SetupVideoPlayerConfig() {
-            switch (LoadFmvConfig.Config.VideoSourceType) {
-                case "LOCAL":
-                    videoSource = gameObject.AddComponent<LocalVideoSource>();
-                    break;
-                case "ONLINE":
-                    videoSource = gameObject.AddComponent<OnlineVideoSource>();
-                    break;
-                default:
-                    videoSource = gameObject.AddComponent<InternalVideoSource>();
-                    break;
-            }
         }
 
         private void SetupUnityVideoEvents() {
@@ -67,15 +49,21 @@ namespace FmvMaker.Core.Facades {
         }
 
         private void PlayerStarted(VideoPlayer source) {
-            OnPlayerStarted?.Invoke(videoModel);
+            // don't fire started event on resume
+            // to prevent multiple button spawning
+            if (source.frame != -1) {
+                return;
+            }
+
+            OnPlayerStarted?.Invoke(source.clip);
         }
 
-        private void PreparationComplete(VideoPlayer source) {
+        private void PreparationComplete(VideoPlayer sourc) {
             OnPreparationCompleted?.Invoke();
         }
 
         private void LoopPointReached(VideoPlayer source) {
-            OnLoopPointReached?.Invoke(videoModel);
+            OnLoopPointReached?.Invoke(source.clip);
         }
 
         public void Play() {
@@ -91,12 +79,13 @@ namespace FmvMaker.Core.Facades {
         public void Stop() {
             videoPlayer.Stop();
             audioSource.Stop();
+            videoPlayer.isLooping = false;
         }
 
-        public void Prepare(VideoModel videoElement) {
-            videoModel = videoElement;
-            videoSource.SetVideoSource(videoElement.VideoTarget);
-            videoPlayer.isLooping = videoElement.IsLooping;
+        public void Prepare(VideoModel videoModel) {
+            videoPlayer.source = VideoSource.VideoClip;
+            videoPlayer.clip = videoModel.VideoClip;
+            videoPlayer.isLooping = videoModel.IsLooping;
             videoPlayer.Prepare();
         }
 
