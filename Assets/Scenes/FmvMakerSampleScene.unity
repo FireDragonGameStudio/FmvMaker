@@ -256,6 +256,81 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &356096910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 356096911}
+  - component: {fileID: 356096913}
+  - component: {fileID: 356096912}
+  m_Layer: 0
+  m_Name: MuteAudioImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &356096911
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356096910}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1121464820}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -50, y: -50}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &356096912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356096910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 98fe8bb61a366d74c923cce590fae44f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &356096913
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356096910}
+  m_CullTransparentMesh: 1
 --- !u!1 &363248588
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,14 +536,14 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 12
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
+  m_CookieSize2D: {x: 10, y: 10}
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
@@ -924,7 +999,6 @@ GameObject:
   - component: {fileID: 875351724}
   - component: {fileID: 875351726}
   - component: {fileID: 875351725}
-  - component: {fileID: 875351727}
   m_Layer: 0
   m_Name: FmvVideo
   m_TagString: Untagged
@@ -978,64 +1052,16 @@ MonoBehaviour:
   RuntimeGraph: {fileID: 3965311268370046156, guid: f8ef361f010847a4fa367836f9b20f02, type: 3}
   OnVideoStarted:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 875351727}
-        m_TargetAssemblyTypeName: FmvMaker.Examples.CheckFmvMakerEvents, Assembly-CSharp
-        m_MethodName: OnVideoStarted
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnVideoPaused:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 875351727}
-        m_TargetAssemblyTypeName: FmvMaker.Examples.CheckFmvMakerEvents, Assembly-CSharp
-        m_MethodName: OnVideoPaused
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnVideoSkipped:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 875351727}
-        m_TargetAssemblyTypeName: FmvMaker.Examples.CheckFmvMakerEvents, Assembly-CSharp
-        m_MethodName: OnVideoSkipped
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnVideoFinished:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 875351727}
-        m_TargetAssemblyTypeName: FmvMaker.Examples.CheckFmvMakerEvents, Assembly-CSharp
-        m_MethodName: OnVideoFinished
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   playPauseVideo: {fileID: 1120369429361536294, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   skipVideo: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   muteUnmuteVideo: {fileID: 7040659881675835329, guid: 052faaac586de48259a63d0c4782560b, type: 3}
@@ -1043,18 +1069,7 @@ MonoBehaviour:
   inventory: {fileID: 1164523470}
   navigationElementsParent: {fileID: 826092047}
   navigationButtonPrefab: {fileID: 3558269130044744310, guid: 65ee7ad5fdfc60044917bb4894ed4caf, type: 3}
---- !u!114 &875351727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 875351723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 789dbf0c0147df7488d34487a466e928, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FmvMaker.Examples.CheckFmvMakerEvents
+  muteAudioImage: {fileID: 356096912}
 --- !u!1 &994300421
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,6 +1135,7 @@ RectTransform:
   m_Children:
   - {fileID: 1309271896}
   - {fileID: 826092047}
+  - {fileID: 356096911}
   m_Father: {fileID: 994300422}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1409,6 +1425,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1653934153
 MeshFilter:
@@ -1527,7 +1544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FmvSettings
   resetInventoryOnStart: 1
-  alwaysStartFromBeginning: 0
+  alwaysStartFromBeginning: 1
   showNavigationUiButtons: 1
   fmvVideos: {fileID: 875351726}
   inventory: {fileID: 1164523470}

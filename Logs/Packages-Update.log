@@ -59,3 +59,17 @@ The following packages were updated:
   com.unity.collab-proxy from version 2.9.1 to 2.9.3
   com.unity.ide.rider from version 3.0.36 to 3.0.37
   com.unity.test-framework from version 1.5.1 to 1.6.0
+
+=== Fri Dec  5 00:03:25 2025
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were added:
+  com.unity.modules.adaptiveperformance@1.0.0
+  com.unity.modules.vectorgraphics@1.0.0
+The following packages were updated:
+  com.unity.collab-proxy from version 2.9.3 to 2.10.2
+  com.unity.inputsystem from version 1.14.2 to 1.16.0
+  com.unity.multiplayer.center from version 1.0.0 to 1.0.1
+  com.unity.render-pipelines.universal from version 17.2.0 to 17.3.0

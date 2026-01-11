@@ -49,6 +49,12 @@ namespace FmvMaker.Core.Facades {
         }
 
         private void PlayerStarted(VideoPlayer source) {
+            // don't fire started event on resume
+            // to prevent multiple button spawning
+            if (source.frame != -1) {
+                return;
+            }
+
             OnPlayerStarted?.Invoke(source.clip);
         }
 

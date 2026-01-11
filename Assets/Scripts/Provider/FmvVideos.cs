@@ -33,6 +33,7 @@ namespace FmvMaker.Provider {
         [SerializeField] private FmvInventory inventory = null;
         [SerializeField] private RectTransform navigationElementsParent = null;
         [SerializeField] private GameObject navigationButtonPrefab;
+        [SerializeField] private Image muteAudioImage;
 
         private Dictionary<string, FmvMakerNode> nodeLookup = new();
         private FmvMakerNode currentNode;
@@ -46,6 +47,8 @@ namespace FmvMaker.Provider {
                 videoView = GetComponent<FmvVideoView>();
             }
             SetupVideoEventTrigger();
+
+            muteAudioImage.gameObject.SetActive(videoView.ActivePlayer.AudioClip == null);
         }
 
         private async void Start() {
@@ -212,13 +215,13 @@ namespace FmvMaker.Provider {
         }
 
         private void SkipVideo() {
-            if (skipVideo.action.WasPerformedThisFrame() && !videoView.ActivePlayer.IsLooping && videoView.ActivePlayer.IsPlaying) {
+            if (skipVideo.action.triggered && !videoView.ActivePlayer.IsLooping && videoView.ActivePlayer.IsPlaying) {
                 videoView.SkipVideoClip();
             }
         }
 
         private void PauseVideo() {
-            if (playPauseVideo.action.WasPerformedThisFrame()) {
+            if (playPauseVideo.action.triggered) {
                 if (videoView.ActivePlayer.IsPlaying) {
                     videoView.PauseVideoClip();
                 } else {
@@ -228,12 +231,19 @@ namespace FmvMaker.Provider {
         }
 
         private void MuteVideo() {
-            if (muteUnmuteVideo.action.WasPerformedThisFrame()) {
+            if (muteUnmuteVideo.action.triggered) {
+
+                if (videoView.ActivePlayer.AudioClip == null) {
+                    muteAudioImage.gameObject.SetActive(true);
+                    return;
+                }
+
                 if (videoView.ActivePlayer.AudioClip.volume >= 1f) {
                     videoView.ActivePlayer.AudioClip.volume = 0f;
                 } else {
                     videoView.ActivePlayer.AudioClip.volume = 1f;
                 }
+                muteAudioImage.gameObject.SetActive(videoView.ActivePlayer.AudioClip.volume == 0f);
             }
         }
 
