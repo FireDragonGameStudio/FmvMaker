@@ -2176,7 +2176,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 9aaec8be7273b23e3fbf394e0b454988
         m_Version: 2
-        m_Position: {x: 1164, y: 825.25476}
+        m_Position: {x: 1164, y: 826.5957}
         m_Title: 
         m_Tooltip: 
         m_NodePreviewModel:
@@ -3566,7 +3566,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 5a0ffeeee082a2a8bd5caf90a7c8bf05
         m_Version: 2
-        m_Position: {x: 236.66667, y: 500.35095}
+        m_Position: {x: 236.66667, y: 501.69177}
         m_Title: 
         m_Tooltip: 
         m_NodePreviewModel:

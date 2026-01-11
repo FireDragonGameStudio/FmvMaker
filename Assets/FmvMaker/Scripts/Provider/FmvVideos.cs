@@ -39,7 +39,7 @@ namespace FmvMaker.Provider {
         private FmvMakerNode currentNode;
         private List<GameObject> clickableObjects = new();
 
-        private string navigationNotSpawnedNodeId = "";
+        private string navigationLastNodeId = "";
         private float navigationUiAlphaValue;
 
         private void Awake() {
@@ -102,13 +102,14 @@ namespace FmvMaker.Provider {
             }
 
             // spawn nav elements for not looping videos
-            if (!currentNode.IsLooping && !navigationNotSpawnedNodeId.Equals(currentNode.NodeId)) {
-                navigationNotSpawnedNodeId = currentNode.NodeId;
+            if (!currentNode.IsLooping && !navigationLastNodeId.Equals(currentNode.NodeId)) {
                 SpawnNavigationElements();
             }
         }
 
         private void SpawnNavigationElements() {
+            navigationLastNodeId = currentNode.NodeId;
+
             for (int i = 0; i < currentNode.DecisionData?.Count; i++) {
 
                 // check if item is needed here and if user has the item in his inventory
