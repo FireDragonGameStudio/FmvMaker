@@ -43,6 +43,10 @@ Follow these simple steps to create your first FMV sequence, based on the [Sneak
 
 ---
 
+<img width="2208" height="1339" alt="FmvMaker-Overview" src="https://github.com/user-attachments/assets/31784f56-7780-4c2c-ab64-9f3def649367" />
+
+---
+
 ## 🚀 Key Features
 
 * **Native Graph Editor:** No more JSON editing. Visualize your entire game flow in a dedicated window.
