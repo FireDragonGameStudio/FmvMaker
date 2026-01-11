@@ -14,7 +14,7 @@ Follow these simple steps to create your first FMV sequence, based on the [Sneak
 
 ### 1. Setup Your Videos
 * Import your video files into Unity.
-* Place them in a valid folder (e.g., `Assets/FmvMaker/Resources/Videos` or any folder you prefer).
+* Place them in a valid folder (e.g., `Assets/FmvMaker/Videos` or any folder you prefer).
 
 ### 2. Create a Graph
 * Right-click in the Project window.
