@@ -1,27 +1,28 @@
 using FmvMaker.Core.Facades;
-using FmvMaker.Provider;
 using UnityEngine;
 
-public class FmvSettings : MonoBehaviour {
-    [Header("Debug Settings")]
-    [SerializeField] private bool resetInventoryOnStart;
-    [SerializeField] private bool alwaysStartFromBeginning;
-    [SerializeField] private bool showNavigationUiButtons;
+namespace FmvMaker.Provider {
+    public class FmvSettings : MonoBehaviour {
+        [Header("Debug Settings")]
+        [SerializeField] private bool resetInventoryOnStart;
+        [SerializeField] private bool alwaysStartFromBeginning;
+        [SerializeField] private bool showNavigationUiButtons;
 
-    [Header("Internal References")]
-    [SerializeField] private FmvVideos fmvVideos;
-    [SerializeField] private FmvInventory inventory;
+        [Header("Internal References")]
+        [SerializeField] private FmvVideos fmvVideos;
+        [SerializeField] private FmvInventory inventory;
 
-    private void Awake() {
-        if (resetInventoryOnStart) {
-            inventory.ResetInventory();
+        private void Awake() {
+            if (resetInventoryOnStart) {
+                inventory.ResetInventory();
+            }
+            fmvVideos.SetNavigationUiVisibility(showNavigationUiButtons ? 1 : 0);
         }
-        fmvVideos.SetNavigationUiVisibility(showNavigationUiButtons ? 1 : 0);
-    }
 
-    private void OnDestroy() {
-        if (!alwaysStartFromBeginning) {
-            fmvVideos.SaveProgress();
+        private void OnDestroy() {
+            if (!alwaysStartFromBeginning) {
+                fmvVideos.SaveProgress();
+            }
         }
     }
 }
