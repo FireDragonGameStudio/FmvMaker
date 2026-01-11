@@ -6,7 +6,7 @@
 
 This branch introduces a completely new, node-based workflow for creating FMV games in Unity. It replaces the old JSON/Visual Scripting system with a custom **Graph Editor** based on Unitys [**Graph Toolkit**](https://docs.unity3d.com/Packages/com.unity.graphtoolkit@0.4/manual/index.html), making it easier to visualize and build your game logic without writing code.
 
-> **⚠️ Warning:** This branch is currently **EXPERIMENTAL**. Features may change, and bugs may occur. Please report any issues you encounter!
+> **⚠️ Warning:** This is currently **EXPERIMENTAL**, due to Unitys Graph Toolkit being integrated into the engine in upcoming versions. Features may change, and bugs may occur. Please report any issues you encounter!
 
 ---
 
