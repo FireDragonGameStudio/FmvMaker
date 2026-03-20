@@ -25,7 +25,7 @@ namespace FmvMaker.Core {
             // TODO: change that, to load saved node ids as start node
             var startNode = fmvMakerGraph.GetNodes().OfType<StartFmvNode>().FirstOrDefault();
             if (startNode != null) {
-                var entryPort = startNode.GetOutputPorts().FirstOrDefault()?.firstConnectedPort;
+                var entryPort = startNode.GetOutputPorts().FirstOrDefault()?.FirstConnectedPort;
                 if (entryPort != null) {
                     runtimeGraph.EntryNodeId = nodeIdMap[entryPort.GetNode()];
                 }
@@ -56,10 +56,10 @@ namespace FmvMaker.Core {
             runtimeNode.VideoClip = GetNodeOption<VideoClip>(node.GetNodeOptionByName("VideoClip"));
             runtimeNode.IsLooping = GetNodeOption<bool>(node.GetNodeOptionByName("IsLooping"));
             runtimeNode.NeededItem = GetNodeOption<FmvInventoryItem>(node.GetNodeOptionByName("NeededItem"));
-            runtimeNode.HasDecisionData = node.blockCount > 0;
+            runtimeNode.HasDecisionData = node.BlockCount > 0;
 
-            foreach (var block in node.blockNodes) {
-                var nextNodePort = block.GetOutputPortByName("out")?.firstConnectedPort;
+            foreach (var block in node.BlockNodes) {
+                var nextNodePort = block.GetOutputPortByName("out")?.FirstConnectedPort;
                 var blockName = GetNodeOption<string>(block.GetNodeOptionByName("Name"));
                 var relativePosition = GetNodeOption<Vector2>(block.GetNodeOptionByName("RelativePosition"));
                 var relativeSize = GetNodeOption<Vector2>(block.GetNodeOptionByName("RelativeSize"));
@@ -87,7 +87,7 @@ namespace FmvMaker.Core {
             runtimeNode.NeededItem = GetNodeOption<FmvInventoryItem>(node.GetNodeOptionByName("NeededItem"));
             runtimeNode.GivingItem = GetNodeOption<FmvInventoryItem>(node.GetNodeOptionByName("GivingItem"));
 
-            var nextNodePort = node.GetOutputPortByName("out")?.firstConnectedPort;
+            var nextNodePort = node.GetOutputPortByName("out")?.FirstConnectedPort;
             if (nextNodePort != null) {
                 runtimeNode.NextNodeId = nodeIdMap[nextNodePort.GetNode()];
             }
@@ -96,9 +96,9 @@ namespace FmvMaker.Core {
         private T GetPortValue<T>(IPort port) {
             if (port == null) return default(T);
 
-            if (port.isConnected) {
-                if (port.firstConnectedPort.GetNode() is IVariableNode variableNode) {
-                    variableNode.variable.TryGetDefaultValue(out T value);
+            if (port.IsConnected) {
+                if (port.FirstConnectedPort.GetNode() is IVariableNode variableNode) {
+                    variableNode.Variable.TryGetDefaultValue(out T value);
                     return value;
                 }
             }

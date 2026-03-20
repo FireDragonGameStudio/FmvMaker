@@ -73,3 +73,18 @@ The following packages were updated:
   com.unity.inputsystem from version 1.14.2 to 1.16.0
   com.unity.multiplayer.center from version 1.0.0 to 1.0.1
   com.unity.render-pipelines.universal from version 17.2.0 to 17.3.0
+
+=== Fri Mar 20 18:21:12 2026
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.ai.navigation from version 2.0.9 to 2.0.11
+  com.unity.collab-proxy from version 2.10.2 to 2.11.4
+  com.unity.ide.rider from version 3.0.38 to 3.0.39
+  com.unity.ide.visualstudio from version 2.0.26 to 2.0.27
+  com.unity.inputsystem from version 1.16.0 to 1.19.0
+  com.unity.render-pipelines.universal from version 17.3.0 to 17.4.0
+  com.unity.timeline from version 1.8.10 to 1.8.11
+  com.unity.visualscripting from version 1.9.9 to 1.9.10

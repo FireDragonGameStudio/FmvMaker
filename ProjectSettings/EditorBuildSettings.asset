@@ -9,5 +9,4 @@ EditorBuildSettings:
     path: Assets/FmvMaker/Scenes/FmvMakerSampleScene.unity
     guid: 7ec4fb6eb6bd13644be35b907d9511e7
   m_configObjects:
-    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_UseUCBPForAssetBundles: 0
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 0b0636fb2d181b1438d382a5ee866342, type: 3}
