@@ -10,6 +10,7 @@ namespace FmvMaker.Models {
         public string NodeName;
         public VideoClip VideoClip;
         public bool IsLooping;
+        public bool IsTimedInteraction;
         public FmvInventoryItem NeededItem;
         public FmvInventoryItem GivingItem;
         public bool HasDecisionData;

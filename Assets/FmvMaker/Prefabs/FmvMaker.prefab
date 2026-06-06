@@ -250,6 +250,7 @@ RectTransform:
   - {fileID: 5915264757608390492}
   - {fileID: 1221498281860454304}
   - {fileID: 5710814684094796668}
+  - {fileID: 7621516931375484821}
   m_Father: {fileID: 6499216615227691451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -275,6 +276,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -320,6 +322,94 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &3641137450859081168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7621516931375484821}
+  - component: {fileID: 5553257810959121361}
+  - component: {fileID: 4715222252806182007}
+  - component: {fileID: 6000696151688632273}
+  m_Layer: 0
+  m_Name: TimedInteractionCountdownImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &7621516931375484821
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641137450859081168}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3072270155802854091}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: 0, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5553257810959121361
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641137450859081168}
+  m_CullTransparentMesh: 1
+--- !u!114 &4715222252806182007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641137450859081168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6000696151688632273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641137450859081168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f701fb1ef2a3f47b569a14868afada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimedInteractionCountdown
 --- !u!1 &4132276088385430631
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,7 +475,7 @@ VideoPlayer:
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 0
-  m_SkipOnDrop: 1
+  m_SkipOnDrop: 0
   m_Looping: 0
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
@@ -564,7 +654,7 @@ VideoPlayer:
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 0
-  m_SkipOnDrop: 1
+  m_SkipOnDrop: 0
   m_Looping: 0
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
@@ -725,7 +815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e82b16cba7f67a4d8cc80ce7b29d341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FmvMaker.Core.Provider.FmvVideos
-  RuntimeGraph: {fileID: 3965311268370046156, guid: f8ef361f010847a4fa367836f9b20f02, type: 3}
+  RuntimeGraph: {fileID: 3965311268370046156, guid: a9d6285f27e3a374f8050506f24ea0b9, type: 3}
   OnVideoStarted:
     m_PersistentCalls:
       m_Calls: []
@@ -738,14 +828,15 @@ MonoBehaviour:
   OnVideoFinished:
     m_PersistentCalls:
       m_Calls: []
-  playPauseVideo: {fileID: 1120369429361536294, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  skipVideo: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  muteUnmuteVideo: {fileID: 7040659881675835329, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  playPauseVideo: {fileID: 0}
+  skipVideo: {fileID: 0}
+  muteUnmuteVideo: {fileID: 0}
   videoView: {fileID: 1944823774241775575}
   inventory: {fileID: 5665468752153485102}
   navigationElementsParent: {fileID: 1221498281860454304}
   navigationButtonPrefab: {fileID: 3558269130044744310, guid: 65ee7ad5fdfc60044917bb4894ed4caf, type: 3}
   muteAudioImage: {fileID: 748681932923547011}
+  timedInteractionCountdownObject: {fileID: 3641137450859081168}
 --- !u!114 &1944823774241775575
 MonoBehaviour:
   m_ObjectHideFlags: 0

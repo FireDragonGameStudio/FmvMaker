@@ -570,10 +570,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 370594441}
     - target: {fileID: 3047148757875082070, guid: 08aa2c785a04a094ea0941a3c0e22453, type: 3}
-      propertyPath: RuntimeGraph
-      value: 
-      objectReference: {fileID: 3965311268370046156, guid: a9d6285f27e3a374f8050506f24ea0b9, type: 3}
-    - target: {fileID: 3047148757875082070, guid: 08aa2c785a04a094ea0941a3c0e22453, type: 3}
       propertyPath: playPauseVideo
       value: 
       objectReference: {fileID: 382535044}
@@ -587,10 +583,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5915264757608390492, guid: 08aa2c785a04a094ea0941a3c0e22453, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915264757608390492, guid: 08aa2c785a04a094ea0941a3c0e22453, type: 3}
-      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5915264757608390492, guid: 08aa2c785a04a094ea0941a3c0e22453, type: 3}

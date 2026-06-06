@@ -27,7 +27,8 @@ Follow these simple steps to create your first FMV sequence, based on the [Sneak
 ### 3. Build Your Flow
 * **Add Nodes:** Right-click or press `Spacebar` in the editor to add nodes.
 * **Start Node:** Always begin with a `Start FMV Node`.
-* **Play a Video:** * Add a `Video Node`.
+* **Play a Video:**
+	* Add a `Video Node`.
     * Connect the `Start Node` output to the `Video Node` input.
     * **Select Video:** Click the `Video Node`. In the Graph Inspector (right side), assign your video clip to the `Video Clip` field.
 * **Create Choices:**
@@ -35,9 +36,15 @@ Follow these simple steps to create your first FMV sequence, based on the [Sneak
     * Click "Add Block" in the node to create multiple outputs (Choice 1, Choice 2, etc.).
     * Connect each output to different `Video Nodes`.
     * **Position Buttons:** In the Inspector, adjust `Relative Screen Position` (X/Y from 0 to 1) to place the click zones on screen.
+* **Create Choices with Timing:**
+	* Add a `Video Context Time Node` (this acts as a hub for timed choices, like quick time events).
+	* Click "Add Block" in the node to create multiple outputs (Choice 1, Choice 2, etc.).
+	* Connect each output to different `Video Nodes`.
+	* Connect the node output to a new `Video Node` input. This will be the default choice, when the time is up and the player didn't choose an option.	
+    * **Position Buttons:** In the Inspector, adjust `Relative Screen Position` (X/Y from 0 to 1) to place the click zones on screen.
 
 ### 4. Run the Game
-* Open the `FmvMakerDemo` scene (or dublicate it and build your own scene).
+* Open the `FmvMakerDemo` scene (or duplicate it and build your own scene).
 * Select the `FmvMaker` GameObject.
 * Locate the `FmvVideo` component in the Inspector.
 * Drag your **NewGameGraph** asset into the `Runtime Graph` field.

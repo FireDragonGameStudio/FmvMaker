@@ -1,10 +1,9 @@
-using FmvMaker.Provider;
 using System;
 using Unity.GraphToolkit.Editor;
 using UnityEngine;
 
 namespace FmvMaker.Core {
-    [UseWithContext(typeof(VideoContextNode))]
+    [UseWithContext(typeof(VideoContextNode), typeof(VideoContextTimeNode))]
     [Serializable]
     public class VideoBlockNode : BlockNode {
         protected override void OnDefineOptions(IOptionDefinitionContext context) {

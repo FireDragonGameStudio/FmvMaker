@@ -18,7 +18,7 @@ namespace FmvMaker.Provider {
         [SerializeField] private FmvVideoFacade secondPlayer = null;
 
         // false -> select second player, true -> select first player
-        private bool videoPlayerToggle = false;
+        private bool videoPlayerToggle = true;
 
         private FmvVideoFacade inactivePlayer;
 

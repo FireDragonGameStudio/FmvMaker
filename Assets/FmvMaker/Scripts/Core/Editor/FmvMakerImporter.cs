@@ -1,11 +1,8 @@
-using FmvMaker.Models;
-using FmvMaker.Provider;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.GraphToolkit.Editor;
 using UnityEditor.AssetImporters;
 using UnityEngine;
-using UnityEngine.Video;
 
 namespace FmvMaker.Core {
     [ScriptedImporter(1, FmvMakerGraph.AssetExtension)]
@@ -13,38 +10,18 @@ namespace FmvMaker.Core {
         public override void OnImportAsset(AssetImportContext ctx) {
             FmvMakerGraph fmvMakerGraph = GraphDatabase.LoadGraphForImporter<FmvMakerGraph>(ctx.assetPath);
             FmvMakerRuntimeGraph runtimeGraph = ScriptableObject.CreateInstance<FmvMakerRuntimeGraph>();
-            var nodeIdMap = new Dictionary<INode, string>();
 
-            foreach (var node in fmvMakerGraph.GetNodes()) {
-                if (node is Node nodeWithOptions) {
-                    var nodeId = GetNodeOption<string>(nodeWithOptions.GetNodeOptionByName("NodeId"));
-                    nodeIdMap[node] = nodeId;
-                }
-            }
+            // load nodes from graph
+            var nodeIdMap = FmvMakerNodeFactory.LoadNodeMap(fmvMakerGraph.GetNodes());
 
-            // TODO: change that, to load saved node ids as start node
-            var startNode = fmvMakerGraph.GetNodes().OfType<StartFmvNode>().FirstOrDefault();
-            if (startNode != null) {
-                var entryPort = startNode.GetOutputPorts().FirstOrDefault()?.FirstConnectedPort;
-                if (entryPort != null) {
-                    runtimeGraph.EntryNodeId = nodeIdMap[entryPort.GetNode()];
-                }
-            }
+            // set Entry Node
+            runtimeGraph.EntryNodeId = GetEntryNodeId(fmvMakerGraph, nodeIdMap);
 
+            // create Nodes using the Factory
             foreach (var node in fmvMakerGraph.GetNodes()) {
                 if (node is StartFmvNode || node is EndFmvNode) continue;
 
-                var runtimeNode = new FmvMakerNode {
-                    NodeId = nodeIdMap[node],
-                    NodeName = GetNodeOption<string>((node as Node).GetNodeOptionByName("Name"))
-                };
-                if (node is VideoContextNode videoElementContextNode) {
-                    ProcessContextNode(videoElementContextNode, runtimeNode, nodeIdMap);
-                }
-                if (node is VideoNode videoElementNode) {
-                    ProcessVideoNode(videoElementNode, runtimeNode, nodeIdMap);
-                }
-
+                var runtimeNode = FmvMakerNodeFactory.Create(node, nodeIdMap);
                 runtimeGraph.AllFmvMakerNodes.Add(runtimeNode);
             }
 
@@ -52,66 +29,21 @@ namespace FmvMaker.Core {
             ctx.SetMainObject(runtimeGraph);
         }
 
-        private void ProcessContextNode(VideoContextNode node, FmvMakerNode runtimeNode, Dictionary<INode, string> nodeIdMap) {
-            runtimeNode.VideoClip = GetNodeOption<VideoClip>(node.GetNodeOptionByName("VideoClip"));
-            runtimeNode.IsLooping = GetNodeOption<bool>(node.GetNodeOptionByName("IsLooping"));
-            runtimeNode.NeededItem = GetNodeOption<FmvInventoryItem>(node.GetNodeOptionByName("NeededItem"));
-            runtimeNode.HasDecisionData = node.BlockCount > 0;
+        private string GetEntryNodeId(FmvMakerGraph graph, Dictionary<INode, string> nodeIdMap) {
+            var startNode = graph.GetNodes().OfType<StartFmvNode>().FirstOrDefault();
+            if (startNode == null) return null;
 
-            foreach (var block in node.BlockNodes) {
-                var nextNodePort = block.GetOutputPortByName("out")?.FirstConnectedPort;
-                var blockName = GetNodeOption<string>(block.GetNodeOptionByName("Name"));
-                var relativePosition = GetNodeOption<Vector2>(block.GetNodeOptionByName("RelativePosition"));
-                var relativeSize = GetNodeOption<Vector2>(block.GetNodeOptionByName("RelativeSize"));
+            // look for the first connected port on the Start node
+            var entryPort = startNode.GetOutputPorts().FirstOrDefault()?.FirstConnectedPort;
 
-                if (nextNodePort != null) {
-                    var decisionData = new FmvMakerDecisionData() {
-                        DecisionText = blockName,
-                        DestinationId = nodeIdMap[nextNodePort.GetNode()],
-                        RelativePosition = relativePosition,
-                        RelativeSize = relativeSize
-                    };
-
-                    runtimeNode.DecisionData.Add(decisionData);
-                }
-            }
-            // sample code for get port value
-            //var nextNodePort = node.GetOutputPortByName("out")?.firstConnectedPort;
-            //if (nextNodePort != null) {
-            //    runtimeNode.NextNodeId = nodeIdMap[nextNodePort.GetNode()];
-            //}
-        }
-
-        private void ProcessVideoNode(VideoNode node, FmvMakerNode runtimeNode, Dictionary<INode, string> nodeIdMap) {
-            runtimeNode.VideoClip = GetNodeOption<VideoClip>(node.GetNodeOptionByName("VideoClip"));
-            runtimeNode.NeededItem = GetNodeOption<FmvInventoryItem>(node.GetNodeOptionByName("NeededItem"));
-            runtimeNode.GivingItem = GetNodeOption<FmvInventoryItem>(node.GetNodeOptionByName("GivingItem"));
-
-            var nextNodePort = node.GetOutputPortByName("out")?.FirstConnectedPort;
-            if (nextNodePort != null) {
-                runtimeNode.NextNodeId = nodeIdMap[nextNodePort.GetNode()];
-            }
-        }
-
-        private T GetPortValue<T>(IPort port) {
-            if (port == null) return default(T);
-
-            if (port.IsConnected) {
-                if (port.FirstConnectedPort.GetNode() is IVariableNode variableNode) {
-                    variableNode.Variable.TryGetDefaultValue(out T value);
-                    return value;
+            if (entryPort != null) {
+                var nextNode = entryPort.GetNode();
+                if (nodeIdMap.ContainsKey(nextNode)) {
+                    return nodeIdMap[nextNode];
                 }
             }
 
-            port.TryGetValue(out T fallbackValue);
-            return fallbackValue;
-        }
-
-        private T GetNodeOption<T>(INodeOption option) {
-            if (option == null) return default(T);
-
-            option.TryGetValue(out T value);
-            return value;
+            return null;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using FmvMaker.Core;
 using FmvMaker.Core.Facades;
+using FmvMaker.Core.Interfaces;
 using FmvMaker.Models;
 using FmvMaker.Utilities;
 using System;
@@ -34,10 +35,12 @@ namespace FmvMaker.Provider {
         [SerializeField] private RectTransform navigationElementsParent = null;
         [SerializeField] private GameObject navigationButtonPrefab;
         [SerializeField] private Image muteAudioImage;
+        [SerializeField] private GameObject timedInteractionCountdownObject;
 
         private Dictionary<string, FmvMakerNode> nodeLookup = new();
         private FmvMakerNode currentNode;
         private List<GameObject> clickableObjects = new();
+        private ICountdownEvents timedInteractionCountdown;
 
         private string navigationLastNodeId = "";
         private float navigationUiAlphaValue;
@@ -46,14 +49,24 @@ namespace FmvMaker.Provider {
             if (!videoView) {
                 videoView = GetComponent<FmvVideoView>();
             }
+
             SetupVideoEventTrigger();
 
             muteAudioImage.gameObject.SetActive(videoView.ActivePlayer.AudioClip == null);
+
+            timedInteractionCountdown ??= timedInteractionCountdownObject.GetComponent<TimedInteractionCountdown>();
+            timedInteractionCountdown.ResetCountdown();
         }
 
         private async void Start() {
+
             // wait a short time for Unity to get correct values for screen height and width
             await Task.Delay(TimeSpan.FromSeconds(0.1));
+
+            OnVideoStarted.AddListener(CheckForVideoStart);
+            OnVideoFinished.AddListener(CheckForNextVideo);
+
+            DynamicVideoResolution.Instance.ScreenSizeChanged += OnScreenSizeChanged;
 
             foreach (var node in RuntimeGraph.AllFmvMakerNodes) {
                 nodeLookup[node.NodeId] = node;
@@ -64,11 +77,6 @@ namespace FmvMaker.Provider {
             } else {
                 EndFmvMaker();
             }
-
-            OnVideoStarted.AddListener(CheckForVideoStart);
-            OnVideoFinished.AddListener(CheckForNextVideo);
-
-            DynamicVideoResolution.Instance.ScreenSizeChanged += OnScreenSizeChanged;
         }
 
         private void Update() {
@@ -80,6 +88,14 @@ namespace FmvMaker.Provider {
         private void CheckForVideoStart(VideoClip videoclip) {
             if (currentNode.IsLooping) {
                 SpawnNavigationElements();
+            }
+
+            // show countdown for timed interaction
+            if (currentNode.IsTimedInteraction) {
+                SpawnNavigationElements();
+                timedInteractionCountdown.InitCountdown(Convert.ToSingle(currentNode.VideoClip.length));
+            } else {
+                timedInteractionCountdown.ResetCountdown();
             }
 
             // add finding item to inventory
@@ -95,8 +111,12 @@ namespace FmvMaker.Provider {
                 return;
             }
 
-            // autoplay next when video node
-            if (!currentNode.HasDecisionData) {
+            // autoplay next when video node or play default option when timed interaction is over
+            if (!currentNode.HasDecisionData || currentNode.IsTimedInteraction) {
+
+                // hide countdown for timed interaction
+                timedInteractionCountdown.ResetCountdown();
+
                 PlayVideo(currentNode.NextNodeId);
                 return;
             }
