@@ -242,7 +242,7 @@ namespace FmvMaker.Provider {
         }
 
         private void PauseVideo() {
-            if (playPauseVideo.action.triggered) {
+            if (playPauseVideo.action.triggered && !currentNode.IsTimedInteraction) {
                 if (videoView.ActivePlayer.IsPlaying) {
                     videoView.PauseVideoClip();
                 } else {
