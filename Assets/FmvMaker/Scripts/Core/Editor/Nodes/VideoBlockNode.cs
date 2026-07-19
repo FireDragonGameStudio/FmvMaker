@@ -16,6 +16,11 @@ namespace FmvMaker.Core {
                 .WithDisplayName("Node Name")
                 .Delayed();
 
+            context.AddOption<string>("Label")
+                .WithDisplayName("Visible InGame Text")
+                .WithTooltip("The text that is displayed. Ignored when empty.")
+                .Delayed();
+
             context.AddOption<Vector2>("RelativePosition")
                 .WithDisplayName("Relative Position (0-1)")
                 .WithTooltip("0,0 is in the left lower corner and 1,1 in the upper right corner.")

@@ -7,6 +7,7 @@ namespace FmvMaker.Models {
     public class FmvMakerDecisionData {
         public string DecisionText;
         public string DestinationId;
+        public string LabelText;
         public Vector2 RelativePosition;
         public Vector2 RelativeSize;
     }

@@ -904,11 +904,13 @@ MonoBehaviour:
           - __option_Name
           - __option_RelativePosition
           - __option_RelativeSize
+          - __option_Label
           m_ValueList:
           - rid: 3038426085980635354
           - rid: 3038426085980635355
           - rid: 3038426085980635356
           - rid: 3038426085980635357
+          - rid: 3977848801182875712
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -967,11 +969,13 @@ MonoBehaviour:
           - __option_Name
           - __option_RelativePosition
           - __option_RelativeSize
+          - __option_Label
           m_ValueList:
           - rid: 3038426085980635360
           - rid: 3038426085980635361
           - rid: 3038426085980635362
           - rid: 3038426085980635363
+          - rid: 3977848801182875713
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1389,11 +1393,13 @@ MonoBehaviour:
           - __option_Name
           - __option_RelativePosition
           - __option_RelativeSize
+          - __option_Label
           m_ValueList:
           - rid: 3038426085980635394
           - rid: 3038426085980635395
           - rid: 3038426085980635396
           - rid: 3038426085980635397
+          - rid: 3977848801182875714
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1712,11 +1718,13 @@ MonoBehaviour:
           - __option_Name
           - __option_RelativePosition
           - __option_RelativeSize
+          - __option_Label
           m_ValueList:
           - rid: 3038426085980635413
           - rid: 3038426085980635414
           - rid: 3038426085980635415
           - rid: 3038426085980635416
+          - rid: 3977848801182875715
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1775,11 +1783,13 @@ MonoBehaviour:
           - __option_Name
           - __option_RelativePosition
           - __option_RelativeSize
+          - __option_Label
           m_ValueList:
           - rid: 3038426085980635419
           - rid: 3038426085980635420
           - rid: 3038426085980635421
           - rid: 3038426085980635422
+          - rid: 3977848801182875716
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2332,11 +2342,13 @@ MonoBehaviour:
           - __option_Name
           - __option_RelativePosition
           - __option_RelativeSize
+          - __option_Label
           m_ValueList:
           - rid: 3038426085980635450
           - rid: 3038426085980635451
           - rid: 3038426085980635452
           - rid: 3038426085980635453
+          - rid: 3977848801182875717
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2600,11 +2612,13 @@ MonoBehaviour:
           - __option_Name
           - __option_RelativePosition
           - __option_RelativeSize
+          - __option_Label
           m_ValueList:
           - rid: 3038426085980635477
           - rid: 3038426085980635478
           - rid: 3038426085980635479
           - rid: 3038426085980635480
+          - rid: 3977848801182875718
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2663,11 +2677,13 @@ MonoBehaviour:
           - __option_Name
           - __option_RelativePosition
           - __option_RelativeSize
+          - __option_Label
           m_ValueList:
           - rid: 3038426085980635483
           - rid: 3038426085980635484
           - rid: 3038426085980635485
           - rid: 3038426085980635486
+          - rid: 3977848801182875719
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2992,11 +3008,13 @@ MonoBehaviour:
           - __option_Name
           - __option_RelativePosition
           - __option_RelativeSize
+          - __option_Label
           m_ValueList:
           - rid: 3038426085980635503
           - rid: 3038426085980635504
           - rid: 3038426085980635505
           - rid: 3038426085980635506
+          - rid: 3977848801182875720
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -3291,11 +3309,13 @@ MonoBehaviour:
           - __option_Name
           - __option_RelativePosition
           - __option_RelativeSize
+          - __option_Label
           m_ValueList:
           - rid: 3038426085980635527
           - rid: 3038426085980635528
           - rid: 3038426085980635529
           - rid: 3038426085980635530
+          - rid: 3977848801182875721
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -3723,6 +3743,54 @@ MonoBehaviour:
           m_PortDirection: 1
           m_PortOrientation: 0
           m_Title: 
+    - rid: 3977848801182875712
+      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
+      data:
+        m_Value: 
+    - rid: 3977848801182875713
+      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
+      data:
+        m_Value: 
+    - rid: 3977848801182875714
+      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
+      data:
+        m_Value: 
+    - rid: 3977848801182875715
+      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
+      data:
+        m_Value: 
+    - rid: 3977848801182875716
+      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
+      data:
+        m_Value: 
+    - rid: 3977848801182875717
+      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
+      data:
+        m_Value: 
+    - rid: 3977848801182875718
+      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
+      data:
+        m_Value: 
+    - rid: 3977848801182875719
+      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
+      data:
+        m_Value: 
+    - rid: 3977848801182875720
+      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
+      data:
+        m_Value: 
+    - rid: 3977848801182875721
+      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
+      data:
+        m_Value: 
+    - rid: 3977848801182875722
+      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
+      data:
+        m_Value: Dialog Intro
+    - rid: 3977848801182875723
+      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
+      data:
+        m_Value: Another
     - rid: 8052436285099082659
       type: {class: UserContextNodeModelImp, ns: Unity.GraphToolkit.Editor.Implementation, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -3847,11 +3915,13 @@ MonoBehaviour:
           - __option_Name
           - __option_RelativePosition
           - __option_RelativeSize
+          - __option_Label
           m_ValueList:
           - rid: 8052436285099082668
           - rid: 8052436285099082669
           - rid: 8052436285099082670
           - rid: 8052436285099082671
+          - rid: 3977848801182875722
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -3910,11 +3980,13 @@ MonoBehaviour:
           - __option_Name
           - __option_RelativePosition
           - __option_RelativeSize
+          - __option_Label
           m_ValueList:
           - rid: 8052436285099082674
           - rid: 8052436285099082675
           - rid: 8052436285099082676
           - rid: 8052436285099082677
+          - rid: 3977848801182875723
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []

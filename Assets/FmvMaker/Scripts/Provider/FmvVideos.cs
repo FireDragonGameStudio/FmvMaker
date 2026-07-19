@@ -6,6 +6,7 @@ using FmvMaker.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -151,6 +152,12 @@ namespace FmvMaker.Provider {
                 var navigationButton = GameObject.Instantiate(navigationButtonPrefab);
                 navigationButton.name = nextVideo.NodeId;
                 navigationButton.transform.SetParent(navigationElementsParent, false);
+
+                // set label text
+                if (!string.IsNullOrEmpty(currentNode.DecisionData[i].LabelText)) {
+                    var labelText = navigationButton.GetComponentInChildren<TextMeshProUGUI>();
+                    labelText.text = currentNode.DecisionData[i].LabelText;
+                }
 
                 // set position and size
                 var rectTransform = navigationButton.GetComponent<RectTransform>();

@@ -35,12 +35,14 @@ Follow these simple steps to create your first FMV sequence, based on the [Sneak
     * Add a `Video Context Node` (this acts as a hub for choices).
     * Click "Add Block" in the node to create multiple outputs (Choice 1, Choice 2, etc.).
     * Connect each output to different `Video Nodes`.
+	* Add an optional label, to display text for a possible output.
     * **Position Buttons:** In the Inspector, adjust `Relative Screen Position` (X/Y from 0 to 1) to place the click zones on screen.
 * **Create Choices with Timing:**
 	* Add a `Video Context Time Node` (this acts as a hub for timed choices, like quick time events).
 	* Click "Add Block" in the node to create multiple outputs (Choice 1, Choice 2, etc.).
 	* Connect each output to different `Video Nodes`.
 	* Connect the node output to a new `Video Node` input. This will be the default choice, when the time is up and the player didn't choose an option.	
+	* Add an optional label, to display text for a possible output.
     * **Position Buttons:** In the Inspector, adjust `Relative Screen Position` (X/Y from 0 to 1) to place the click zones on screen.
 
 ### 4. Run the Game
