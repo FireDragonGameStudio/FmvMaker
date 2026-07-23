@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/FmvMaker/Scenes/FmvMakerSampleScene.unity
-    guid: 7ec4fb6eb6bd13644be35b907d9511e7
+    path: Assets/FmvMaker/Samples/Detective-Point_n_Click/Scenes/Detective-Story.unity
+    guid: 013f9e20f1e48a842a1c238cfdca9623
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 0b0636fb2d181b1438d382a5ee866342, type: 3}

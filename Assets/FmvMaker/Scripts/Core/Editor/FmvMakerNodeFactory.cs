@@ -59,6 +59,7 @@ namespace FmvMaker.Core {
                 var nextNodePort = block.GetOutputPortByName("out")?.FirstConnectedPort;
                 var blockName = GetNodeOption<string>(block.GetNodeOptionByName("Name"));
                 var labelText = GetNodeOption<string>(block.GetNodeOptionByName("Label"));
+                var labelTextColor = GetNodeOption<Color>(block.GetNodeOptionByName("LabelColor"));
                 var relativePosition = GetNodeOption<Vector2>(block.GetNodeOptionByName("RelativePosition"));
                 var relativeSize = GetNodeOption<Vector2>(block.GetNodeOptionByName("RelativeSize"));
 
@@ -67,6 +68,7 @@ namespace FmvMaker.Core {
                         DecisionText = blockName,
                         DestinationId = nodeIdMap[nextNodePort.GetNode()],
                         LabelText = labelText,
+                        LabelTextColor = labelTextColor,
                         RelativePosition = relativePosition,
                         RelativeSize = relativeSize
                     };
@@ -86,6 +88,7 @@ namespace FmvMaker.Core {
                 var nextNodePort = block.GetOutputPortByName("out")?.FirstConnectedPort;
                 var blockName = GetNodeOption<string>(block.GetNodeOptionByName("Name"));
                 var labelText = GetNodeOption<string>(block.GetNodeOptionByName("Label"));
+                var labelTextColor = GetNodeOption<Color>(block.GetNodeOptionByName("LabelColor"));
                 var relativePosition = GetNodeOption<Vector2>(block.GetNodeOptionByName("RelativePosition"));
                 var relativeSize = GetNodeOption<Vector2>(block.GetNodeOptionByName("RelativeSize"));
 
@@ -94,6 +97,7 @@ namespace FmvMaker.Core {
                         DecisionText = blockName,
                         DestinationId = nodeIdMap[nextNodePort.GetNode()],
                         LabelText = labelText,
+                        LabelTextColor = labelTextColor,
                         RelativePosition = relativePosition,
                         RelativeSize = relativeSize
                     };

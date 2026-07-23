@@ -7,6 +7,7 @@ namespace FmvMaker.Provider {
         [SerializeField] private bool resetInventoryOnStart;
         [SerializeField] private bool alwaysStartFromBeginning;
         [SerializeField] private bool showNavigationUiButtons;
+        [SerializeField] private bool showNavigationLabelTexts;
 
         [Header("Internal References")]
         [SerializeField] private FmvVideos fmvVideos;
@@ -17,6 +18,7 @@ namespace FmvMaker.Provider {
                 inventory.ResetInventory();
             }
             fmvVideos.SetNavigationUiVisibility(showNavigationUiButtons ? 1 : 0);
+            fmvVideos.SetNavigationUiLabelVisibility(showNavigationLabelTexts ? 1 : 0);
         }
 
         private void OnDestroy() {

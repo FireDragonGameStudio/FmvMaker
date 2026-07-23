@@ -570,6 +570,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 370594441}
     - target: {fileID: 3047148757875082070, guid: 08aa2c785a04a094ea0941a3c0e22453, type: 3}
+      propertyPath: RuntimeGraph
+      value: 
+      objectReference: {fileID: 3965311268370046156, guid: 97be8e46f0a0f9246b56b57e51be8ee0, type: 3}
+    - target: {fileID: 3047148757875082070, guid: 08aa2c785a04a094ea0941a3c0e22453, type: 3}
       propertyPath: playPauseVideo
       value: 
       objectReference: {fileID: 382535044}

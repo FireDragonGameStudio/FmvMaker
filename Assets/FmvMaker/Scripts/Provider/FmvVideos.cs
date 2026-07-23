@@ -45,6 +45,7 @@ namespace FmvMaker.Provider {
 
         private string navigationLastNodeId = "";
         private float navigationUiAlphaValue;
+        private float navigationUiLabelAlphaValue;
 
         private void Awake() {
             if (!videoView) {
@@ -52,8 +53,6 @@ namespace FmvMaker.Provider {
             }
 
             SetupVideoEventTrigger();
-
-            muteAudioImage.gameObject.SetActive(videoView.ActivePlayer.AudioClip == null);
 
             timedInteractionCountdown ??= timedInteractionCountdownObject.GetComponent<TimedInteractionCountdown>();
             timedInteractionCountdown.ResetCountdown();
@@ -78,6 +77,8 @@ namespace FmvMaker.Provider {
             } else {
                 EndFmvMaker();
             }
+
+            muteAudioImage.gameObject.SetActive(videoView.ActivePlayer.IsMute);
         }
 
         private void Update() {
@@ -157,6 +158,8 @@ namespace FmvMaker.Provider {
                 if (!string.IsNullOrEmpty(currentNode.DecisionData[i].LabelText)) {
                     var labelText = navigationButton.GetComponentInChildren<TextMeshProUGUI>();
                     labelText.text = currentNode.DecisionData[i].LabelText;
+                    labelText.color = currentNode.DecisionData[i].LabelTextColor;
+                    labelText.alpha = navigationUiLabelAlphaValue;
                 }
 
                 // set position and size
@@ -178,7 +181,7 @@ namespace FmvMaker.Provider {
                     PlayVideo(decisionData.DestinationId);
                 });
 
-                // set visibility
+                // set visibility of button image
                 var image = navigationButton.GetComponent<Image>();
                 image.color = new Color(image.color.r, image.color.g, image.color.b, navigationUiAlphaValue);
 
@@ -260,18 +263,8 @@ namespace FmvMaker.Provider {
 
         private void MuteVideo() {
             if (muteUnmuteVideo.action.triggered) {
-
-                if (videoView.ActivePlayer.AudioClip == null) {
-                    muteAudioImage.gameObject.SetActive(true);
-                    return;
-                }
-
-                if (videoView.ActivePlayer.AudioClip.volume >= 1f) {
-                    videoView.ActivePlayer.AudioClip.volume = 0f;
-                } else {
-                    videoView.ActivePlayer.AudioClip.volume = 1f;
-                }
-                muteAudioImage.gameObject.SetActive(videoView.ActivePlayer.AudioClip.volume == 0f);
+                videoView.ActivePlayer.IsMute = !videoView.ActivePlayer.IsMute;
+                muteAudioImage.gameObject.SetActive(videoView.ActivePlayer.IsMute);
             }
         }
 
@@ -291,6 +284,10 @@ namespace FmvMaker.Provider {
 
         public void SetNavigationUiVisibility(int alphaValue) {
             navigationUiAlphaValue = alphaValue;
+        }
+
+        public void SetNavigationUiLabelVisibility(int alphaValue) {
+            navigationUiLabelAlphaValue = alphaValue;
         }
     }
 }

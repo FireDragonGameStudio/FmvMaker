@@ -21,6 +21,11 @@ namespace FmvMaker.Core {
                 .WithTooltip("The text that is displayed. Ignored when empty.")
                 .Delayed();
 
+            context.AddOption<Color>("LabelColor")
+                .WithDisplayName("Visible InGame Text Color")
+                .WithTooltip("The color that text is displayed. Only used when Label is not empty.")
+                .Delayed();
+
             context.AddOption<Vector2>("RelativePosition")
                 .WithDisplayName("Relative Position (0-1)")
                 .WithTooltip("0,0 is in the left lower corner and 1,1 in the upper right corner.")

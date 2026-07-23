@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Video;
 
 namespace FmvMaker.Core.Facades {
+    [RequireComponent(typeof(AudioSource), typeof(VideoPlayer))]
     public class FmvVideoFacade : MonoBehaviour, IVideoEvents {
 
         public event Action OnPreparationCompleted;
@@ -17,7 +18,30 @@ namespace FmvMaker.Core.Facades {
         public bool IsLooping => videoPlayer.isLooping;
         public bool IsPlaying => videoPlayer.isPlaying;
         public VideoClip VideoClip => videoPlayer.clip;
-        public AudioSource AudioClip => videoPlayer.GetTargetAudioSource(0);
+
+        public bool IsMute {
+            get {
+                return videoPlayer.GetDirectAudioMute(0);
+            }
+            set {
+                if (videoPlayer.audioOutputMode == VideoAudioOutputMode.None) {
+                    return;
+                }
+
+                if (videoPlayer.audioOutputMode == VideoAudioOutputMode.Direct && videoPlayer.canSetDirectAudioVolume) {
+                    for (ushort i = 0; i < videoPlayer.audioTrackCount; i++) {
+                        videoPlayer.SetDirectAudioMute(i, value);
+                    }
+                    return;
+                }
+
+                if (videoPlayer.audioOutputMode == VideoAudioOutputMode.AudioSource) {
+                    audioSource.mute = value;
+                }
+
+                // API not necessary (yet?)
+            }
+        }
 
         private void Awake() {
             videoPlayer = GetComponent<VideoPlayer>();
@@ -86,6 +110,12 @@ namespace FmvMaker.Core.Facades {
             videoPlayer.source = VideoSource.VideoClip;
             videoPlayer.clip = videoModel.VideoClip;
             videoPlayer.isLooping = videoModel.IsLooping;
+
+            // add audio source manually
+            if (videoPlayer.audioOutputMode == VideoAudioOutputMode.AudioSource) {
+                videoPlayer.SetTargetAudioSource(0, audioSource);
+            }
+
             videoPlayer.Prepare();
         }
 

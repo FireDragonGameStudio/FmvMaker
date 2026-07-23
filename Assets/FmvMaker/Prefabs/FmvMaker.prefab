@@ -213,7 +213,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FmvSettings
   resetInventoryOnStart: 1
   alwaysStartFromBeginning: 1
-  showNavigationUiButtons: 1
+  showNavigationUiButtons: 0
+  showNavigationLabelTexts: 0
   fmvVideos: {fileID: 3047148757875082070}
   inventory: {fileID: 5665468752153485102}
 --- !u!1 &3550572875714875646
@@ -465,7 +466,7 @@ VideoPlayer:
   m_DataSource: 0
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
-  m_AudioOutputMode: 1
+  m_AudioOutputMode: 2
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
@@ -644,7 +645,7 @@ VideoPlayer:
   m_DataSource: 0
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
-  m_AudioOutputMode: 1
+  m_AudioOutputMode: 2
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:

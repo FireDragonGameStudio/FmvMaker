@@ -8,6 +8,7 @@ namespace FmvMaker.Models {
         public string DecisionText;
         public string DestinationId;
         public string LabelText;
+        public Color LabelTextColor;
         public Vector2 RelativePosition;
         public Vector2 RelativeSize;
     }
