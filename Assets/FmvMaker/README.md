@@ -1,12 +1,10 @@
-# FmvMaker (Experimental Graph Tool Version)
+# FmvMaker
 
-**Welcome to FmvMaker v2 (Experimental).**
+**Welcome to FmvMaker v2**
 
 ![FmvMaker Logo small](https://github.com/FireDragonGameStudio/FmvMaker/blob/experimental_graph_tool_impl/Assets/FmvMaker/Textures/FmvMaker-Logo-169.png)
 
-This branch introduces a completely new, node-based workflow for creating FMV games in Unity. It replaces the old JSON/Visual Scripting system with a custom **Graph Editor** based on Unitys [**Graph Toolkit**](https://docs.unity3d.com/Packages/com.unity.graphtoolkit@0.4/manual/index.html), making it easier to visualize and build your game logic without writing code.
-
-> **⚠️ Warning:** This branch is currently **EXPERIMENTAL**. Features may change, and bugs may occur. Please report any issues you encounter!
+This branch introduces a completely new, node-based workflow for creating FMV games in Unity. It replaces the old JSON/Visual Scripting system with a custom **Graph Editor** based on Unitys [**Graph Toolkit**](https://docs.unity3d.com/Packages/com.unity.graphtoolkit@0.4/manual/index.html), making it easier to visualize and build your game logic without writing code. You can find it in the Unity AssetStore as well: [FmvMaker-AssetStore Link](https://assetstore.unity.com/packages/tools/video/fmvmaker-182868)
 
 ---
 
@@ -34,20 +32,26 @@ Follow these simple steps to create your first FMV sequence, based on the [Sneak
 * **Create Choices:**
     * Add a `Video Context Node` (this acts as a hub for choices).
     * Click "Add Block" in the node to create multiple outputs (Choice 1, Choice 2, etc.).
+	* You can set a label text and label text color for each choice, if that fits your game.
+	* Leave the text empty, if you don't want to show the choices to the player.
     * Connect each output to different `Video Nodes`.
+	* Add an optional label, to display text for a possible output.
     * **Position Buttons:** In the Inspector, adjust `Relative Screen Position` (X/Y from 0 to 1) to place the click zones on screen.
 * **Create Choices with Timing:**
 	* Add a `Video Context Time Node` (this acts as a hub for timed choices, like quick time events).
 	* Click "Add Block" in the node to create multiple outputs (Choice 1, Choice 2, etc.).
+	* You can set a label text and label text color for each choice, if that fits your game.
+	* Leave the text empty, if you don't want to show the choices to the player.
 	* Connect each output to different `Video Nodes`.
 	* Connect the node output to a new `Video Node` input. This will be the default choice, when the time is up and the player didn't choose an option.	
+	* Add an optional label, to display text for a possible output.
     * **Position Buttons:** In the Inspector, adjust `Relative Screen Position` (X/Y from 0 to 1) to place the click zones on screen.
 
 ### 4. Run the Game
 * Open the `FmvMakerDemo` scene (or duplicate it and build your own scene).
 * Select the `FmvMaker` GameObject.
 * Locate the `FmvVideo` component in the Inspector.
-* Drag your **NewGameGraph** asset into the `Runtime Graph` field.
+* Drag your `NewGameGraph` asset into the `Runtime Graph` field.
 * Press **Play** in Unity!
 
 ---
