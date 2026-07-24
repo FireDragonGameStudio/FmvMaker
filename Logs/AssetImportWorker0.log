@@ -1,11 +1,11 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.4/staging' branch; Version is '6000.4.5f1 (cc83ebd631f8) revision 13403115'; Using compiler version '194234433'; Build Type 'Release'
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-marku" at "2026-07-23T20:38:18.2652866Z"
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-marku" at "2026-07-24T18:27:10.4094614Z"
 OS: 'Windows 11  (10.0.26200) Core' Language: 'en' Physical Memory: 32536 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
-Date: 2026-07-23T20:38:18Z
+Date: 2026-07-24T18:27:10Z
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.4.5f1\Editor\Unity.exe
@@ -19,7 +19,7 @@ C:/Users/marku/Unity/FmvMaker
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-17103
+48620
 -licensingIpc
 LicenseClient-marku
 -force-d3d12
@@ -68,14 +68,14 @@ C:/Users/marku/Unity/FmvMaker
     "memorysetup-job-temp-allocator-block-size=2097152"
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
-Player connection [36260]  Target information:
+Player connection [13972]  Target information:
 
-Player connection [36260]  * "[IP] 169.254.123.136 [Port] 0 [Flags] 2 [Guid] 1959081503 [EditorId] 1959081503 [Version] 1048832 [Id] WindowsEditor(7,MSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [13972]  * "[IP] 169.254.123.136 [Port] 0 [Flags] 2 [Guid] 1666561953 [EditorId] 1666561953 [Version] 1048832 [Id] WindowsEditor(7,MSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [36260]  * "[IP] 192.168.8.10 [Port] 0 [Flags] 2 [Guid] 1959081503 [EditorId] 1959081503 [Version] 1048832 [Id] WindowsEditor(7,MSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [13972]  * "[IP] 192.168.8.10 [Port] 0 [Flags] 2 [Guid] 1666561953 [EditorId] 1666561953 [Version] 1048832 [Id] WindowsEditor(7,MSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [36260] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [36260] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [13972] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [13972] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 15
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -87,7 +87,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 5.06 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 2.56 ms, found 4 plugins.
 Initialize engine version: 6000.4.5f1 (cc83ebd631f8)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.4.5f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/marku/Unity/FmvMaker/Assets
@@ -101,30 +101,30 @@ Direct3D:
     VRAM:            11995 MB
     App VRAM Budget: 11227 MB
     Driver:          32.0.16.1074
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.4.5f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.4.5f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.4.5f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56116
+CodeReloadManager initialized
+Begin MonoManager ReloadAssembly
 [Licensing::Client] Error: HandshakeResponse reported an error:
 	ResponseCode: 505
 	ResponseStatus: Unsupported protocol version '1.18.1'.
 [Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-marku"
 [Licensing::IpcConnector] LicenseClient-marku channel disconnected successfully.
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-marku-6000.4.5" at "2026-07-23T20:38:19.2225443Z"
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 22252, path: "C:/Program Files/Unity/Hub/Editor/6000.4.5f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-marku-6000.4.5" at "2026-07-24T18:27:11.0877732Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 24444, path: "C:/Program Files/Unity/Hub/Editor/6000.4.5f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.18.1+9fbee8e
-  Session Id:              4245a266c4a6494c898a3a630f33f41a
-  Correlation Id:          6a2ac52c51d25ea33660171f8450e97e
-  External correlation Id: 3242271347094061942
+  Session Id:              095bc28e2c33472694113781b08080fd
+  Correlation Id:          897b678f7a7776fe78fbabdb48f26a86
+  External correlation Id: 7090673513545855150
   Machine Id:              pN+TMrx0ot+7t9xoYIProAIW6uo=
 [Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-marku-6000.4.5" (connect: 0.00s, validation: 0.00s, handshake: 0.00s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-marku-6000.4.5-notifications" at "2026-07-23T20:38:19.229431Z"
-[Licensing::Module] Licensing Background thread has ended after 0.96s
-Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.4.5f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.4.5f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.4.5f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56768
-CodeReloadManager initialized
-Begin MonoManager ReloadAssembly
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-marku-6000.4.5-notifications" at "2026-07-24T18:27:11.0928049Z"
+[Licensing::Module] Licensing Background thread has ended after 0.68s
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.4.5f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 [Licensing::Client] Successfully resolved entitlement details
@@ -134,7 +134,7 @@ Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.4.5f1/E
   Type: Assigned
   Expiration: Unlimited
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.4.5f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Registered in 0.003005 seconds.
+Registered in 0.002948 seconds.
 Native extension for Android target not found
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
@@ -143,23 +143,23 @@ Package Manager log level set to [2]
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.300 seconds
-Domain Reload Profiling: 644ms
-	BeginReloadAssembly (94ms)
-	RebuildCommonClasses (29ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (49ms)
-	LoadAllAssembliesAndSetupDomain (161ms)
-		LoadAssemblies (90ms)
-		AnalyzeDomain (153ms)
-			TypeCache.Refresh (152ms)
-				TypeCache.ScanAssembly (142ms)
-	FinalizeReload (302ms)
+- Finished resetting the current domain, in  0.279 seconds
+Domain Reload Profiling: 594ms
+	BeginReloadAssembly (88ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (46ms)
+	LoadAllAssembliesAndSetupDomain (144ms)
+		LoadAssemblies (86ms)
+		AnalyzeDomain (136ms)
+			TypeCache.Refresh (136ms)
+				TypeCache.ScanAssembly (126ms)
+	FinalizeReload (280ms)
 		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (43ms)
-			BeforeProcessingInitializeOnLoad (68ms)
-			ProcessInitializeOnLoadAttributes (80ms)
-			ProcessInitializeOnLoadMethodAttributes (63ms)
+			InitializePlatformSupportModulesInManaged (40ms)
+			BeforeProcessingInitializeOnLoad (64ms)
+			ProcessInitializeOnLoadAttributes (72ms)
+			ProcessInitializeOnLoadMethodAttributes (58ms)
 ========================================================================
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
@@ -204,61 +204,48 @@ Native extension for WindowsStandalone target not found
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.658 seconds
-Domain Reload Profiling: 1332ms
-	BeginReloadAssembly (136ms)
-		DisableScriptedObjects (3ms)
-		CreateAndSetChildDomain (22ms)
-	RebuildCommonClasses (29ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (55ms)
-	LoadAllAssembliesAndSetupDomain (445ms)
-		LoadAssemblies (321ms)
-		AnalyzeDomain (195ms)
-			TypeCache.Refresh (142ms)
-				TypeCache.ScanAssembly (128ms)
-			BuildScriptInfoCaches (45ms)
+- Finished resetting the current domain, in  0.623 seconds
+Domain Reload Profiling: 1235ms
+	BeginReloadAssembly (119ms)
+		DisableScriptedObjects (4ms)
+		CreateAndSetChildDomain (19ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (47ms)
+	LoadAllAssembliesAndSetupDomain (412ms)
+		LoadAssemblies (286ms)
+		AnalyzeDomain (186ms)
+			TypeCache.Refresh (135ms)
+				TypeCache.ScanAssembly (122ms)
+			BuildScriptInfoCaches (42ms)
 			ResolveRequiredComponents (7ms)
-	FinalizeReload (659ms)
+	FinalizeReload (623ms)
 		SetupLoadedEditorAssemblies (0ms)
 			InitializePlatformSupportModulesInManaged (6ms)
-			BeforeProcessingInitializeOnLoad (155ms)
-			ProcessInitializeOnLoadAttributes (271ms)
-			ProcessInitializeOnLoadMethodAttributes (56ms)
-			AfterProcessingInitializeOnLoad (4ms)
+			BeforeProcessingInitializeOnLoad (147ms)
+			ProcessInitializeOnLoadAttributes (260ms)
+			ProcessInitializeOnLoadMethodAttributes (52ms)
+			AfterProcessingInitializeOnLoad (5ms)
 		AwakeInstancesAfterBackupRestoration (5ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
 Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 6559 unused Assets / (5.2 MB). Loaded Objects now: 7385.
-Memory consumption went from 172.1 MB to 166.9 MB.
-Total: 5.475700 ms (FindLiveObjects: 0.414500 ms CreateObjectMapping: 0.249100 ms MarkObjects: 3.379400 ms  DeleteObjects: 1.426700 ms)
+Memory consumption went from 166.0 MB to 160.8 MB.
+Total: 4.974500 ms (FindLiveObjects: 0.378400 ms CreateObjectMapping: 0.248600 ms MarkObjects: 2.975700 ms  DeleteObjects: 1.370500 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 697955.558568 seconds.
+  Time since last request: 776488.924084 seconds.
   path: Assets/FmvMaker/Samples/Detective-Point_n_Click/Graph/DetectiveGraph.fmvmkr
   importAddress: Guid(97be8e46f0a0f9246b56b57e51be8ee0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/FmvMaker/Samples/Detective-Point_n_Click/Graph/DetectiveGraph.fmvmkr using Guid(97be8e46f0a0f9246b56b57e51be8ee0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '48a4dbee325eb837051ac298ce874138') in 0.0638901 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a6b2ecf5b78f8ee887dc1a68342b8c00 DependenciesID=f59f91a23addec821f3320aa9bb65b1c StaticDependenciesID=d04db75396557cecc70d42d123967449 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+Start importing Assets/FmvMaker/Samples/Detective-Point_n_Click/Graph/DetectiveGraph.fmvmkr using Guid(97be8e46f0a0f9246b56b57e51be8ee0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ebbbaa49a2320ebe307ef66c5cde0c67') in 0.058084 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=48f52dfd94bdb72e87032226b5726f05 DependenciesID=08280100025b80d13a72cf04dbe3728d StaticDependenciesID=9e171b959cf89b27a7b205b7ad9112c6 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/FmvMaker/Samples/Detective-Point_n_Click/Videos/this_will_be_the_first_clip_of.mp4
-  importAddress: Guid(db171f7c37fa8334c89df9622f18ec3e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/FmvMaker/Samples/Detective-Point_n_Click/Videos/this_will_be_the_first_clip_of.mp4 using Guid(db171f7c37fa8334c89df9622f18ec3e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f82af6ebcfe7c21e2b78600f80e462a3') in 0.0282821 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=720ab35c3f8a6b37bd1b47511e1202b9 DependenciesID=0e090e2c6dc305ecaf4ed15b409ac9e2 StaticDependenciesID=ccc9b8f8d47f9772fe6bbeeeaecd2794 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+  Time since last request: 176.566646 seconds.
+  path: Assets/FmvMaker/Samples/Detective-Point_n_Click/Graph/DetectiveGraph.fmvmkr
+  importAddress: Guid(97be8e46f0a0f9246b56b57e51be8ee0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/FmvMaker/Samples/Detective-Point_n_Click/Graph/DetectiveGraph.fmvmkr using Guid(97be8e46f0a0f9246b56b57e51be8ee0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b4e844ddc795643d6740da00a3e8d1db') in 0.0157969 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a0236a04c3388d3d506705a0901fbf55 DependenciesID=28e588584cde8a6d2fb9bf9a9b58688f StaticDependenciesID=fce10fd57ac38c5023be798977c7e305 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
 
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 3.18 ms, found 4 plugins.
-Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 6546 unused Assets / (4.2 MB). Loaded Objects now: 7387.
-Memory consumption went from 170.9 MB to 166.6 MB.
-Total: 9.756000 ms (FindLiveObjects: 0.965700 ms CreateObjectMapping: 0.519000 ms MarkObjects: 6.050600 ms  DeleteObjects: 2.219900 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
