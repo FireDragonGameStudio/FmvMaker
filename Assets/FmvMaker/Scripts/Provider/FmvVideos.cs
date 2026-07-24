@@ -263,8 +263,9 @@ namespace FmvMaker.Provider {
 
         private void MuteVideo() {
             if (muteUnmuteVideo.action.triggered) {
-                videoView.ActivePlayer.IsMute = !videoView.ActivePlayer.IsMute;
-                muteAudioImage.gameObject.SetActive(videoView.ActivePlayer.IsMute);
+                var mute = !muteAudioImage.gameObject.activeSelf;
+                videoView.MuteVideoClip(mute);
+                muteAudioImage.gameObject.SetActive(mute);
             }
         }
 

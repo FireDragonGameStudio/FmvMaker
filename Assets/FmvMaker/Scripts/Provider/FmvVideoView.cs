@@ -57,6 +57,11 @@ namespace FmvMaker.Provider {
             inactivePlayer.Pause();
         }
 
+        public void MuteVideoClip(bool mute) {
+            firstPlayer.IsMute = mute;
+            secondPlayer.IsMute = mute;
+        }
+
         private void SetupVideoFacadeEvents() {
             firstPlayer.OnPlayerStarted += PlayerStarted;
             firstPlayer.OnPreparationCompleted += PreparationComplete;

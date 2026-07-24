@@ -20,28 +20,13 @@ namespace FmvMaker.Core.Facades {
         public VideoClip VideoClip => videoPlayer.clip;
 
         public bool IsMute {
-            get {
-                return videoPlayer.GetDirectAudioMute(0);
-            }
+            get => isMuted;
             set {
-                if (videoPlayer.audioOutputMode == VideoAudioOutputMode.None) {
-                    return;
-                }
-
-                if (videoPlayer.audioOutputMode == VideoAudioOutputMode.Direct && videoPlayer.canSetDirectAudioVolume) {
-                    for (ushort i = 0; i < videoPlayer.audioTrackCount; i++) {
-                        videoPlayer.SetDirectAudioMute(i, value);
-                    }
-                    return;
-                }
-
-                if (videoPlayer.audioOutputMode == VideoAudioOutputMode.AudioSource) {
-                    audioSource.mute = value;
-                }
-
-                // API not necessary (yet?)
+                isMuted = value;
+                MuteAudio(isMuted);
             }
         }
+        private bool isMuted = false;
 
         private void Awake() {
             videoPlayer = GetComponent<VideoPlayer>();
@@ -83,11 +68,32 @@ namespace FmvMaker.Core.Facades {
         }
 
         private void PreparationComplete(VideoPlayer sourc) {
+            MuteAudio(IsMute);
+
             OnPreparationCompleted?.Invoke();
         }
 
         private void LoopPointReached(VideoPlayer source) {
             OnLoopPointReached?.Invoke(source.clip);
+        }
+
+        private void MuteAudio(bool mute) {
+            if (videoPlayer.audioOutputMode == VideoAudioOutputMode.None) {
+                return;
+            }
+
+            if (videoPlayer.audioOutputMode == VideoAudioOutputMode.Direct && videoPlayer.canSetDirectAudioVolume) {
+                for (ushort i = 0; i < videoPlayer.audioTrackCount; i++) {
+                    videoPlayer.SetDirectAudioMute(i, mute);
+                }
+                return;
+            }
+
+            if (videoPlayer.audioOutputMode == VideoAudioOutputMode.AudioSource) {
+                audioSource.mute = mute;
+            }
+
+            // API not necessary (yet?)
         }
 
         public void Play() {
