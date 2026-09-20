@@ -6,7 +6,7 @@ namespace FmvMaker.Models {
     [Serializable]
     public class FmvMakerDecisionData {
         public string DecisionText;
-        public string DestinationId;
+        public Hash128 DestinationId;
         public string LabelText;
         public Color LabelTextColor;
         public Vector2 RelativePosition;

@@ -8,12 +8,13 @@ using UnityEngine.Video;
 namespace FmvMaker.Core {
     public static class FmvMakerNodeFactory {
 
-        public static Dictionary<INode, string> LoadNodeMap(IEnumerable<INode> graphNodes) {
-            var nodeIdMap = new Dictionary<INode, string>();
+        public static Dictionary<INode, Hash128> LoadNodeMap(IEnumerable<INode> graphNodes) {
+            var nodeIdMap = new Dictionary<INode, Hash128>();
 
             foreach (var node in graphNodes) {
                 if (node is Node nodeWithOptions) {
-                    var nodeId = GetNodeOption<string>(nodeWithOptions.GetNodeOptionByName("NodeId"));
+                    //var nodeId = GetNodeOption<string>(nodeWithOptions.GetNodeOptionByName("NodeId"));
+                    var nodeId = node.ID;
                     nodeIdMap[node] = nodeId;
                 }
             }
@@ -21,7 +22,7 @@ namespace FmvMaker.Core {
             return nodeIdMap;
         }
 
-        public static FmvMakerNode Create(INode node, Dictionary<INode, string> nodeIdMap) {
+        public static FmvMakerNode Create(INode node, Dictionary<INode, Hash128> nodeIdMap) {
             var runtimeNode = new FmvMakerNode {
                 NodeId = nodeIdMap[node],
                 NodeName = GetNodeOption<string>((node as Node).GetNodeOptionByName("Name"))
@@ -42,18 +43,23 @@ namespace FmvMaker.Core {
             return runtimeNode;
         }
 
-        private static void PopulateVideoNode(VideoNode node, FmvMakerNode runtimeNode, Dictionary<INode, string> nodeIdMap) {
+        private static void PopulateVideoNode(VideoNode node, FmvMakerNode runtimeNode, Dictionary<INode, Hash128> nodeIdMap) {
             runtimeNode.VideoClip = GetNodeOption<VideoClip>(node.GetNodeOptionByName("VideoClip"));
             runtimeNode.NeededItem = GetNodeOption<FmvInventoryItem>(node.GetNodeOptionByName("NeededItem"));
             runtimeNode.GivingItem = GetNodeOption<FmvInventoryItem>(node.GetNodeOptionByName("GivingItem"));
             runtimeNode.NextNodeId = GetOutputNodeId(node, "out", nodeIdMap);
+
+            runtimeNode.InputPortId = node.GetInputPortByName("in").FirstConnectedPort.ID;
+            runtimeNode.OutputPortId = node.GetOutputPortByName("out").FirstConnectedPort.ID;
         }
 
-        private static void PopulateContextNode(VideoContextNode node, FmvMakerNode runtimeNode, Dictionary<INode, string> nodeIdMap) {
+        private static void PopulateContextNode(VideoContextNode node, FmvMakerNode runtimeNode, Dictionary<INode, Hash128> nodeIdMap) {
             runtimeNode.VideoClip = GetNodeOption<VideoClip>(node.GetNodeOptionByName("VideoClip"));
             runtimeNode.IsLooping = GetNodeOption<bool>(node.GetNodeOptionByName("IsLooping"));
             runtimeNode.NeededItem = GetNodeOption<FmvInventoryItem>(node.GetNodeOptionByName("NeededItem"));
             runtimeNode.HasDecisionData = node.BlockCount > 0;
+
+            runtimeNode.InputPortId = node.GetInputPortByName("in").FirstConnectedPort.ID;
 
             foreach (var block in node.BlockNodes) {
                 var nextNodePort = block.GetOutputPortByName("out")?.FirstConnectedPort;
@@ -78,11 +84,14 @@ namespace FmvMaker.Core {
             }
         }
 
-        private static void PopulateContextTimeNode(VideoContextTimeNode node, FmvMakerNode runtimeNode, Dictionary<INode, string> nodeIdMap) {
+        private static void PopulateContextTimeNode(VideoContextTimeNode node, FmvMakerNode runtimeNode, Dictionary<INode, Hash128> nodeIdMap) {
             runtimeNode.VideoClip = GetNodeOption<VideoClip>(node.GetNodeOptionByName("VideoClip"));
             runtimeNode.NeededItem = GetNodeOption<FmvInventoryItem>(node.GetNodeOptionByName("NeededItem"));
             runtimeNode.IsTimedInteraction = true;
             runtimeNode.HasDecisionData = node.BlockCount > 0;
+
+            runtimeNode.InputPortId = node.GetInputPortByName("in").FirstConnectedPort.ID;
+            runtimeNode.OutputPortId = node.GetOutputPortByName("out").FirstConnectedPort.ID;
 
             foreach (var block in node.BlockNodes) {
                 var nextNodePort = block.GetOutputPortByName("out")?.FirstConnectedPort;
@@ -112,9 +121,9 @@ namespace FmvMaker.Core {
             }
         }
 
-        private static string GetOutputNodeId(INode node, string portName, Dictionary<INode, string> nodeIdMap) {
+        private static Hash128 GetOutputNodeId(INode node, string portName, Dictionary<INode, Hash128> nodeIdMap) {
             var port = node.GetOutputPortByName(portName)?.FirstConnectedPort;
-            return (port != null && nodeIdMap.ContainsKey(port.GetNode())) ? nodeIdMap[port.GetNode()] : string.Empty;
+            return (port != null && nodeIdMap.ContainsKey(port.GetNode())) ? nodeIdMap[port.GetNode()] : default;
         }
 
         private static T GetNodeOption<T>(INodeOption option) {

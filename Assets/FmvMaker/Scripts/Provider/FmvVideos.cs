@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using TMPro;
+using Unity.GraphToolkit.Editor;
+using Unity.GraphToolkit.Editor.GraphVisualization;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -38,14 +40,18 @@ namespace FmvMaker.Provider {
         [SerializeField] private Image muteAudioImage;
         [SerializeField] private GameObject timedInteractionCountdownObject;
 
-        private Dictionary<string, FmvMakerNode> nodeLookup = new();
+        private Dictionary<Hash128, FmvMakerNode> nodeLookup = new();
         private FmvMakerNode currentNode;
         private List<GameObject> clickableObjects = new();
         private ICountdownEvents timedInteractionCountdown;
 
-        private string navigationLastNodeId = "";
+        private Hash128 navigationLastNodeId;
         private float navigationUiAlphaValue;
         private float navigationUiLabelAlphaValue;
+
+#if UNITY_EDITOR
+        private Context context;
+#endif
 
         private void Awake() {
             if (!videoView) {
@@ -56,6 +62,10 @@ namespace FmvMaker.Provider {
 
             timedInteractionCountdown ??= timedInteractionCountdownObject.GetComponent<TimedInteractionCountdown>();
             timedInteractionCountdown.ResetCountdown();
+
+#if UNITY_EDITOR
+            context = Registry.CreateVisualizationContext(RuntimeGraph.GraphId);
+#endif
         }
 
         private async void Start() {
@@ -72,7 +82,7 @@ namespace FmvMaker.Provider {
                 nodeLookup[node.NodeId] = node;
             }
 
-            if (!string.IsNullOrEmpty(RuntimeGraph.EntryNodeId)) {
+            if (RuntimeGraph.EntryNodeId != null) {
                 PlayVideo(RuntimeGraph.EntryNodeId);
             } else {
                 EndFmvMaker();
@@ -151,7 +161,7 @@ namespace FmvMaker.Provider {
                 }
 
                 var navigationButton = GameObject.Instantiate(navigationButtonPrefab);
-                navigationButton.name = nextVideo.NodeId;
+                navigationButton.name = nextVideo.NodeId.ToString();
                 navigationButton.transform.SetParent(navigationElementsParent, false);
 
                 // set label text
@@ -196,6 +206,10 @@ namespace FmvMaker.Provider {
             DisposeVideoEventTrigger();
 
             DynamicVideoResolution.Instance.ScreenSizeChanged -= OnScreenSizeChanged;
+
+#if UNITY_EDITOR
+            context.Dispose();
+#endif
         }
 
         private void SetupVideoEventTrigger() {
@@ -212,7 +226,7 @@ namespace FmvMaker.Provider {
             videoView.OnVideoFinished -= OnVideoFinished.Invoke;
         }
 
-        private void PlayVideo(string nodeId) {
+        private void PlayVideo(Hash128 nodeId) {
 
             if (!nodeLookup.ContainsKey(nodeId)) {
                 EndFmvMaker();
@@ -223,6 +237,30 @@ namespace FmvMaker.Provider {
         }
 
         private void PlayVideoInternal(FmvMakerNode fmvMakerNode) {
+
+#if UNITY_EDITOR
+            if (currentNode != null) {
+                var previousNodeRef = context.GetNodeReference(currentNode.NodeId);
+                context.Motion.Stop(previousNodeRef);
+
+                //var connectedWireRef = context.GetWireReference(currentNode.OutputPortId, fmvMakerNode.InputPortId);
+                //context.Motion.Play(connectedWireRef);
+                //connectedWireRef.WidthOverride = 10f;
+                //connectedWireRef.Opacity = 0.5f;
+                //connectedWireRef.IsDashed = true;
+                //connectedWireRef.ClearCustomization();
+            }
+
+            var currentNodeRef = context.GetNodeReference(fmvMakerNode.NodeId);
+            currentNodeRef.FillAmount = 100f;
+            context.Motion.Play(currentNodeRef);
+
+            var connectedWireRef = context.GetWireReference(Hash128.Parse("ac6574633d958692adb54c5549f22d55"), Hash128.Parse("d6a97c78c9f8b8eaf0f87cbdf2bfe8e7"));
+            connectedWireRef.WidthOverride = 10f;
+            connectedWireRef.Opacity = 0.5f;
+            connectedWireRef.IsDashed = true;
+            context.Motion.Play(connectedWireRef);
+#endif
 
             currentNode = fmvMakerNode;
 

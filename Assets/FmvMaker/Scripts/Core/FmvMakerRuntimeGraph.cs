@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace FmvMaker.Core {
     public class FmvMakerRuntimeGraph : ScriptableObject {
-        public string EntryNodeId;
+        public Hash128 GraphId;
+        public Hash128 EntryNodeId;
         public List<FmvMakerNode> AllFmvMakerNodes = new();
     }
 }

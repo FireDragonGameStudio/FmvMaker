@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO.Hashing;
 using System.Linq;
 using Unity.GraphToolkit.Editor;
 using UnityEditor.AssetImporters;
@@ -13,6 +14,9 @@ namespace FmvMaker.Core {
 
             // load nodes from graph
             var nodeIdMap = FmvMakerNodeFactory.LoadNodeMap(fmvMakerGraph.GetNodes());
+
+            // set Graph Id
+            runtimeGraph.GraphId = fmvMakerGraph.ID;
 
             // set Entry Node
             runtimeGraph.EntryNodeId = GetEntryNodeId(fmvMakerGraph, nodeIdMap);
@@ -29,9 +33,9 @@ namespace FmvMaker.Core {
             ctx.SetMainObject(runtimeGraph);
         }
 
-        private string GetEntryNodeId(FmvMakerGraph graph, Dictionary<INode, string> nodeIdMap) {
+        private Hash128 GetEntryNodeId(FmvMakerGraph graph, Dictionary<INode, Hash128> nodeIdMap) {
             var startNode = graph.GetNodes().OfType<StartFmvNode>().FirstOrDefault();
-            if (startNode == null) return null;
+            if (startNode == null) return default;
 
             // look for the first connected port on the Start node
             var entryPort = startNode.GetOutputPorts().FirstOrDefault()?.FirstConnectedPort;
@@ -43,7 +47,7 @@ namespace FmvMaker.Core {
                 }
             }
 
-            return null;
+            return default;
         }
     }
 }

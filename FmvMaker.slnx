@@ -1,4 +1,6 @@
 ﻿<Solution>
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="Unity.GraphToolkit.Samples.VisualNovelDirector.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
+  <Project Path="Unity.GraphToolkit.Samples.VisualNovelDirector.Editor.csproj" />
 </Solution>
