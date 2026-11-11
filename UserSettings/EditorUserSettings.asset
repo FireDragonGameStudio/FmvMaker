@@ -5,6 +5,9 @@ EditorUserSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
   m_ConfigSettings:
+    QuickInstaller_com.unity.multiplayer.center_installRecorded:
+      value: 37434103
+      flags: 0
     QuickInstaller_com.unity.purchasing_installRecorded:
       value: 2550581500
       flags: 0
