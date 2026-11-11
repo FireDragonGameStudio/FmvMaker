@@ -7,8 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using TMPro;
-using Unity.GraphToolkit.Editor;
-using Unity.GraphToolkit.Editor.GraphVisualization;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -40,6 +38,8 @@ namespace FmvMaker.Provider {
         [SerializeField] private Image muteAudioImage;
         [SerializeField] private GameObject timedInteractionCountdownObject;
 
+        private const int MaxRandomizersInARow = 32;
+
         private Dictionary<Hash128, FmvMakerNode> nodeLookup = new();
         private FmvMakerNode currentNode;
         private List<GameObject> clickableObjects = new();
@@ -50,7 +50,7 @@ namespace FmvMaker.Provider {
         private float navigationUiLabelAlphaValue;
 
 #if UNITY_EDITOR
-        private Context context;
+        private FmvGraphVisualizer graphVisualizer;
 #endif
 
         private void Awake() {
@@ -64,7 +64,7 @@ namespace FmvMaker.Provider {
             timedInteractionCountdown.ResetCountdown();
 
 #if UNITY_EDITOR
-            context = Registry.CreateVisualizationContext(RuntimeGraph.GraphId);
+            graphVisualizer = new FmvGraphVisualizer(RuntimeGraph);
 #endif
         }
 
@@ -76,14 +76,12 @@ namespace FmvMaker.Provider {
             OnVideoStarted.AddListener(CheckForVideoStart);
             OnVideoFinished.AddListener(CheckForNextVideo);
 
-            DynamicVideoResolution.Instance.ScreenSizeChanged += OnScreenSizeChanged;
-
             foreach (var node in RuntimeGraph.AllFmvMakerNodes) {
                 nodeLookup[node.NodeId] = node;
             }
 
-            if (RuntimeGraph.EntryNodeId != null) {
-                PlayVideo(RuntimeGraph.EntryNodeId);
+            if (RuntimeGraph.EntryNodeId.isValid) {
+                PlayVideo(RuntimeGraph.EntryNodeId, RuntimeGraph.EntryOutputPortId);
             } else {
                 EndFmvMaker();
             }
@@ -92,6 +90,9 @@ namespace FmvMaker.Provider {
         }
 
         private void Update() {
+#if UNITY_EDITOR
+            graphVisualizer?.Tick();
+#endif
             SkipVideo();
             PauseVideo();
             MuteVideo();
@@ -129,7 +130,7 @@ namespace FmvMaker.Provider {
                 // hide countdown for timed interaction
                 timedInteractionCountdown.ResetCountdown();
 
-                PlayVideo(currentNode.NextNodeId);
+                PlayVideo(currentNode.NextNodeId, currentNode.OutputPortId);
                 return;
             }
 
@@ -144,24 +145,14 @@ namespace FmvMaker.Provider {
 
             for (int i = 0; i < currentNode.DecisionData?.Count; i++) {
 
-                // check if item is needed here and if user has the item in his inventory
-                var nextVideo = nodeLookup[currentNode.DecisionData[i].DestinationId];
-                var neededItem = nextVideo.NeededItem;
-                if (neededItem != null && !inventory.ContainsItem(neededItem)) {
+                var destinationId = currentNode.DecisionData[i].DestinationId;
+                if (!IsDestinationAvailable(destinationId)) {
                     continue;
                 }
-                // the item can be found and the user already has it
-                var givingItem = nextVideo.GivingItem;
-                if (givingItem != null && inventory.ContainsItem(givingItem)) {
-                    continue;
-                }
-                // if item is needed, is in inventory, is not multi-use and was used alread
-                if (neededItem != null && inventory.ContainsItem(neededItem) && !neededItem.MultiUse && neededItem.WasUsed) {
-                    continue;
-                }
+                var neededItem = nodeLookup.TryGetValue(destinationId, out var nextVideo) ? nextVideo.NeededItem : null;
 
                 var navigationButton = GameObject.Instantiate(navigationButtonPrefab);
-                navigationButton.name = nextVideo.NodeId.ToString();
+                navigationButton.name = destinationId.ToString();
                 navigationButton.transform.SetParent(navigationElementsParent, false);
 
                 // set label text
@@ -188,7 +179,7 @@ namespace FmvMaker.Provider {
                         neededItem.WasUsed = true;
                     }
 
-                    PlayVideo(decisionData.DestinationId);
+                    PlayVideo(decisionData.DestinationId, decisionData.OutputPortId);
                 });
 
                 // set visibility of button image
@@ -199,16 +190,66 @@ namespace FmvMaker.Provider {
             }
         }
 
+        /// <summary>
+        /// Whether the player may go to this node, based on the inventory.
+        /// Destinations that aren't playable nodes (e.g. an End FMV Node) are always available.
+        /// </summary>
+        private bool IsDestinationAvailable(Hash128 destinationId) {
+            if (!nodeLookup.TryGetValue(destinationId, out var destination)) {
+                return true;
+            }
+
+            // item is needed here and the user doesn't have it
+            var neededItem = destination.NeededItem;
+            if (neededItem != null && !inventory.ContainsItem(neededItem)) {
+                return false;
+            }
+            // the item can be found here and the user already has it
+            var givingItem = destination.GivingItem;
+            if (givingItem != null && inventory.ContainsItem(givingItem)) {
+                return false;
+            }
+            // item is needed, is in inventory, is not multi-use and was used already
+            if (neededItem != null && !neededItem.MultiUse && neededItem.WasUsed) {
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>Picks one outcome of a randomizer node by weight, ignoring outcomes the player can't reach.</summary>
+        private FmvMakerDecisionData PickRandomOutcome(FmvMakerNode randomizer) {
+            var candidates = new List<FmvMakerDecisionData>();
+            var totalWeight = 0f;
+            foreach (var outcome in randomizer.DecisionData) {
+                if (outcome.Weight > 0f && IsDestinationAvailable(outcome.DestinationId)) {
+                    candidates.Add(outcome);
+                    totalWeight += outcome.Weight;
+                }
+            }
+
+            if (candidates.Count == 0) {
+                return null;
+            }
+
+            var roll = UnityEngine.Random.Range(0f, totalWeight);
+            foreach (var outcome in candidates) {
+                roll -= outcome.Weight;
+                if (roll < 0f) {
+                    return outcome;
+                }
+            }
+            // floating point edge case: roll == totalWeight
+            return candidates[candidates.Count - 1];
+        }
+
         private void OnDestroy() {
             OnVideoStarted.RemoveAllListeners();
             OnVideoFinished.RemoveAllListeners();
 
             DisposeVideoEventTrigger();
 
-            DynamicVideoResolution.Instance.ScreenSizeChanged -= OnScreenSizeChanged;
-
 #if UNITY_EDITOR
-            context.Dispose();
+            graphVisualizer?.Dispose();
 #endif
         }
 
@@ -226,41 +267,41 @@ namespace FmvMaker.Provider {
             videoView.OnVideoFinished -= OnVideoFinished.Invoke;
         }
 
-        private void PlayVideo(Hash128 nodeId) {
+        /// <param name="viaOutputPortId">Own "out" port of the node or choice block that led here (for visualization).</param>
+        /// <param name="randomizerDepth">Number of randomizer nodes passed in a row, to stop endless randomizer loops.</param>
+        private void PlayVideo(Hash128 nodeId, Hash128 viaOutputPortId, int randomizerDepth = 0) {
 
-            if (!nodeLookup.ContainsKey(nodeId)) {
+            if (!nodeLookup.TryGetValue(nodeId, out var nextNode)) {
                 EndFmvMaker();
                 return;
             }
 
-            PlayVideoInternal(nodeLookup[nodeId]);
+#if UNITY_EDITOR
+            graphVisualizer?.ShowTransition(nextNode.NodeId, viaOutputPortId, nextNode.InputPortId);
+#endif
+
+            if (nextNode.IsRandomizer) {
+                if (randomizerDepth >= MaxRandomizersInARow) {
+                    Debug.LogError($"FmvMaker: more than {MaxRandomizersInARow} randomizer nodes in a row at '{nextNode.NodeName}'. Check the graph for a loop between randomizers.");
+                    EndFmvMaker();
+                    return;
+                }
+
+                var outcome = PickRandomOutcome(nextNode);
+                if (outcome == null) {
+                    Debug.LogWarning($"FmvMaker: randomizer '{nextNode.NodeName}' has no available outcome.");
+                    EndFmvMaker();
+                    return;
+                }
+
+                PlayVideo(outcome.DestinationId, outcome.OutputPortId, randomizerDepth + 1);
+                return;
+            }
+
+            PlayVideoInternal(nextNode);
         }
 
         private void PlayVideoInternal(FmvMakerNode fmvMakerNode) {
-
-#if UNITY_EDITOR
-            if (currentNode != null) {
-                var previousNodeRef = context.GetNodeReference(currentNode.NodeId);
-                context.Motion.Stop(previousNodeRef);
-
-                //var connectedWireRef = context.GetWireReference(currentNode.OutputPortId, fmvMakerNode.InputPortId);
-                //context.Motion.Play(connectedWireRef);
-                //connectedWireRef.WidthOverride = 10f;
-                //connectedWireRef.Opacity = 0.5f;
-                //connectedWireRef.IsDashed = true;
-                //connectedWireRef.ClearCustomization();
-            }
-
-            var currentNodeRef = context.GetNodeReference(fmvMakerNode.NodeId);
-            currentNodeRef.FillAmount = 100f;
-            context.Motion.Play(currentNodeRef);
-
-            var connectedWireRef = context.GetWireReference(Hash128.Parse("ac6574633d958692adb54c5549f22d55"), Hash128.Parse("d6a97c78c9f8b8eaf0f87cbdf2bfe8e7"));
-            connectedWireRef.WidthOverride = 10f;
-            connectedWireRef.Opacity = 0.5f;
-            connectedWireRef.IsDashed = true;
-            context.Motion.Play(connectedWireRef);
-#endif
 
             currentNode = fmvMakerNode;
 
@@ -307,12 +348,11 @@ namespace FmvMaker.Provider {
             }
         }
 
-        private void OnScreenSizeChanged(float width, float height) {
-            //rectTransform.anchoredPosition = DynamicVideoResolution.GetRelativeScreenPosition(clickableModel.RelativeScreenPosition);
-        }
-
         private void EndFmvMaker() {
             Debug.Log("FmvMaker ended!");
+#if UNITY_EDITOR
+            graphVisualizer?.StopActive();
+#endif
             currentNode = null;
             StopVideo();
         }

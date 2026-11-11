@@ -77,12 +77,10 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_VideoClip
           - __option_NeededItem
           m_ValueList:
-          - rid: 2583076179994738759
           - rid: 2583076179994738760
           - rid: 2583076179994738761
           - rid: 2583076179994738762
@@ -110,10 +108,6 @@ MonoBehaviour:
         m_Subtitle: 
         m_Node:
           rid: 2583076179994738763
-    - rid: 2583076179994738759
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: 46786f11-e2f9-488b-98bd-9d9c7e1bfac5
     - rid: 2583076179994738760
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -147,14 +141,12 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_Label
           - __option_LabelColor
           - __option_RelativePosition
           - __option_RelativeSize
           m_ValueList:
-          - rid: 2583076179994738765
           - rid: 2583076179994738766
           - rid: 2583076179994738767
           - rid: 2583076179994738768
@@ -177,10 +169,6 @@ MonoBehaviour:
           rid: 2583076179994738758
         m_Node:
           rid: 2583076179994738771
-    - rid: 2583076179994738765
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: 250ceecb-1aed-442c-870d-6c764685601c
     - rid: 2583076179994738766
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -222,14 +210,12 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_Label
           - __option_LabelColor
           - __option_RelativePosition
           - __option_RelativeSize
           m_ValueList:
-          - rid: 2583076179994738773
           - rid: 2583076179994738774
           - rid: 2583076179994738775
           - rid: 2583076179994738776
@@ -252,10 +238,6 @@ MonoBehaviour:
           rid: 2583076179994738758
         m_Node:
           rid: 2583076179994738779
-    - rid: 2583076179994738773
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: c80de5ff-b0cb-4df7-984b-7a5529450895
     - rid: 2583076179994738774
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -279,38 +261,6 @@ MonoBehaviour:
     - rid: 2583076179994738779
       type: {class: VideoBlockNode, ns: FmvMaker.Core, asm: Assembly-CSharp-Editor}
       data: 
-    - rid: 2583076179994738780
-      type: {class: WireModel, ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Guid:
-          m_Value0: 3111922214185703898
-          m_Value1: 1256450170974195709
-        m_HashGuid:
-          serializedVersion: 2
-          Hash: da992f21c4c42f2bfd4fe506c6ce6f11
-        m_Version: 2
-        m_FromPortReference:
-          m_NodeModelGuid:
-            m_Value0: 12620168801466718912
-            m_Value1: 12668562621655099758
-          m_NodeModelHashGuid:
-            serializedVersion: 2
-            Hash: c01ae410a9d823af6e298b5e95c6cfaf
-          m_UniqueId: out
-          m_PortDirection: 2
-          m_PortOrientation: 0
-          m_Title: out
-        m_ToPortReference:
-          m_NodeModelGuid:
-            m_Value0: 5282152196052126074
-            m_Value1: 7187265872173760986
-          m_NodeModelHashGuid:
-            serializedVersion: 2
-            Hash: 7a893caf6ff94d49da8134213b4cbe63
-          m_UniqueId: in
-          m_PortDirection: 1
-          m_PortOrientation: 0
-          m_Title: in
     - rid: 2583076179994738781
       type: {class: WireModel, ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -407,6 +357,38 @@ MonoBehaviour:
           m_PortDirection: 1
           m_PortOrientation: 0
           m_Title: in
+    - rid: 2850019066454212959
+      type: {class: WireModel, ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
+      data:
+        m_Guid:
+          m_Value0: 50477466629721001
+          m_Value1: 15279602736570543047
+        m_HashGuid:
+          serializedVersion: 2
+          Hash: a94ba00bfd54b300c7ab5feebb0d0cd4
+        m_Version: 2
+        m_FromPortReference:
+          m_NodeModelGuid:
+            m_Value0: 12620168801466718912
+            m_Value1: 12668562621655099758
+          m_NodeModelHashGuid:
+            serializedVersion: 2
+            Hash: c01ae410a9d823af6e298b5e95c6cfaf
+          m_UniqueId: out
+          m_PortDirection: 2
+          m_PortOrientation: 0
+          m_Title: out
+        m_ToPortReference:
+          m_NodeModelGuid:
+            m_Value0: 5282152196052126074
+            m_Value1: 7187265872173760986
+          m_NodeModelHashGuid:
+            serializedVersion: 2
+            Hash: 7a893caf6ff94d49da8134213b4cbe63
+          m_UniqueId: in
+          m_PortDirection: 1
+          m_PortOrientation: 0
+          m_Title: in
     - rid: 3038426085980635330
       type: {class: GraphModelImp, ns: Unity.GraphToolkit.Editor.Implementation, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -473,10 +455,10 @@ MonoBehaviour:
         - rid: 3038426085980635543
         - rid: 3038426085980635549
         - rid: 3038426085980635556
-        - rid: 2583076179994738780
         - rid: 2583076179994738781
         - rid: 2583076179994738782
         - rid: 2583076179994738783
+        - rid: 2850019066454212959
         m_GraphStickyNoteModels: []
         m_GraphPlacematModels: []
         m_GraphVariableModels: []
@@ -494,9 +476,9 @@ MonoBehaviour:
         m_LastKnownBounds:
           serializedVersion: 2
           x: -1753
-          y: -209
+          y: -207
           width: 3777
-          height: 1953
+          height: 1951
         m_GraphElementMetaData:
         - m_Guid:
             m_Value0: 12620168801466718912
@@ -995,21 +977,13 @@ MonoBehaviour:
           m_Category: 4
           m_Index: 28
         - m_Guid:
-            m_Value0: 3111922214185703898
-            m_Value1: 1256450170974195709
-          m_HashGuid:
-            serializedVersion: 2
-            Hash: da992f21c4c42f2bfd4fe506c6ce6f11
-          m_Category: 2
-          m_Index: 25
-        - m_Guid:
             m_Value0: 8209372323693266888
             m_Value1: 5022114730998931764
           m_HashGuid:
             serializedVersion: 2
             Hash: c807a91ea28ced7134a17252bd22b245
           m_Category: 2
-          m_Index: 26
+          m_Index: 25
         - m_Guid:
             m_Value0: 8905528096059466285
             m_Value1: 11202590009005221527
@@ -1017,13 +991,21 @@ MonoBehaviour:
             serializedVersion: 2
             Hash: 2da2e2ae9eca967b97a618634298779b
           m_Category: 2
-          m_Index: 27
+          m_Index: 26
         - m_Guid:
             m_Value0: 10473584514203506953
             m_Value1: 14589098491855866191
           m_HashGuid:
             serializedVersion: 2
             Hash: 09d921ce9fa559914f894130c8e376ca
+          m_Category: 2
+          m_Index: 27
+        - m_Guid:
+            m_Value0: 50477466629721001
+            m_Value1: 15279602736570543047
+          m_HashGuid:
+            serializedVersion: 2
+            Hash: a94ba00bfd54b300c7ab5feebb0d0cd4
           m_Category: 2
           m_Index: 28
         m_EntryPoint:
@@ -1063,10 +1045,8 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           m_ValueList:
-          - rid: 3038426085980635334
           - rid: 3038426085980635335
         m_InputPortInfos:
           expandedPortsById:
@@ -1083,10 +1063,6 @@ MonoBehaviour:
           m_HasUserColor: 0
         m_Node:
           rid: 3038426085980635336
-    - rid: 3038426085980635334
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: 8a8ba4bd-9571-4654-98ba-6ce9925629fa
     - rid: 3038426085980635335
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -1112,13 +1088,11 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_VideoClip
           - __option_GivingItem
           - __option_NeededItem
           m_ValueList:
-          - rid: 3038426085980635339
           - rid: 3038426085980635340
           - rid: 3038426085980635341
           - rid: 3038426085980635342
@@ -1138,10 +1112,6 @@ MonoBehaviour:
           m_HasUserColor: 0
         m_Node:
           rid: 3038426085980635344
-    - rid: 3038426085980635339
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: 39de70b3-94e5-4872-bf29-b9dd4459c71a
     - rid: 3038426085980635340
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -1179,13 +1149,11 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_VideoClip
           - __option_IsLooping
           - __option_NeededItem
           m_ValueList:
-          - rid: 3038426085980635347
           - rid: 3038426085980635348
           - rid: 3038426085980635349
           - rid: 3038426085980635350
@@ -1255,10 +1223,6 @@ MonoBehaviour:
           m_PortDirection: 1
           m_PortOrientation: 0
           m_Title: in
-    - rid: 3038426085980635347
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: c825f92c-0c40-451b-9f6c-6612f0c311aa
     - rid: 3038426085980635348
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -1296,14 +1260,12 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_RelativePosition
           - __option_RelativeSize
           - __option_Label
           - __option_LabelColor
           m_ValueList:
-          - rid: 3038426085980635354
           - rid: 3038426085980635355
           - rid: 3038426085980635356
           - rid: 3038426085980635357
@@ -1326,10 +1288,6 @@ MonoBehaviour:
           rid: 3038426085980635345
         m_Node:
           rid: 3038426085980635358
-    - rid: 3038426085980635354
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: 2c372caa-996d-45c7-8cc7-166abd23baff
     - rid: 3038426085980635355
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -1363,14 +1321,12 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_RelativePosition
           - __option_RelativeSize
           - __option_Label
           - __option_LabelColor
           m_ValueList:
-          - rid: 3038426085980635360
           - rid: 3038426085980635361
           - rid: 3038426085980635362
           - rid: 3038426085980635363
@@ -1393,10 +1349,6 @@ MonoBehaviour:
           rid: 3038426085980635345
         m_Node:
           rid: 3038426085980635364
-    - rid: 3038426085980635360
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: 56f90968-490f-4bbd-b134-39c00b4f067d
     - rid: 3038426085980635361
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -1430,13 +1382,11 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_VideoClip
           - __option_GivingItem
           - __option_NeededItem
           m_ValueList:
-          - rid: 3038426085980635367
           - rid: 3038426085980635368
           - rid: 3038426085980635369
           - rid: 3038426085980635370
@@ -1488,10 +1438,6 @@ MonoBehaviour:
           m_PortDirection: 1
           m_PortOrientation: 0
           m_Title: in
-    - rid: 3038426085980635367
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: 70874fa2-7c28-4008-9030-e49e654b9ef6
     - rid: 3038426085980635368
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -1529,13 +1475,11 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_VideoClip
           - __option_GivingItem
           - __option_NeededItem
           m_ValueList:
-          - rid: 3038426085980635375
           - rid: 3038426085980635376
           - rid: 3038426085980635377
           - rid: 3038426085980635378
@@ -1587,10 +1531,6 @@ MonoBehaviour:
           m_PortDirection: 1
           m_PortOrientation: 0
           m_Title: in
-    - rid: 3038426085980635375
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: 21c176af-c496-4b8e-be79-2cd3b1de4b65
     - rid: 3038426085980635376
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -1789,14 +1729,12 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_RelativePosition
           - __option_RelativeSize
           - __option_Label
           - __option_LabelColor
           m_ValueList:
-          - rid: 3038426085980635394
           - rid: 3038426085980635395
           - rid: 3038426085980635396
           - rid: 3038426085980635397
@@ -1819,10 +1757,6 @@ MonoBehaviour:
           rid: 3038426085980635345
         m_Node:
           rid: 3038426085980635398
-    - rid: 3038426085980635394
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: 027f58a6-4f64-4c60-ae0f-1a2d03985d3c
     - rid: 3038426085980635395
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -1856,13 +1790,11 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_VideoClip
           - __option_GivingItem
           - __option_NeededItem
           m_ValueList:
-          - rid: 3038426085980635401
           - rid: 3038426085980635402
           - rid: 3038426085980635403
           - rid: 3038426085980635404
@@ -1914,10 +1846,6 @@ MonoBehaviour:
           m_PortDirection: 1
           m_PortOrientation: 0
           m_Title: in
-    - rid: 3038426085980635401
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: 258ebfed-104b-4ff8-bf94-346323b6c53a
     - rid: 3038426085980635402
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -2116,14 +2044,12 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_RelativePosition
           - __option_RelativeSize
           - __option_Label
           - __option_LabelColor
           m_ValueList:
-          - rid: 3038426085980635413
           - rid: 3038426085980635414
           - rid: 3038426085980635415
           - rid: 3038426085980635416
@@ -2146,10 +2072,6 @@ MonoBehaviour:
           rid: 3038426085980635345
         m_Node:
           rid: 3038426085980635417
-    - rid: 3038426085980635413
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: 8c2f92fe-09ef-4a46-8dc9-d7c43b351ebc
     - rid: 3038426085980635414
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -2183,14 +2105,12 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_RelativePosition
           - __option_RelativeSize
           - __option_Label
           - __option_LabelColor
           m_ValueList:
-          - rid: 3038426085980635419
           - rid: 3038426085980635420
           - rid: 3038426085980635421
           - rid: 3038426085980635422
@@ -2213,10 +2133,6 @@ MonoBehaviour:
           rid: 3038426085980635345
         m_Node:
           rid: 3038426085980635423
-    - rid: 3038426085980635419
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: aeffb722-2c11-44ea-a668-4ab264a32a48
     - rid: 3038426085980635420
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -2411,13 +2327,11 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_VideoClip
           - __option_GivingItem
           - __option_NeededItem
           m_ValueList:
-          - rid: 3038426085980635431
           - rid: 3038426085980635432
           - rid: 3038426085980635433
           - rid: 3038426085980635434
@@ -2469,10 +2383,6 @@ MonoBehaviour:
           m_PortDirection: 1
           m_PortOrientation: 0
           m_Title: in
-    - rid: 3038426085980635431
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: 33f32cc2-60d8-442e-9b04-81510f8d05ca
     - rid: 3038426085980635432
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -2671,13 +2581,11 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_VideoClip
           - __option_IsLooping
           - __option_NeededItem
           m_ValueList:
-          - rid: 3038426085980635443
           - rid: 3038426085980635444
           - rid: 3038426085980635445
           - rid: 3038426085980635446
@@ -2703,10 +2611,6 @@ MonoBehaviour:
         m_Subtitle: 
         m_Node:
           rid: 3038426085980635448
-    - rid: 3038426085980635443
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: 5b50bdee-eedf-4e7f-a31a-73889efca5dc
     - rid: 3038426085980635444
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -2744,14 +2648,12 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_RelativePosition
           - __option_RelativeSize
           - __option_Label
           - __option_LabelColor
           m_ValueList:
-          - rid: 3038426085980635450
           - rid: 3038426085980635451
           - rid: 3038426085980635452
           - rid: 3038426085980635453
@@ -2774,10 +2676,6 @@ MonoBehaviour:
           rid: 3038426085980635442
         m_Node:
           rid: 3038426085980635454
-    - rid: 3038426085980635450
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: c49c4599-e603-4224-b804-7739290c32a0
     - rid: 3038426085980635451
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -2932,7 +2830,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 92648f707a6eed738c6fcbeff1739612
         m_Version: 2
-        m_Position: {x: -660.69226, y: -209.07674}
+        m_Position: {x: -660.69226, y: -207.06538}
         m_Title: 
         m_Tooltip: 
         m_NodePreviewModel:
@@ -2940,13 +2838,11 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_VideoClip
           - __option_IsLooping
           - __option_NeededItem
           m_ValueList:
-          - rid: 3038426085980635470
           - rid: 3038426085980635471
           - rid: 3038426085980635472
           - rid: 3038426085980635473
@@ -2975,10 +2871,6 @@ MonoBehaviour:
         m_Subtitle: 
         m_Node:
           rid: 3038426085980635475
-    - rid: 3038426085980635470
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: c93e2f54-5ff1-4efc-bcd5-f88561d6c075
     - rid: 3038426085980635471
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -3016,14 +2908,12 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_RelativePosition
           - __option_RelativeSize
           - __option_Label
           - __option_LabelColor
           m_ValueList:
-          - rid: 3038426085980635477
           - rid: 3038426085980635478
           - rid: 3038426085980635479
           - rid: 3038426085980635480
@@ -3046,10 +2936,6 @@ MonoBehaviour:
           rid: 3038426085980635468
         m_Node:
           rid: 3038426085980635481
-    - rid: 3038426085980635477
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: a7160aac-20ca-4bbe-9a0c-aef3708f0760
     - rid: 3038426085980635478
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -3083,14 +2969,12 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_RelativePosition
           - __option_RelativeSize
           - __option_Label
           - __option_LabelColor
           m_ValueList:
-          - rid: 3038426085980635483
           - rid: 3038426085980635484
           - rid: 3038426085980635485
           - rid: 3038426085980635486
@@ -3113,10 +2997,6 @@ MonoBehaviour:
           rid: 3038426085980635468
         m_Node:
           rid: 3038426085980635487
-    - rid: 3038426085980635483
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: ca64b9f6-e674-4443-a43e-2474849f286b
     - rid: 3038426085980635484
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -3311,13 +3191,11 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_VideoClip
           - __option_IsLooping
           - __option_NeededItem
           m_ValueList:
-          - rid: 3038426085980635496
           - rid: 3038426085980635497
           - rid: 3038426085980635498
           - rid: 3038426085980635499
@@ -3375,10 +3253,6 @@ MonoBehaviour:
           m_PortDirection: 1
           m_PortOrientation: 0
           m_Title: in
-    - rid: 3038426085980635496
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: d22fab77-4674-46f2-bf15-057b529c59fc
     - rid: 3038426085980635497
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -3416,14 +3290,12 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_RelativePosition
           - __option_RelativeSize
           - __option_Label
           - __option_LabelColor
           m_ValueList:
-          - rid: 3038426085980635503
           - rid: 3038426085980635504
           - rid: 3038426085980635505
           - rid: 3038426085980635506
@@ -3446,10 +3318,6 @@ MonoBehaviour:
           rid: 3038426085980635494
         m_Node:
           rid: 3038426085980635507
-    - rid: 3038426085980635503
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: 75b90c85-98ef-46cf-9a4b-3b50dccc611e
     - rid: 3038426085980635504
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -3483,13 +3351,11 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_VideoClip
           - __option_GivingItem
           - __option_NeededItem
           m_ValueList:
-          - rid: 3038426085980635511
           - rid: 3038426085980635512
           - rid: 3038426085980635513
           - rid: 3038426085980635514
@@ -3541,10 +3407,6 @@ MonoBehaviour:
           m_PortDirection: 1
           m_PortOrientation: 0
           m_Title: in
-    - rid: 3038426085980635511
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: aa2a0a1d-d0d9-4e40-8496-ed289a0b7e93
     - rid: 3038426085980635512
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -3614,13 +3476,11 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_VideoClip
           - __option_IsLooping
           - __option_NeededItem
           m_ValueList:
-          - rid: 3038426085980635520
           - rid: 3038426085980635521
           - rid: 3038426085980635522
           - rid: 3038426085980635523
@@ -3678,10 +3538,6 @@ MonoBehaviour:
           m_PortDirection: 1
           m_PortOrientation: 0
           m_Title: in
-    - rid: 3038426085980635520
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: 7df71777-69d1-4ed1-bdf2-8e0b3f77f5ad
     - rid: 3038426085980635521
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -3719,14 +3575,12 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_RelativePosition
           - __option_RelativeSize
           - __option_Label
           - __option_LabelColor
           m_ValueList:
-          - rid: 3038426085980635527
           - rid: 3038426085980635528
           - rid: 3038426085980635529
           - rid: 3038426085980635530
@@ -3749,10 +3603,6 @@ MonoBehaviour:
           rid: 3038426085980635518
         m_Node:
           rid: 3038426085980635531
-    - rid: 3038426085980635527
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: 9d9ce6be-c368-4acf-9770-5a7f7a98c7a5
     - rid: 3038426085980635528
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -3786,13 +3636,11 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_VideoClip
           - __option_GivingItem
           - __option_NeededItem
           m_ValueList:
-          - rid: 3038426085980635534
           - rid: 3038426085980635535
           - rid: 3038426085980635536
           - rid: 3038426085980635537
@@ -3844,10 +3692,6 @@ MonoBehaviour:
           m_PortDirection: 1
           m_PortOrientation: 0
           m_Title: in
-    - rid: 3038426085980635534
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: 76e85e04-3b18-4722-ac88-eb0fad10c888
     - rid: 3038426085980635535
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:
@@ -4046,13 +3890,11 @@ MonoBehaviour:
         m_State: 0
         m_InputConstantsById:
           m_KeyList:
-          - __option_NodeId
           - __option_Name
           - __option_VideoClip
           - __option_GivingItem
           - __option_NeededItem
           m_ValueList:
-          - rid: 3038426085980635550
           - rid: 3038426085980635551
           - rid: 3038426085980635552
           - rid: 3038426085980635553
@@ -4104,10 +3946,6 @@ MonoBehaviour:
           m_PortDirection: 1
           m_PortOrientation: 0
           m_Title: in
-    - rid: 3038426085980635550
-      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
-      data:
-        m_Value: a1851343-4519-455e-93d4-fa1078057fc4
     - rid: 3038426085980635551
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
       data:

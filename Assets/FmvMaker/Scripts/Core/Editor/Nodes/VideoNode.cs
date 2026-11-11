@@ -8,9 +8,6 @@ namespace FmvMaker.Core {
     public class VideoNode : Node {
         protected override void OnDefineOptions(IOptionDefinitionContext context) {
 
-            context.AddOption<string>("NodeId")
-                .WithDefaultValue(Guid.NewGuid().ToString());
-
             context.AddOption<string>("Name")
                 .WithDefaultValue("")
                 .Delayed();
@@ -34,27 +31,6 @@ namespace FmvMaker.Core {
                 .Build();
             context.AddOutputPort("out")
                 .Build();
-
-            //var nodeNameOption = GetNodeOptionByName("Name");
-            //nodeNameOption.TryGetValue<string>(out string nodeName);
-            //context.AddInputPort<string>("Name")
-            //    .WithDefaultValue("nodeName")
-            //    .Build();
-
-            //var nodeVideoClipOption = GetNodeOptionByName("VideoClip");
-            //nodeVideoClipOption.TryGetValue<VideoClip>(out VideoClip nodeVideoClip);
-            //context.AddInputPort<VideoClip>("VideoClip")
-            //    .WithDisplayName("Video Clip")
-            //    .WithDefaultValue(null)
-            //    .Build();
-
-            //context.AddInputPort<string>("GivingItem")
-            //    .WithDisplayName("Giving Item")
-            //    .Build();
-
-            //context.AddInputPort<string>("NeededItem")
-            //    .WithDisplayName("Needed Item")
-            //    .Build();
         }
     }
 }
