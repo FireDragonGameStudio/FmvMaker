@@ -92,8 +92,6 @@ namespace FmvMaker.Core.Facades {
             if (videoPlayer.audioOutputMode == VideoAudioOutputMode.AudioSource) {
                 audioSource.mute = mute;
             }
-
-            // API not necessary (yet?)
         }
 
         public void Play() {

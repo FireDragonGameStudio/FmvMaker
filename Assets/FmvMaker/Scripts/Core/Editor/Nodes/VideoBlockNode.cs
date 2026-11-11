@@ -7,11 +7,6 @@ namespace FmvMaker.Core {
     [Serializable]
     public class VideoBlockNode : BlockNode {
         protected override void OnDefineOptions(IOptionDefinitionContext context) {
-            context.AddOption<string>("NodeId")
-                .WithDisplayName("Node Id")
-                .WithDefaultValue(Guid.NewGuid().ToString())
-                .ShowInInspectorOnly();
-
             context.AddOption<string>("Name")
                 .WithDisplayName("Node Name")
                 .Delayed();
