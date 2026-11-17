@@ -1,3 +1,4 @@
+using FmvMaker.Provider;
 using System;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ namespace FmvMaker.Models {
         public Hash128 OutputPortId;
         // relative chance, only used by randomizer nodes
         public float Weight;
+        // optional, overrides the default button style of the FmvVideos component
+        public FmvButtonStyle ButtonStyle;
         public string LabelText;
         public Color LabelTextColor;
         public Vector2 RelativePosition;

@@ -19,6 +19,10 @@ namespace FmvMaker.Provider {
         [Header("FmvMaker Graph")]
         public FmvMakerRuntimeGraph RuntimeGraph;
 
+        [Header("Button Style")]
+        [Tooltip("Look of all choice buttons. Create one via Create > FmvMaker > Button Style. Choices can override it in the graph. Leave empty to use the button prefab as it is.")]
+        public FmvButtonStyle DefaultButtonStyle;
+
         [Header("FmvMaker Events")]
         public VideoEvent OnVideoStarted = new VideoEvent();
         public VideoBoolEvent OnVideoPaused = new VideoBoolEvent();
@@ -155,12 +159,20 @@ namespace FmvMaker.Provider {
                 navigationButton.name = destinationId.ToString();
                 navigationButton.transform.SetParent(navigationElementsParent, false);
 
-                // set label text
-                if (!string.IsNullOrEmpty(currentNode.DecisionData[i].LabelText)) {
-                    var labelText = navigationButton.GetComponentInChildren<TextMeshProUGUI>();
-                    labelText.text = currentNode.DecisionData[i].LabelText;
-                    labelText.color = currentNode.DecisionData[i].LabelTextColor;
-                    labelText.alpha = navigationUiLabelAlphaValue;
+                var decisionData = currentNode.DecisionData[i];
+                var labelText = navigationButton.GetComponentInChildren<TextMeshProUGUI>(true);
+                if (labelText != null) {
+                    labelText.text = decisionData.LabelText ?? "";
+                }
+
+                // look of the button: the choice's style, the default style, or the prefab as it is
+                var buttonStyle = decisionData.ButtonStyle != null ? decisionData.ButtonStyle : DefaultButtonStyle;
+                if (buttonStyle != null) {
+                    // an unset color (transparent black) means "use the style's label color"
+                    Color? labelColorOverride = decisionData.LabelTextColor == default ? null : decisionData.LabelTextColor;
+                    navigationButton.AddComponent<FmvButtonStyler>().Init(buttonStyle, labelColorOverride, navigationUiAlphaValue > 0f);
+                } else {
+                    ApplyLegacyVisibility(navigationButton, labelText, decisionData);
                 }
 
                 // set position and size
@@ -171,7 +183,6 @@ namespace FmvMaker.Provider {
 
                 // set click action
                 var button = navigationButton.GetComponent<Button>();
-                var decisionData = currentNode.DecisionData[i];
                 button.onClick.AddListener(() => {
 
                     // use item, if applicable
@@ -182,12 +193,19 @@ namespace FmvMaker.Provider {
                     PlayVideo(decisionData.DestinationId, decisionData.OutputPortId);
                 });
 
-                // set visibility of button image
-                var image = navigationButton.GetComponent<Image>();
-                image.color = new Color(image.color.r, image.color.g, image.color.b, navigationUiAlphaValue);
-
                 clickableObjects.Add(navigationButton);
             }
+        }
+
+        /// <summary>Look of buttons without a Button Style: the prefab, shown or hidden via the FmvSettings toggles.</summary>
+        private void ApplyLegacyVisibility(GameObject navigationButton, TextMeshProUGUI labelText, FmvMakerDecisionData decisionData) {
+            if (labelText != null && !string.IsNullOrEmpty(decisionData.LabelText)) {
+                labelText.color = decisionData.LabelTextColor;
+                labelText.alpha = navigationUiLabelAlphaValue;
+            }
+
+            var image = navigationButton.GetComponent<Image>();
+            image.color = new Color(image.color.r, image.color.g, image.color.b, navigationUiAlphaValue);
         }
 
         /// <summary>

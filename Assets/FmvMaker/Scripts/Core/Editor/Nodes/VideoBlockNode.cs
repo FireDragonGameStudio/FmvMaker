@@ -1,3 +1,4 @@
+using FmvMaker.Provider;
 using System;
 using Unity.GraphToolkit.Editor;
 using UnityEngine;
@@ -18,8 +19,12 @@ namespace FmvMaker.Core {
 
             context.AddOption<Color>("LabelColor")
                 .WithDisplayName("Visible InGame Text Color")
-                .WithTooltip("The color that text is displayed. Only used when Label is not empty.")
+                .WithTooltip("The color that text is displayed. Only used when Label is not empty. With a Button Style, leave it unset (transparent black) to use the style's label color.")
                 .Delayed();
+
+            context.AddOption<FmvButtonStyle>("ButtonStyle")
+                .WithDisplayName("Button Style")
+                .WithTooltip("Optional. Changes the look of this choice. Leave empty to use the Default Button Style of the FmvVideos component. Create styles via Create > FmvMaker > Button Style.");
 
             context.AddOption<Vector2>("RelativePosition")
                 .WithDisplayName("Relative Position (0-1)")

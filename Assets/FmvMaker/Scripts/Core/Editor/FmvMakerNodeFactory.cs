@@ -122,7 +122,8 @@ namespace FmvMaker.Core {
                     LabelText = GetNodeOption<string>(block.GetNodeOptionByName("Label")),
                     LabelTextColor = GetNodeOption<Color>(block.GetNodeOptionByName("LabelColor")),
                     RelativePosition = GetNodeOption<Vector2>(block.GetNodeOptionByName("RelativePosition")),
-                    RelativeSize = GetNodeOption<Vector2>(block.GetNodeOptionByName("RelativeSize"))
+                    RelativeSize = GetNodeOption<Vector2>(block.GetNodeOptionByName("RelativeSize")),
+                    ButtonStyle = GetNodeOption<FmvButtonStyle>(block.GetNodeOptionByName("ButtonStyle"))
                 });
             }
         }
