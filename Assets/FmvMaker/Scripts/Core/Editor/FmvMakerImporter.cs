@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace FmvMaker.Core {
     // bump the version whenever the runtime data changes, to force a reimport
-    [ScriptedImporter(3, FmvMakerGraph.AssetExtension)]
+    [ScriptedImporter(4, FmvMakerGraph.AssetExtension)]
     public class FmvMakerImporter : ScriptedImporter {
         public override void OnImportAsset(AssetImportContext ctx) {
             FmvMakerGraph fmvMakerGraph = GraphDatabase.LoadGraphForImporter<FmvMakerGraph>(ctx.assetPath);

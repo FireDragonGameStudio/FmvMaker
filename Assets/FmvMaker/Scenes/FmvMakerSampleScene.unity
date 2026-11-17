@@ -577,6 +577,10 @@ PrefabInstance:
       propertyPath: muteUnmuteVideo
       value: 
       objectReference: {fileID: 1281972258}
+    - target: {fileID: 3047148757875082070, guid: 08aa2c785a04a094ea0941a3c0e22453, type: 3}
+      propertyPath: DefaultButtonStyle
+      value: 
+      objectReference: {fileID: 11400000, guid: 1712491efa6a65849a9a9ba788387418, type: 2}
     - target: {fileID: 3256012904639496449, guid: 08aa2c785a04a094ea0941a3c0e22453, type: 3}
       propertyPath: showNavigationUiButtons
       value: 1

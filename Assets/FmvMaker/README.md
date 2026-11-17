@@ -63,6 +63,26 @@ Follow these simple steps to create your first FMV sequence, based on the [Sneak
 * Drag your `NewGameGraph` asset into the `Runtime Graph` field.
 * Press **Play** in Unity!
 
+### 5. Style Your Buttons (optional)
+Change the look of the choice buttons without touching any prefab or code:
+* Select **Create > FmvMaker > Button Style**, or duplicate one of the ready-made styles in `Assets/FmvMaker/ButtonStyles`:
+	* `InvisibleHotspot`: invisible click zones, typical for point & click games.
+	* `HighlightOnHover`: invisible until the mouse is over it.
+	* `ClassicButton`: dark button with white text.
+	* `TextOnly`: just the label, which changes color on hover.
+	* `CaptionBelow`: a light frame with the label below it.
+* Click the style and adjust it in the Inspector:
+	* button colors for normal, hover and pressed (set the alpha to 0 for an invisible button)
+	* an optional background image
+	* label font, size, style and color
+	* label position: centered, above or below the button
+* Drag the style into the `Default Button Style` field of the `FmvVideos` component. All choices now use it.
+* To give a single choice a different look, select a style in its `Button Style` field in the graph.
+* A `Visible InGame Text Color` set on a choice replaces the label color of the style. Leave it unset to use the style's color.
+* Changes to a style are visible immediately while the game is running in the editor.
+* Tip: enable `Show Navigation UI Buttons` on the `FmvSettings` component to see invisible hotspots in pink while testing.
+* Without a Button Style, the buttons look like before and are shown or hidden with the `FmvSettings` toggles.
+
 ---
 
 <img width="2208" height="1339" alt="FmvMaker-Overview" src="https://github.com/user-attachments/assets/31784f56-7780-4c2c-ab64-9f3def649367" />
@@ -77,6 +97,7 @@ Follow these simple steps to create your first FMV sequence, based on the [Sneak
 	* **Unlock Paths:** Set "Needed Item" on a video node to restrict access until the player has the specific item.
 	* **Reward Players:** Set "Giving Items" on a node to add items to the inventory upon watching.
 * **Random Outcomes:** Let the game decide with the `Video Randomizer Node` and weighted outcomes.
+* **Button Styles:** Change colors, fonts and label placement of the choice buttons in the Inspector, for all choices or per choice. No prefab editing or coding needed.
 * **Portals:** Create clean loops (e.g., returning to a dialogue menu) without messy wires crossing the screen.
 * **Save/Load System:** Built-in support to save inventory state and progress automatically.
 * **Graph Validation:** Mistakes are marked directly on the nodes while you edit and listed in the Console. For example:
